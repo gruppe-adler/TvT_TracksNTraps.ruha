@@ -5,9 +5,9 @@ private _destroyAction = [
     "Destroy Depot",
     "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     {
-        [_target] execVM "functions\fn_destroyDepot.sqf";
+        [_target] call gradSB_fnc_depotDestroy;
     }, {
-        !(_target getVariable ["SB_depotDestroyed", false])
+        !(_target getVariable ["gradSB_depotDestroyed", false])
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

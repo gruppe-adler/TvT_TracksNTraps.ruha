@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=424;
+		nextID=438;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2985.9329,91.340324,15196.495};
-		dir[]={0.56597483,-0.40196398,-0.71984041};
-		up[]={0.24847119,0.91564012,-0.31602007};
-		aside[]={-0.78614366,6.9849193e-009,-0.6181016};
+		pos[]={7114.3887,135.73314,11062.054};
+		dir[]={-0.87682909,-0.48027703,-0.022978991};
+		up[]={-0.48011824,0.87711406,-0.01258171};
+		aside[]={-0.026198018,1.5988553e-007,0.99966592};
 	};
 };
 binarizationWanted=0;
@@ -204,25 +204,25 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9554.3281,94.926674,11929.855};
+						position[]={7080.3589,100.87112,11057.08};
 						angles[]={0,4.8091826,0};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						isPlayer=1;
 					};
 					id=50;
 					type="B_Deck_Crew_F";
-					atlOffset=1.1139297;
+					atlOffset=0.18373871;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=49;
-			atlOffset=1.1139297;
+			atlOffset=0.18373871;
 		};
 		class Item1
 		{
@@ -3355,7 +3355,7 @@ class Mission
 				};
 			};
 			id=346;
-			atlOffset=-0.0021438599;
+			atlOffset=-0.0021896362;
 		};
 		class Item56
 		{
@@ -3372,7 +3372,7 @@ class Mission
 			};
 			id=350;
 			type="gm_ge_army_Leopard1a5";
-			atlOffset=-0.0021438599;
+			atlOffset=-0.0021896362;
 		};
 		class Item57
 		{
@@ -3605,7 +3605,7 @@ class Mission
 				};
 			};
 			id=356;
-			atlOffset=0.00045776367;
+			atlOffset=0.00045013428;
 		};
 		class Item60
 		{
@@ -3622,7 +3622,7 @@ class Mission
 			};
 			id=360;
 			type="gm_ge_army_Leopard1a5";
-			atlOffset=0.00045776367;
+			atlOffset=0.00045013428;
 		};
 		class Item61
 		{

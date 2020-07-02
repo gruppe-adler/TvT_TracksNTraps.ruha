@@ -1,4 +1,11 @@
-params ["_depot", "_side"];
+params ["_depot", ["_destroyed", false]];
+
+private _side = _depot getVariable ["SB_depotSide", sideUnknown];
+
+if (_destroyed) exitWith {
+    private _marker = _depot getVariable ["SB_depotMarkerLocal", ""];
+    _marker setMarkerTypeLocal "hd_destroy";
+};
 
 private _position = position _depot;
 private _markerName = format ["mrk_depot_%1", str _position];

@@ -47,15 +47,16 @@ _camoNet setPos _positionCamoNet;
 _camoNet setDir (_dir+90);
 
 
-_depot setVariable ["SB_shelter", _shelter, true];
-_depot setVariable ["SB_camoNet", _camoNet, true];
+_depot setVariable ["gradSB_shelter", _shelter, true];
+_depot setVariable ["gradSB_camoNet", _camoNet, true];
 
 
 // fuel
 [_depot, 100000] call ace_refuel_fnc_makeSource;
 
 // repair
-_depot setVariable ["ACE_isRepairFacility", true, true];    
+_depot setVariable ["ACE_isRepairFacility", true, true]; 
+_depot setVariable ["gradSB_depotSide", _side, true];
 
 // rearm
 if (_side == west) then {
@@ -67,3 +68,4 @@ if (_side == west) then {
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;
 
 [_depot] remoteExec ["gradSB_fnc_depotAction", 0, true];
+[_depot] remoteExec ["gradSB_fnc_depotMarker", 0, true];
