@@ -13,9 +13,9 @@ private _depot = if (_side == west) then {
     ]
 } else {
     [
-        "gm_ge_army_shelteraceII_repair",
+        "gm_gc_army_shelterlakII_repair",
         "Land_RepairDepot_01_green_F",
-        "land_gm_camonet_04_nato"
+        "land_gm_camonet_04_east"
     ]
 };
 
@@ -49,6 +49,22 @@ _camoNet setDir (_dir+90);
 
 _depot setVariable ["SB_shelter", _shelter, true];
 _depot setVariable ["SB_camoNet", _camoNet, true];
+
+
+// fuel
+[_depot, 100000] call ace_refuel_fnc_makeSource;
+
+// repair
+_depot setVariable ["ACE_isRepairFacility", true, true];    
+
+// rearm
+if (_side == west) then {
+    [_depot, "gm_ge_army_Leopard1a5"] call ace_rearm_fnc_addVehicleMagazinesToSupply;    
+} else {
+    [_depot, "gm_gc_army_t55am2b"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
+};
+
+[_depot, 100000] call ace_rearm_fnc_setSupplyCount;
 
 private _destroyAction = [
     "RepairHole",

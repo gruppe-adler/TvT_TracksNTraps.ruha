@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=403;
+		nextID=409;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6326.8384,134.37315,10786.286};
-		dir[]={0.52781546,-0.77553546,0.34648648};
-		up[]={0.64837027,0.63123369,0.42562521};
-		aside[]={0.54880112,3.4131517e-007,-0.83600962};
+		pos[]={6338.7598,131.3999,10787.48};
+		dir[]={0.043961883,-0.63598853,0.77051687};
+		up[]={0.03623208,0.77161771,0.63504601};
+		aside[]={0.99843067,2.8096474e-007,-0.056963824};
 	};
 };
 binarizationWanted=0;
@@ -38,17 +38,13 @@ addons[]=
 	"gm_vehicles_land_tracked_leopard1_ge_army_leopard1",
 	"gm_vehicles_land_tracked_m113_ge_army_m113",
 	"gm_vehicles_air_helicopters_bo105_ge_army_bo105",
-	"gm_vehicles_land_wheeled_iltis_ge_army_iltis",
-	"gm_objects_fortification",
-	"A3_Structures_F_Tank_Military_RepairDepot",
-	"gm_objects_container_shelterlak_gc_army_shelterlak",
-	"gm_objects_container_shelterace_ge_army_shelterace"
+	"gm_vehicles_land_wheeled_iltis_ge_army_iltis"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=14;
 		class Item0
 		{
 			className="A3_Characters_F_Jets";
@@ -147,34 +143,6 @@ class AddonsMetaData
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item14
-		{
-			className="gm_objects_fortification";
-			name="gm_objects_fortification";
-			author="Global Mobilization";
-			url="global-mobilization.com";
-		};
-		class Item15
-		{
-			className="A3_Structures_F_Tank";
-			name="Arma 3 Tank - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
-		{
-			className="gm_objects_container_shelterlak_gc_army_shelterlak";
-			name="gm_objects_container_shelterlak_gc_army_shelterlak";
-			author="Global Mobilization";
-			url="global-mobilization.com";
-		};
-		class Item17
-		{
-			className="gm_objects_container_shelterace_ge_army_shelterace";
-			name="gm_objects_container_shelterace_ge_army_shelterace";
-			author="Global Mobilization";
-			url="global-mobilization.com";
-		};
 	};
 };
 randomSeed=12538678;
@@ -207,7 +175,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=70;
+		items=64;
 		class Item0
 		{
 			dataType="Group";
@@ -336,7 +304,7 @@ class Mission
 			fillName="Grid";
 			a=200;
 			b=200;
-			angle=275.54593;
+			angle=275.5459;
 			id=94;
 			atlOffset=-5.4828339;
 		};
@@ -446,7 +414,7 @@ class Mission
 				};
 			};
 			id=231;
-			atlOffset=-0.0065612793;
+			atlOffset=-0.0065536499;
 		};
 		class Item9
 		{
@@ -463,7 +431,7 @@ class Mission
 			};
 			id=235;
 			type="gm_gc_army_t55am2b";
-			atlOffset=-0.0065612793;
+			atlOffset=-0.0065536499;
 		};
 		class Item10
 		{
@@ -696,7 +664,7 @@ class Mission
 				};
 			};
 			id=241;
-			atlOffset=-0.0065307617;
+			atlOffset=-0.0065383911;
 		};
 		class Item13
 		{
@@ -713,7 +681,7 @@ class Mission
 			};
 			id=245;
 			type="gm_gc_army_t55am2b";
-			atlOffset=-0.0065307617;
+			atlOffset=-0.0065383911;
 		};
 		class Item14
 		{
@@ -821,7 +789,7 @@ class Mission
 				};
 			};
 			id=246;
-			atlOffset=-0.00730896;
+			atlOffset=-0.0073165894;
 		};
 		class Item15
 		{
@@ -838,7 +806,7 @@ class Mission
 			};
 			id=250;
 			type="gm_gc_army_t55am2b";
-			atlOffset=-0.00730896;
+			atlOffset=-0.0073165894;
 		};
 		class Item16
 		{
@@ -1237,7 +1205,7 @@ class Mission
 					};
 					id=267;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=5.3405762e-005;
+					atlOffset=6.1035156e-005;
 				};
 				class Item1
 				{
@@ -1254,7 +1222,7 @@ class Mission
 					};
 					id=268;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=5.3405762e-005;
+					atlOffset=6.1035156e-005;
 				};
 				class Item2
 				{
@@ -1271,7 +1239,7 @@ class Mission
 					};
 					id=269;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=5.3405762e-005;
+					atlOffset=6.1035156e-005;
 				};
 			};
 			class Attributes
@@ -1571,7 +1539,7 @@ class Mission
 				};
 			};
 			id=276;
-			atlOffset=-0.0054092407;
+			atlOffset=-0.0054168701;
 		};
 		class Item27
 		{
@@ -1588,7 +1556,7 @@ class Mission
 			};
 			id=280;
 			type="gm_gc_army_t55am2b";
-			atlOffset=-0.0054092407;
+			atlOffset=-0.0054168701;
 		};
 		class Item28
 		{
@@ -1737,7 +1705,7 @@ class Mission
 					};
 					id=287;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=6.8664551e-005;
+					atlOffset=7.6293945e-005;
 				};
 				class Item1
 				{
@@ -1754,7 +1722,7 @@ class Mission
 					};
 					id=288;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=6.8664551e-005;
+					atlOffset=7.6293945e-005;
 				};
 				class Item2
 				{
@@ -1771,7 +1739,7 @@ class Mission
 					};
 					id=289;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=6.8664551e-005;
+					atlOffset=7.6293945e-005;
 				};
 			};
 			class Attributes
@@ -3653,108 +3621,6 @@ class Mission
 			type="mil_circle";
 			id=363;
 			atlOffset=-4.5923615;
-		};
-		class Item64
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6363.4009,104.3444,10819.91};
-				angles[]={0.017997233,0,6.2751846};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=373;
-			type="land_gm_camonet_04_east";
-		};
-		class Item65
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6363.9185,106.82741,10816.092};
-				angles[]={0.017997233,4.6968203,6.2751846};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=384;
-			type="Land_RepairDepot_01_green_F";
-			atlOffset=-5.3405762e-005;
-		};
-		class Item66
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6363.3477,105.32138,10822.396};
-				angles[]={0.015998369,4.7466011,6.2731848};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				textures="gm_gc_oli";
-			};
-			id=385;
-			type="gm_gc_army_shelterlakII_repair";
-			atlOffset=-7.6293945e-006;
-		};
-		class Item67
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6344.2632,105.6136,10818.902};
-				angles[]={0.013999403,4.7520394,6.2771854};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				textures="gm_ge_wdl";
-			};
-			id=386;
-			type="gm_ge_army_shelteraceII_repair";
-			atlOffset=-3.0517578e-005;
-		};
-		class Item68
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6344.8301,107.01898,10812.521};
-				angles[]={0.011995304,4.6968203,6.2771854};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=394;
-			type="Land_RepairDepot_01_green_F";
-		};
-		class Item69
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6344.313,104.55538,10816.339};
-				angles[]={0.01399754,0,6.2771816};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=396;
-			type="land_gm_camonet_04_nato";
-			atlOffset=7.6293945e-006;
 		};
 	};
 	class Connections
