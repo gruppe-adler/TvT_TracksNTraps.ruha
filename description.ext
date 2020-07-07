@@ -1,3 +1,5 @@
 class cfgFunctions {
     #include "cfgFunctions.hpp"
+
+    #include "modules\grad-vehiclerespawn\cfgFunctions.hpp"
 };
