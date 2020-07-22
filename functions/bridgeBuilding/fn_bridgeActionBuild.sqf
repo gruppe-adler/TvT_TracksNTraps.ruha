@@ -22,7 +22,7 @@ private _buildAction = [
               hintSilent _string;
             };
         };
-        player call gradSB_fnc_bridgePlace;
+        call gradSB_fnc_bridgePlace;
     }, {
           true
     },{},nil,"",3,[false,false,false,false,false]

@@ -1,0 +1,10 @@
+{
+  "name": "tvt-steelbeast",
+  "description": "Tank TvT scenario for Arma3",
+  "version": "0.0.1",
+  "dependencies": {
+    "@gruppe-adler/replay": "^1.5.0",
+    "grad-loadout": "^4.11.4",
+    "grad-tvtsettings": "0.0.2"
+  }
+}

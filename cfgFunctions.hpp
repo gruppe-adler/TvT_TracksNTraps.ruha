@@ -1,7 +1,6 @@
 class gradSB {
-    class all {
-
-        file = "functions";
+    class bridgeBuilding {
+        file = "functions\bridgeBuilding";
 
         class bridgeActionBuild;
         class bridgeActionDestroy;
@@ -11,16 +10,24 @@ class gradSB {
         class bridgeMouseClick;
         class bridgeMouseWheel;
         class bridgePlace;
+    };
 
-        class clearForest;
-        class coverMap;
+    class depot {
+      file = "functions\depot";
 
-        class deleteBorder { postInit = 1; };
-        class depotAction;
-        class depotDestroy;
-        class depotDrop;
-        class depotMarker;
+      class deleteBorder { postInit = 1; };
+      class depotAction;
+      class depotDestroy;
+      class depotDrop;
+      class depotMarker;
+    };
 
-        class markRivers { postInit = 1; };
+    class missionSetup {
+      file = "functions\missionSetup";
+
+      class clearForest;
+      class coverMap;
+      class markRivers { postInit = 1; };
+      class nerfMines { postInit = 1; };
     };
 };

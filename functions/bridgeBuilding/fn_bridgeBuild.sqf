@@ -28,6 +28,16 @@ addCamShake [10, 1, 3];
 inGameUISetEventHandler ["PrevAction", "false"];
 inGameUISetEventHandler ["NextAction", "false"];
 
+player forceWalk false;
+player setVariable ["gradSB_carryBridge", objNull];
+
+private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
+// exitwith
+if (_bridgesBuild >= SB_MAX_BRIDGES) exitWith {
+    private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", SB_MAX_BRIDGES];
+    hintSilent _string;
+};
+
 private _bridge = createVehicle ["CUP_A2_Road_Bridge_wood_25", _position, [], 0, "CAN_COLLIDE"];
 _bridge setPosATL _position;
 _bridge setDir (_dir + 90);
@@ -37,15 +47,12 @@ _bridge enableSimulationGlobal false;
 private _bridgeHelper = "rhs_ec400" createVehicleLocal [0,0,0];
 _bridgeHelper attachTo [_bridge,[2,0,2.5]];
 
-player setVariable ["gradSB_carryBridge", objNull];
 _bridgeHelper setVariable ["gradSB_bridgeHelperBridge", _bridge, true];
 _bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];
 
 private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
 _bridgesBuild = _bridgesBuild + 1;
 player setVariable ["SB_bridgesBuilt", _bridgesBuild, true];
-
-player forceWalk false;
 
 [_bridge] remoteExec ["gradSB_fnc_bridgeActionDestroy", 0, true];
 [_bridge, side player] remoteExec ["gradSB_fnc_bridgeMarker", 0, true];
