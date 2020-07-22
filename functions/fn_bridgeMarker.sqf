@@ -5,8 +5,8 @@ private _side = _bridge getVariable ["SB_bridgeSide", sideUnknown];
 if (side player != _side) exitWith {};
 
 if (_destroyed) exitWith {
-    private _marker = _bridge getVariable ["SB_bridgeMarkerLocal", ""];
-    _marker setMarkerTypeLocal "hd_destroy";
+    // private _marker = _bridge getVariable ["SB_bridgeMarkerLocal", ""];
+    // _marker setMarkerTypeLocal "hd_destroy";
 };
 
 private _position = position _bridge;

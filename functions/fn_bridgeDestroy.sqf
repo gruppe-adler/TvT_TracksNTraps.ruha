@@ -24,7 +24,7 @@ for "_i" from 0 to _maxTime do {
     if (_bridgesBuild > 0) then {
         _bridgesBuild = _bridgesBuild - 1;
     };
-    _unit setVariable ["SB_bridgesBuilt", _bridgesBuild];
+    _unit setVariable ["SB_bridgesBuilt", _bridgesBuild, true];
 
     private _bridgesLeft = ["You can now build %1 bridge again.", 2 - _bridgesBuild];
     [_bridgesLeft] remoteExec ["hintSilent", _unit];

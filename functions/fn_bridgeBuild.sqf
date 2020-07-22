@@ -41,6 +41,9 @@ player setVariable ["gradSB_carryBridge", objNull];
 _bridgeHelper setVariable ["gradSB_bridgeHelperBridge", _bridge, true];
 _bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];
 
+private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
+_bridgesBuild = _bridgesBuild + 1;
+player setVariable ["SB_bridgesBuilt", _bridgesBuild, true];
 
 player forceWalk false;
 

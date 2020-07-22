@@ -1,5 +1,5 @@
 /*
-    
+
     execVM "markRivers.sqf";
 
 */
@@ -36,7 +36,7 @@ private _riverObjects =
         _p2 params ["_p2X", "_p2Y"];
         private _maxWidth = abs (_p2X - _p1X);
         private _maxLength = abs (_p2Y - _p1Y);
-        
+
         private _markerName = format ["mrk_river_%1", str _position];
         private _marker = createMarkerLocal [_markerName, _position];
         _marker setMarkerPosLocal _position;
@@ -78,7 +78,7 @@ private _bridges =
         _p2 params ["_p2X", "_p2Y"];
         private _maxWidth = abs (_p2X - _p1X);
         private _maxLength = abs (_p2Y - _p1Y);
-        
+
         private _markerName = format ["mrk_bridge_%1", str _position];
         private _marker = createMarkerLocal [_markerName, _position];
         _marker setMarkerPosLocal _position;
@@ -94,12 +94,14 @@ private _bridges =
 
 } forEach _allRoads;
 
+/*
+// not necessary
 [{
     params ["_args", "_handle"];
 
     private _bridges = missionNamespace getVariable ["SB_mapBridges", []];
 
-    {   
+    {
         _x params ["_bridge", "_marker"];
 
         if (damage _bridge == 1) then {
@@ -116,3 +118,4 @@ private _bridges =
     } forEach _bridges;
 
 }, 1 , []] call CBA_fnc_addPerFrameHandler;
+*/
