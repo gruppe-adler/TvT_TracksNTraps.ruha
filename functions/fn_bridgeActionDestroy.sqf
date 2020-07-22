@@ -3,12 +3,12 @@ params ["_bridge"];
 private _helperObject = _bridge getVariable ["gradSB_bridgeHelper", objNull];
 
 private _destroyAction = [
-    "RepairHole",
+    "DestroyBridge",
     "Destroy Bridge",
     "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     {
         private _bridge = _target getVariable ["gradSB_bridgeHelperBridge", objNull];
-        [_bridge] call gradSB_fnc_bridgeDestroy;
+        [player, _bridge] remoteExec ["gradSB_fnc_bridgeDestroy", 2];
     }, {
         private _bridge = _target getVariable ["gradSB_bridgeHelperBridge", objNull];
         !(_bridge getVariable ["gradSB_bridgeDestroyed", false])

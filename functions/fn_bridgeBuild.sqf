@@ -44,5 +44,5 @@ _bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];
 
 player forceWalk false;
 
-[_bridge] remoteExec ["gradSB_fnc_bridgeAction", 0, true];
+[_bridge] remoteExec ["gradSB_fnc_bridgeActionDestroy", 0, true];
 [_bridge, side player] remoteExec ["gradSB_fnc_bridgeMarker", 0, true];

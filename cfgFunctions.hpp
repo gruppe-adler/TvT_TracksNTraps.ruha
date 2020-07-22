@@ -1,9 +1,10 @@
-class gradSB {  
+class gradSB {
     class all {
 
         file = "functions";
 
-        class bridgeAction;
+        class bridgeActionBuild;
+        class bridgeActionDestroy;
         class bridgeBuild;
         class bridgeDestroy;
         class bridgeMarker;
@@ -13,7 +14,7 @@ class gradSB {
 
         class clearForest;
         class coverMap;
-        
+
         class deleteBorder { postInit = 1; };
         class depotAction;
         class depotDestroy;
