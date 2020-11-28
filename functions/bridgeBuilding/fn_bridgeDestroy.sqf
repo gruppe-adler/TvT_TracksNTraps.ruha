@@ -3,14 +3,14 @@ params ["_unit", "_bridge"];
 private _maxTime = 30;
 
 for "_i" from 0 to _maxTime do {
-  {
+  [{
       params ["_i", "_unit"];
 
       private _string = format ["Bridge blows up in %1 s...", _i];
 
       [_string] remoteExec ["hintSilent", _unit];
 
-  }, [_maxTime-_i, _unit], _i] call CBA_fnc_waitAndExecute;
+  }, [(_maxTime-_i), _unit], _i] call CBA_fnc_waitAndExecute;
 };
 
 

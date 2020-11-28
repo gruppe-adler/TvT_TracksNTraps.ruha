@@ -12,14 +12,24 @@ class gradSB {
         class bridgePlace;
     };
 
+    class damageHandling {
+        file = "functions\damageHandling";
+
+        class canBeRepaired;
+        class damageHandling;
+        class damageHandlingAddAction;
+        class damageRepair;
+    };
+
     class depot {
       file = "functions\depot";
-
-      class deleteBorder { postInit = 1; };
-      class depotAction;
-      class depotDestroy;
+   
+      class depotActionDeploy;
+      class depotActionDestroy;
       class depotDrop;
+      class depotInit;
       class depotMarker;
+      class depotPlace;
     };
 
     class missionSetup {
@@ -27,6 +37,7 @@ class gradSB {
 
       class clearForest;
       class coverMap;
+      class deleteBorder { postInit = 1; };
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
     };
