@@ -18,6 +18,7 @@ class sovjetGM {
         watch = "gm_watch_kosei_80";
         nvgoggles = "";
         gps = "";
+        goggles = "";
     };
 
     class Type {

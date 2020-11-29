@@ -1,6 +1,6 @@
-params ["_vehType", "_respawnWhenNotDead", "_vehDir", "_vehPos", "_handle", "_customCode"];
+params ["_vehType", "_respawnWhenNotDead", "_vehDir", "_vehPos", "_handle", "_customCode", "_gmAttributes"];
 
-if ( _veh distance _vehPos > (sizeOf _vehType)) exitWith {
+if ( !isNull _veh && {_veh distance _vehPos > (sizeOf _vehType)}) exitWith {
   diag_log format ["grad-vehicleRespawn: too close to original position"];
 };
 
@@ -12,5 +12,5 @@ private _isRoom = count _positionEmpty isEqualTo 0;
 if (_isRoom) then {
 
     [_handle] call CBA_fnc_removePerFrameHandler;
-    [_vehType, _respawnWhenNotDead, _vehPos, _vehDir, _customCode] call gradSB_fnc_vehicleRespawnSpawn;
+    [_vehType, _respawnWhenNotDead, _vehPos, _vehDir, _customCode, _gmAttributes] call gradSB_fnc_vehicleRespawnSpawn;
 };

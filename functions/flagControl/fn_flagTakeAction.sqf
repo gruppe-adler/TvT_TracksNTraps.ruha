@@ -4,7 +4,7 @@ params ["_vehicle"];
 private _flagTakeAction = [
     "flagTake",
     "Take Flag",
-    "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+    "\A3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",
     {
         [_player] call gradSB_fnc_flagTake;
     }, {

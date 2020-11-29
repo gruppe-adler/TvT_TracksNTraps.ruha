@@ -41,7 +41,8 @@
 
     // save with timestamp for later evaluation
     _history pushBack [_newTotal, _side, CBA_missionTime];
+    missionNamespace setVariable ["gradSB_pointHistory", _history, true];
 
-    diag_log format ["%1 - new points for %2: %3", CBA_missionTime, _side, _newTotal];
+    diag_log format ["%1 - new points for %2: %3 for type %4", CBA_missionTime, _side, _newTotal, _type];
 
 }] call CBA_fnc_addEventHandler;

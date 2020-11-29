@@ -25,3 +25,6 @@ if (_vehicle isKindOf "Tank") then {
 
     [_vehicle] call gradSB_fnc_damageHandlingAddAction;
 };
+
+[_vehicle, false] call gradSB_fnc_vehicleRespawnAdd;
+[_vehicle] call gradSB_fnc_addExplosiveAction;

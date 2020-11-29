@@ -16,6 +16,7 @@ class bwGM {
         compass = "gm_ge_army_conat2";
         watch = "gm_watch_kosei_80";
         nvgoggles = "";
+        goggles = "";
     };
 
     class Type {

@@ -4,7 +4,7 @@ params ["_flag"];
 private _flagRaiseAction = [
     "flagRaise",
     "Raise Flag",
-    "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+    "\A3\ui_f\data\igui\cfg\actions\take_ca.paa",
     {
         [_target, _player] remoteExec ["gradSB_fnc_flagRaise", 2];
     }, {

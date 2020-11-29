@@ -20,13 +20,6 @@ class gradSB_Points {
     crew = 50;
 };
 
-class gradSB_vehicleRespawn {
-
-    class myVehicleClassname {
-        customCode = "(_this select 0) addMagazineCargoGlobal ['myMagazineClassname', 2]"; // _this select 0 is the vehicle
-    };
-};
-
 // cba_settings_hasSettingsFile = 1;
 //GRAD REPLAY =================================================================
 class GRAD_Replay {
@@ -74,8 +67,6 @@ class Header
     maxPlayers = 102;
 };
 
-
-
 class cfgSounds
 {
     sounds[] = {};
@@ -93,4 +84,38 @@ class cfgSounds
         sound[] = {"sounds\anthem_su.ogg",5,1,500};
         titles[] = { 0, "" };
     };
+
+    class bongs1
+    {
+        name = "bongs1";
+        sound[] = {"sounds\bongs1.ogg",5,1,100};
+        titles[] = { 0, "" };
+    };
+
+    class bongs2
+    {
+        name = "bongs2";
+        sound[] = {"sounds\bongs2.ogg",5,1,50};
+        titles[] = { 0, "" };
+    };
+
+    class bongs3
+    {
+        name = "bongs3";
+        sound[] = {"sounds\bongs3.ogg",5,1,50};
+        titles[] = { 0, "" };
+    };
+
+    class bongs4
+    {
+        name = "bongs4";
+        sound[] = {"sounds\bongs4.ogg",5,1,50};
+        titles[] = { 0, "" };
+    };
+};
+
+// disable random decals
+disableRandomization[] =
+{
+    "AllVehicles"
 };

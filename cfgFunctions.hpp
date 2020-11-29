@@ -15,10 +15,12 @@ class gradSB {
     class damageHandling {
         file = "functions\damageHandling";
 
+        class addExplosiveAction;
         class canBeRepaired;
         class damageHandling;
         class damageHandlingAddAction;
         class damageRepair;
+        class triggerExplosive;
     };
 
     class depot {
@@ -63,7 +65,7 @@ class gradSB {
     class points {
       file = "functions\points";
 
-      class countPoints;
+      class countPoints { postInit = 1; };
     };
 
     class vehicleRespawn {
