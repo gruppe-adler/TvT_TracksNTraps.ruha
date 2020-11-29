@@ -70,8 +70,9 @@ private _bridges =
     (getModelInfo _bridgeObject) params ["_modelName"];
 
     if ((_bridges find _modelName) > -1) then {
+        private _position = position _bridgeObject;
+        
         if (_position inArea trg_gameArea) then {
-            private _position = position _bridgeObject;
             // diag_log format ["position: %1", _position];
 
             private _bbr = boundingBoxReal _bridgeObject;

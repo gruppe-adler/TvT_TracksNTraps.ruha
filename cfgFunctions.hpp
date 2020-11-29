@@ -44,6 +44,12 @@ class gradSB {
       class flagTakeAction;
     };
 
+    class loadout {
+      file = "functions\loadout";
+
+      class loadoutInit { postInit = 1; };
+    };
+
     class missionSetup {
       file = "functions\missionSetup";
 
