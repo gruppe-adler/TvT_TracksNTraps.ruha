@@ -72,6 +72,7 @@ class gradSB {
       file = "functions\vehicleRespawn";
 
       class vehicleRespawnAdd;
+      class vehicleRespawnAssignmentHandler { postInit = 1; };
       class vehicleRespawnCheck;
       class vehicleRespawnConfig;
       class vehicleRespawnSpawn;
