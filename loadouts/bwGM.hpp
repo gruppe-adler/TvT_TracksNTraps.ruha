@@ -210,6 +210,7 @@ class bwGM {
         class Soldier_SL_F: Soldier_TL_F {
             headgear = "gm_ge_headgear_beret_crew_red_opcom";
             backpack = "TFAR_rt1523g_green";
+            goggles = "";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
