@@ -59,4 +59,19 @@ class gradSB {
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
     };
+
+    class points {
+      file = "functions\points";
+
+      class countPoints;
+    };
+
+    class vehicleRespawn {
+      file = "functions\vehicleRespawn";
+
+      class vehicleRespawnAdd;
+      class vehicleRespawnCheck;
+      class vehicleRespawnConfig;
+      class vehicleRespawnSpawn;
+    };
 };

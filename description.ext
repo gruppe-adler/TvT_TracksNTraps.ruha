@@ -5,9 +5,26 @@
 
 class CfgFunctions {
     #include "cfgFunctions.hpp"
-    // #include "modules\grad-vehiclerespawn\cfgFunctions.hpp"
     #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
+};
+
+class gradSB_Points {
+    flagTick = 100;
+    depotTick = 50;
+    depot = 2000;
+    bridge = 1000;
+    tank = 500;
+    apc = 300;
+    car = 100;
+    crew = 50;
+};
+
+class gradSB_vehicleRespawn {
+
+    class myVehicleClassname {
+        customCode = "(_this select 0) addMagazineCargoGlobal ['myMagazineClassname', 2]"; // _this select 0 is the vehicle
+    };
 };
 
 // cba_settings_hasSettingsFile = 1;
