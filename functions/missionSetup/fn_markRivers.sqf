@@ -29,22 +29,23 @@ private _riverObjects =
     if ((_riverObjects find _modelName) > -1) then {
         private _position = position _riverObject;
         // diag_log format ["position: %1", _position];
+        if (_position inArea trg_gameArea) then {
+            private _bbr = boundingBoxReal _riverObject;
+            _bbr params ["_p1", "_p2"];
+            _p1 params ["_p1X", "_p1Y"];
+            _p2 params ["_p2X", "_p2Y"];
+            private _maxWidth = abs (_p2X - _p1X);
+            private _maxLength = abs (_p2Y - _p1Y);
 
-        private _bbr = boundingBoxReal _riverObject;
-        _bbr params ["_p1", "_p2"];
-        _p1 params ["_p1X", "_p1Y"];
-        _p2 params ["_p2X", "_p2Y"];
-        private _maxWidth = abs (_p2X - _p1X);
-        private _maxLength = abs (_p2Y - _p1Y);
-
-        private _markerName = format ["mrk_river_%1", str _position];
-        private _marker = createMarkerLocal [_markerName, _position];
-        _marker setMarkerPosLocal _position;
-        _marker setMarkerColorLocal "ColorBlue";
-        _marker setMarkerShapeLocal "RECTANGLE";
-        _marker setMarkerBrushLocal "SOLID";
-        _marker setMarkerSizeLocal [_maxWidth, _maxLength];
-        _marker setMarkerDirLocal (getDir _riverObject);
+            private _markerName = format ["mrk_river_%1", str _position];
+            private _marker = createMarkerLocal [_markerName, _position];
+            _marker setMarkerPosLocal _position;
+            _marker setMarkerColorLocal "ColorBlue";
+            _marker setMarkerShapeLocal "RECTANGLE";
+            _marker setMarkerBrushLocal "SOLID";
+            _marker setMarkerSizeLocal [_maxWidth, _maxLength];
+            _marker setMarkerDirLocal (getDir _riverObject);
+        };
     };
 } forEach _terrainObjects;
 
@@ -69,27 +70,29 @@ private _bridges =
     (getModelInfo _bridgeObject) params ["_modelName"];
 
     if ((_bridges find _modelName) > -1) then {
-        private _position = position _bridgeObject;
-        // diag_log format ["position: %1", _position];
+        if (_position inArea trg_gameArea) then {
+            private _position = position _bridgeObject;
+            // diag_log format ["position: %1", _position];
 
-        private _bbr = boundingBoxReal _bridgeObject;
-        _bbr params ["_p1", "_p2"];
-        _p1 params ["_p1X", "_p1Y"];
-        _p2 params ["_p2X", "_p2Y"];
-        private _maxWidth = abs (_p2X - _p1X);
-        private _maxLength = abs (_p2Y - _p1Y);
+            private _bbr = boundingBoxReal _bridgeObject;
+            _bbr params ["_p1", "_p2"];
+            _p1 params ["_p1X", "_p1Y"];
+            _p2 params ["_p2X", "_p2Y"];
+            private _maxWidth = abs (_p2X - _p1X);
+            private _maxLength = abs (_p2Y - _p1Y);
 
-        private _markerName = format ["mrk_bridge_%1", str _position];
-        private _marker = createMarkerLocal [_markerName, _position];
-        _marker setMarkerPosLocal _position;
-        _marker setMarkerColorLocal "ColorGreen";
-        _marker setMarkerTypeLocal "mil_box";
-        _marker setMarkerShapeLocal "Icon";
-        _marker setMarkerAlphaLocal 0.8;
+            private _markerName = format ["mrk_bridge_%1", str _position];
+            private _marker = createMarkerLocal [_markerName, _position];
+            _marker setMarkerPosLocal _position;
+            _marker setMarkerColorLocal "ColorGreen";
+            _marker setMarkerTypeLocal "mil_box";
+            _marker setMarkerShapeLocal "Icon";
+            _marker setMarkerAlphaLocal 0.8;
 
-        private _bridges = missionNamespace getVariable ["SB_mapBridges", []];
-        _bridges pushBack [_bridgeObject, _marker];
-        missionNamespace setVariable ["SB_mapBridges", _bridges, true];
+            private _bridges = missionNamespace getVariable ["SB_mapBridges", []];
+            _bridges pushBack [_bridgeObject, _marker];
+            missionNamespace setVariable ["SB_mapBridges", _bridges, true];
+        };
     };
 
 } forEach _allRoads;

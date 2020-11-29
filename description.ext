@@ -25,7 +25,7 @@ class GRAD_Replay {
 
 OnLoadMission = "A Tank Battle of Epic Proportions";
 author = "Gruppe Adler";  //appears as author in overview and loading screen
-overviewText = "GDR vs. GER"; //appears in overview and loading screen
+overviewText = "USSR vs. GER"; //appears in overview and loading screen
 onLoadName = "S T E E L   B E A S T"; //mission name for loading screen only
 overviewPicture = ""; //mission picture for loading screen only
 onLoadMissionTime = True;
@@ -43,4 +43,25 @@ class Header
     gameType = TDM;
     minPlayers = 15;
     maxPlayers = 102;
+};
+
+
+
+class cfgSounds
+{
+    sounds[] = {};
+  
+    class anthem_ger
+    {
+        name = "anthem_ger";
+        sound[] = {"sounds\anthem_ger.ogg",5,1,500};
+        titles[] = { 0, "" };
+    };
+
+    class anthem_su
+    {
+        name = "anthem_su";
+        sound[] = {"sounds\anthem_su.ogg",5,1,500};
+        titles[] = { 0, "" };
+    };
 };

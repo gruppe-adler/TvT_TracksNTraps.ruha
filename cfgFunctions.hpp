@@ -32,6 +32,18 @@ class gradSB {
       class depotPlace;
     };
 
+    class flagControl {
+      file = "functions\flagControl";
+   
+      class flagAddAction;
+      class flagAddControl;
+      class flagCanRaise;
+      class flagGetTexture;
+      class flagRaise;
+      class flagTake;
+      class flagTakeAction;
+    };
+
     class missionSetup {
       file = "functions\missionSetup";
 
