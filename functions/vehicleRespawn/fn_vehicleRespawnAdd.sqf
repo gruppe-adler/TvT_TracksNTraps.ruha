@@ -34,7 +34,7 @@ diag_log format ["grad-vehicleRespawn: adding %1 to respawn, respawns when not d
             [_vehType, _respawnWhenNotDead, _vehDir, _vehPos, _handle, _customCode, _gmAttributes] call gradSB_fnc_vehicleRespawnCheck;
     };
 
-    if ( !( alive _vehObj ) || { !( canMove _vehObj ) } ) exitWith {
+    if ( !( alive _vehObj ) ) exitWith {
 
             diag_log format ["grad-vehicleRespawn: vehicle %1 dead", _vehObj];
             [_vehType, _respawnWhenNotDead, _vehDir, _vehPos, _handle, _customCode, _gmAttributes] call gradSB_fnc_vehicleRespawnCheck;
