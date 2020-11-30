@@ -7,11 +7,14 @@ _vehicle setVariable ["gradSB_explosiveAttaching", true, true];
     _args params ["_vehicle"];
 
     _vehicle setVariable ["gradSB_explosiveAttaching", false, true];
+    _vehicle setVariable ["gradSB_explosiveAttached", true, true];
     hint "Explosion in 30s";
 
     [{
         params ["_vehicle"];
-        _vehicle setDamage [1, true];
+        if (_vehicle getVariable ["gradSB_explosiveAttached", false]) then {
+            _vehicle setDamage [1, true];
+        };
     }, [_vehicle], 30] call CBA_fnc_waitAndExecute;
 }, {
     params ["_args"];

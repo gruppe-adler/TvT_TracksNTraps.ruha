@@ -20,6 +20,7 @@ class gradSB {
         class damageHandling;
         class damageHandlingAddAction;
         class damageRepair;
+        class removeExplosive;
         class triggerExplosive;
     };
 
