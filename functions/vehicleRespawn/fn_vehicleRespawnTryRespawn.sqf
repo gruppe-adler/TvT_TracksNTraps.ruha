@@ -27,9 +27,10 @@ private _isRoom = count _positionEmpty isEqualTo 0;
 if (!_isRoom) exitWith { false; };
 
 // spawn vehicle
-private _veh = createVehicle [ _vehtype, [0,0,0], [], 0, "NONE" ];
-_veh setPos [ ( _vehPos select 0 ), ( _vehPos select 1 ), 1 ];
-_veh setDir _vehDir;
+private _veh = createVehicle [ _type, [0,0,0], [], 0, "NONE" ];
+_pos set [2, 1];
+_veh setPos _pos;
+_veh setDir _dir;
 
 // copy variables from old vehicle
 {

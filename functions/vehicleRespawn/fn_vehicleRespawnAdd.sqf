@@ -43,8 +43,8 @@ private _deletedID = _veh addEventHandler ["Deleted", {
 _veh setVariable [
     "gradSB_vehicleRespawn",
     [
-        getPos _vehObj,
-        getDir _vehObj,
+        getPos _veh,
+        getDir _veh,
         _killedID,
         _deletedID
     ],

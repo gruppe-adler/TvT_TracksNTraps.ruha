@@ -28,13 +28,13 @@ _var params [["_respawnPos", [0,0,0], [[]], [3]], ["_respawnDir", 0, [0]], ["_ki
 _veh setVariable ["gradSB_vehicleRespawn", nil];
 
 // remove EHs just to be save any of won't trigger multiple times
-_veh addMPEventHandler ["MPKilled", _killedEH];
+_veh removeMPEventHandler ["MPKilled", _killedEH];
 _veh removeEventHandler ["Deleted", _deletedEH];
 
 // remember all RESPAWN_VARIABLE_NAMES of old vehicle 
 private _variables = [];
 {
-    private _value = _vehObj getVariable _x;
+    private _value = _veh getVariable _x;
     _variables pushBack [_x, _value];
 } forEach RESPAWN_VARIABLE_NAMES;
 
