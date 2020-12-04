@@ -9,10 +9,12 @@ SB_BRIDGES_VEHICLE_WEST = "gm_ge_army_u1300l_repair";
 SB_BRIDGES_VEHICLE_EAST = "gm_gc_army_ural4320_repair"; // empty string to allow placement everywhere, else its only allowed near one of the listed vehicles
 SB_BRIDGES_VEHICLE_DISTANCE = 30; // maximum distance vehicle is allowed to be
 
-{
-    private _unit = _x;
+[{
+    {
+        private _unit = _x;
 
-    if (_unit getVariable ["ACE_IsEngineer", 0] > 0) then {
-        [] remoteExecCall ["gradSB_fnc_bridgeAction", _unit, true];
-    };
-} forEach (playableUnits + switchableUnits);
+        if (_unit getVariable ["ACE_IsEngineer", 0] > 0) then {
+            [] remoteExecCall ["gradSB_fnc_bridgeActionBuild", _unit, true];
+        };
+    } forEach (playableUnits + switchableUnits);
+}, [], 3]  call CBA_fnc_waitAndExecute;

@@ -21,7 +21,7 @@ player forceWalk true;
 
     private _carryAttachX = 0;
     private _carryAttachY = 16;
-    private _carryAttachH = 1.5;
+    private _carryAttachH = 0;
 
     private _bridgeDummy = createSimpleObject ["\a3\structures_f_exp\infrastructure\bridges\bridgewooden_01_f.p3d", [0,0,0], true];
     _bridgeDummy setVariable ["gradSB_bridgeAttachPosition", [_carryAttachX, _carryAttachY, _carryAttachH]];

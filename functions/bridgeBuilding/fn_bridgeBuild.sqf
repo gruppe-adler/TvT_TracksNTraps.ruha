@@ -31,12 +31,14 @@ inGameUISetEventHandler ["NextAction", "false"];
 player forceWalk false;
 player setVariable ["gradSB_carryBridge", objNull];
 
-private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
+private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 // exitwith
-if (_bridgesBuild >= SB_MAX_BRIDGES) exitWith {
+if (_bridgesBuilt >= SB_MAX_BRIDGES) exitWith {
     private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", SB_MAX_BRIDGES];
     hintSilent _string;
 };
+
+
 
 private _bridge = createSimpleObject ["\a3\structures_f_exp\infrastructure\bridges\bridgewooden_01_f.p3d", _position];
 _bridge setPosATL _position;
@@ -45,14 +47,17 @@ _bridge setDir _dir;
 _bridge enableSimulationGlobal false;
 
 private _bridgeHelper = "rhs_ec400" createVehicleLocal [0,0,0];
-_bridgeHelper attachTo [_bridge,[2,0,.5]];
+_bridgeHelper attachTo [_bridge,[3,0,1.1]];
 
 _bridgeHelper setVariable ["gradSB_bridgeHelperBridge", _bridge, true];
 _bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];
 
-private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
-_bridgesBuild = _bridgesBuild + 1;
-player setVariable ["SB_bridgesBuilt", _bridgesBuild, true];
+private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
+_bridgesBuilt = _bridgesBuilt + 1;
+player setVariable ["SB_bridgesBuilt", _bridgesBuilt, true];
+
+private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBuilt)];
+hintSilent _bridgesLeft;
 
 [_bridge] remoteExec ["gradSB_fnc_bridgeActionDestroy", 0, true];
 [_bridge, side player] remoteExec ["gradSB_fnc_bridgeMarker", 0, true];

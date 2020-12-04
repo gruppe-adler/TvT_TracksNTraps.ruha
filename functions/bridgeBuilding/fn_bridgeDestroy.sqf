@@ -26,7 +26,7 @@ for "_i" from 0 to _maxTime do {
     };
     _unit setVariable ["SB_bridgesBuilt", _bridgesBuild, true];
 
-    private _bridgesLeft = ["You can now build %1 bridge again.", 2 - _bridgesBuild];
+    private _bridgesLeft = format ["You can now build %1 bridge again.", 2 - _bridgesBuild];
     [_bridgesLeft] remoteExec ["hintSilent", _unit];
 
 }, [_bridge, _unit], _maxTime] call CBA_fnc_waitAndExecute;
