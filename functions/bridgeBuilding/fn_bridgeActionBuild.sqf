@@ -1,6 +1,7 @@
 /*
 
-  adds self interaction to build bridges
+    adds self interaction to build bridges
+    test: call gradSB_fnc_bridgeActionBuild;
 
 */
 
@@ -14,7 +15,7 @@ private _buildAction = [
             private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", SB_MAX_BRIDGES];
             hintSilent _string;
         };
-        private _bridgeVehicle = [SB_BRIDGES_VEHICLE_WEST, SB_BRIDGES_VEHICLE_EAST] select { side player == east };
+        private _bridgeVehicle = [SB_BRIDGES_VEHICLE_WEST, SB_BRIDGES_VEHICLE_EAST] select ( side player == east );
         private _vehicleNear = false;
         if (_bridgeVehicle != "") then {
             if (count (player nearObjects [_bridgeVehicle, SB_BRIDGES_VEHICLE_DISTANCE]) == 0) exitWith {

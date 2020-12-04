@@ -38,14 +38,14 @@ if (_bridgesBuild >= SB_MAX_BRIDGES) exitWith {
     hintSilent _string;
 };
 
-private _bridge = createVehicle ["CUP_A2_Road_Bridge_wood_25", _position, [], 0, "CAN_COLLIDE"];
+private _bridge = createSimpleObject ["\a3\structures_f_exp\infrastructure\bridges\bridgewooden_01_f.p3d", _position];
 _bridge setPosATL _position;
-_bridge setDir (_dir + 90);
+_bridge setDir _dir;
 
 _bridge enableSimulationGlobal false;
 
 private _bridgeHelper = "rhs_ec400" createVehicleLocal [0,0,0];
-_bridgeHelper attachTo [_bridge,[2,0,2.5]];
+_bridgeHelper attachTo [_bridge,[2,0,.5]];
 
 _bridgeHelper setVariable ["gradSB_bridgeHelperBridge", _bridge, true];
 _bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];

@@ -6,6 +6,7 @@ class gradSB {
         class bridgeActionDestroy;
         class bridgeBuild;
         class bridgeDestroy;
+        class bridgeInit { postInit = 1; };
         class bridgeMarker;
         class bridgeMouseClick;
         class bridgeMouseWheel;
