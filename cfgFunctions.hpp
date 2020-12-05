@@ -78,6 +78,12 @@ class gradTnT {
       class addRespawnEventHandler { postInit = 1; };
     };
 
+    class misc {
+      file = "functions\misc";
+
+      class initVehicle {};
+    };
+
     class vehicleRespawn {
       file = "functions\vehicleRespawn";
 

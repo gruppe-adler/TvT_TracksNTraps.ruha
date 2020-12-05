@@ -38,9 +38,6 @@ _veh setDir _dir;
 	_veh setVariable [_name, _val];
 } forEach _variables;
 
-// add vehicle as respawnable
-[_veh] call gradTnT_fnc_vehicleRespawnAdd;
-
 // trigger server event
 // 0: New vehicle <OBJECT>
 // 1: Variables <ARRAY> (Variables is a pairs array. Each pair is [<name>, <value>])

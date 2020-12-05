@@ -23,6 +23,10 @@ if (isNull _veh) exitWith {
     diag_log format ["grad-vehicleRespawn: failed add respawn to vehicle, because it was objNull"]
 };
 
+if (count (_veh getVariable ["gradTnT_vehicleRespawn", []]) > 0) exitWith {
+    diag_log format ["grad-vehicleRespawn: failed add respawn to vehicle, because it is already added as respawnable"]
+};
+
 diag_log format ["grad-vehicleRespawn: adding %1 to respawn", _veh];
 
 // add killed EH

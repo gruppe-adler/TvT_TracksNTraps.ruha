@@ -1,7 +1,6 @@
 params ["_vehicle"];
 
 if (_vehicle isKindOf "Tank") then {
-
     _vehicle addEventHandler ["HandleDamage", {
         params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 
@@ -25,6 +24,3 @@ if (_vehicle isKindOf "Tank") then {
 
     [_vehicle] call gradTnT_fnc_damageHandlingAddAction;
 };
-
-[_vehicle, false] call gradTnT_fnc_vehicleRespawnAdd;
-[_vehicle] call gradTnT_fnc_addExplosiveAction;
