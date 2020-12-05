@@ -1,4 +1,4 @@
-class gradSB {
+class gradTnT {
     class bridgeBuilding {
         file = "functions\bridgeBuilding";
 
