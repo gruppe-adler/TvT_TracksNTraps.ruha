@@ -3,6 +3,8 @@
 #include "node_modules\@gruppe-adler\replay\ui\defines.hpp"
 #include "node_modules\@gruppe-adler\replay\ui\dialog.hpp"
 
+#include "cfgHints.hpp"
+
 class CfgFunctions {
     #include "cfgFunctions.hpp"
     #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
@@ -48,12 +50,12 @@ class Loadouts {
 OnLoadMission = "A Tank Battle of Epic Proportions";
 author = "Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "USSR vs. GER"; //appears in overview and loading screen
-onLoadName = "S T E E L   B E A S T"; //mission name for loading screen only
+onLoadName = "T R A C K S   N    T R A P S"; //mission name for loading screen only
 overviewPicture = ""; //mission picture for loading screen only
 onLoadMissionTime = True;
 disabledAI = 0; //1
 enableDebugConsole = 1;
-loadScreen = "";
+loadScreen = "pics\logo.paa";
 respawnDelay = 9999999;
 
 respawn = 3;

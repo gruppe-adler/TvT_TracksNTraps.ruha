@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={6781.0249,109.02119,11334.664};
-		dir[]={-0.8433063,-0.4519071,-0.29090041};
-		up[]={-0.42720541,0.89206433,-0.14736533};
-		aside[]={-0.32609749,1.0535587e-008,0.94534165};
+		dir[]={-0.83715922,-0.45587555,-0.30224428};
+		up[]={-0.42878646,0.89004266,-0.15480722};
+		aside[]={-0.33958331,5.8207661e-010,0.94058138};
 	};
 };
 binarizationWanted=0;
@@ -16048,6 +16048,7 @@ class Mission
 					};
 					id=842;
 					type="gm_gc_army_rifleman_mpiak74n_80_str";
+					atlOffset=7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16134,6 +16135,7 @@ class Mission
 			{
 			};
 			id=841;
+			atlOffset=7.6293945e-006;
 		};
 		class Item81
 		{
