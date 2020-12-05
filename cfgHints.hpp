@@ -11,7 +11,7 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "...";
             // Structured text, filled by arguments from 'arguments' param
-            description = "Hello %11! You belong to the engineers team. <t size='10'><img image='pics\help_engineers.paa'/></t>";
+            description = "Hello %11! You belong to the engineers team.<br/><t size='10'><img image='pics\help_engineers.paa'/></t>";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "Find a description of your abilities in the %3FIELD MANUAL%4 you find in the ESC menu.";
             arguments[] = {
