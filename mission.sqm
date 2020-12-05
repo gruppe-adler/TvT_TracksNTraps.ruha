@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1098;
+		nextID=1099;
 	};
 	class MarkerIDProvider
 	{
@@ -47,13 +47,14 @@ addons[]=
 	"gm_vehicles_land_wheeled_iltis_ge_army_iltis",
 	"gm_vehicles_air_helicopters_bo105_ge_army_bo105",
 	"gm_characters_gc_characters",
-	"gm_structures_euro_80"
+	"gm_structures_euro_80",
+	"A3_Modules_F_Curator_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -207,6 +208,13 @@ class AddonsMetaData
 			name="gm_structures_euro_80";
 			author="Global Mobilization";
 			url="global-mobilization.com";
+		};
+		class Item22
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -450,19 +458,18 @@ class Mission
 	};
 	class Entities
 	{
-		items=307;
+		items=308;
 		class Item0
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8950.4941,136.20581,12060.37};
+				position[]={8950.4941,136.20566,12060.37};
 				angles[]={0,4.8091846,0};
 			};
-			init="call{[this] call gradTnT_fnc_coverMap;}";
 			id=58;
 			type="LocationArea_F";
-			atlOffset=30.509148;
+			atlOffset=30.508995;
 		};
 		class Item1
 		{
@@ -1457,7 +1464,7 @@ class Mission
 			fillName="Horizontal";
 			a=3000;
 			b=1000;
-			angle=129.24498;
+			angle=129.24496;
 			id=409;
 			atlOffset=-0.27008057;
 		};
@@ -1472,7 +1479,7 @@ class Mission
 			fillName="Horizontal";
 			a=3000;
 			b=1000;
-			angle=129.24498;
+			angle=129.24496;
 			id=410;
 			atlOffset=-0.03515625;
 		};
@@ -20339,16 +20346,29 @@ class Mission
 			type="land_gm_wall_vehicleditch_700";
 			atlOffset=0.21614838;
 		};
+		class Item307
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11648.579,86.608345,13053.794};
+			};
+			areaIsRectangle=1;
+			flags=1;
+			id=1098;
+			type="ModuleCoverMap_F";
+			atlOffset=7.6293945e-006;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=64;
+			nextID=65;
 		};
 		class Links
 		{
-			items=64;
+			items=65;
 			class Item0
 			{
 				linkID=0;
@@ -20984,6 +21004,16 @@ class Mission
 				linkID=63;
 				item0=633;
 				item1=350;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item64
+			{
+				linkID=64;
+				item0=1098;
+				item1=58;
 				class CustomData
 				{
 					type="Sync";

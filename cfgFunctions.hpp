@@ -66,7 +66,6 @@ class gradTnT {
       file = "functions\missionSetup";
 
       class clearForest;
-      class coverMap;
       class deleteBorder { postInit = 1; };
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
