@@ -235,6 +235,9 @@ class bwGM {
             };
             backpack = "";
         };
+        class Recon_F: Crew_F {
+
+        };
         class Helipilot_F: Crew_F {
             primaryWeapon = "";
             secondaryWeapon = "gm_p1_blk";
@@ -252,6 +255,23 @@ class bwGM {
                 "ACE_MapTools",
                 "ACE_Flashlight_XL50",
                 "ACE_key_west"
+            };
+        };
+
+        class Rank {
+            class COLONEL {
+                headgear = "gm_ge_headgear_beret_crew_red_opcom";
+                backpack = "TFAR_rt1523g_green";
+                goggles = "";
+                addItemsToUniform[] = {
+                    LIST_7("ACE_fieldDressing"),
+                    LIST_2("ACE_epinephrine"),
+                    LIST_4("ACE_morphine"),
+                    LIST_2("ACE_tourniquet"),
+                    "ACE_MapTools",
+                    "ACE_Flashlight_XL50",
+                    "ACE_key_west"
+                };
             };
         };
     };

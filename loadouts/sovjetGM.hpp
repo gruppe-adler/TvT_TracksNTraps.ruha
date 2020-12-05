@@ -234,6 +234,10 @@ class sovjetGM {
             };
             backpack = "";
         };
+
+        class Recon_F: Crew_F {
+
+        };
         class Helipilot_F: Crew_F {
             primaryWeapon = "";
             secondaryWeapon = "gm_pm_blk";
@@ -251,6 +255,21 @@ class sovjetGM {
                 "ACE_MapTools",
                 "ACE_Flashlight_XL50",
                 "ACE_key_east"
+            };
+        };
+
+        class Rank {
+            class COLONEL {
+                uniform = "gm_ge_army_uniform_crew_80_oli";
+                headgear = "gm_gc_headgear_beret_officer_blk";
+                primaryWeapon = "gm_mpiaks74nk_brn";
+                primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
+                vest = "gm_gc_army_vest_80_belt_str";
+                addItemsToVest[] = {
+                    LIST_2("gm_smokeshell_wht_gc"),
+                    LIST_2("gm_handgrenade_frag_rgd5"),
+                    LIST_3("gm_30Rnd_545x39mm_B_7N6_ak74_org")
+                };
             };
         };
     };
