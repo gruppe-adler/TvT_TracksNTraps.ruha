@@ -28,7 +28,8 @@ player forceWalk true;
     _bridgeDummy attachTo [player,[_carryAttachX, _carryAttachY, _carryAttachH]];
     // _bridgeDummy setVectorDirAndUp [[1,0,0],[0,0,1]];
 
-    player setVariable ["gradSB_carryBridge", _bridgeDummy];
+    player setVariable ["gradSB_carryBridge", 1];
+    player setVariable ["gradSB_carryBridgeDummy", _bridgeDummy];
 
     [{
         params ["_args", "_handle"];
@@ -41,9 +42,15 @@ player forceWalk true;
             hintSilent "Surface must be water";
         };
 
-        if (isNull (player getVariable ["gradSB_carryBridge", objNull])) exitWith {
-              [_handle] call CBA_fnc_removePerFrameHandler;
+        if (player getVariable ["gradSB_carryBridge", 0] isEqualTo 2) exitWith {
               [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradSB_fnc_bridgeBuild;
+              player setVariable ["gradSB_carryBridge", -1];
+              [_handle] call CBA_fnc_removePerFrameHandler;
+        };
+
+        if (player getVariable ["gradSB_carryBridge", 0] isEqualTo -1) exitWith {
+              [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradSB_fnc_bridgeBuildAbort;
+              [_handle] call CBA_fnc_removePerFrameHandler;
         };
 
     },1, [_bridgeDummy, _mouseClickEH, _mouseWheelEH]] call CBA_fnc_addPerFrameHandler;

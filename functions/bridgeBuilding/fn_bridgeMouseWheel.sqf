@@ -1,4 +1,4 @@
-private _bridgeDummy = player getVariable ["gradSB_carryBridge", objNull];
+private _bridgeDummy = player getVariable ["gradSB_carryBridgeDummy", objNull];
 if (isNull _bridgeDummy) exitWith {};
 
 private _offset = _bridgeDummy getVariable ["gradSB_bridgeAttachPosition", [0, 16, 1.5]];

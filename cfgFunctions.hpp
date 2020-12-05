@@ -5,6 +5,7 @@ class gradSB {
         class bridgeActionBuild;
         class bridgeActionDestroy;
         class bridgeBuild;
+        class bridgeBuildAbort;
         class bridgeDestroy;
         class bridgeInit { postInit = 1; };
         class bridgeMarker;
@@ -34,6 +35,13 @@ class gradSB {
       class depotInit;
       class depotMarker;
       class depotPlace;
+    };
+
+    class fieldManual {
+      file = "functions\fieldManual";
+   
+      class fieldManualAddAction;
+      class init { postInit = 1; };
     };
 
     class flagControl {

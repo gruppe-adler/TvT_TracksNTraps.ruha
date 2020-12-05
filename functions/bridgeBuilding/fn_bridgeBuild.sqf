@@ -29,7 +29,7 @@ inGameUISetEventHandler ["PrevAction", "false"];
 inGameUISetEventHandler ["NextAction", "false"];
 
 player forceWalk false;
-player setVariable ["gradSB_carryBridge", objNull];
+player setVariable ["gradSB_carryBridge", -1];
 
 private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 // exitwith

@@ -11,6 +11,8 @@ class CfgFunctions {
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
 };
 
+disableRemoteSensors = true;
+
 class gradSB_Points {
     flagTick = 100;
     depotTick = 50;

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=844;
+		nextID=864;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6775.6519,103.72678,11333.174};
-		dir[]={-0.87229222,-0.33859789,-0.35281885};
-		up[]={-0.31389737,0.9409278,-0.12696341};
-		aside[]={-0.37496728,1.5759724e-007,0.92704982};
+		pos[]={1473.9385,115.67175,16170.778};
+		dir[]={-0.55409187,-0.64286959,-0.52888566};
+		up[]={-0.46503514,0.76597065,-0.44387966};
+		aside[]={-0.69046813,2.3597386e-007,0.72337437};
 	};
 };
 binarizationWanted=0;
@@ -442,7 +442,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=82;
+		items=84;
 		class Item0
 		{
 			dataType="Logic";
@@ -10597,14 +10597,14 @@ class Mission
 						angles[]={0,1.4110638,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Gunner";
 						isPlayable=1;
 					};
-					id=644;
-					type="B_crew_F";
+					id=850;
+					type="B_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10657,14 +10657,14 @@ class Mission
 						angles[]={0,1.2451178,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Driver";
 						isPlayable=1;
 					};
-					id=645;
-					type="B_crew_F";
+					id=851;
+					type="B_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10713,18 +10713,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1471.3436,91.949219,16118.106};
-						angles[]={0.0039967569,1.3460155,0};
+						position[]={1472.4139,91.950005,16118.179};
+						angles[]={0.0019896752,1.3460155,0.0019896752};
 					};
 					side="West";
 					flags=6;
 					class Attributes
 					{
+						rank="COLONEL";
 						description="Commander";
 						isPlayable=1;
 					};
-					id=740;
-					type="B_Soldier_SL_F";
+					id=852;
+					type="B_recon_F";
+					atlOffset=-7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10773,6 +10775,7 @@ class Mission
 			{
 			};
 			id=642;
+			atlOffset=-7.6293945e-006;
 		};
 		class Item48
 		{
@@ -12530,18 +12533,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11874.563,100.17039,7320.2061};
-						angles[]={0,4.8779483,0};
+						position[]={11872.584,100.02328,7322.71};
+						angles[]={0.053945597,4.8779483,0.0059901671};
 					};
 					side="East";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Driver";
 						isPlayable=1;
 					};
-					id=702;
-					type="O_crew_F";
+					id=853;
+					type="O_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12590,18 +12593,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11873.94,100.31144,7317.209};
-						angles[]={0,4.8779483,0};
+						position[]={11871.961,100.1794,7319.7129};
+						angles[]={0.04796192,4.8779483,0.0060001095};
 					};
 					side="East";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Gunner";
 						isPlayable=1;
 					};
-					id=703;
-					type="O_crew_F";
+					id=854;
+					type="O_recon_F";
 					atlOffset=7.6293945e-006;
 					class CustomAttributes
 					{
@@ -12651,19 +12654,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11873.016,100.21071,7319.1919};
-						angles[]={0.04796192,4.8779483,0.0060001095};
+						position[]={11871.036,100.06877,7321.6958};
+						angles[]={0.053948127,4.8779507,0.0059864791};
 					};
 					side="East";
 					flags=6;
 					class Attributes
 					{
+						rank="COLONEL";
 						description="Commander";
 						isPlayable=1;
 					};
-					id=739;
-					type="O_Soldier_SL_F";
-					atlOffset=7.6293945e-006;
+					id=855;
+					type="O_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12712,7 +12715,6 @@ class Mission
 			{
 			};
 			id=700;
-			atlOffset=7.6293945e-006;
 		};
 		class Item58
 		{
@@ -15621,14 +15623,14 @@ class Mission
 						angles[]={0,1.4110638,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Gunner";
 						isPlayable=1;
 					};
-					id=825;
-					type="B_crew_F";
+					id=845;
+					type="B_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15681,14 +15683,14 @@ class Mission
 						angles[]={0,1.2451178,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Driver";
 						isPlayable=1;
 					};
-					id=826;
-					type="B_crew_F";
+					id=846;
+					type="B_recon_F";
 					atlOffset=1.5258789e-005;
 					class CustomAttributes
 					{
@@ -15748,8 +15750,8 @@ class Mission
 						description="Commander";
 						isPlayable=1;
 					};
-					id=828;
-					type="B_crew_F";
+					id=847;
+					type="B_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15811,18 +15813,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1467.2853,91.871971,16128.626};
+						position[]={1467.285,91.871979,16128.626};
 						angles[]={0,1.4110638,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Gunner";
 						isPlayable=1;
 					};
-					id=830;
-					type="B_crew_F";
+					id=844;
+					type="B_recon_F";
+					atlOffset=7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15875,14 +15878,14 @@ class Mission
 						angles[]={0,1.2451178,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						description="Driver";
 						isPlayable=1;
 					};
-					id=831;
-					type="B_crew_F";
+					id=848;
+					type="B_recon_F";
 					atlOffset=1.5258789e-005;
 					class CustomAttributes
 					{
@@ -15942,8 +15945,8 @@ class Mission
 						description="Commander";
 						isPlayable=1;
 					};
-					id=832;
-					type="B_crew_F";
+					id=849;
+					type="B_recon_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16153,6 +16156,393 @@ class Mission
 			id=843;
 			type="gm_gc_army_ural4320_repair";
 			atlOffset=7.6293945e-006;
+		};
+		class Item82
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11877.67,99.713165,7328.48};
+						angles[]={0.057934806,4.8779483,0.0039967569};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						description="Driver";
+						isPlayable=1;
+					};
+					id=857;
+					type="O_recon_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11877.047,99.889534,7325.4829};
+						angles[]={0.059928458,4.8779483,0.0019834081};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						description="Gunner";
+						isPlayable=1;
+					};
+					id=858;
+					type="O_recon_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11876.122,99.768707,7327.4658};
+						angles[]={0.059928458,4.8779483,0.0019834081};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						description="Commander";
+						isPlayable=1;
+					};
+					id=859;
+					type="O_recon_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=856;
+		};
+		class Item83
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11870.598,100.42342,7314.458};
+						angles[]={0.047963165,4.8779483,0.0060001095};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						description="Driver";
+						isPlayable=1;
+					};
+					id=861;
+					type="O_recon_F";
+					atlOffset=7.6293945e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11869.975,100.56355,7311.4609};
+						angles[]={0.04796192,4.8779483,0.0060001095};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						description="Gunner";
+						isPlayable=1;
+					};
+					id=862;
+					type="O_recon_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11869.05,100.46282,7313.4438};
+						angles[]={0.04796192,4.8779483,0.0060001095};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						description="Commander";
+						isPlayable=1;
+					};
+					id=863;
+					type="O_recon_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=860;
 		};
 	};
 	class Connections

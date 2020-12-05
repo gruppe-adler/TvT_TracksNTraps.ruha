@@ -1,0 +1,28 @@
+#include "\z\ace\addons\main\script_component.hpp"
+#include "\z\ace\addons\main\script_macros.hpp"
+
+params ["_bridgeDummy", "_mouseClickEH", "_mouseWheelEH"];
+
+private _position = getPosATLVisual _bridgeDummy;
+_position params ["_posX", "_posY", "_posZ"];
+private _dir = getDir player;
+
+player setVariable ["gradSB_carryBridgeDummy", objNull];
+deleteVehicle _bridgeDummy;
+addCamShake [10, 1, 3];
+
+(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown", _mouseClickEH];
+(findDisplay 46) displayRemoveEventHandler ["MouseZChanged", _mouseWheelEH];
+
+[] call EFUNC(interaction,hideMouseHint);
+
+inGameUISetEventHandler ["PrevAction", "false"];
+inGameUISetEventHandler ["NextAction", "false"];
+
+player forceWalk false;
+player setVariable ["gradSB_carryBridge", -1];
+
+private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
+
+private _bridgesLeft = format ["Building aborted. You can build %1 more bridges.", (2 - _bridgesBuilt)];
+hintSilent _bridgesLeft;
