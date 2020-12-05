@@ -68,15 +68,14 @@ class gradSB {
       file = "functions\points";
 
       class countPoints { postInit = 1; };
+      class addRespawnEventHandler { postInit = 1; };
     };
 
     class vehicleRespawn {
       file = "functions\vehicleRespawn";
 
       class vehicleRespawnAdd;
-      class vehicleRespawnAssignmentHandler { postInit = 1; };
-      class vehicleRespawnCheck;
-      class vehicleRespawnConfig;
-      class vehicleRespawnSpawn;
+      class vehicleRespawnTrigger;
+      class vehicleRespawnTryRespawn;
     };
 };
