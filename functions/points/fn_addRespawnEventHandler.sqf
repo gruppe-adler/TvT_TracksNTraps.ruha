@@ -3,7 +3,7 @@
  */
 if (!isServer) exitWith {};
 
-["gradSB_vehicleRespawn", {
+["gradTnT_vehicleRespawn", {
     params ["_veh", "_variables"];
 
 	private _rootClasses = [
@@ -36,5 +36,5 @@ if (!isServer) exitWith {};
 
 	if (_sidePointsAddedTo isEqualTo sideUnknown) exitWith {};
 
-	["gradSB_points", [_rootClass, _sidePointsAddedTo]] call CBA_fnc_serverEvent;
+	["gradTnT_points", [_rootClass, _sidePointsAddedTo]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;

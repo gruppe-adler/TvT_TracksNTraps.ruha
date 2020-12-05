@@ -1,4 +1,4 @@
-["gradSB_vehicleRespawn", {
+["gradTnT_vehicleRespawn", {
 	params ["_veh"];
 
 	clearWeaponCargoGlobal _veh;

@@ -9,11 +9,11 @@ player forceWalk true;
 
     private _mouseClickEH = (findDisplay 46) displayAddEventHandler [
         "MouseButtonDown",
-        "_this call gradSB_fnc_bridgeMouseClick"
+        "_this call gradTnT_fnc_bridgeMouseClick"
     ];
     private _mouseWheelEH = (findDisplay 46) displayAddEventHandler [
         "MouseZChanged",
-        "_this call gradSB_fnc_bridgeMouseWheel"
+        "_this call gradTnT_fnc_bridgeMouseWheel"
     ];
 
     inGameUISetEventHandler ["PrevAction", "true"];
@@ -24,12 +24,12 @@ player forceWalk true;
     private _carryAttachH = 0;
 
     private _bridgeDummy = createSimpleObject ["\a3\structures_f_exp\infrastructure\bridges\bridgewooden_01_f.p3d", [0,0,0], true];
-    _bridgeDummy setVariable ["gradSB_bridgeAttachPosition", [_carryAttachX, _carryAttachY, _carryAttachH]];
+    _bridgeDummy setVariable ["gradTnT_bridgeAttachPosition", [_carryAttachX, _carryAttachY, _carryAttachH]];
     _bridgeDummy attachTo [player,[_carryAttachX, _carryAttachY, _carryAttachH]];
     // _bridgeDummy setVectorDirAndUp [[1,0,0],[0,0,1]];
 
-    player setVariable ["gradSB_carryBridge", 1];
-    player setVariable ["gradSB_carryBridgeDummy", _bridgeDummy];
+    player setVariable ["gradTnT_carryBridge", 1];
+    player setVariable ["gradTnT_carryBridgeDummy", _bridgeDummy];
 
     [{
         params ["_args", "_handle"];
@@ -42,14 +42,14 @@ player forceWalk true;
             hintSilent "Surface must be water";
         };
 
-        if (player getVariable ["gradSB_carryBridge", 0] isEqualTo 2) exitWith {
-              [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradSB_fnc_bridgeBuild;
-              player setVariable ["gradSB_carryBridge", -1];
+        if (player getVariable ["gradTnT_carryBridge", 0] isEqualTo 2) exitWith {
+              [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradTnT_fnc_bridgeBuild;
+              player setVariable ["gradTnT_carryBridge", -1];
               [_handle] call CBA_fnc_removePerFrameHandler;
         };
 
-        if (player getVariable ["gradSB_carryBridge", 0] isEqualTo -1) exitWith {
-              [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradSB_fnc_bridgeBuildAbort;
+        if (player getVariable ["gradTnT_carryBridge", 0] isEqualTo -1) exitWith {
+              [_bridgeDummy, _mouseClickEH, _mouseWheelEH] call gradTnT_fnc_bridgeBuildAbort;
               [_handle] call CBA_fnc_removePerFrameHandler;
         };
 

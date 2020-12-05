@@ -1,9 +1,9 @@
 params ["_flag", "_unit"];
 
-_flag setVariable ["gradSB_flagAnimation", true, true];
+_flag setVariable ["gradTnT_flagAnimation", true, true];
 
 // lower flag
-if (_flag getVariable ["gradSB_flagOwner", sideUnknown] == sideUnknown) then {
+if (_flag getVariable ["gradTnT_flagOwner", sideUnknown] == sideUnknown) then {
     [_flag, 0, true] call BIS_fnc_animateFlag;
 };
 
@@ -19,12 +19,12 @@ if (flagAnimationPhase _flag != 0) then {
     params ["_flag", "_unit"];
 
     // delete running sounds if necessary
-    private _helper = _flag getVariable ["gradSB_flagHelper", objNull];
+    private _helper = _flag getVariable ["gradTnT_flagHelper", objNull];
     if (!(isNull _helper)) then { deleteVehicle _helper; };
 
-    _flag setFlagTexture ([_unit] call gradSB_fnc_flagGetTexture);
+    _flag setFlagTexture ([_unit] call gradTnT_fnc_flagGetTexture);
 
-    private _speakersPos = getPos (_flag getVariable ["gradSB_flagSpeakers", objNull]);
+    private _speakersPos = getPos (_flag getVariable ["gradTnT_flagSpeakers", objNull]);
     _speakersPos set [2,3];
 
     _helper = "Sign_Sphere25cm_Geometry_F" createVehicle [0,0,0];
@@ -35,7 +35,7 @@ if (flagAnimationPhase _flag != 0) then {
             "anthem_ger"
     ] select (side _unit == west));
 
-    _flag setVariable ["gradSB_flagHelper", _helper, true];
+    _flag setVariable ["gradTnT_flagHelper", _helper, true];
 
     [{
         params ["_args", "_handle"];
@@ -43,7 +43,7 @@ if (flagAnimationPhase _flag != 0) then {
 
         // if player is still in reach, capture
         if (_unit distance _flag < 5) then {
-            _unit setVariable ["gradSB_flagRaising", true, true];            
+            _unit setVariable ["gradTnT_flagRaising", true, true];            
 
             [{ params ["_helper"]; if (!(isNull _helper)) then { deleteVehicle _helper; }}, [_helper], 80] call CBA_fnc_waitAndExecute;
 
@@ -53,9 +53,9 @@ if (flagAnimationPhase _flag != 0) then {
             } else {
                 [_handle] call CBA_fnc_removePerFrameHandler;
 
-                _flag setVariable ["gradSB_flagAnimation", false, true];
-                _flag setVariable ["gradSB_flagOwner", side _unit, true];
-                _unit setVariable ["gradSB_flagRaising", false, true];
+                _flag setVariable ["gradTnT_flagAnimation", false, true];
+                _flag setVariable ["gradTnT_flagOwner", side _unit, true];
+                _unit setVariable ["gradTnT_flagRaising", false, true];
             };
 
         } else {
@@ -64,8 +64,8 @@ if (flagAnimationPhase _flag != 0) then {
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_flag, 0, 0.1] call BIS_fnc_animateFlag;
             // abort capture
-            _flag setVariable ["gradSB_flagAnimation", false, true];
-            _flag setVariable ["gradSB_flagOwner", sideUnknown, true];
+            _flag setVariable ["gradTnT_flagAnimation", false, true];
+            _flag setVariable ["gradTnT_flagOwner", sideUnknown, true];
 
             [{
                 params ["_flag"];

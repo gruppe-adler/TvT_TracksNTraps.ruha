@@ -451,7 +451,7 @@ class Mission
 				position[]={8950.4941,136.20581,12060.37};
 				angles[]={0,4.8091846,0};
 			};
-			init="call{[this] call gradSB_fnc_coverMap;}";
+			init="call{[this] call gradTnT_fnc_coverMap;}";
 			id=58;
 			type="LocationArea_F";
 			atlOffset=30.509148;
@@ -494,7 +494,7 @@ class Mission
 				position[]={9997.1602,107.16059,13315.613};
 				angles[]={0,4.8091846,0};
 			};
-			init="call{[this] call gradSB_fnc_clearForest;}";
+			init="call{[this] call gradTnT_fnc_clearForest;}";
 			id=83;
 			type="LocationArea_F";
 			atlOffset=25.205002;
@@ -526,7 +526,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=235;
 			type="gm_gc_army_t55am2b";
@@ -806,7 +806,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=350;
@@ -1570,7 +1570,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="call{[this, flagSpeakers] call gradSB_fnc_flagAddControl;}";
+				init="call{[this, flagSpeakers] call gradTnT_fnc_flagAddControl;}";
 			};
 			id=439;
 			type="Flag_Red_F";
@@ -1869,7 +1869,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=583;
 			type="gm_gc_army_t55am2b";
@@ -2119,7 +2119,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=584;
 			type="gm_gc_army_t55am2b";
@@ -2368,7 +2368,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=585;
 			type="gm_gc_army_t55am2b";
@@ -2618,7 +2618,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=586;
 			type="gm_gc_army_t55am2b";
@@ -2868,7 +2868,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=587;
 			type="gm_gc_army_t55am2b";
@@ -3118,7 +3118,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=588;
 			type="gm_gc_army_t55am2b";
@@ -3368,7 +3368,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=589;
 			type="gm_gc_army_t55am2b";
@@ -3618,7 +3618,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=590;
 			type="gm_gc_army_t55am2b";
@@ -3867,7 +3867,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=592;
@@ -4526,7 +4526,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=593;
@@ -5184,7 +5184,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=594;
 			type="gm_ge_army_Leopard1a5";
@@ -5510,7 +5510,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=595;
@@ -6169,7 +6169,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=596;
@@ -6827,7 +6827,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=597;
@@ -7485,7 +7485,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=598;
@@ -8144,7 +8144,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 				textures="gm_ge_wdl";
 			};
 			id=599;
@@ -12924,7 +12924,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=756;
 			type="gm_ge_army_u1300l_repair";
@@ -13154,7 +13154,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=757;
 			type="gm_ge_army_u1300l_repair";
@@ -13384,7 +13384,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=758;
 			type="gm_gc_army_ural4320_repair";
@@ -13577,7 +13577,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=760;
 			type="gm_gc_army_ural4320_repair";
@@ -13770,7 +13770,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=789;
 			type="gm_gc_army_btr60pb";
@@ -13982,7 +13982,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=790;
 			type="gm_gc_army_btr60pb";
@@ -14194,7 +14194,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=791;
 			type="gm_gc_army_btr60pb";
@@ -14438,7 +14438,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_handleDamage;}";
+				init="call{[this] call gradTnT_fnc_handleDamage;}";
 			};
 			id=807;
 			type="gm_gc_airforce_mi2p";
@@ -14700,7 +14700,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=821;
 			type="gm_ge_army_luchsa2";
@@ -15007,7 +15007,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=822;
 			type="gm_ge_army_luchsa2";
@@ -15313,7 +15313,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradSB_fnc_damageHandling;}";
+				init="call{[this] call gradTnT_fnc_damageHandling;}";
 			};
 			id=823;
 			type="gm_ge_army_luchsa2";

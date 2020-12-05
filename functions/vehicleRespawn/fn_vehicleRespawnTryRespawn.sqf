@@ -1,5 +1,5 @@
 /*
- * Name: gradSB_fnc_vehicleRespawnTryRespawn
+ * Name: gradTnT_fnc_vehicleRespawnTryRespawn
  * Author: DerZade
  * Tries to respawn vehicle. Respawn can fail if given position doesn't have enough room.
  *
@@ -13,7 +13,7 @@
  * Respawn was successful? <BOOL>
  *
  * Example:
- * private _successful = ["", [0,0,0], 20, []] call gradSB_fnc_vehicleRespawnTryRespawn;
+ * private _successful = ["", [0,0,0], 20, []] call gradTnT_fnc_vehicleRespawnTryRespawn;
  *
  * Public: No
  */
@@ -39,11 +39,11 @@ _veh setDir _dir;
 } forEach _variables;
 
 // add vehicle as respawnable
-[_veh] call gradSB_fnc_vehicleRespawnAdd;
+[_veh] call gradTnT_fnc_vehicleRespawnAdd;
 
 // trigger server event
 // 0: New vehicle <OBJECT>
 // 1: Variables <ARRAY> (Variables is a pairs array. Each pair is [<name>, <value>])
-["gradSB_vehicleRespawn", [_veh, _variables]] call CBA_fnc_serverEvent;
+["gradTnT_vehicleRespawn", [_veh, _variables]] call CBA_fnc_serverEvent;
 
 true;

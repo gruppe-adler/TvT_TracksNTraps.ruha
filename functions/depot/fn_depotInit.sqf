@@ -8,6 +8,6 @@ SB_DEPOTS_VEHICLE_DISTANCE = 30; // maximum distance vehicle is allowed to be
     private _unit = _x;
 
     if (_unit getVariable ["ACE_IsEngineer", 0] > 0) then {
-        [] remoteExecCall ["gradSB_fnc_depotActionDeploy", _unit, true];
+        [] remoteExecCall ["gradTnT_fnc_depotActionDeploy", _unit, true];
     };
 } forEach (playableUnits + switchableUnits);

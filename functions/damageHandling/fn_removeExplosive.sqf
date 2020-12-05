@@ -4,8 +4,8 @@ params ["_vehicle"];
     params ["_args"];
     _args params ["_vehicle"];
 
-    if (_vehicle getVariable ["gradSB_explosiveAttached", false]) then {
-        _vehicle setVariable ["gradSB_explosiveAttached", false, true];
+    if (_vehicle getVariable ["gradTnT_explosiveAttached", false]) then {
+        _vehicle setVariable ["gradTnT_explosiveAttached", false, true];
         hint "Explosive removed";
     };
 }, {

@@ -7,7 +7,7 @@ private _position = getPosATLVisual _bridgeDummy;
 _position params ["_posX", "_posY", "_posZ"];
 private _dir = getDir player;
 
-player setVariable ["gradSB_carryBridgeDummy", objNull];
+player setVariable ["gradTnT_carryBridgeDummy", objNull];
 deleteVehicle _bridgeDummy;
 addCamShake [10, 1, 3];
 
@@ -20,7 +20,7 @@ inGameUISetEventHandler ["PrevAction", "false"];
 inGameUISetEventHandler ["NextAction", "false"];
 
 player forceWalk false;
-player setVariable ["gradSB_carryBridge", -1];
+player setVariable ["gradTnT_carryBridge", -1];
 
 private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 

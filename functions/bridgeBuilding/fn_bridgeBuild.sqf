@@ -12,7 +12,7 @@ _position params ["_posX", "_posY", "_posZ"];
 private _dir = getDir player;
 
 /*
-private _offset = _bridgeDummy getVariable ["gradSB_bridgeAttachPosition", [0, 16, 1.5]];
+private _offset = _bridgeDummy getVariable ["gradTnT_bridgeAttachPosition", [0, 16, 1.5]];
 _offset params ["_offsetX", "_offsetY", "_offsetZ"];
 _position set [2,(_posZ + _offsetZ)];
 */
@@ -29,7 +29,7 @@ inGameUISetEventHandler ["PrevAction", "false"];
 inGameUISetEventHandler ["NextAction", "false"];
 
 player forceWalk false;
-player setVariable ["gradSB_carryBridge", -1];
+player setVariable ["gradTnT_carryBridge", -1];
 
 private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 // exitwith
@@ -49,8 +49,8 @@ _bridge enableSimulationGlobal false;
 private _bridgeHelper = "rhs_ec400" createVehicleLocal [0,0,0];
 _bridgeHelper attachTo [_bridge,[3,0,1.1]];
 
-_bridgeHelper setVariable ["gradSB_bridgeHelperBridge", _bridge, true];
-_bridge setVariable ["gradSB_bridgeHelper", _bridgeHelper, true];
+_bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
+_bridge setVariable ["gradTnT_bridgeHelper", _bridgeHelper, true];
 
 private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 _bridgesBuilt = _bridgesBuilt + 1;
@@ -59,5 +59,5 @@ player setVariable ["SB_bridgesBuilt", _bridgesBuilt, true];
 private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBuilt)];
 hintSilent _bridgesLeft;
 
-[_bridge] remoteExec ["gradSB_fnc_bridgeActionDestroy", 0, true];
-[_bridge, side player] remoteExec ["gradSB_fnc_bridgeMarker", 0, true];
+[_bridge] remoteExec ["gradTnT_fnc_bridgeActionDestroy", 0, true];
+[_bridge, side player] remoteExec ["gradTnT_fnc_bridgeMarker", 0, true];

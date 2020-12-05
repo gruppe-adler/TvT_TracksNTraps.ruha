@@ -55,8 +55,8 @@ _camoNet setPos _positionCamoNet;
 _camoNet setDir (_dir+90);
 
 
-_depot setVariable ["gradSB_shelter", _shelter, true];
-_depot setVariable ["gradSB_camoNet", _camoNet, true];
+_depot setVariable ["gradTnT_shelter", _shelter, true];
+_depot setVariable ["gradTnT_camoNet", _camoNet, true];
 
 _depotsBuild = _depotsBuild + 1;
 missionNameSpace setVariable [_depotsBuildID, _depotsBuilt, true];
@@ -66,7 +66,7 @@ missionNameSpace setVariable [_depotsBuildID, _depotsBuilt, true];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", true, true];
-_depot setVariable ["gradSB_depotSide", _side, true];
+_depot setVariable ["gradTnT_depotSide", _side, true];
 
 // rearm
 if (_side == west) then {
@@ -77,5 +77,5 @@ if (_side == west) then {
 
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;
 
-[_depot] remoteExec ["gradSB_fnc_depotAction", 0, true];
-[_depot] remoteExec ["gradSB_fnc_depotMarker", 0, true];
+[_depot] remoteExec ["gradTnT_fnc_depotAction", 0, true];
+[_depot] remoteExec ["gradTnT_fnc_depotMarker", 0, true];

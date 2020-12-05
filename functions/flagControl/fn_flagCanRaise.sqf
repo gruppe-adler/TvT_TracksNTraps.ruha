@@ -1,5 +1,5 @@
 params ["_flag"];
 
-(_flag getVariable ["gradSB_flagOwner", sideUnknown] != side player) &&
-!(_flag getVariable ["gradSB_flagAnimation", false]) &&
-!isNull (player getVariable ["gradSB_ownerOfFlag", objNull])
+(_flag getVariable ["gradTnT_flagOwner", sideUnknown] != side player) &&
+!(_flag getVariable ["gradTnT_flagAnimation", false]) &&
+!isNull (player getVariable ["gradTnT_ownerOfFlag", objNull])

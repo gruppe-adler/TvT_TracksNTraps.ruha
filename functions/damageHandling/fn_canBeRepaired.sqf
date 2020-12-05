@@ -1,3 +1,3 @@
 params ["_vehicle"];
 
-_vehicle getVariable ["gradSB_criticalHit", false]
+_vehicle getVariable ["gradTnT_criticalHit", false]

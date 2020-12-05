@@ -4,9 +4,9 @@ params ["_vehicle"];
     params ["_args"];
     _args params ["_vehicle"];
 
-    _vehicle setVariable ["gradSB_criticalHit", false, true];
+    _vehicle setVariable ["gradTnT_criticalHit", false, true];
 
-    private _smoke = _vehicle getVariable ["gradSB_criticalHitSmoke", objNull];
+    private _smoke = _vehicle getVariable ["gradTnT_criticalHitSmoke", objNull];
     if (!isNull _smoke) then {
         deleteVehicle _smoke;
     };

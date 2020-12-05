@@ -1,6 +1,6 @@
 class CfgHints
 {
-    class gradSB_Engineer
+    class gradTnT_Engineer
     {
         // Topic title (displayed only in topic listbox in Field Manual)
         displayName = "Engineer System";

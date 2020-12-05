@@ -22,7 +22,7 @@ private _buildAction = [
               hintSilent _string;
             };
         };
-        call gradSB_fnc_depotDrop;
+        call gradTnT_fnc_depotDrop;
     }, {
           true
     },{},nil,"",3,[false,false,false,false,false]

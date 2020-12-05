@@ -5,7 +5,7 @@ private _explosiveAction = [
     "Attach Explosive (destroy and respawn) - 30s timer",
     "\A3\ui_f\data\map\respawn\icon_dead_ca.paa",
     {
-        [_target] call gradSB_fnc_triggerExplosive;
+        [_target] call gradTnT_fnc_triggerExplosive;
     }, {
         true
     },{},nil,"",3,[false,false,false,false,false]
@@ -22,9 +22,9 @@ private _defuseAction = [
     "Remove Explosive (prevent respawn)",
     "\A3\ui_f\data\igui\cfg\actions\take_ca.paa",
     {
-        [_target] call gradSB_fnc_removeExplosive;
+        [_target] call gradTnT_fnc_removeExplosive;
     }, {
-        _target getVariable ["gradSB_explosiveAttached", false]
+        _target getVariable ["gradTnT_explosiveAttached", false]
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

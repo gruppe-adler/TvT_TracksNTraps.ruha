@@ -9,11 +9,11 @@ if (_vehicle isKindOf "Tank") then {
         if ((_damage > .88 && _hitPoint == "hitHull") || (_damage > .88 && _hitPoint == "") || damage _unit > .88) then {
             _damage = .88;
 
-            if (!(_unit getVariable ["gradSB_criticalHit", false])) then {
-                _unit setVariable ["gradSB_criticalHit", true, true];
+            if (!(_unit getVariable ["gradTnT_criticalHit", false])) then {
+                _unit setVariable ["gradTnT_criticalHit", true, true];
                 private _smoke = createVehicle ["test_EmptyObjectForSmoke", getPos _unit, [], 0, "NONE"];
                 _smoke attachTo [_unit, [0,0,-1]];
-                _unit setVariable ["gradSB_criticalHitSmoke", _smoke, true];
+                _unit setVariable ["gradTnT_criticalHitSmoke", _smoke, true];
             };
         };
 
@@ -23,8 +23,8 @@ if (_vehicle isKindOf "Tank") then {
         _damage
     }];
 
-    [_vehicle] call gradSB_fnc_damageHandlingAddAction;
+    [_vehicle] call gradTnT_fnc_damageHandlingAddAction;
 };
 
-[_vehicle, false] call gradSB_fnc_vehicleRespawnAdd;
-[_vehicle] call gradSB_fnc_addExplosiveAction;
+[_vehicle, false] call gradTnT_fnc_vehicleRespawnAdd;
+[_vehicle] call gradTnT_fnc_addExplosiveAction;

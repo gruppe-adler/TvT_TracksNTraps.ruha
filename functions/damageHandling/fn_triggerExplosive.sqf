@@ -1,18 +1,18 @@
 params ["_vehicle"];
 
-_vehicle setVariable ["gradSB_explosiveAttaching", true, true];
+_vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
 
 [15, [_vehicle], {
     params ["_args"];
     _args params ["_vehicle"];
 
-    _vehicle setVariable ["gradSB_explosiveAttaching", false, true];
-    _vehicle setVariable ["gradSB_explosiveAttached", true, true];
+    _vehicle setVariable ["gradTnT_explosiveAttaching", false, true];
+    _vehicle setVariable ["gradTnT_explosiveAttached", true, true];
     hint "Explosion in 30s";
 
     [{
         params ["_vehicle"];
-        if (_vehicle getVariable ["gradSB_explosiveAttached", false]) then {
+        if (_vehicle getVariable ["gradTnT_explosiveAttached", false]) then {
             _vehicle setDamage [1, true];
         };
     }, [_vehicle], 30] call CBA_fnc_waitAndExecute;
@@ -21,7 +21,7 @@ _vehicle setVariable ["gradSB_explosiveAttaching", true, true];
     _args params ["_vehicle"];
     hint "Aborted!";
 
-    _vehicle setVariable ["gradSB_explosiveAttaching", false, true];
+    _vehicle setVariable ["gradTnT_explosiveAttaching", false, true];
 }, "Attaching Explosive"] call ace_common_fnc_progressBar;
 
 {
@@ -32,7 +32,7 @@ _vehicle setVariable ["gradSB_explosiveAttaching", true, true];
     params ["_args", "_handle"];
     _args params ["_vehicle"];
 
-    if (!(_vehicle getVariable ["gradSB_explosiveAttaching", false])) exitWith {
+    if (!(_vehicle getVariable ["gradTnT_explosiveAttaching", false])) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 

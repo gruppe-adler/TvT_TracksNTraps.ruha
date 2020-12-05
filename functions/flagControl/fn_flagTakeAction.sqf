@@ -6,9 +6,9 @@ private _flagTakeAction = [
     "Take Flag",
     "\A3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",
     {
-        [_player] call gradSB_fnc_flagTake;
+        [_player] call gradTnT_fnc_flagTake;
     }, {
-        isNull (_player getVariable ["gradSB_ownerOfFlag", objNull])
+        isNull (_player getVariable ["gradTnT_ownerOfFlag", objNull])
     },{},nil,[0,0,0],5,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

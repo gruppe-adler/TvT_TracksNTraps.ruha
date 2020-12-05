@@ -1,7 +1,7 @@
-private _bridgeDummy = player getVariable ["gradSB_carryBridgeDummy", objNull];
+private _bridgeDummy = player getVariable ["gradTnT_carryBridgeDummy", objNull];
 if (isNull _bridgeDummy) exitWith {};
 
-private _offset = _bridgeDummy getVariable ["gradSB_bridgeAttachPosition", [0, 16, 1.5]];
+private _offset = _bridgeDummy getVariable ["gradTnT_bridgeAttachPosition", [0, 16, 1.5]];
 
 _offset params ["_carryAttachX", "_carryAttachY", "_carryAttachH"];
 
@@ -19,4 +19,4 @@ if ((_this select 1) < -1 && (_carryAttachH > _min)) then {
 };
 
 _bridgeDummy attachTo [player,[_carryAttachX, _carryAttachY, _carryAttachH]];
-_bridgeDummy setVariable ["gradSB_bridgeAttachPosition", [_carryAttachX, _carryAttachY, _carryAttachH]];
+_bridgeDummy setVariable ["gradTnT_bridgeAttachPosition", [_carryAttachX, _carryAttachY, _carryAttachH]];

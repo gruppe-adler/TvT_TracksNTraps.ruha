@@ -1,7 +1,7 @@
 /*
 
     adds self interaction to build bridges
-    test: call gradSB_fnc_bridgeActionBuild;
+    test: call gradTnT_fnc_bridgeActionBuild;
 
 */
 
@@ -23,7 +23,7 @@ private _buildAction = [
               hintSilent _string;
             };
         };
-        call gradSB_fnc_bridgePlace;
+        call gradTnT_fnc_bridgePlace;
     }, {
           true
     },{},nil,"",3,[false,false,false,false,false]

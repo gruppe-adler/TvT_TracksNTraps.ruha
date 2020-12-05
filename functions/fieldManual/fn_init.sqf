@@ -4,5 +4,5 @@ private _isPilot = typeOf player isEqualTypeAny ["B_Helipilot_F", "O_helipilot_F
 private _isRecon = typeOf player isEqualTypeAny ["B_recon_F", "O_recon_F"];
 
 if (_isEngineer) then {
-    ["Open Help", ["gradSB_Engineer", "BuildingAbilities"]] call gradSB_fnc_fieldManualAddAction;
+    ["Open Help", ["gradTnT_Engineer", "BuildingAbilities"]] call gradTnT_fnc_fieldManualAddAction;
 };

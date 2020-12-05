@@ -13,7 +13,7 @@ class CfgFunctions {
 
 disableRemoteSensors = true;
 
-class gradSB_Points {
+class gradTnT_Points {
     flagTick = 100;
     depotTick = 50;
     depot = 2000;
