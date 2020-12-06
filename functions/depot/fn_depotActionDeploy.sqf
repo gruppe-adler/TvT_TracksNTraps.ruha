@@ -14,7 +14,7 @@ private _buildAction = [
             private _string = format ["Depot Limit of %1 reached. Destroy one of the placed depots via ACE Interact to be able to build new ones.", SB_MAX_DEPOTS];
             hintSilent _string;
         };
-        private _bridgeVehicle = [SB_DEPOTS_VEHICLE_WEST, SB_DEPOTS_VEHICLE_EAST] select { side player == east };
+        private _bridgeVehicle = [SB_DEPOTS_VEHICLE_WEST, SB_DEPOTS_VEHICLE_EAST] select ( side player == east );
         private _vehicleNear = false;
         if (_bridgeVehicle != "") then {
             if (count (player nearObjects [_bridgeVehicle, SB_DEPOTS_VEHICLE_DISTANCE]) == 0) exitWith {
@@ -22,7 +22,7 @@ private _buildAction = [
               hintSilent _string;
             };
         };
-        call gradTnT_fnc_depotDrop;
+        call gradTnT_fnc_depotPlace;
     }, {
           true
     },{},nil,"",3,[false,false,false,false,false]

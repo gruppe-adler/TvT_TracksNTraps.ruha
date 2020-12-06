@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2504.2993,175.87628,11477.25};
-		dir[]={0.004021917,-0.77466065,-0.63254714};
-		up[]={0.0049247984,0.63235891,-0.77463382};
-		aside[]={-1.000083,-7.2909097e-007,-0.0063609541};
+		pos[]={1468.7659,116.56617,16182.199};
+		dir[]={-0.41608331,-0.73066181,-0.54130828};
+		up[]={-0.44528639,0.68273765,-0.57930106};
+		aside[]={-0.79284513,7.7765435e-008,0.6094299};
 	};
 };
 binarizationWanted=0;
@@ -20071,7 +20071,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3011.2783,126.59727,11511.221};
+				position[]={3011.2783,126.59726,11511.221};
 				angles[]={0,6.1789789,0};
 			};
 			side="Empty";
@@ -30663,7 +30663,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3533.4043,121.9972,11691.365};
-				angles[]={-0,2.4905078,-0};
+				angles[]={0,2.4905078,0};
 			};
 			side="Empty";
 			flags=5;
@@ -31001,7 +31001,7 @@ class Mission
 			};
 			id=1223;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=2.4707794;
+			atlOffset=2.4707718;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31165,7 +31165,7 @@ class Mission
 			};
 			id=1227;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=3.7654953;
+			atlOffset=3.7654877;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31206,7 +31206,7 @@ class Mission
 			};
 			id=1228;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=3.7062607;
+			atlOffset=3.7062378;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31247,7 +31247,7 @@ class Mission
 			};
 			id=1229;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=1.9539337;
+			atlOffset=1.9539413;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31288,7 +31288,7 @@ class Mission
 			};
 			id=1230;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=2.0491638;
+			atlOffset=2.0491714;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31370,7 +31370,7 @@ class Mission
 			};
 			id=1232;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=2.0692978;
+			atlOffset=2.0693054;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31575,7 +31575,7 @@ class Mission
 			};
 			id=1237;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=0.79655457;
+			atlOffset=0.79656219;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31616,7 +31616,7 @@ class Mission
 			};
 			id=1238;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=0.67279053;
+			atlOffset=0.67277527;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31657,7 +31657,7 @@ class Mission
 			};
 			id=1239;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=0.55789948;
+			atlOffset=0.5579071;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31944,7 +31944,7 @@ class Mission
 			};
 			id=1246;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=1.6958542;
+			atlOffset=1.6958466;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31985,7 +31985,7 @@ class Mission
 			};
 			id=1247;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=0.85414124;
+			atlOffset=0.85412598;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -32841,7 +32841,7 @@ class Mission
 			};
 			id=1268;
 			type="land_gm_fence_border_waterbarrier_gssz70_1800";
-			atlOffset=1.4579926;
+			atlOffset=1.4580688;
 			class CustomAttributes
 			{
 				class Attribute0

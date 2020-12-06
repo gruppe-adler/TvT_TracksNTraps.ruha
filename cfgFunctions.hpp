@@ -31,9 +31,13 @@ class gradTnT {
    
       class depotActionDeploy;
       class depotActionDestroy;
-      class depotDrop;
-      class depotInit;
+      class depotBuild;
+      class depotBuildAbort;
+      class depotDestroy;
+      class depotGetOffset;
+      class depotInit { postInit = 1; };
       class depotMarker;
+      class depotMouseClick;
       class depotPlace;
     };
 
