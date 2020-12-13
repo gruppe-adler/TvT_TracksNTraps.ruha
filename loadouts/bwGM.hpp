@@ -41,6 +41,10 @@ class bwGM {
             headgear = "gm_ge_headgear_m62";
             vest = "gm_ge_army_vest_80_demolition";
             backpack = "gm_ge_backpack_satchel_80_blk";
+            addItemsToVest[] = {
+                LIST_2("gm_smokeshell_wht_dm25"),
+                LIST_3("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
+            };
             addItemsToBackpack[] = {
                 "gm_mine_at_dm21",
                 "toolkit",

@@ -1,9 +1,9 @@
 params ["_depot", ["_destroyed", false]];
 
-private _side = _depot getVariable ["SB_depotSide", sideUnknown];
+private _side = _depot getVariable ["gradTnT_depotSide", sideUnknown];
 
 if (_destroyed) exitWith {
-    private _marker = _depot getVariable ["SB_depotMarkerLocal", ""];
+    private _marker = _depot getVariable ["gradTnT_depotMarkerLocal", ""];
     _marker setMarkerTypeLocal "hd_destroy";
 };
 
@@ -21,6 +21,6 @@ if (_side == west) then {
 _marker setMarkerShapeLocal "ICON";
 _marker setMarkerTypeLocal "b_maint";
 
-_depot setVariable ["SB_depotMarkerLocal", _marker];
+_depot setVariable ["gradTnT_depotMarkerLocal", _marker];
 
 ///// minen gehen nur auf ketten
