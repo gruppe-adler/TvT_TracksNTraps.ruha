@@ -34,11 +34,11 @@ player forceWalk true;
     // _depotDummy setVectorDirAndUp [[1,0,0],[0,0,1]];
     {
         _x params ["_classname", "_relPos", "_offsetDir"];
-        
+
         private _depotDummy =  _classname createVehicleLocal [0,0,0];
         _depotDummy enableSimulation false;
         _depotDummy disableCollisionWith player;
-        private _position = [_depotDummy, _relPos] call gradTnT_fnc_depotGetOffset;
+        private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
         _depotDummy setPos _position;
         _depotDummy setDir (getDir player + _offsetDir);
 
@@ -58,7 +58,7 @@ player forceWalk true;
 
         {
             _x params ["_depotDummy", "_relPos", "_offsetDir"];
-            private _position = [_depotDummy, _relPos] call gradTnT_fnc_depotGetOffset;
+            private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
             _depotDummy setPos _position;
             _depotDummy setDir (getDir player + _offsetDir);
 
@@ -88,7 +88,7 @@ player forceWalk true;
               [_depotDummyClasses, _mouseClickEH] call gradTnT_fnc_depotBuild;
               player setVariable ["gradTnT_carrydepot", -1];
               [_handle] call CBA_fnc_removePerFrameHandler;
-        };        
+        };
 
     }, 0, [_depotDummys, _depotDummyClasses, _mouseClickEH]] call CBA_fnc_addPerFrameHandler;
 

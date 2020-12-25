@@ -17,7 +17,7 @@ diag_log format ["_depotDummyClasses Build %1", _depotDummyClasses];
 
 private _side = side player;
 
-private _depotsBuiltID = format ["gradTnT_depotsBuilt_%1", _side]; 
+private _depotsBuiltID = format ["gradTnT_depotsBuilt_%1", _side];
 private _depotsBuilt = missionNameSpace getVariable [_depotsBuiltID, 0];
 
 if (_depotsBuilt >= gradTnT_DEPOTS_MAX) exitWith {
@@ -32,13 +32,11 @@ private _depotObjects = [];
 {
     _x params ["_classname", "_relPos", "_offsetDir"];
 
-    private _position = player getRelPos _relPos;
-    private _dir = getDir _player;
-
     private _depotPart = _classname createVehicle [0,0,0];
+    private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
     _depotPart setPos _position;
     _depotPart setDir (_dir + _offsetDir);
-    _depotPart enableSimulationGlobal false; 
+    _depotPart enableSimulationGlobal false;
 
     _depotObjects pushBackUnique _depotPart;
 

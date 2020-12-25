@@ -1,4 +1,4 @@
-params ["_object", "_relPos"];
+params ["_relPos"];
 
 _relPos params ["_distance", "_heading"];
 
