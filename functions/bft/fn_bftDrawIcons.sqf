@@ -1,7 +1,11 @@
 params ["_control"];
 
-private _alive = missionNamespace getVariable ["gradTnT_bftIconsAlive", []];
-private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
+private _side = [_vehicle, true] call BIS_fnc_objectSide;
+private _keyAlive = format ["gradTnT_bftIconsAlive_%1", _side];
+private _keyDead = format ["gradTnT_bftIconsDead_%1", _side];
+
+private _alive = missionNamespace getVariable [_keyAlive, []];
+private _dead = missionNamespace getVariable [_keyDead, []];
 
 {   
     private _vehicle = _x;
@@ -18,6 +22,14 @@ private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
 
     if (_vehicle isKindOf "gm_wheeled_truck_base") then {
         _vehicleIcon = getMissionPath "functions\bft\gui\bft_engineer.paa";
+    };
+
+    if (_vehicle isKindOf "gm_helicopter_base") then {
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_air.paa";
+    };
+
+    if (_vehicle isKindOf "gm_wheeled_car_base") then {
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_cmd.paa";
     };
 
     private _crewCount = count ((crew _vehicle) select { alive _x });
@@ -72,9 +84,9 @@ private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
         0,
         _vehicle getVariable ["gradTnT_bftGroupID", "Alpha"],
         0,
-        0.03,
+        0.04,
         "TahomaB",
-        "center"
+        "right"
     ];
 
 } forEach _alive;

@@ -2,19 +2,24 @@ params ["_vehicle"];
 
 if (!alive _vehicle) exitWith {};
 
-private _vehiclesAlive = missionNamespace getVariable ["gradTnT_bftIconsAlive", []];
+private _side = [_vehicle, true] call BIS_fnc_objectSide;
+private _keyAlive = format ["gradTnT_bftIconsAlive_%1", _side];
+
+private _vehiclesAlive = missionNamespace getVariable [_keyAlive, []];
 _vehiclesAlive pushBackUnique _vehicle;
-missionNamespace setVariable ["gradTnT_bftIconsAlive", _vehiclesAlive, true];
+missionNamespace setVariable [_keyAlive, _vehiclesAlive, true];
 
 
 _vehicle addMPEventHandler ["MPKilled", {
     params ["_vehicle", "_killer", "_instigator", "_useEffects"];
 
-    private _vehiclesAlive = missionNamespace getVariable ["gradTnT_bftIconsAlive", []];
-    _vehiclesAlive deleteAt (_vehiclesAlive find _vehicle);
-    missionNamespace setVariable ["gradTnT_bftIconsAlive", _vehiclesAlive, true];
+    private _side = [_vehicle, true] call BIS_fnc_objectSide;
+    private _keyAlive = format ["gradTnT_bftIconsAlive_%1", _side];
+    private _keyDead = format ["gradTnT_bftIconsDead_%1", _side];
 
-    private _vehiclesDead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
-    _vehiclesDead pushBackUnique _vehicle;
-    missionNamespace setVariable ["gradTnT_bftIconsDead", _vehiclesDead, true];
+    private _vehiclesAlive = missionNamespace getVariable [_keyAlive, []];
+    _vehiclesAlive deleteAt (_vehiclesAlive find _vehicle);
+    missionNamespace setVariable [_keyAlive, _vehiclesAlive, true];
+
+    [_vehicle] call gradTnT_fnc_bftMarkerDead;
 }];

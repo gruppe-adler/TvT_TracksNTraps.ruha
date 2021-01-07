@@ -5,6 +5,7 @@ class gradTnT {
         class bftAdd;
         class bftDrawIcons;
         class bftInit { postInit = 1; };
+        class bftMarkerDead;
     };
 
     class bridgeBuilding {
