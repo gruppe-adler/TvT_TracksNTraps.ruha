@@ -9,15 +9,15 @@ private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
     private _crewIcon = "";
 
     if (_vehicle isKindOf "gm_tracked_Tank_base") then {
-        _vehicleIcon = getMissionPath "functions\bft\gui\bft_armor2.paa";
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_armor.paa";
     };
 
     if (_vehicle isKindOf "gm_wheeled_APC_base") then {
-        _vehicleIcon = getMissionPath "functions\bft\gui\bft_recon2.paa";
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_recon.paa";
     };
 
     if (_vehicle isKindOf "gm_wheeled_truck_base") then {
-        _vehicleIcon = getMissionPath "functions\bft\gui\bft_engineer2.paa";
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_engineer.paa";
     };
 
     private _crewCount = count ((crew _vehicle) select { alive _x });
@@ -28,7 +28,7 @@ private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
         _turretCount = count ( fullCrew [_vehicle, "", true]);
     };
 
-    private _crewIcon = getMissionPath "functions\bft\gui\" + "bft_crew_" + str _crewCount + "_" + str _turretCount + "2.paa";
+    private _crewIcon = getMissionPath "functions\bft\gui\" + "bft_crew_" + str _crewCount + "_" + str _turretCount + ".paa";
 
     // vehicle icon
     _control drawIcon 
@@ -67,12 +67,12 @@ private _dead = missionNamespace getVariable ["gradTnT_bftIconsDead", []];
         "#(rgb,1,1,1)color(1,1,1,0)",
         [0.1,0.1,0.1,1],
         getPos _vehicle,
-        40,
-        40,
+        50,
+        50,
         0,
         _vehicle getVariable ["gradTnT_bftGroupID", "Alpha"],
-        1,
-        0.04,
+        0,
+        0.03,
         "TahomaB",
         "center"
     ];
