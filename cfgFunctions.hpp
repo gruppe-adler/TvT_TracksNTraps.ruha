@@ -1,4 +1,12 @@
 class gradTnT {
+    class bft {
+        file = "functions\bft";
+
+        class bftAdd;
+        class bftDrawIcons;
+        class bftInit { postInit = 1; };
+    };
+
     class bridgeBuilding {
         file = "functions\bridgeBuilding";
 

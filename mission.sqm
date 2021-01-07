@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1461.4801,105.9946,16173.037};
-		dir[]={-0.24476339,-0.69274527,-0.67838126};
-		up[]={-0.23511133,0.72117972,-0.65162903};
-		aside[]={-0.94064701,-4.7701178e-008,0.33939141};
+		pos[]={1472.3345,105.9946,16163.462};
+		dir[]={-0.35018009,-0.52779233,-0.77384913};
+		up[]={-0.21759744,0.84936553,-0.4808591};
+		aside[]={-0.9110741,5.873153e-008,0.41227823};
 	};
 };
 binarizationWanted=0;
@@ -273,7 +273,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=2;
+									items=3;
 									class Item0
 									{
 										class data
@@ -302,6 +302,20 @@ class CustomAttributes
 											value="ace_cookoff_enableammocookoff";
 										};
 									};
+									class Item2
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_map_bft_enabled";
+										};
+									};
 								};
 							};
 						};
@@ -318,7 +332,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=2;
+									items=3;
 									class Item0
 									{
 										class data
@@ -365,6 +379,51 @@ class CustomAttributes
 										};
 									};
 									class Item1
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item2
 									{
 										class data
 										{
