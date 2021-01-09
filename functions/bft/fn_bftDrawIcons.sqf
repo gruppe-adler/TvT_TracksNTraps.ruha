@@ -2,10 +2,8 @@ params ["_control"];
 
 private _side = [_vehicle, true] call BIS_fnc_objectSide;
 private _keyAlive = format ["gradTnT_bftIconsAlive_%1", _side];
-private _keyDead = format ["gradTnT_bftIconsDead_%1", _side];
 
 private _alive = missionNamespace getVariable [_keyAlive, []];
-private _dead = missionNamespace getVariable [_keyDead, []];
 
 {   
     private _vehicle = _x;
@@ -82,15 +80,26 @@ private _dead = missionNamespace getVariable [_keyDead, []];
         50,
         50,
         0,
-        _vehicle getVariable ["gradTnT_bftGroupID", "Alpha"],
+        _vehicle getVariable ["gradTnT_bftGroupID_prefix", "A"],
         0,
-        0.04,
-        "TahomaB",
-        "right"
+        0.05,
+        "RobotoCondensedBold",
+        "left"
     ];
 
-} forEach _alive;
+    _control drawIcon 
+    [
+        "#(rgb,1,1,1)color(1,1,1,0)",
+        [0.1,0.1,0.1,1],
+        getPos _vehicle,
+        50,
+        50,
+        0,
+        _vehicle getVariable ["gradTnT_bftGroupID_suffix", "1"],
+        0,
+        0.05,
+        "RobotoCondensedBold",
+        "right"
+    ];   
 
-{
-  
-} forEach _dead;
+} forEach _alive;
