@@ -53,9 +53,12 @@ if (flagAnimationPhase _flag != 0) then {
             } else {
                 [_handle] call CBA_fnc_removePerFrameHandler;
 
+                private _side = side _unit;
                 _flag setVariable ["gradTnT_flagAnimation", false, true];
-                _flag setVariable ["gradTnT_flagOwner", side _unit, true];
+                _flag setVariable ["gradTnT_flagOwner", _side, true];
                 _unit setVariable ["gradTnT_flagRaising", false, true];
+
+                ["gradTnT_objectiveCaptured", [_side]] call CBA_fnc_globalEvent;
             };
 
         } else {
@@ -67,6 +70,7 @@ if (flagAnimationPhase _flag != 0) then {
             _flag setVariable ["gradTnT_flagAnimation", false, true];
             _flag setVariable ["gradTnT_flagOwner", sideUnknown, true];
             _unit setVariable ["gradTnT_flagRaising", false, true];
+            ["gradTnT_objectiveCaptured", [sideUnknown]] call CBA_fnc_globalEvent;
 
             [{
                 params ["_flag"];

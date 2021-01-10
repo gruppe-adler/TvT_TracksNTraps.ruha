@@ -48,7 +48,7 @@ class CfgNotifications
     // Example 1
     class BluforCaptured
     {
-        title = "Blufor captured the objective.";
+        title = "";
         iconPicture = "functions\bft\gui\ico_objective_blufor.paa";
         description = "%1";
         priority = 7;
@@ -58,7 +58,7 @@ class CfgNotifications
     // Example 2
     class OpforCaptured
     {
-        title = "Opfor captured the objective.";
+        title = "";
         iconPicture = "functions\bft\gui\ico_objective_opfor.paa";
         description = "%1";
         priority = 7;
@@ -67,7 +67,7 @@ class CfgNotifications
 
     class NeutralCaptured
     {
-        title = "Objective in battle.";
+        title = "";
         iconPicture = "functions\bft\gui\ico_objective_neutral.paa";
         description = "%1";
         priority = 7;
