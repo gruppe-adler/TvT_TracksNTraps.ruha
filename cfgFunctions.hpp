@@ -64,6 +64,8 @@ class gradTnT {
       class flagAddControl;
       class flagCanRaise;
       class flagGetTexture;
+      class flagMapMarker;
+      class flagMapMarkerInit { postInit = 1; };
       class flagRaise;
       class flagTake;
       class flagTakeAction;

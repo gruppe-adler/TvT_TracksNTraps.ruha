@@ -66,6 +66,7 @@ if (flagAnimationPhase _flag != 0) then {
             // abort capture
             _flag setVariable ["gradTnT_flagAnimation", false, true];
             _flag setVariable ["gradTnT_flagOwner", sideUnknown, true];
+            _unit setVariable ["gradTnT_flagRaising", false, true];
 
             [{
                 params ["_flag"];

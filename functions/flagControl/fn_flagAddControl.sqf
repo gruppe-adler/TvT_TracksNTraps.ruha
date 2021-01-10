@@ -6,6 +6,8 @@ if (isServer) then {
     _flag setFlagTexture "";
     _flag setVariable ["gradTnT_flagSpeakers", _flagSpeakers, true];
 
+    missionNamespace setVariable ["gradTnT_flagObjective", _flag, true];
+
     // count points
     [{
         params ["_args", "_handle"];
