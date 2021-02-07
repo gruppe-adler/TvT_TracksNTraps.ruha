@@ -1,7 +1,7 @@
 params ["_player", "_depotHelper"];
 
-private _depotObjects = _depotHelper getVariable ["gradTnt_depotObjects", []];
-private _depot = _depotObjects select 0;
+private _depot = _depotHelper getVariable ["gradTnT_depotHelperDepot", objNull];
+private _depotObjects = _depot getVariable ["gradTnt_depotObjects", []];
 
 {
   _x setDamage [1, false];
