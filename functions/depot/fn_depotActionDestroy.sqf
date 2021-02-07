@@ -10,8 +10,8 @@ private _destroyAction = [
         private _depot = _target getVariable ["gradTnT_depotHelperDepot", objNull];
         [player, _depot] remoteExec ["gradTnT_fnc_depotDestroy", 2];
     }, {
-        private _bridge = _target getVariable ["gradTnT_bridgeHelperBridge", objNull];
-        !(_bridge getVariable ["gradTnT_depotDestroyed", false])
+        private _depot = _target getVariable ["gradTnT_depotHelperDepot", objNull];
+        !(_depot getVariable ["gradTnT_depotDestroyed", false])
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

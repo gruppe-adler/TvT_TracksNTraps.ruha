@@ -1,7 +1,7 @@
 #include "\z\ace\addons\main\script_component.hpp"
 #include "\z\ace\addons\main\script_macros.hpp"
 
-params ["_depotDummyClasses", "_mouseClickEH"];
+params ["_depotDummyClasses", "_depotDummys", "_mouseClickEH"];
 
 diag_log format ["_depotDummyClasses Build %1", _depotDummyClasses];
 /*
@@ -13,10 +13,20 @@ diag_log format ["_depotDummyClasses Build %1", _depotDummyClasses];
 
 */
 
+{
+  deleteVehicle (_x select 0);
+} forEach _depotDummys;
+
 (findDisplay 46) displayRemoveEventHandler ["MouseButtonDown", _mouseClickEH];
 
-private _side = side player;
+[] call EFUNC(interaction,hideMouseHint);
+inGameUISetEventHandler ["PrevAction", "false"];
+inGameUISetEventHandler ["NextAction", "false"];
 
+player forceWalk false;
+player setVariable ["gradTnT_carryDepot", -1];
+
+private _side = side player;
 private _depotsBuiltID = format ["gradTnT_depotsBuilt_%1", _side];
 private _depotsBuilt = missionNameSpace getVariable [_depotsBuiltID, 0];
 
@@ -35,7 +45,7 @@ private _depotObjects = [];
     private _depotPart = _classname createVehicle [0,0,0];
     private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
     _depotPart setPos _position;
-    _depotPart setDir (_dir + _offsetDir);
+    _depotPart setDir (getDir player + _offsetDir);
     _depotPart enableSimulationGlobal false;
 
     _depotObjects pushBackUnique _depotPart;
@@ -44,8 +54,9 @@ private _depotObjects = [];
 
 private _depot = _depotObjects select 0;
 
-private _depotHelper = "rhs_ec400" createVehicleLocal [0,0,0];
+private _depotHelper = "rhs_ec400" createVehicle [0,0,0];
 _depotHelper attachTo [_depot,[1,0,1.1]];
+_depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
 
 _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
 _depot setVariable ["gradTnT_depotHelper", _depotHelper, true];

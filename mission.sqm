@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1364;
+		nextID=1375;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11907.078,124.37157,7347.8257};
-		dir[]={-0.60706747,-0.50705159,-0.61187434};
-		up[]={-0.35712829,0.86190969,-0.3599568};
-		aside[]={-0.70989829,3.7776772e-007,0.70431948};
+		pos[]={1457.5024,114.86427,16140.385};
+		dir[]={-0.10449277,-0.64683819,0.75544965};
+		up[]={-0.088627182,0.76262254,0.64074689};
+		aside[]={0.99058527,3.5624907e-007,0.13701542};
 	};
 };
 binarizationWanted=0;
@@ -46,13 +46,17 @@ addons[]=
 	"gm_vehicles_land_wheeled_iltis_ge_army_iltis",
 	"gm_vehicles_air_helicopters_bo105_ge_army_bo105",
 	"gm_structures_euro_80",
-	"A3_Modules_F_Curator_Misc"
+	"A3_Modules_F_Curator_Misc",
+	"gm_objects_container_shelterlak_gc_army_shelterlak",
+	"ace_compat_gm",
+	"gm_objects_fortification",
+	"A3_Structures_F_Tank_Military_RepairDepot"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=25;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -197,6 +201,34 @@ class AddonsMetaData
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item21
+		{
+			className="gm_objects_container_shelterlak_gc_army_shelterlak";
+			name="gm_objects_container_shelterlak_gc_army_shelterlak";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item22
+		{
+			className="ace_compat_gm";
+			name="ACE3 - GM Compatibility";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item23
+		{
+			className="gm_objects_fortification";
+			name="gm_objects_fortification";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item24
+		{
+			className="A3_Structures_F_Tank";
+			name="Arma 3 Tank - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -501,7 +533,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=486;
+		items=495;
 		class Item0
 		{
 			dataType="Logic";
@@ -12855,8 +12887,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1455.103,91.376335,16158.689};
-						angles[]={0,1.5208101,0};
+						position[]={1453.6501,91.308693,16162.047};
+						angles[]={0.015998369,0.010595251,0.0079935296};
 					};
 					side="West";
 					flags=4;
@@ -12866,7 +12898,6 @@ class Mission
 					};
 					id=1345;
 					type="gm_ge_army_engineer_g3a4_80_ols";
-					atlOffset=7.6293945e-006;
 				};
 				class Item1
 				{
@@ -33483,6 +33514,391 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item486
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9526.3086,76.480698,16245.348};
+				angles[]={6.2812018,2.4046993,0};
+			};
+			areaSize[]={1000,0,1000};
+			areaIsRectangle=1;
+			flags=1;
+			id=1364;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item487
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6906.5796,74.706818,17417.629};
+				angles[]={6.2812018,2.4046993,0};
+			};
+			areaSize[]={1000,0,1000};
+			areaIsRectangle=1;
+			flags=1;
+			id=1365;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item488
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10731.658,87.379028,12871.023};
+				angles[]={0.01399754,3.8486779,6.2791882};
+			};
+			areaSize[]={400,0,200};
+			areaIsRectangle=1;
+			flags=1;
+			id=1366;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=7;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item489
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={13202.189,88.33252,8264.3604};
+				angles[]={0.0019834081,2.2818086,6.2791886};
+			};
+			areaSize[]={700,0,700};
+			areaIsRectangle=1;
+			flags=1;
+			id=1369;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=7;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item490
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8778.9805,148.71742,5436.6812};
+				angles[]={6.2691875,2.2818086,0.0060039326};
+			};
+			areaSize[]={700,0,700};
+			areaIsRectangle=1;
+			flags=1;
+			id=1370;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item491
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2263.5759,83.034218,15869.033};
+				angles[]={6.2691875,2.2818086,0.0060039326};
+			};
+			areaSize[]={300,0,300};
+			flags=1;
+			id=1371;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=-7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item492
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1455.3719,92.19738,16170.55};
+				angles[]={0.015998369,1.5361557,0.0079935296};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1372;
+			type="gm_gc_army_shelterlakII_repair";
+		};
+		class Item493
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1455.2666,91.151123,16172.563};
+				angles[]={0.015998369,0,0.0079935296};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1373;
+			type="land_gm_camonet_04_east";
+		};
+		class Item494
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1454.7926,93.517578,16175.548};
+				angles[]={0.015998369,1.5251547,0.010000871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1374;
+			type="Land_RepairDepot_01_green_F";
+			atlOffset=-1.5258789e-005;
 		};
 	};
 	class Connections

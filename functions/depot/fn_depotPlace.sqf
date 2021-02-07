@@ -17,15 +17,15 @@ player forceWalk true;
 
     private _depotDummyClasses = if (side player == west) then {
         [
-            ["gm_ge_army_shelteraceII_repair", [10,0],0],
-            ["Land_RepairDepot_01_green_F", [5, -90],0],
-            ["land_gm_camonet_04_nato", [2.5,-90],90]
+            ["gm_ge_army_shelteraceII_repair", [2.5,-3],90],
+            ["Land_RepairDepot_01_green_F", [7, 0],-270],
+            ["land_gm_camonet_04_nato", [2.5,0],0]
         ]
     } else {
         [
-            ["gm_gc_army_shelterlakII_repair", [10,0],0],
-            ["Land_RepairDepot_01_green_F", [5, -90],0],
-            ["land_gm_camonet_04_east", [2.5, -90],90]
+            ["gm_gc_army_shelterlakII_repair", [2.5,-3],90],
+            ["Land_RepairDepot_01_green_F", [7, 0],-270],
+            ["land_gm_camonet_04_east", [2.5, 0],0]
         ]
     };
 
@@ -85,7 +85,7 @@ player forceWalk true;
         };
 
         if (player getVariable ["gradTnT_carrydepot", 0] isEqualTo 2) exitWith {
-              [_depotDummyClasses, _mouseClickEH] call gradTnT_fnc_depotBuild;
+              [_depotDummyClasses, _depotDummys, _mouseClickEH] call gradTnT_fnc_depotBuild;
               player setVariable ["gradTnT_carrydepot", -1];
               [_handle] call CBA_fnc_removePerFrameHandler;
         };
