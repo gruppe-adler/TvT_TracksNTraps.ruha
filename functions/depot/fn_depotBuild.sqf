@@ -55,7 +55,7 @@ private _depotObjects = [];
 private _depot = _depotObjects select 0;
 
 private _depotHelper = "rhs_ec400" createVehicle [0,0,0];
-_depotHelper attachTo [_depot,[1,0,1.1]];
+_depotHelper attachTo [_depot,[1,0,1]];
 detach _depotHelper; // because setvectordirandup refuses to work otherwise
 _depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
 

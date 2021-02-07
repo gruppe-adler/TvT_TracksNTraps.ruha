@@ -1,6 +1,7 @@
 params ["_control"];
 
-private _side = [_vehicle, true] call BIS_fnc_objectSide;
+private _side = side player;
+
 private _keyAlive = format ["gradTnT_bftIconsAlive_%1", _side];
 
 private _alive = missionNamespace getVariable [_keyAlive, []];
@@ -37,6 +38,9 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
     if (_turretCount == 0) then {
         _turretCount = count ( fullCrew [_vehicle, "", true]);
     };
+
+    _turretCount = _turretCount min 3; // limit to 3 crew
+    _turretCount = _turretCount max _crewCount; // turretcount cant be greater than crew count
 
     private _crewIcon = getMissionPath "functions\bft\gui\" + "bft_crew_" + str _crewCount + "_" + str _turretCount + ".paa";
 
