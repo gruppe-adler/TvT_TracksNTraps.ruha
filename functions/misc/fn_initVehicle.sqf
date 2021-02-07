@@ -16,7 +16,7 @@
  * Public: No
  */
 
-params [["_veh", objNull, [objNull]], ["_callsign", "", [""]]];
+params [["_veh", objNull, [objNull]], ["_callsignPrefix", "A"], ["_callsignSuffix", "1"]];
 
 // exit if this is no the server
 if (!isServer) exitWith {};
@@ -31,5 +31,8 @@ clearBackpackCargoGlobal _veh;
 [_veh] call gradTnT_fnc_vehicleRespawnAdd;
 [_veh] call gradTnT_fnc_addExplosiveAction;
 [_veh] call gradTnT_fnc_damageHandling;
+[_veh, _callsignPrefix, _callsignSuffix] call gradTnT_fnc_bftAdd;
+// add existing vehicles to system
+
 
 // private _side = [_veh, true] call BIS_fnc_objectSide;

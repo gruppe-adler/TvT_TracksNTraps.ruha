@@ -1,4 +1,4 @@
-params ["_vehicle"];
+params ["_vehicle", "_callsignPrefix", "_callsignSuffix"];
 
 if (!alive _vehicle) exitWith {};
 
@@ -9,6 +9,8 @@ private _vehiclesAlive = missionNamespace getVariable [_keyAlive, []];
 _vehiclesAlive pushBackUnique _vehicle;
 missionNamespace setVariable [_keyAlive, _vehiclesAlive, true];
 
+_vehicle setVariable ["gradTnT_bftGroupID_prefix", _callsignPrefix, true];
+_vehicle setVariable ["gradTnT_bftGroupID_suffix", _callsignSuffix, true];
 
 _vehicle addMPEventHandler ["MPKilled", {
     params ["_vehicle", "_killer", "_instigator", "_useEffects"];

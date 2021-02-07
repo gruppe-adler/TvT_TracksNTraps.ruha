@@ -70,7 +70,7 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
         40,
         0,
         "",
-        1,
+        0,
         0.03,
         "TahomaB",
         "right"
