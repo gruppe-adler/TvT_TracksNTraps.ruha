@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1441.8492,125.07515,16154.767};
-		dir[]={-0.21697375,-0.72517771,-0.65351844};
-		up[]={-0.22850443,0.68855351,-0.68824834};
-		aside[]={-0.94908464,4.6048081e-007,0.31510565};
+		pos[]={11868.519,107.35897,7308.0464};
+		dir[]={-0.33965355,-0.50461257,0.7937575};
+		up[]={-0.19852214,0.86333394,0.46393889};
+		aside[]={0.91938823,3.5899575e-008,0.39340946};
 	};
 };
 binarizationWanted=0;
@@ -3586,7 +3586,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="gm_insignia_formation_D4_wht";
 						};
 					};
 				};
@@ -6254,7 +6254,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="001";
+							value="123";
 						};
 					};
 				};
@@ -6349,7 +6349,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="gm_insignia_formation_A1_yel";
 						};
 					};
 				};
@@ -6814,7 +6814,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="A";
 						};
 					};
 				};
@@ -13339,7 +13339,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="gm_insignia_formation_E_wht";
 						};
 					};
 				};
@@ -14551,7 +14551,6 @@ class Mission
 			};
 			id=791;
 			type="gm_gc_army_btr60pb";
-			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14607,7 +14606,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="gm_insignia_formation_D4_yel";
 						};
 					};
 				};
@@ -14626,7 +14625,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="0";
 						};
 					};
 				};
@@ -15858,7 +15857,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="-1";
+							value="gm_insignia_formation_D4_yel";
 						};
 					};
 				};

@@ -32,6 +32,7 @@ clearBackpackCargoGlobal _veh;
 [_veh] call gradTnT_fnc_addExplosiveAction;
 [_veh] call gradTnT_fnc_damageHandling;
 [_veh, _callsignPrefix, _callsignSuffix] call gradTnT_fnc_bftAdd;
+[_veh] remoteExecCall ["gradTnT_fnc_addVehicleAction", 0, true];
 // add existing vehicles to system
 
 

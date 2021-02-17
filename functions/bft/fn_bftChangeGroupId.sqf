@@ -45,6 +45,10 @@ _treeMultiSuffix tvAdd [[], "2"];
 _treeMultiSuffix tvAdd [[], "3"];
 _treeMultiSuffix tvAdd [[], "4"];
 
+missionNamespace setVariable ["gradTnT_changeGroupIdCachePrefix", ""];
+missionNamespace setVariable ["gradTnT_changeGroupIdCacheSuffix", ""];
+missionNamespace setVariable ["gradTnT_changeGroupIdCacheVehicle", _vehicle];
+
 _treeMultiPrefix ctrlAddEventHandler ["TreeSelChanged", {
     params ["_control", "_selectionPath"];
 
@@ -57,6 +61,7 @@ _treeMultiPrefix ctrlAddEventHandler ["TreeSelChanged", {
         // _treeMultiSuffix tvSetCurSel [-1];
         // _treeMultiSuffix tvSetCurSel [0];
     };
+    missionNamespace setVariable ["gradTnT_changeGroupIdCachePrefix", _control tvText _selectionPath];
 }];
 
 _treeMultiSuffix ctrlAddEventHandler ["TreeSelChanged", {
@@ -71,14 +76,25 @@ _treeMultiSuffix ctrlAddEventHandler ["TreeSelChanged", {
        //  _control tvSetCurSel [-1];
        // _control tvSetCurSel [0];
     };
+    missionNamespace setVariable ["gradTnT_changeGroupIdCacheSuffix", _control tvText _selectionPath];
 }];
 
 _ctrlButton ctrlAddEventHandler ["ButtonClick", 
 {
     params ["_ctrl"];
     private _display = ctrlParent _ctrl;
-    private _text = ctrlText (_display displayCtrl 1337);
+    private _prefix = missionNamespace getVariable ["gradTnT_changeGroupIdCachePrefix", ""];
+    private _suffix = missionNamespace getVariable ["gradTnT_changeGroupIdCacheSuffix", ""];
+    private _text = _prefix + " " + _suffix;
+
     if (_text == "") then { _text = "EMPTY" };
     hint _text;
+
+    private _vehicle = missionNamespace getVariable ["gradTnT_changeGroupIdCacheVehicle", objNull];
+    _vehicle setVariable ["gradTnT_bftGroupID_prefix", _prefix, true];
+    _vehicle setVariable ["gradTnT_bftGroupID_suffix", _suffix, true];
+
+    [_vehicle, (_prefix + _suffix), "1234"] call gradTnT_fnc_configureVehicleMarking;
+
     _display closeDisplay 1;
 }];

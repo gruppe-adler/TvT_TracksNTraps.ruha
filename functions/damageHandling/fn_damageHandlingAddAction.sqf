@@ -7,7 +7,7 @@ private _repairAction = [
     {
         [_target] call gradTnT_fnc_damageRepair;
     }, {
-        ([_target] call gradTnT_fnc_canBeRepaired) && (_player getVariable ["ACE_IsEngineer", false])
+        ([_target] call gradTnT_fnc_canBeRepaired) && (_player getVariable ["ACE_IsEngineer", -1] > 0)
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
