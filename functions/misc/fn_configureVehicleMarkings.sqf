@@ -2,9 +2,6 @@ params ["_vehicle", ["_formationParam", "none"], ["_vehicleNumberParam", "none"]
 
 private _attributesExisting = _vehicle getVariable ["gm_vehicle_attributes", []];
 
-private _formationSign = "";
-private _vehicleNumber = "";
-
 private _supportedStrings = [
     "A0",
     "A1",
@@ -30,16 +27,17 @@ private _supportedStrings = [
     "F"
 ];
 
-if ((_formationParam in _supportedStrings) && (_formationParam != "none")) then {
-    _formationSign = "gm_insignia_formation_" + _formation + "_yel";
-    (_attributes select 3) set [5, _formationSign];
+if (_formationParam in _supportedStrings) then {
+    private _formationSignString = "";
+    _formationSignString = "gm_insignia_formation_" + _formationParam + "_yel";
+    (_attributesExisting select 3) set [5, _formationSignString];
 };
 
 if (_vehicleNumberParam != "none") then {
-    (_attributes select 2) set [0, _vehicleNumber];
+    (_attributesExisting select 2) set [0, _vehicleNumberParam];
 };
 
-_vehicle setVariable ["gm_vehicle_attributes", _attributes];
+_vehicle setVariable ["gm_vehicle_attributes", _attributesExisting];
 [_vehicle] spawn gm_core_vehicles_fnc_vehicleMarkingsInit;
 
 

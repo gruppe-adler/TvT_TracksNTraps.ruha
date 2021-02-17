@@ -94,7 +94,7 @@ _ctrlButton ctrlAddEventHandler ["ButtonClick",
     _vehicle setVariable ["gradTnT_bftGroupID_prefix", _prefix, true];
     _vehicle setVariable ["gradTnT_bftGroupID_suffix", _suffix, true];
 
-    [_vehicle, (_prefix + _suffix), "1234"] call gradTnT_fnc_configureVehicleMarking;
+    [_vehicle, (_prefix + _suffix), "1234"] call gradTnT_fnc_configureVehicleMarkings;
 
     _display closeDisplay 1;
 }];
