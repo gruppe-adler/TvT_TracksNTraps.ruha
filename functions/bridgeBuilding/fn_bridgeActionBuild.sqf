@@ -17,13 +17,17 @@ private _buildAction = [
         };
         private _bridgeVehicle = [SB_BRIDGES_VEHICLE_WEST, SB_BRIDGES_VEHICLE_EAST] select ( side player == east );
         private _vehicleNear = false;
+        private _canBuild = true;
         if (_bridgeVehicle != "") then {
             if (count (player nearObjects [_bridgeVehicle, SB_BRIDGES_VEHICLE_DISTANCE]) == 0) exitWith {
               private _string = format ["No Engineer Vehicle near your position (needs to be closer than %1 m).", SB_BRIDGES_VEHICLE_DISTANCE];
               hintSilent _string;
+              _canBuild = false;
             };
         };
-        call gradTnT_fnc_bridgePlace;
+        if (_canBuild) then {
+            call gradTnT_fnc_bridgePlace;
+        };
     }, {
           true
     },{},nil,"",3,[false,false,false,false,false]

@@ -87,4 +87,6 @@ if (_side == west) then {
 [_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
 [_depot] remoteExec ["gradTnT_fnc_depotMarker", 0, true];
 
+[_depot, "", ""] spawn gradTnT_fnc_bftAdd;
+
 player setVariable ["gradTnT_carryDepotDummys", []];

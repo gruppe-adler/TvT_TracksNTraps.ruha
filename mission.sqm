@@ -1,4 +1,4 @@
-version=53;
+version=54;
 class EditorData
 {
 	moveGridStep=1;
@@ -16,13 +16,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11868.519,107.35897,7308.0464};
-		dir[]={-0.33965355,-0.50461257,0.7937575};
-		up[]={-0.19852214,0.86333394,0.46393889};
-		aside[]={0.91938823,3.5899575e-008,0.39340946};
+		pos[]={11907.953,110.51157,7327.2441};
+		dir[]={-0.12294471,-0.62802362,0.76842296};
+		up[]={-0.099219523,0.77819324,0.62013704};
+		aside[]={0.98744118,-5.2386895e-010,0.15798691};
 	};
 };
 binarizationWanted=0;
+sourceName="TvT_TracksNTraps";
 addons[]=
 {
 	"A3_Modules_F",
@@ -14551,6 +14552,7 @@ class Mission
 			};
 			id=791;
 			type="gm_gc_army_btr60pb";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0

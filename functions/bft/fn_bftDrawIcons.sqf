@@ -11,6 +11,18 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
     private _vehicleIcon = "";
     private _crewIcon = "";
 
+
+    if (_vehicle isKindOf "gm_ge_army_shelteraceII_repair" ||
+        _vehicle isKindOf "gm_gc_army_shelterlakII_repair") then {
+
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_depot.paa";
+    };
+
+    if (((getModelInfo _vehicle) select 0) == "bridgewooden_01_f.p3d") then {
+        _vehicleIcon = getMissionPath "functions\bft\gui\bft_bridge.paa";
+    };
+
+
     if (_vehicle isKindOf "gm_tracked_Tank_base") then {
         _vehicleIcon = getMissionPath "functions\bft\gui\bft_armor.paa";
     };
