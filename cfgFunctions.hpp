@@ -93,6 +93,7 @@ class gradTnT {
 
       class countPoints { postInit = 1; };
       class addRespawnEventHandler { postInit = 1; };
+      class showStats;
     };
 
     class misc {
