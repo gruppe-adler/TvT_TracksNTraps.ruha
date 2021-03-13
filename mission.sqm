@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1375;
+		nextID=1381;
 	};
 	class MarkerIDProvider
 	{
-		nextID=60;
+		nextID=61;
 	};
 	class Camera
 	{
-		pos[]={6915.937,122.62401,10841.469};
-		dir[]={-0.1945505,-0.67338157,-0.71325308};
-		up[]={-0.17720342,0.73928964,-0.64965171};
-		aside[]={-0.96476364,6.7224028e-007,0.26315519};
+		pos[]={1420.9602,97.767288,16080.821};
+		dir[]={0.74859542,-0.47803599,-0.45944151};
+		up[]={0.40742251,0.8783403,-0.25005069};
+		aside[]={-0.52307922,1.4901161e-008,-0.85228419};
 	};
 };
 binarizationWanted=0;
@@ -534,7 +534,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=495;
+		items=497;
 		class Item0
 		{
 			dataType="Logic";
@@ -16355,16 +16355,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1429.1798,94.149658,16072.926};
-				angles[]={6.2811952,0.30518827,6.2791882};
+				position[]={1430.5911,94.148148,16075.323};
+				angles[]={-0,0.36523953,6.2791886};
 			};
-			side="Empty";
-			flags=4;
+			side="West";
+			flags=6;
 			class Attributes
 			{
 			};
 			id=833;
 			type="gm_ge_army_iltis_cargo";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -34195,6 +34196,85 @@ class Mission
 			id=1374;
 			type="Land_RepairDepot_01_green_F";
 			atlOffset=-1.5258789e-005;
+		};
+		class Item495
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1430.5823,91.949104,16075.373};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=1377;
+					type="gm_ge_army_rifleman_g3a3_80_ols";
+					atlOffset=-7.6293945e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=1377;
+						item1=833;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=1375;
+			atlOffset=-7.6293945e-006;
+		};
+		class Item496
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1427.0151,91.965271,16075.997};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=1379;
+					type="gm_ge_army_engineer_g3a4_80_ols";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1378;
 		};
 	};
 	class Connections

@@ -96,6 +96,18 @@ class gradTnT {
       class showStats;
     };
 
+    class taxi {
+      file = "functions\taxi";
+
+      class addGetInHandler;
+      class addInteraction;
+      class taxiDialogClose;
+      class taxiDialogOpen;
+      class setTaxiWaypoint;
+      class taxiOpenMap;
+      class taxiCloseMap;
+    };
+
     class misc {
       file = "functions\misc";
 
