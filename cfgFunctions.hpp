@@ -106,6 +106,7 @@ class gradTnT {
       class setTaxiWaypoint;
       class taxiOpenMap;
       class taxiCloseMap;
+      class taxiStop;
     };
 
     class misc {

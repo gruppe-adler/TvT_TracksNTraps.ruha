@@ -1,6 +1,11 @@
 params ["_position"];
 
-_driverGroup = group driver vehicle player;
+private _driverGroup = group driver vehicle player;
+
+for "_i" from count waypoints _driverGroup - 1 to 0 step -1 do
+{
+    deleteWaypoint [_driverGroup, _i];
+};
 
 _wp = _driverGroup addWaypoint [_position, 0];
 _driverGroup setSpeedMode "NORMAL";
@@ -30,3 +35,6 @@ _marker setMarkerColor ([side player,  true] call BIS_fnc_sideColor);
 _marker setMarkerText (format ["Drop Off %1", groupID group player]);
 
 vehicle player setVariable ["gradTnT_taxiMarker", _marker, true];
+
+vehicle player vehicleChat format ['Fahre los.'];
+vehicle player lockCargo [vehicle player getCargoIndex player, true];

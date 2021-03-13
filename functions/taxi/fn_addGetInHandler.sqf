@@ -4,6 +4,9 @@ _veh setVariable ["gradTnT_isTaxi", true, true];
 
 [_veh] remoteExecCall ["gradTnT_fnc_addInteraction", 0, true];
 
+
+[_veh, "", ""] spawn gradTnT_fnc_bftAdd;
+
 _veh addEventHandler ["GetIn", {
     _veh = _this select 0;
     _unit = _this select 2;

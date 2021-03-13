@@ -32,7 +32,6 @@ _map ctrlMapCursor ["", "Move"];
 _btn_cancel = (uiNamespace getVariable ['gradTnT_taxiDialog_btn_cancel', controlNull]); 
 _btn_cancel ctrlShow true;
 
- 
 _btn_choose = (uiNamespace getVariable ['gradTnT_taxiDialog_btn_choose', controlNull]);
 _btn_choose ctrlShow false;
 
