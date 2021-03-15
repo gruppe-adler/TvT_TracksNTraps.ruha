@@ -99,6 +99,7 @@ class gradTnT {
     class taxi {
       file = "functions\taxi";
 
+      class addFlagInteraction;
       class addGetInHandler;
       class addInteraction;
       class taxiDialogClose;
@@ -107,6 +108,7 @@ class gradTnT {
       class taxiOpenMap;
       class taxiCloseMap;
       class taxiStop;
+      class taxiSpawn;
     };
 
     class misc {
