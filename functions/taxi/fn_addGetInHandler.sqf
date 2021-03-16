@@ -24,8 +24,10 @@ _veh setVariable ["gradTnT_isTaxi", true, true];
         private _wp = _driverGroup addWaypoint [_position, 0];
         _wp setWaypointStatements ["true", "
             private _vehicle = vehicle this;
+            private _side = side _vehicle;
             deleteVehicle _vehicle;
             { deleteVehicle _x; } forEach thisList;
+            ['gradTnT_points', ['car_deposit', [_side] call gradTnT_fnc_getOpposingSide]] call CBA_fnc_serverEvent;
         "];
 
         _driverGroup setSpeedMode "FULL";

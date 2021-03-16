@@ -24,6 +24,7 @@ class gradTnT_Points {
     apc = 300;
     car = 100;
     crew = 50;
+    car_deposit = -50;
 };
 
 // cba_settings_hasSettingsFile = 1;

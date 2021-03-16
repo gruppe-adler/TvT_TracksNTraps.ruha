@@ -35,5 +35,8 @@ clearBackpackCargoGlobal _veh;
 [_veh] remoteExecCall ["gradTnT_fnc_addVehicleAction", 0, true];
 // add existing vehicles to system
 
-
-// private _side = [_veh, true] call BIS_fnc_objectSide;
+// flag for capturing only on engineer vehicles
+private _side = [_veh, true] call BIS_fnc_objectSide;
+if (_veh getVariable ['ace_isRepairVehicle', false]) then {
+    [_veh] remoteExecCall ["gradTnT_fnc_flagTakeAction", _side, true];
+};

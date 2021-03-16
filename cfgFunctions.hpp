@@ -116,6 +116,7 @@ class gradTnT {
 
       class addVehicleAction;
       class configureVehicleMarkings;
+      class getOpposingSide;
       class initVehicle {};
     };
 
