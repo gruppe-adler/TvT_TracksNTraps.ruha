@@ -115,6 +115,7 @@ class gradTnT {
       file = "functions\misc";
 
       class addVehicleAction;
+      class configureBpzEast;
       class configureVehicleMarkings;
       class getOpposingSide;
       class initVehicle {};

@@ -1,0 +1,57 @@
+crane_elev_source
+crane_hook_source
+crane_hook_unhide
+crane_rope_handler_source
+crane_trav_source
+dozer_blade_elev_source
+
+beacon_01_unhide
+beacon_light_unhide_source
+beacon_01_org_unhide
+
+gm_bpz2a1_hook == invisible when spawning?!
+gm_bpz2_hook_base
+
+crane_hook_axis
+crane_hook == menmpoint for attachTo of hook
+
+its all setup to work, but due to limitations not DLC worthy
+so its "hidden" away
+can see to making it available via a variable or editor modul of some kind
+
+I thik the hook can be createVehicle'd?
+yes
+
+its 100% wierd scripting hacks
+especialy since ropes cannot be conencted directly to a bone that is animated without causing a CTD :smile:
+Mondkalb — 30.10.2020
+You can find it via the config explorer. gm_bpz2a1_hook
+
+isnt there a memorypoint on the crane for ropes?
+GalComT — 30.10.2020
+there is
+Tobi — 30.10.2020
+is that connected to the bone for the animation?
+GalComT — 30.10.2020
+those memorypoints are for a dummy object
+which is attached to the crane
+to which then the ropes are atatched :smile:
+lol
+and tada no ctd
+
+
+cursorObject animateSource ["crane_trav_source", 1];
+
+private _sphere = "C_Kart_01_F" createVehicle [0,0,0]; _sphere attachTo [cursorObject, [0,0,0], "crane_hook"];  
+_sphere enableRopeAttach true; _sphere hideObjectGlobal true;
+private _rope = ropeCreate [_sphere, [0,0,.5], 20, [], ["RopeEnd", [0,0,-1]]]; 
+[{ params ["_sphere", "_rope"]; deleteVehicle _sphere; deleteVehicle _rope; }, [_sphere, _rope], 10] call CBA_fnc_waitAndExecute;
+
+
+
+
+[veh1, [0,0,0], [0,0,-1]] ropeAttachTo (ropes heli1 select 0);
+
+private _helper = "Land_Can_V2_F" createVehicle [0,0,0];
+_helper attachTo [cursorObject, [0,0,0], "crane_hook"];
+private _rope = ropeCreate [_helper, [0,0,0], 2];
