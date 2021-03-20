@@ -1,3 +1,7 @@
+\a3\3den\Data\CfgWaypoints\unhook_ca.paa
+
+
+
 crane_elev_source
 crane_hook_source
 crane_hook_unhide

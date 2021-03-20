@@ -1,5 +1,3 @@
-params ["_vehicle"];
-
 gradTnT_fnc_bpz_canPickUpRopes = {
   count (player getVariable ["gradTnT_ropesVehicleAttached", []]) == 0 &&
   count (missionNamespace getVariable ["gradTnT_nearby_vehicles",[]]) > 0 &&
@@ -40,33 +38,27 @@ gradTnT_fnc_bpz_getClosestRope = {
 
 
 gradTnT_fnc_bpz_findNearbyFreeRopes = {
-    private _nearRopeEnds = [];
-    private _ropeEnds = (player nearObjects ["Land_Can_Rusty_F", 30]);
-    {
-        if (_x getVariable ["gradTnt_ropeEnd", false] && isNull attachedTo _x) then {
-            // directly search for dummy object
-            _nearRopeEnds append  _x;
+    private _ropes = [];
+    private _hooks = (nearestObjects [player, ["gm_bpz2a1_hook"], 30]);
+    private _vehicle = objNull;
+
+    if (count _hooks > 0) then {
+        _hooks params ["_hook"];
+        if (_hook getVariable ["canHook", false]) then {
+            _ropes = _hook getVariable ["gradTnT_bpz_ropesHook", []];
+            _vehicle = _hook getVariable ["gradTnT_bpz_hookVehicle", objNull];
         };
-    } forEach _ropeEnds;
-    
-    _nearRopeEnds;
+    };
+
+    [_ropes, _hook, _vehicle]
 };
 
 
 gradTnT_fnc_bpz_pickupAction = {
-    _closestRope = [] call gradTnT_fnc_bpz_findNearbyFreeRopes;
-    if(!isNull (_closestRope select 0)) then {
-        _canPickupRopes = true;
-        if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-            if( locked (_closestRope select 0) > 1 ) then {
-                ["Cannot pick up cargo ropes from locked vehicle",false] call ASL_Hint;
-                _canPickupRopes = false;
-            };
-        };
-        if(_canPickupRopes) then {
-            [(_closestRope select 0), player, (_closestRope select 1)] call ASL_Pickup_Ropes;
-        };
-    };
+    params ["_player"];
+    private _nearByRopes = call gradTnT_fnc_bpz_findNearbyFreeRopes;
+    
+    [_nearByRopes, _player] call gradTnT_fnc_bpz_pickupRopes;  
 };
 
 
@@ -74,11 +66,12 @@ gradTnT_fnc_bpz_pickupAction = {
 [{
     params ["_args", "_handle"];
 
-    private _nearbyVehicles = call gradTnT_fnc_bpz_findNearbyRopes;
+    private _nearByRopes = call gradTnT_fnc_bpz_findNearbyFreeRopes;
+    missionNamespace setVariable ["gradTnT_nearByRopes",_nearByRopes];
 
 }, 2, []] call CBA_fnc_addPerFrameHandler;
 
 
 player addAction ["Pickup Cargo Ropes", { 
-    [] call gradTnT_fnc_bpz_pickupAction;
+    [player] call gradTnT_fnc_bpz_pickupAction;
 }, nil, 0, false, true, "", "call gradTnT_fnc_bpz_canPickUpRopes"];

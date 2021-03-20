@@ -12,13 +12,16 @@ params ["_vehicle"];
 
 private _hook = "gm_bpz2a1_hook" createVehicle [0,0,0];
 _hook setObjectTextureGlobal [5, "\gm\gm_vehicles\gm_land\gm_tracked\gm_bpz2\gm_ge_army_bpz2\data\oli\gm_ge_army_bpz2a0_ext_01_oli_co.paa"];
-private _position = (_vehicle modelToWorld (_vehicle selectionPosition "crane_hook"));
+private _position = (_vehicle modelToWorld (_vehicle selectionPosition "rope_1_1_pos"));
+private _zPos = _position select 2;
+_position set [2, (_zPos - 1)];
 _hook setPos _position;
 _hook enableRopeAttach true;
+_hook setVariable ["gradTnT_bpz_hookVehicle", _vehicle, true];
 
 {
     private _dummyCrane = "ace_fastroping_helper" createVehicle [0,0,0];
-    _dummyCrane attachTo [cursorObject, [0,0,0], _x];
+    _dummyCrane attachTo [_vehicle, [0,0,0], _x];
     _dummyCrane enableRopeAttach true;
     _dummyCrane hideObjectGlobal true;
 
@@ -61,7 +64,7 @@ _hook enableRopeAttach true;
 ];
 
 [{
-    params ["_hook"];
+    params ["_hook", "_vehicle"];
 
     [_hook] call gradTnT_fnc_bpz_prepareRopesHook;
-}, [_hook], 1] call CBA_fnc_waitAndExecute;
+}, [_hook, _vehicle], 1] call CBA_fnc_waitAndExecute;

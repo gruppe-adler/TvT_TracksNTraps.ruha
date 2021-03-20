@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11864.152,105.90559,7358.7407};
-		dir[]={0.44059393,-0.45559925,-0.77350265};
-		up[]={0.22549723,0.89018494,-0.39588085};
-		aside[]={-0.86892343,1.4901161e-008,-0.49494642};
+		pos[]={11866.44,105.59946,7354.5078};
+		dir[]={0.53904319,-0.50556016,-0.67367762};
+		up[]={0.31585705,0.8627913,-0.39474729};
+		aside[]={-0.78081173,-1.4901161e-008,-0.62476653};
 	};
 };
 binarizationWanted=0;
@@ -16528,7 +16528,6 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						isPlayer=1;
 					};
 					id=842;
 					type="gm_gc_army_rifleman_mpiak74n_80_str";
@@ -33977,13 +33976,14 @@ class Mission
 					class PositionInfo
 					{
 						position[]={11872.916,98.582191,7346.8086};
-						angles[]={0.063912325,4.1223364,0.0080009829};
+						angles[]={0.063913956,4.1223283,0.0079936078};
 					};
 					side="East";
 					flags=6;
 					class Attributes
 					{
 						description="Driver";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1388;
@@ -34028,7 +34028,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute2
+						{
+							property="gm_servicebranch";
+							expression="[_this, [0,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="gm_rankinsignia";
+							expression="[_this, [1,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=4;
 					};
 				};
 			};
@@ -34058,8 +34096,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11871.145,101.7524,7338.9443};
-				angles[]={0.061924282,5.7012053,0.0060039326};
+				position[]={11870.807,101.69925,7339.7837};
+				angles[]={0,0.12873209,0};
 			};
 			side="Empty";
 			flags=4;

@@ -15,8 +15,10 @@ class gradTnT {
         class bpz_actions;
         class bpz_configureBpzEast;
         class bpz_connectRopes;
+        class bpz_getCornerPoints;
         class bpz_pickupRopes;
-        class bpz_pickupRopesAction;
+
+        class bpz_pickupRopesAction { postInit = 1 };
         class bpz_prepareRopesCrane;
         class bpz_prepareRopesHook;
         class bpz_ropeUnwind;
