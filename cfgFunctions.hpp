@@ -9,6 +9,12 @@ class gradTnT {
         class bftMarkerDead;
     };
 
+    class bpz {
+        file = "functions\bpz";
+
+        class fn_configureBpzEast;
+    };
+
     class bridgeBuilding {
         file = "functions\bridgeBuilding";
 
@@ -38,7 +44,7 @@ class gradTnT {
 
     class depot {
       file = "functions\depot";
-   
+
       class depotActionDeploy;
       class depotActionDestroy;
       class depotBuild;
@@ -53,14 +59,14 @@ class gradTnT {
 
     class fieldManual {
       file = "functions\fieldManual";
-   
+
       class fieldManualAddAction;
       class init { postInit = 1; };
     };
 
     class flagControl {
       file = "functions\flagControl";
-   
+
       class flagAddAction;
       class flagAddControl;
       class flagCanRaise;
