@@ -59,3 +59,9 @@ _hook enableRopeAttach true;
   "rope_3_1_pos",
   "rope_3_2_pos"
 ];
+
+[{
+    params ["_vehicle"];
+
+    [_vehicle] call gradTnT_fnc_bpz_prepareRopesHook;
+}, [_vehicle], 1] call CBA_fnc_waitAndExecute;

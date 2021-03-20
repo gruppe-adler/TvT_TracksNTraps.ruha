@@ -18,6 +18,7 @@ class gradTnT {
         class bpz_pickupRopes;
         class bpz_pickupRopesAction;
         class bpz_prepareRopesCrane;
+        class bpz_prepareRopesHook;
         class bpz_ropeUnwind;
     };
 
