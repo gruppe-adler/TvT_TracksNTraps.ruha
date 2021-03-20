@@ -12,7 +12,13 @@ class gradTnT {
     class bpz {
         file = "functions\bpz";
 
-        class fn_configureBpzEast;
+        class bpz_actions;
+        class bpz_configureBpzEast;
+        class bpz_connectRopes;
+        class bpz_pickupRopes;
+        class bpz_pickupRopesAction;
+        class bpz_prepareRopesCrane;
+        class bpz_ropeUnwind;
     };
 
     class bridgeBuilding {
@@ -121,7 +127,6 @@ class gradTnT {
       file = "functions\misc";
 
       class addVehicleAction;
-      class configureBpzEast;
       class configureVehicleMarkings;
       class getOpposingSide;
       class initVehicle {};

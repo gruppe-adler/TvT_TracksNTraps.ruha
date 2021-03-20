@@ -17,7 +17,7 @@ _hook setPos _position;
 _hook enableRopeAttach true;
 
 {
-    private _dummyCrane = "C_Kart_01_F" createVehicle [0,0,0];
+    private _dummyCrane = "ace_fastroping_helper" createVehicle [0,0,0];
     _dummyCrane attachTo [cursorObject, [0,0,0], _x];
     _dummyCrane enableRopeAttach true;
     _dummyCrane hideObjectGlobal true;
@@ -32,7 +32,7 @@ _hook enableRopeAttach true;
     ] select _forEachIndex;
 
     if (_forEachIndex != 4) then {
-        private _dummyHook = "C_Kart_01_F" createVehicle [0,0,0];
+        private _dummyHook = "ace_fastroping_helper" createVehicle [0,0,0];
         _dummyHook attachTo [_hook, _offset];
         _dummyHook enableRopeAttach true;
         _dummyHook hideObjectGlobal true;
@@ -59,12 +59,3 @@ _hook enableRopeAttach true;
   "rope_3_1_pos",
   "rope_3_2_pos"
 ];
-
-// create ropes that get attached to wreck in the end
-for "_i" from 0 to 3 do
-{
-    private _dummyRopeEnd = "Land_Can_Rusty_F" createVehicle [0,0,0];
-    _dummyRopeEnd setPos (getPos _hook);
-    _dummyRopeEnd hideObjectGlobal true;
-    private _ropesHook = ropeCreate [_hook, [0,0,0], _dummyRopeEnd, [0,0,2], 5, [], ["RopeEnd", [0,0,-1]]];
-};

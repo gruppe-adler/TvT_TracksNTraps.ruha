@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11867.653,105.90559,7351.4541};
-		dir[]={0.45744842,-0.60431516,-0.65233743};
-		up[]={0.34696531,0.79674536,-0.49478465};
-		aside[]={-0.81875271,0,-0.57414633};
+		pos[]={11864.152,105.90559,7358.7407};
+		dir[]={0.44059393,-0.45559928,-0.77350265};
+		up[]={0.22549725,0.89018494,-0.39588088};
+		aside[]={-0.86892349,0,-0.49494645};
 	};
 };
 binarizationWanted=0;
@@ -34065,7 +34065,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call gradTnT_fnc_configureBpzEast;}";
+				init="call{[this] call gradTnT_fnc_bpz_configureBpzEast;}";
 				textures="gm_ge_wdl";
 			};
 			id=1401;
