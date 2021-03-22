@@ -66,5 +66,5 @@ _hook setVariable ["gradTnT_bpz_hookVehicle", _vehicle, true];
 [{
     params ["_hook", "_vehicle"];
 
-    [_hook] call gradTnT_fnc_bpz_prepareRopesHook;
+    [_hook, _vehicle] call gradTnT_fnc_bpz_prepareRopesHook;
 }, [_hook, _vehicle], 1] call CBA_fnc_waitAndExecute;

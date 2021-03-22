@@ -14,7 +14,8 @@ _vehicle animateSource ["dozer_blade_elev_source", 1];
     (_vehicle animationSourcePhase "crane_trav_source" == 1)
 },{
     params ["_vehicle"];
-    
+
+    _vehicle setVariable ["recoveryMode", true, true];
     [_vehicle] call gradTnT_fnc_bpz_prepareRopesCrane;
 
 }, [_vehicle]] call CBA_fnc_waitUntilAndExecute;

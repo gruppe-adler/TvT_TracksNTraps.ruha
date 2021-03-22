@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11866.44,105.59946,7354.5078};
-		dir[]={0.53904319,-0.50556016,-0.67367762};
-		up[]={0.31585705,0.8627913,-0.39474729};
-		aside[]={-0.78081173,-1.4901161e-008,-0.62476653};
+		pos[]={11872.399,103.95847,7357.4536};
+		dir[]={-0.29691136,-0.42614824,-0.8545416};
+		up[]={-0.13986379,0.90465337,-0.40254247};
+		aside[]={-0.94460672,7.4505806e-009,0.32820457};
 	};
 };
 binarizationWanted=0;
@@ -34080,7 +34080,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11877.391,101.60123,7342.2148};
+				position[]={11878.373,101.602,7342.3003};
 				angles[]={0.059928458,5.7012067,0.0060001095};
 			};
 			side="Empty";
@@ -34096,7 +34096,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11870.807,101.69925,7339.7837};
+				position[]={11868.782,101.5871,7341.3062};
 				angles[]={0,0.12873209,0};
 			};
 			side="Empty";
@@ -34108,6 +34108,7 @@ class Mission
 			};
 			id=1401;
 			type="gm_ge_army_bpz2a0";
+			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
