@@ -7,6 +7,9 @@
 
 #include "functions\taxi\ui\taxiDialog.hpp"
 
+#include ".\ui\include.hpp"
+
+
 class CfgFunctions {
     #include "cfgFunctions.hpp"
     #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"

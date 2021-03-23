@@ -1,9 +1,9 @@
+#include "functions\callsign\CfgFunctions.hpp"
 class gradTnT {
     class bft {
         file = "functions\bft";
 
         class bftAdd;
-        class bftChangeGroupId;
         class bftDrawIcons;
         class bftInit { postInit = 1; };
         class bftMarkerDead;
@@ -133,8 +133,6 @@ class gradTnT {
     class misc {
       file = "functions\misc";
 
-      class addVehicleAction;
-      class configureVehicleMarkings;
       class getOpposingSide;
       class initVehicle {};
     };
