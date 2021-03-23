@@ -88,6 +88,8 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
         "right"
     ];
 
+    (_vehicle getVariable ["gradTnT_callsign", ["A", "1"]]) params ["_prefix", "_suffix"];
+
     _control drawIcon 
     [
         "#(rgb,1,1,1)color(1,1,1,0)",
@@ -96,7 +98,7 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
         50,
         50,
         0,
-        _vehicle getVariable ["gradTnT_bftGroupID_prefix", "A"],
+        _prefix,
         0,
         0.05,
         "RobotoCondensedBold",
@@ -111,7 +113,7 @@ private _alive = missionNamespace getVariable [_keyAlive, []];
         50,
         50,
         0,
-        _vehicle getVariable ["gradTnT_bftGroupID_suffix", "1"],
+        _suffix,
         0,
         0.05,
         "RobotoCondensedBold",
