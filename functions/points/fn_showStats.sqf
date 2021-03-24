@@ -3,53 +3,56 @@
     execVM "functions\points\fn_showStats.sqf";
 
 */
-/*
-case "flagTick" : {
-           _pointsAdded = [_cfg,"flagTick",100] call BIS_fnc_returnConfigEntry;
-        };
-        case "depotTick" : {
-           _pointsAdded = [_cfg,"depotTick",100] call BIS_fnc_returnConfigEntry;
-        };
-        case "depot" : {
-            _pointsAdded = [_cfg,"depot",2000] call BIS_fnc_returnConfigEntry;
-        };
-        case "bridge" : {
-            _pointsAdded = [_cfg,"bridge",1000] call BIS_fnc_returnConfigEntry;
-        };
-        case "tank" : {
-            _pointsAdded = [_cfg,"tank",500] call BIS_fnc_returnConfigEntry;
-        };
-        case "apc" : {
-            _pointsAdded = [_cfg,"apc",300] call BIS_fnc_returnConfigEntry;
-        };
-        case "car" : {
-            _pointsAdded = [_cfg,"car",300] call BIS_fnc_returnConfigEntry;
-        };
-        case "crew" : {
-            _pointsAdded = [_cfg,"crew",50] call BIS_fnc_returnConfigEntry;
-        };
 
-         private _pointsKey = format ["gradTnT_points_%1", _side];
+
+private _resultTotalNumber_west = 0;
+private _resultTotalNumber_east = 0;
+
+
+gradTnT_fnc_getPointsForKeySide = {
+    params ["_side", "_type"];
+
+    private _pointsKey = format ["gradTnT_points_%1_%2", _side, _type];
     private _pointsExisting = missionNameSpace getVariable [_pointsKey, 0];
-        */
-
-if (isServer) then {
-    [] spawn {
-        
-        if (!_draw) then {
-            switch (_winner) do { 
-                case west : { [[west]] remoteExec ["grad_endings_fnc_endMissionClient",0,false];  }; 
-                case east : {  [[east]] remoteExec ["grad_endings_fnc_endMissionClient",0,false];  }; 
-                case independent : { [[independent]] remoteExec ["grad_endings_fnc_endMissionClient",0,false];   }; 
-                case civilian : {  [[civilian]] remoteExec ["grad_endings_fnc_endMissionClient",0,false]; }; 
-                default {}; 
-            };
-        } else {
-            [[west,east,independent,civilian]] remoteExec ["grad_endings_fnc_endMissionClient",0,false];
-        };
-    };
+    
+    _pointsExisting
 };
 
+gradTnT_fnc_getPointsForSide = {
+    params ["_side"];
+
+    private _pointsTotalKey = format ["gradTnT_pointsTotal_%1", _side];
+    private _pointsTotalExisting = missionNameSpace getVariable [_pointsTotalKey, 0];
+    
+    _pointsTotalExisting
+};
+
+
+private _flagTickWest = [west, "flagTick"] call gradTnT_fnc_getPointsForKeySide;
+// private _depotTickWest = [west, "depotTick"] call gradTnT_fnc_getPointsForKeySide;
+private _depotWest = [west, "depot"] call gradTnT_fnc_getPointsForKeySide;
+private _bridgeWest = [west, "bridge"] call gradTnT_fnc_getPointsForKeySide;
+private _tankWest = [west, "tank"] call gradTnT_fnc_getPointsForKeySide;
+private _apcWest = [west, "apc"] call gradTnT_fnc_getPointsForKeySide;
+private _carWest = [west, "car"] call gradTnT_fnc_getPointsForKeySide;
+private _crewWest = [west, "crew"] call gradTnT_fnc_getPointsForKeySide;
+      
+private _flagTickEast = [east, "flagTick"] call gradTnT_fnc_getPointsForKeySide;
+// private _depotTickEast = [east, "depotTick"] call gradTnT_fnc_getPointsForKeySide;
+private _depotEast = [east, "depot"] call gradTnT_fnc_getPointsForKeySide;
+private _bridgeEast = [east, "bridge"] call gradTnT_fnc_getPointsForKeySide;
+private _tankEast = [east, "tank"] call gradTnT_fnc_getPointsForKeySide;
+private _apcEast = [east, "apc"] call gradTnT_fnc_getPointsForKeySide;
+private _carEast = [east, "car"] call gradTnT_fnc_getPointsForKeySide;
+private _crewEast = [east, "crew"] call gradTnT_fnc_getPointsForKeySide;
+
+systemChat str _flagTickWest;
+
+private _results_west_total = [west] call gradTnT_fnc_getPointsForSide;
+private _results_east_total = [east] call gradTnT_fnc_getPointsForSide;
+
+private _results_west = [nil, _flagTickWest, _depotWest, _bridgeWest, _tankWest, _apcWest, _carWest, _crewWest, _results_west_total];
+private _results_east = [nil, _flagTickEast, _depotEast, _bridgeEast, _tankEast, _apcEast, _carEast, _crewEast, _results_east_total];
 
 if (hasInterface) then {
 
@@ -61,32 +64,33 @@ if (hasInterface) then {
     private _screenWidth = safeZoneW;
     private _screenHeight = safeZoneH;
 
-    private _columnWidth = _screenWidth/40;
-    private _rowHeight = _screenHeight/40;
+    private _columnWidth = _screenWidth/30;
+    private _rowHeight = _screenHeight/60;
 
     disableSerialization;
 
-    // private _iconKilled = "\A3\ui_f\data\igui\cfg\mptable\killed_ca.paa";
+    private _iconObjective = "\A3\ui_f\data\Map\Markers\HandDrawn\objective_ca.paa";
+    private _iconDepots = "\A3\ui_f\data\Map\Markers\HandDrawn\flag_ca.paa";
+    private _iconBridges = "\A3\ui_f\data\Map\Markers\HandDrawn\join_CA.paa";
+    private _iconArmored = "\A3\ui_f\data\igui\cfg\mptable\armored_ca.paa";
+    private _iconAPC = "\A3\ui_f\data\Map\Vehicleicons\iconAPC_ca.paa";
+    private _iconCar = "\A3\ui_f\data\Map\Vehicleicons\iconCar_ca.paa";
     private _iconInf = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
-    private _iconSoft = "\A3\ui_f\data\igui\cfg\mptable\soft_ca.paa";
-    // private _iconArmored = "\A3\ui_f\data\igui\cfg\mptable\armored_ca.paa";
-    private _iconFuel = "USER\winstats\drop2.paa";
     private _iconTotal = "\A3\ui_f\data\igui\cfg\mptable\total_ca.paa";
     // text = "\A3\ui_f\data\igui\cfg\mptable\air_ca.paa";
 
     private _columns = ["", "Blufor", "Opfor"];
-    private _picturePath = ["", _iconInf, _iconSoft, _iconFuel, _iconTotal];
-    private _picturePathDescription = ["", "Infanterie", "Autos", "Treibstoff", "Insgesamt"];
+    private _picturePath = ["", _iconObjective, _iconDepots, _iconBridges, _iconArmored, _iconAPC, _iconCar, _iconInf, _iconTotal];
+    private _picturePathDescription = ["", "Objective", "Depots", "Bridges", "Tank", "APC", "Cars", "Crew", "Total"];
 
 
-    private _totalNumbers = [_resultTotalNumber_west, _resultTotalNumber_east, _resultTotalNumber_independent];
+    private _totalNumbers = [_resultTotalNumber_west, _resultTotalNumber_east];
     _totalNumbers sort false;
 
     // hint str _totalNumbers;
 
-    private _winner = _totalNumbers select 0 select 1;
-    private _draw = _resultTotal_west isEqualTo _resultTotal_east &&
-                    _resultTotal_independent isEqualTo _resultTotal_west;
+    private _winner = _totalNumbers select 0;
+    private _draw = _resultTotalNumber_west isEqualTo _resultTotalNumber_east;
                     
 
     private _display = findDisplay 46 createDisplay "RscDisplayEmpty";
@@ -117,13 +121,13 @@ if (hasInterface) then {
     _bgHeadline ctrlsetFont "RobotoCondensedBold";
     _bgHeadline ctrlSetBackgroundColor [0,0,0,0];
     _bgHeadline ctrlSetStructuredText parseText ("<t size='3' align='center' color='#333333'>" + _resultText + "</t>");
-    _bgHeadline ctrlSetPosition [safezoneX, safeZoneY, _screenWidth, _rowHeight*3];
+    _bgHeadline ctrlSetPosition [safezoneX, safeZoneY, _screenWidth, _rowHeight*5];
     _bgHeadline ctrlCommit 0;
 
 
 
 
-    for "_i" from 1 to 5 do {
+    for "_i" from 1 to 3 do {
 
         private _multiplicator = _i * 5;
 
@@ -146,22 +150,22 @@ if (hasInterface) then {
             _columnWidth * _multiplicator + safezoneX + _columnWidth,
             _rowHeight * 4 + safezoneY + _rowHeight * 2,
             _columnWidth * 4,
-            _rowHeight * 2.5
+            _rowHeight * 4
         ];
         _headline ctrlCommit 0;
 
 
-        for "_j" from 1 to 4 do {
+        for "_j" from 1 to 8 do {
 
-                private _textFadeResult = if (_j == 4) then { 0 } else { 0.5 };
+                private _textFadeResult = if (_j == 8) then { 0 } else { 0.5 };
 
                 if (_i == 1) then {
                     private _picture = _display ctrlCreate ["RscPictureKeepAspect", -1];
                     _picture ctrlSetPosition [
                         _columnWidth * _multiplicator + safezoneX  + _columnWidth + _columnWidth/2,
-                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 6,
+                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 5.5,
                         _columnWidth * 2,
-                        _rowHeight * 2
+                        _rowHeight * 3
                     ];
                     _picture ctrlSetBackgroundColor [0,0,0,0];
                     _picture ctrlSetText (_picturePath select _j);
@@ -174,12 +178,12 @@ if (hasInterface) then {
                     private _subline = _display ctrlCreate ["RscStructuredText", -1];
                     _subline ctrlsetFont "RobotoCondensedBold";
                     _subline ctrlSetBackgroundColor [0,0,0,0];
-                    _subline ctrlSetStructuredText parseText ("<t size='2' align='center' shadow='0' color='#ffffff'>" + (_results_west select _j) + "</t>");
+                    _subline ctrlSetStructuredText parseText ("<t size='2' align='center' shadow='0' color='#ffffff'>" + str (_results_west select _j) + "</t>");
                     _subline ctrlSetPosition [
                         _columnWidth * _multiplicator + safezoneX  + _columnWidth,
-                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 6,
+                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 5.5,
                         _columnWidth * 4,
-                        _rowHeight * 2
+                        _rowHeight * 3
                     ];
                     _subline ctrlSetFade _textFadeResult;
                     _subline ctrlCommit 0;
@@ -189,27 +193,12 @@ if (hasInterface) then {
                     private _subline = _display ctrlCreate ["RscStructuredText", -1];
                     _subline ctrlsetFont "RobotoCondensedBold";
                     _subline ctrlSetBackgroundColor [0,0,0,0];
-                    _subline ctrlSetStructuredText parseText ("<t size='2' align='center' shadow='0' color='#ffffff'>" + (_results_east select _j) + "</t>");
+                    _subline ctrlSetStructuredText parseText ("<t size='2' align='center' shadow='0' color='#ffffff'>" + str (_results_east select _j) + "</t>");
                     _subline ctrlSetPosition [
                         _columnWidth * _multiplicator + safezoneX  + _columnWidth,
-                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 6,
+                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 5.5,
                         _columnWidth * 4,
-                        _rowHeight * 2
-                    ];
-                    _subline ctrlSetFade _textFadeResult;
-                    _subline ctrlCommit 0;
-                };
-
-                if (_i == 4) then {
-                    private _subline = _display ctrlCreate ["RscStructuredText", -1];
-                    _subline ctrlsetFont "RobotoCondensedBold";
-                    _subline ctrlSetBackgroundColor [0,0,0,0];
-                    _subline ctrlSetStructuredText parseText ("<t size='2' align='center' shadow='0' color='#ffffff'>" + (_results_independent select _j) + "</t>");
-                    _subline ctrlSetPosition [
-                        _columnWidth * _multiplicator + safezoneX  + _columnWidth,
-                        (_j * (_rowHeight * 6) + safezoneY) + _rowHeight * 6,
-                        _columnWidth * 4,
-                        _rowHeight * 2
+                        _rowHeight * 3
                     ];
                     _subline ctrlSetFade _textFadeResult;
                     _subline ctrlCommit 0;

@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={11872.399,103.95847,7357.4536};
-		dir[]={-0.29691136,-0.42614824,-0.8545416};
-		up[]={-0.13986379,0.90465337,-0.40254247};
-		aside[]={-0.94460672,7.4505806e-009,0.32820457};
+		dir[]={0.24375629,-0.65325564,-0.71682632};
+		up[]={0.21031213,0.75713742,-0.61847538};
+		aside[]={-0.94675857,0,-0.32194459};
 	};
 };
 binarizationWanted=0;
@@ -16334,6 +16334,7 @@ class Mission
 			};
 			id=837;
 			type="gm_ge_army_bo105m_vbh";
+			atlOffset=-0.0091171265;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -33900,6 +33901,7 @@ class Mission
 			};
 			id=1372;
 			type="gm_gc_army_shelterlakII_repair";
+			atlOffset=-0.001449585;
 		};
 		class Item488
 		{
@@ -34108,7 +34110,7 @@ class Mission
 			};
 			id=1401;
 			type="gm_ge_army_bpz2a0";
-			atlOffset=3.0517578e-005;
+			atlOffset=2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0

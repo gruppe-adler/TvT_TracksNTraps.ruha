@@ -14,7 +14,7 @@ if (isServer) then {
         _args params ["_flag"];
 
         private _flagOwner = _flag getVariable ["gradTnT_flagOwner", sideUnknown];
-        ["gradTnT_points", ["flag", _flagOwner]] call CBA_fnc_serverEvent;
+        ["gradTnT_points", ["flagTick", _flagOwner]] call CBA_fnc_serverEvent;
 
     }, 60, [_flag]] call CBA_fnc_addPerFrameHandler;
 };

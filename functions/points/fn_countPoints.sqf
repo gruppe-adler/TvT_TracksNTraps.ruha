@@ -37,10 +37,16 @@
         default {};
     };
 
-    private _pointsKey = format ["gradTnT_points_%1", _side];
+    private _pointsKey = format ["gradTnT_points_%1_%2", _side, _type];
     private _pointsExisting = missionNameSpace getVariable [_pointsKey, 0];
     private _newTotal = _pointsExisting + _pointsAdded;
     missionNameSpace setVariable [_pointsKey, _newTotal, true];
+
+
+    private _pointsTotalKey = format ["gradTnT_pointsTotal_%1", _side];
+    private _pointsTotalExisting = missionNameSpace getVariable [_pointsTotalKey, 0];
+    private _newGlobalTotal = _pointsTotalExisting + _pointsAdded;
+    missionNameSpace setVariable [_pointsKey, _newGlobalTotal, true];
 
     // save with timestamp for later evaluation
     _history pushBack [_newTotal, _side, CBA_missionTime];
