@@ -54,10 +54,12 @@ private _depotObjects = [];
 
 private _depot = _depotObjects select 0;
 
-private _depotHelper = "rhs_ec400" createVehicle [0,0,0];
+private _depotHelper = "DemoCharge_F" createVehicle [0,0,0];
 _depotHelper attachTo [_depot,[1,0,1]];
 detach _depotHelper; // because setvectordirandup refuses to work otherwise
 _depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+
+
 
 _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
 _depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
@@ -79,13 +81,12 @@ _depot setVariable ["gradTnT_depotSide", _side, true];
 if (_side == west) then {
     [_depot, "gm_ge_army_Leopard1a5"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
 
-    [west, _depot] call BIS_fnc_addRespawnPosition;
-    private _id = [west, _depot, "Depot"] call BIS_fnc_addRespawnPosition;
+    private _id = [west, getPos _depot, "Depot"] remoteExec ["BIS_fnc_addRespawnPosition", 2];
     _depot setVariable ["gradTnT_respawnID", _id, true];
 } else {
     [_depot, "gm_gc_army_t55am2b"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
 
-    private _id = [east, _depot, "Depot"] call BIS_fnc_addRespawnPosition;
+    private _id = [east, getPos _depot, "Depot"] remoteExec ["BIS_fnc_addRespawnPosition", 2];
     _depot setVariable ["gradTnT_respawnID", _id, true];
 };
 

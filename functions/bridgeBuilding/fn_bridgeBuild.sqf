@@ -45,7 +45,7 @@ _bridge setDir _dir;
 
 _bridge enableSimulationGlobal false;
 
-private _bridgeHelper = "rhs_ec400" createVehicle [0,0,0];
+private _bridgeHelper = "DemoCharge_F" createVehicle [0,0,0];
 _bridgeHelper attachTo [_bridge,[3,0,1.1]];
 
 _bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
