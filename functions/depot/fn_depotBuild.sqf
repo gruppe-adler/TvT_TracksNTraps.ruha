@@ -44,10 +44,10 @@ private _depotObjects = [];
 
     private _depotPart = _classname createVehicle [0,0,0];
     private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
-    _depotPart setPos _position;
-    _depotPart setDir (getDir player + _offsetDir);
     _depotPart enableSimulationGlobal false;
-
+    _depotPart setDir (getDir player + _offsetDir);
+    _depotPart setPos _position;
+    
     _depotObjects pushBackUnique _depotPart;
 
 } forEach _depotDummyClasses;
