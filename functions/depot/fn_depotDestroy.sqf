@@ -28,3 +28,8 @@ private _depotSide = _depot getVariable ["gradTnT_depotSide", sideUnknown];
 if (_side != _depotSide) then {
     ["gradTnT_points", ["depot", _side]] call CBA_fnc_serverEvent;
 };
+
+private _id = _depot getVariable ["gradTnT_respawnID", []];
+if (count _id > 0) then {
+    _id call BIS_fnc_removeRespawnPosition;
+};
