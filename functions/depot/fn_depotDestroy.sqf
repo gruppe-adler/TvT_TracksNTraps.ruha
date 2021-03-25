@@ -29,7 +29,5 @@ if (_side != _depotSide) then {
     ["gradTnT_points", ["depot", _side]] call CBA_fnc_serverEvent;
 };
 
-private _id = _depot getVariable ["gradTnT_respawnID", []];
-if (count _id > 0) then {
-    _id call BIS_fnc_removeRespawnPosition;
-};
+[_depotSide, _depot, "Depot", false] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
+[west, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];

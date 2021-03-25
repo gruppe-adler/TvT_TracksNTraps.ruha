@@ -81,13 +81,11 @@ _depot setVariable ["gradTnT_depotSide", _side, true];
 if (_side == west) then {
     [_depot, "gm_ge_army_Leopard1a5"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
 
-    private _id = [west, getPos _depot, "Depot"] remoteExec ["BIS_fnc_addRespawnPosition", 2];
-    _depot setVariable ["gradTnT_respawnID", _id, true];
+    [west, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
 } else {
     [_depot, "gm_gc_army_t55am2b"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
 
-    private _id = [east, getPos _depot, "Depot"] remoteExec ["BIS_fnc_addRespawnPosition", 2];
-    _depot setVariable ["gradTnT_respawnID", _id, true];
+    [east, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
 };
 
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;

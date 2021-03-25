@@ -60,6 +60,7 @@ class gradTnT {
 
       class depotActionDeploy;
       class depotActionDestroy;
+      class depotAddRespawn;
       class depotBuild;
       class depotBuildAbort;
       class depotDestroy;
