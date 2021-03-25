@@ -1,4 +1,4 @@
-if (!isServer) exitWith {};
+// run on server only
 
 params ["_side", "_object", "_name", ["_add", false]];
 

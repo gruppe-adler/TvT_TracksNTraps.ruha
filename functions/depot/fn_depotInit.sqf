@@ -8,6 +8,8 @@ gradTnT_DEPOTS_VEHICLE_DISTANCE = 30; // maximum distance vehicle is allowed to 
     private _unit = _x;
 
     if (_unit getVariable ["ACE_IsEngineer", 0] > 0) then {
-        [] remoteExecCall ["gradTnT_fnc_depotActionDeploy", _unit, true];
+        if (!isMultiplayer && isPlayer _unit || isMultiplayer) then {
+            [] remoteExecCall ["gradTnT_fnc_depotActionDeploy", _unit, true];
+        };
     };
 } forEach (playableUnits + switchableUnits);
