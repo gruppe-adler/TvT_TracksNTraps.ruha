@@ -64,11 +64,12 @@ onLoadMissionTime = True;
 disabledAI = 0; //1
 enableDebugConsole = 1;
 loadScreen = "pics\logo.paa";
-respawnDelay = 9999999;
 
 respawn = 3;
 respawnButton = 1;
-respawnTemplates[] = {"MenuPosition"};
+respawnTemplates[] = {"MenuPosition", "Counter"};
+respawnOnStart = -1;
+respawnDelay = 10;
 
 class Header
 {
