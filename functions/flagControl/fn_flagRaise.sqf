@@ -49,7 +49,6 @@ if (flagAnimationPhase _flag != 0) then {
 
             if (flagAnimationPhase _flag < 1) then {
                 [_flag, ((flagAnimationPhase _flag) + 0.05)] call BIS_fnc_animateFlag;
-                [_unit, "ace_gestures_engageStandLowered"] call ace_common_fnc_doGesture;
             } else {
                 [_handle] call CBA_fnc_removePerFrameHandler;
 
