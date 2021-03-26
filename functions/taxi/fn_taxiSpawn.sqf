@@ -13,7 +13,7 @@ private _classname = "gm_ge_army_iltis_cargo";
 if (_side == west) then {
     _classname = "gm_ge_army_iltis_cargo";
 } else {
-    _classname = "LOP_NK_UAZ";   // todo add GM UAZ
+    _classname = "gm_gc_bgs_uaz469_cargo";
 };
 
 private _result = [_position, _dir, _classname, _side] call BIS_fnc_spawnVehicle;

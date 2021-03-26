@@ -218,7 +218,7 @@ if (hasInterface) then {
         };
     };
 
-    sleep 16;
+    sleep 10;
     _display displayRemoveAllEventHandlers "KeyDown";
     _display closeDisplay 1;
 
