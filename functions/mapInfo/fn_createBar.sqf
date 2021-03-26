@@ -1,5 +1,16 @@
 private _display = findDisplay 12 createDisplay "RscDisplayEmpty";  
       
+private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];      
+private _sideHeldByValue = _flag getVariable ["flagOwner", sideUnknown];
+private _objHeldByValue = "";
+switch (_sideHeldByValue) do { 
+      case west : {  _objHeldByValue = "Germany"; }; 
+      case east : {  _objHeldByValue = "Sovjets"; }; 
+      case sideUnknown : {  _objHeldByValue = "no one"; }; 
+      default {  /*...code...*/ }; 
+};
+
+
 private _ctrlHeadline = _display ctrlCreate ["RscStructuredText", -1];  
 _ctrlHeadline ctrlSetPosition [0, safeZoneY + 0.06, 1, 0.1];  
 _ctrlHeadline ctrlsetstructuredText parseText "<t align='center'>TRACKS N TRAPS</t>"; 
@@ -17,14 +28,14 @@ _objHeldByLabel ctrlSetTextColor [1,1,1,0.5];
 _objHeldByLabel ctrlSetBackgroundColor [0,0,0,0];  
 _objHeldByLabel ctrlCommit 0; 
  
-private _objHeldByValue = _display ctrlCreate ["RscStructuredText", -1];  
-_objHeldByValue ctrlSetPosition [0.01, safeZoneY + 0.06 + 0.04, 1, 0.1];  
-_objHeldByValue ctrlsetstructuredText parseText "<t align='left' shadow='0'>NO ONE</t>"; 
-_objHeldByValue ctrlSetFont "RobotoCondensedBold";  
-_objHeldByValue ctrlSetFontHeight 0.6;   
-_objHeldByValue ctrlSetTextColor [1,1,1,1]; 
-_objHeldByValue ctrlSetBackgroundColor [0,0,0,0];  
-_objHeldByValue ctrlCommit 0;
+private _ctrlObjHeldByValue = _display ctrlCreate ["RscStructuredText", -1];  
+_ctrlObjHeldByValue ctrlSetPosition [0.01, safeZoneY + 0.06 + 0.04, 1, 0.1];  
+_ctrlObjHeldByValue ctrlsetstructuredText parseText "<t align='left' shadow='0'>NO ONE</t>"; 
+_ctrlObjHeldByValue ctrlSetFont "RobotoCondensedBold";  
+_ctrlObjHeldByValue ctrlSetFontHeight 0.6;   
+_ctrlObjHeldByValue ctrlSetTextColor [1,1,1,1]; 
+_ctrlObjHeldByValue ctrlSetBackgroundColor [0,0,0,0];  
+_ctrlObjHeldByValue ctrlCommit 0;
 
 private _battleTimeLabel = _display ctrlCreate ["RscStructuredText", -1];  
 _battleTimeLabel ctrlSetPosition [1, safeZoneY + 0.06 + 0.02, 1, 0.1];  
@@ -44,4 +55,4 @@ _battleTimeValue ctrlSetBackgroundColor [0,0,0,0];
 _battleTimeValue ctrlCommit 0;
 
 
-[_ctrlHeadline, _objHeldByLabel, _objHeldByValue, _battleTimeLabel, _battleTimeValue]
+[_ctrlHeadline, _objHeldByLabel, _ctrlObjHeldByValue, _battleTimeLabel, _battleTimeValue]
