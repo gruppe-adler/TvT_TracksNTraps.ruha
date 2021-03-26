@@ -102,6 +102,7 @@ class gradTnT {
     class mapInfo {
       file = "functions\mapInfo";
 
+       class createBar;
        class topBar;
     };
 
