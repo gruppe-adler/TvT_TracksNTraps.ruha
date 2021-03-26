@@ -22,7 +22,7 @@ publicVariable "WEATHER_FOG";
 GRAD_REPLAY_PRECISION = ["GRAD_REPLAY_PRECISION", 4] call BIS_fnc_getParamValue;
 publicVariable "GRAD_REPLAY_PRECISION"; // clients need to know this
 
-PREPARATION_TIME = [3, ["PREPARATION_TIME", 0] call BIS_fnc_getParamValue] select (!DEBUG_MODE);
+PREPARATION_TIME = ["PREPARATION_TIME", 0] call BIS_fnc_getParamValue;
 publicVariable "PREPARATION_TIME";
 
 // execute weather/time settings
@@ -83,16 +83,9 @@ gradTnT_fnc_setCustomWeather = {
     0.001]] call BIS_fnc_selectRandomWeighted;
   };
 
-  if (str WEATHER_WIND isEqualTo "-1") then {
-    WEATHER_WIND = (random 2) - (random 4);
-  };
-
-  diag_log format ["BC setup: setting wind to %1", WEATHER_WIND];
-
   // basics
   10 setOvercast WEATHER_OVERCAST;
   10 setFog WEATHER_FOG;
-  setWind [WEATHER_WIND, WEATHER_WIND, true];
   10 setWindForce 0.1;
 
   // add specials dependent on values

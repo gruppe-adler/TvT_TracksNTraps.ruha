@@ -133,7 +133,7 @@ class cfgSounds
     class intro_fx
     {
         name = "intro_fx";
-        sound[] = {"sounds\intro.ogg",5,1,50};
+        sound[] = {"sounds\intro.ogg",2,1,50};
         titles[] = { 0, "" };
     };
 };
