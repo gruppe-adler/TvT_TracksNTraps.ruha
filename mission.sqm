@@ -26346,7 +26346,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, east] call gradTnT_fnc_initVehicle;}";
+				init="call{[this, nil, east] call gradTnT_fnc_initVehicle;}";
 				textures="gm_ge_wdl";
 			};
 			id=1424;
@@ -26771,7 +26771,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, east] call gradTnT_fnc_initVehicle;}";
+				init="call{[this, nil, east] call gradTnT_fnc_initVehicle;}";
 				textures="gm_ge_wdl";
 			};
 			id=1427;

@@ -5,20 +5,20 @@
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
- * 1: Default Callsign. Array including two or three strings [prefix, suffix, tacticalNumber] <ARRAY>
+ * 1: Default Callsign. Array including two or three strings [prefix, suffix, tacticalNumber] (Optional) <ARRAY>
+ * 2: Overwrite vehicle side  (Optional) <SIDE>
  *
  * Return Value:
  * NONE
  *
  * Example:
- * [this, ["B", "2"]] call gradTnT_fnc_initVehicle;
+ * [this, ["B", "2"], east] call gradTnT_fnc_initVehicle;
  *
  * Public: No
  */
 
 params [
-    ["_veh", objNull, [objNull]],
-    ["_side", sideUnknown]
+    ["_veh", objNull, [objNull]]
 ];
 
 // exit if this is no the server
@@ -40,10 +40,7 @@ private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]
 [_veh, _callsign] call gradTnT_callsign_fnc_set;
 [_veh] remoteExecCall ["gradTnT_callsign_fnc_addAction", 0, true];
 
-
-if (_side == sideUnknown) then {
-    _side = [_veh, true] call BIS_fnc_objectSide;
-};
+private _side = param [2, [_veh, true] call BIS_fnc_objectSide, [sideUnknown]];
 _veh setVariable ["gradTnT_vehicleSide", _side, true];
 
 // flag for capturing only on non tank vehicles
