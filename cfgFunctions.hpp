@@ -111,10 +111,13 @@ class gradTnT {
 
       class clearForest;
       class deleteBorder { postInit = 1; };
-      class intro { postInit = 1; };
+      class initGlobal { postInit = 1; };
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
       class waitForTimeUp { postInit = 1; };
+
+      class startPreparationTime;
+      class preparationTimeCountdown;
     };
 
     class points {

@@ -15,3 +15,14 @@
     },time] call CBA_fnc_waitUntilAndExecute;
 
 }] call CBA_fnc_addEventHandler;
+
+
+// prevent bugging out on jip
+[{
+    !isNil "PREPARATION_TIME"  
+},{
+        // start replay record on server and init replay on client
+    [{
+        call GRAD_replay_fnc_init;
+    }, [], PREPARATION_TIME] call CBA_fnc_waitAndExecute;    
+}, []] call CBA_fnc_waitUntilAndExecute;

@@ -115,3 +115,5 @@ gradTnT_fnc_setCustomWeather = {
 setDate [2015, 2, 1, TIME_OF_DAY, 1]; // set to 5:00 for perfect full moon
 
 call gradTnT_fnc_setCustomWeather;
+
+[PREPARATION_TIME] call gradTnT_fnc_startPreparationTime;

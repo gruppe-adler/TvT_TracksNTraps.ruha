@@ -16,6 +16,10 @@ class CfgFunctions {
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
 };
 
+class rscTitles {
+    #include "functions\missionSetup\rscTitles.hpp"
+};
+
 disableRemoteSensors = true;
 
 class Params
