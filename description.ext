@@ -18,6 +18,12 @@ class CfgFunctions {
 
 disableRemoteSensors = true;
 
+class Params
+{
+    #include "params\params.hpp"
+
+};
+
 class gradTnT_Points {
     flagTick = 100;
     depotTick = 50;
@@ -121,6 +127,13 @@ class cfgSounds
     {
         name = "bongs4";
         sound[] = {"sounds\bongs4.ogg",5,1,50};
+        titles[] = { 0, "" };
+    };
+
+    class intro_fx
+    {
+        name = "intro_fx";
+        sound[] = {"sounds\intro.ogg",5,1,50};
         titles[] = { 0, "" };
     };
 };

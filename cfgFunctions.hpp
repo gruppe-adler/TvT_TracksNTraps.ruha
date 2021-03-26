@@ -99,11 +99,18 @@ class gradTnT {
       class loadoutInit { postInit = 1; };
     };
 
+    class mapInfo {
+      file = "functions\mapInfo";
+
+       class topBar;
+    };
+
     class missionSetup {
       file = "functions\missionSetup";
 
       class clearForest;
       class deleteBorder { postInit = 1; };
+      class intro { postInit = 1; };
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
     };

@@ -1,3 +1,10 @@
+addMissionEventHandler
+[   "Map",
+    {   params ["_isOpened","_isForced"];
+        // do what you want
+    }
+];
+
 private _display = findDisplay 12 createDisplay "RscDisplayEmpty";  
   
 private _ctrlHeadline = _display ctrlCreate ["RscStructuredText", -1];  
