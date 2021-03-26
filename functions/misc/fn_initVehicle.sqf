@@ -17,7 +17,8 @@
  */
 
 params [
-    ["_veh", objNull, [objNull]]
+    ["_veh", objNull, [objNull]],
+    ["_side", sideUnknown]
 ];
 
 // exit if this is no the server
@@ -39,8 +40,21 @@ private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]
 [_veh, _callsign] call gradTnT_callsign_fnc_set;
 [_veh] remoteExecCall ["gradTnT_callsign_fnc_addAction", 0, true];
 
-// flag for capturing only on engineer vehicles
-private _side = [_veh, true] call BIS_fnc_objectSide;
-if (_veh getVariable ["ace_isRepairVehicle", -1] == 1) then {
+
+if (_side == sideUnknown) then {
+    _side = [_veh, true] call BIS_fnc_objectSide;
+};
+_veh setVariable ["gradTnT_vehicleSide", _side, true];
+
+// flag for capturing only on non tank vehicles
+if (!(_veh isKindOf "gm_tracked_Tank_base")) then {
     [_veh] remoteExecCall ["gradTnT_fnc_flagTakeAction", _side, true];
+};
+
+
+// assign side to vehicle
+if (_veh isKindOf "gm_ge_army_bpz2a0") then {
+    _veh setVariable ["gradTnT_isRepairTank", true, true];
+} else {
+    _veh setVariable ["gradTnT_isRepairTank", false, true]; // todo necessary to set respawn var even when false?
 };
