@@ -103,7 +103,7 @@ class gradTnT {
       file = "functions\mapInfo";
 
        class createBar;
-       class topBar;
+       class topBar { postInit = 1; };
     };
 
     class missionSetup {
@@ -114,6 +114,7 @@ class gradTnT {
       class intro { postInit = 1; };
       class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
+      class waitForTimeUp { postInit = 1; };
     };
 
     class points {

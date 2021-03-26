@@ -1,5 +1,4 @@
-addMissionEventHandler
-["Map",{   
+addMissionEventHandler ["Map",{   
     params ["_isOpened","_isForced"];
 
     if (_isOpened) then {

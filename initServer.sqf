@@ -25,6 +25,11 @@ publicVariable "GRAD_REPLAY_PRECISION"; // clients need to know this
 PREPARATION_TIME = ["PREPARATION_TIME", 0] call BIS_fnc_getParamValue;
 publicVariable "PREPARATION_TIME";
 
+LENGTH_OF_BATTLE = ["LENGTH_OF_BATTLE", 0] call BIS_fnc_getParamValue;
+publicVariable "LENGTH_OF_BATTLE";
+
+[LENGTH_OF_BATTLE] call BIS_fnc_countDown;
+
 // execute weather/time settings
 gradTnT_fnc_setCustomWeather = {
 
