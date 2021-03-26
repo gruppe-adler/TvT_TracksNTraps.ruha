@@ -42,6 +42,8 @@ private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]
 
 private _side = param [2, [_veh, true] call BIS_fnc_objectSide, [sideUnknown]];
 _veh setVariable ["gradTnT_vehicleSide", _side, true];
+_veh setVariable ["tf_side", str _side, true];
+_veh setVariable ["tf_hasRadio", true, true];
 
 // flag for capturing only on non tank vehicles
 if (!(_veh isKindOf "gm_tracked_Tank_base")) then {
