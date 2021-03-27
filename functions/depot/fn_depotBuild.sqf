@@ -90,7 +90,6 @@ if (_side == west) then {
 [_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
 
 _depot setVariable ["gradTnT_vehicleSide", _side, true];
-_depot setVariable ["gradTnT_callsign", ["", ""], true];
 
 [_depot, "depot"] spawn gradTnT_bft_fnc_add;
 

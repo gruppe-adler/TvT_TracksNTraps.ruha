@@ -121,35 +121,39 @@ private _iconSize2 = 50;
     };
 
     // callsign
-    (_veh getVariable ["gradTnT_callsign", ["A", "1"]]) params ["_prefix", "_suffix"];
+    (_veh getVariable ["gradTnT_callsign", ["", ""]]) params ["_prefix", "_suffix"];
 
-    _control drawIcon 
-    [
-        "#(rgb,1,1,1)color(1,1,1,0)",
-        [0.1,0.1,0.1, _opacity],
-        _pos,
-        _iconSize2,
-        _iconSize2,
-        0,
-        _prefix,
-        0,
-        0.05,
-        "RobotoCondensedBold",
-        "left"
-    ];
+    if (_prefix isNotEqualTo "")  then {
+        _control drawIcon 
+        [
+            "#(rgb,1,1,1)color(1,1,1,0)",
+            [0.1,0.1,0.1, _opacity],
+            _pos,
+            _iconSize2,
+            _iconSize2,
+            0,
+            _prefix,
+            0,
+            0.05,
+            "RobotoCondensedBold",
+            "left"
+        ];
+    };
 
-    _control drawIcon 
-    [
-        "#(rgb,1,1,1)color(1,1,1,0)",
-        [0.1,0.1,0.1, _opacity],
-        _pos,
-        _iconSize2,
-        _iconSize2,
-        0,
-        _suffix,
-        0,
-        0.05,
-        "RobotoCondensedBold",
-        "right"
-    ];  
+    if (_suffix isNotEqualTo "")  then {
+        _control drawIcon 
+        [
+            "#(rgb,1,1,1)color(1,1,1,0)",
+            [0.1,0.1,0.1, _opacity],
+            _pos,
+            _iconSize2,
+            _iconSize2,
+            0,
+            _suffix,
+            0,
+            0.05,
+            "RobotoCondensedBold",
+            "right"
+        ];
+    }; 
 } forEach _vehicles;

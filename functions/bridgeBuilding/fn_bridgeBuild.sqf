@@ -59,7 +59,6 @@ private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBu
 hintSilent _bridgesLeft;
 
 _bridge setVariable ["gradTnT_vehicleSide", side player, true];
-_bridge setVariable ["gradTnT_callsign", ["", ""], true];
 
 [_bridge, "bridge"] call gradTnT_bft_fnc_add;
 
