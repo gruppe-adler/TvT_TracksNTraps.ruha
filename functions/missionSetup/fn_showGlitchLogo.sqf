@@ -16,6 +16,7 @@ params ["_fadeIn", "_duration", ["_isLast", false]];
     private _position = (player getRelPos [600, 0]);
     _position set [2,100];
     _texture setPos _position;
+    _texture setVectorUp [0,0,1];
 
     _texture setObjectTexture [0, "pics\glitch1.paa"];
     _texture setObjectScale 25;

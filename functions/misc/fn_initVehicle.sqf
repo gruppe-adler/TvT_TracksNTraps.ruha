@@ -31,6 +31,7 @@ clearItemCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
 
+
 private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]), [[]], [2, 3]];
 [_veh, _callsign] call gradTnT_callsign_fnc_set;
 [_veh] remoteExecCall ["gradTnT_callsign_fnc_addAction", 0, true];
@@ -56,4 +57,22 @@ if (_veh isKindOf "gm_ge_army_bpz2a0") then {
     _veh setVariable ["gradTnT_isRepairTank", true, true];
 } else {
     _veh setVariable ["gradTnT_isRepairTank", false, true]; // todo necessary to set respawn var even when false?
+};
+
+
+// default items for each vehicle
+_veh addItemCargoGlobal ["ItemGPS", 1];
+_veh addItemCargoGlobal ["ACE_EntrenchingTool", 2];
+_veh addItemCargoGlobal ["ACE_fieldDressing", 2];
+_veh addItemCargoGlobal ["ACE_epinephrine", 2];
+_veh addItemCargoGlobal ["ACE_morphine", 2];
+_veh addItemCargoGlobal ["ACE_tourniquet", 2];
+_veh addItemCargoGlobal ["ACE_MapTools", 2];
+_veh addItemCargoGlobal ["ACE_Flashlight_XL50", 2];
+_veh addItemCargoGlobal ["ACE_wirecutter", 2];
+
+if (_side == west) then {
+    _veh addItemCargoGlobal ["ACE_key_west", 2];
+} else {
+    _veh addItemCargoGlobal ["ACE_key_east", 2];
 };
