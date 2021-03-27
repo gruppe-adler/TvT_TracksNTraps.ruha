@@ -1,14 +1,6 @@
 #include "functions\callsign\CfgFunctions.hpp"
+#include "functions\bft\CfgFunctions.hpp"
 class gradTnT {
-    class bft {
-        file = "functions\bft";
-
-        class bftAdd;
-        class bftDrawIcons;
-        class bftInit { postInit = 1; };
-        class bftMarkerDead;
-    };
-
     class bpz {
         file = "functions\bpz";
 

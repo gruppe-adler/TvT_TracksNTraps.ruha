@@ -3,7 +3,7 @@ params ["_veh"];
 _veh setVariable ["gradTnT_isTaxi", true, true];
 
 [_veh] remoteExecCall ["gradTnT_fnc_addInteraction", 0, true];
-[_veh, "", ""] spawn gradTnT_fnc_bftAdd;
+[_veh] spawn gradTnT_bft_fnc_add;
 
 
 [{

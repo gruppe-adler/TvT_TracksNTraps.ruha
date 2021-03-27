@@ -34,7 +34,7 @@ clearBackpackCargoGlobal _veh;
 [_veh] call gradTnT_fnc_vehicleRespawnAdd;
 [_veh] call gradTnT_fnc_addExplosiveAction;
 [_veh] call gradTnT_fnc_damageHandling;
-[_veh] call gradTnT_fnc_bftAdd;
+[_veh] call gradTnT_bft_fnc_add;
 
 private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]), [[]], [2, 3]];
 [_veh, _callsign] call gradTnT_callsign_fnc_set;

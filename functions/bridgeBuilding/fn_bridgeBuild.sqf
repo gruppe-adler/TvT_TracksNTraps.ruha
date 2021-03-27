@@ -59,7 +59,7 @@ private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBu
 hintSilent _bridgesLeft;
 
 
-[_bridge, "", ""] spawn gradTnT_fnc_bftAdd;
+[_bridge] call gradTnT_bft_fnc_add;
 
 
 [_bridge] remoteExec ["gradTnT_fnc_bridgeActionDestroy", 0, true];
