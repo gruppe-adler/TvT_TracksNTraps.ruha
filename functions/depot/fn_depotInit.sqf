@@ -4,12 +4,6 @@ gradTnT_DEPOTS_VEHICLE_EAST = "gm_gc_army_bmp1sp2"; // empty string to allow pla
 gradTnT_DEPOTS_VEHICLE_DISTANCE = 30; // maximum distance vehicle is allowed to be
 
 
-{
-    private _unit = _x;
-
-    if (_unit getVariable ["ACE_IsEngineer", 0] > 0) then {
-        if (!isMultiplayer && isPlayer _unit || isMultiplayer) then {
-            [] remoteExecCall ["gradTnT_fnc_depotActionDeploy", _unit, true];
-        };
-    };
-} forEach (playableUnits + switchableUnits);
+if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
+    call gradTnT_fnc_depotActionDeploy;
+};
