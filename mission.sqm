@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11897.688,118.76128,7375.498};
-		dir[]={-0.11508099,-0.52418464,-0.84379631};
-		up[]={-0.070835181,0.85160488,-0.51937747};
-		aside[]={-0.99082893,3.2247044e-008,0.13513401};
+		pos[]={11865.888,130.72089,7353.2188};
+		dir[]={0.17865294,-0.53869796,-0.82339787};
+		up[]={0.11422932,0.84248549,-0.52647412};
+		aside[]={-0.97730368,1.4447141e-007,-0.21204266};
 	};
 };
 binarizationWanted=0;
@@ -19140,7 +19140,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11871.961,100.1794,7319.7129};
+						position[]={11869.596,100.06481,7321.5723};
 						angles[]={0.04796192,4.8779483,0.0060001095};
 					};
 					side="East";
@@ -19152,7 +19152,7 @@ class Mission
 					};
 					id=1357;
 					type="gm_gc_army_crew_mpiaks74nk_80_blk";
-					atlOffset=7.6293945e-006;
+					atlOffset=-0.0019683838;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19201,7 +19201,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11871.036,100.06877,7321.6958};
+						position[]={11868.671,99.954185,7323.5552};
 						angles[]={0.053948127,4.8779507,0.0059864791};
 					};
 					side="East";
@@ -19262,7 +19262,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11872.584,100.02328,7322.71};
+						position[]={11870.219,99.908691,7324.5693};
 						angles[]={0.053945597,4.8779483,0.0059901671};
 					};
 					side="East";
@@ -24603,7 +24603,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11871.887,102.3555,7331.3379};
+				position[]={11869.842,102.38111,7330.708};
 				angles[]={0,5.1029377,0};
 			};
 			side="Empty";
@@ -24615,7 +24615,6 @@ class Mission
 			};
 			id=1416;
 			type="gm_gc_army_bmp1sp2";
-			atlOffset=-9.1552734e-005;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -34,7 +34,7 @@ private _side = [_veh] call gradTnT_fnc_side;
 
 ["gradTnT_bft_add", [_veh, _side]] call CBA_fnc_globalEvent;
 
-_veh addMPEventHandler ["MPKilled", {
+private _id = _veh addMPEventHandler ["MPKilled", {
     params ["_veh"];
 
     if (!isServer) exitWith {};
@@ -50,3 +50,4 @@ _veh addMPEventHandler ["MPKilled", {
     ] call CBA_fnc_waitAndExecute;
 }];
 
+diag_log format ["mpkilled added %1", _id];
