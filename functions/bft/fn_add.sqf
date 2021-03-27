@@ -37,8 +37,6 @@ private _side = [_veh] call gradTnT_fnc_side;
 private _id = _veh addMPEventHandler ["MPKilled", {
     params ["_veh"];
 
-    if (!isServer) exitWith {};
-
     // save time when vehicle got destroyed
     _veh setVariable ["gradTnT_bft_destroyedTime", CBA_missionTime, true];
 
