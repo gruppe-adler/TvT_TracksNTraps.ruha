@@ -25,15 +25,11 @@ if (_veh isKindOf "gm_ge_army_shelteraceII_repair" || _veh isKindOf "gm_gc_army_
 	"depot";
 };
 
-if (_veh isKindOf "gm_tracked_Tank_base") exitWith {
-	"armor";
+if (((getModelInfo _veh) select 0) == "bridgewooden_01_f.p3d") exitWith {
+	"bridge";
 };
 
-if (_veh isKindOf "gm_wheeled_APC_base") exitWith {
-	"recon";
-};
-
-if (_veh isKindOf "gm_wheeled_truck_base") exitWith {
+if (_veh isKindOf "gm_ge_army_bpz2a0") exitWith {
 	"engineer";
 };
 
@@ -45,8 +41,12 @@ if (_veh isKindOf "gm_wheeled_car_base") exitWith {
 	"cmd";
 };
 
-if (((getModelInfo _veh) select 0) == "bridgewooden_01_f.p3d") exitWith {
-	"bridge";
+if (_veh isKindOf "gm_wheeled_APC_base" || _veh isKindOf "gm_tracked_APC_base") exitWith {
+	"recon";
+};
+
+if (_veh isKindOf "gm_tracked_Tank_base") exitWith {
+	"armor";
 };
 
 "unknown";

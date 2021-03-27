@@ -75,7 +75,6 @@ missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", true, true];
-_depot setVariable ["gradTnT_depotSide", _side, true];
 
 // rearm
 if (_side == west) then {
@@ -89,8 +88,10 @@ if (_side == west) then {
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;
 
 [_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
-[_depot] remoteExec ["gradTnT_fnc_depotMarker", 0, true];
 
-[_depot] spawn gradTnT_bft_fnc_add;
+_depot setVariable ["gradTnT_vehicleSide", _side, true];
+_depot setVariable ["gradTnT_callsign", ["", ""], true];
+
+[_depot, "depot"] spawn gradTnT_bft_fnc_add;
 
 player setVariable ["gradTnT_carryDepotDummys", []];

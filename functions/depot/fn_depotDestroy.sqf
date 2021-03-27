@@ -24,7 +24,7 @@ _depotsBuilt = _depotsBuilt -1;
 missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // if destroying enemy depot, give points
-private _depotSide = _depot getVariable ["gradTnT_depotSide", sideUnknown];
+private _depotSide = [_depot] call gradTnT_fnc_side;
 if (_side != _depotSide) then {
     ["gradTnT_points", ["depot", _side]] call CBA_fnc_serverEvent;
 };

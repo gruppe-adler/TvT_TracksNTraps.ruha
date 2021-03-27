@@ -24,27 +24,28 @@ if (isNull _veh) exitWith {
 // set type if it isn't already set
 if ((_veh getVariable ["gradTnT_bft_type", ""]) isEqualTo  "") then {
     private _defaultType = [_veh] call gradTnT_bft_fnc_defaultType;
+
     private _type = param [1, _defaultType, [""]];
 
     _veh setVariable ["gradTnT_bft_type", _type, true];
 };
 
-private _side = [_veh, true] call BIS_fnc_objectSide;
+private _side = [_veh] call gradTnT_fnc_side;
 
 ["gradTnT_bft_add", [_veh, _side]] call CBA_fnc_globalEvent;
 
 _veh addMPEventHandler ["MPKilled", {
     params ["_veh"];
 
-    // save time when vehicle got destroyes
-    _veh setVariable ["gradTnT_bft_destroyedTime", time];
+    if (!isServer) exitWith {};
 
-    if (isServer) then {
-        // trigger event after 300s to remove vehicle
-        [
-            CBA_fnc_globalEvent, 
-            ["gradTnT_bft_remove", [_veh]],
-            300
-        ] call CBA_fnc_waitAndExecute;
-    }
+    // save time when vehicle got destroyes
+    _veh setVariable ["gradTnT_bft_destroyedTime", serverTime, true];
+
+    // trigger event after 300s to remove vehicle
+    [
+        CBA_fnc_globalEvent, 
+        ["gradTnT_bft_remove", [_veh]],
+        300
+    ] call CBA_fnc_waitAndExecute;
 }];

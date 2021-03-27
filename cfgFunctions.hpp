@@ -58,7 +58,6 @@ class gradTnT {
       class depotDestroy;
       class depotGetOffset;
       class depotInit { postInit = 1; };
-      class depotMarker;
       class depotMouseClick;
       class depotPlace;
     };
@@ -138,6 +137,7 @@ class gradTnT {
     class misc {
       file = "functions\misc";
 
+      class side;
       class getOpposingSide;
       class initVehicle {};
     };

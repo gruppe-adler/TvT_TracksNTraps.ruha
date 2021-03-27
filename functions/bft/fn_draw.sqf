@@ -55,9 +55,11 @@ private _iconSize2 = 50;
     private _opacity = 1;
     if !(alive _veh) then {
         private _destroyedTime = _veh getVariable ["gradTnT_bft_destroyedTime", time];
-        private _elapsed = (time - _destroyedTime) max 300;
-        _opacity = 1 - (_elapsed / 300);
+        private _elapsed = (serverTime - _destroyedTime) min 300;
+        _opacity = (1 - (_elapsed / 300)) * 0.75;
     };
+
+    if (_opacity isEqualTo 0) then {continue};
 
     // vehicle icon
     private _vehicleIcon = getMissionPath format ["functions\bft\gui\bft\%1.paa", _type];
@@ -78,9 +80,11 @@ private _iconSize2 = 50;
 
     if (alive _veh) then {
         private _turrets = _veh call _getTurrets;
-        private _crewCount = ({ !(isNull (_veh turretUnit _x)) } count _turrets) min 3;
         private _turretCount = (count _turrets) min 3;
 
+        if (_turretCount isEqualTo 0) exitWith {};
+
+        private _crewCount = ({ !(isNull (_veh turretUnit _x)) } count _turrets) min 3;
         private _crewIcon = getMissionPath format ["functions\bft\gui\bft\crew_%1_%2.paa", _crewCount, _turretCount];
 
         // crew icon
