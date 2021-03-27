@@ -16,5 +16,14 @@
  */
 
 if (hasInterface) then {
-	(findDisplay 12 displayCtrl 51) ctrlAddEventHandler ["draw", gradTnT_bft_fnc_draw];
+	[
+		{
+			! isNull (findDisplay 12)
+		},
+		{
+			private _disp = findDisplay 12;
+			(_disp displayCtrl 51) ctrlAddEventHandler ["draw", gradTnT_bft_fnc_draw];
+		},
+		[]
+	] call CBA_fnc_waitUntilAndExecute;
 };
