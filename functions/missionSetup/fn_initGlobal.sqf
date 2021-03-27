@@ -26,3 +26,12 @@
         call GRAD_replay_fnc_init;
     }, [], PREPARATION_TIME] call CBA_fnc_waitAndExecute;    
 }, []] call CBA_fnc_waitUntilAndExecute;
+
+
+if (player getVariable ["ACE_isEngineer", 0] > 0 && side player == west) then {
+    [player,"land_gm_tanktrap_01",15] call grad_fortifications_fnc_addFort;
+};
+
+if (player getVariable ["ACE_isEngineer", 0] > 0 && side player == east) then {
+    [player,"land_gm_tanktrap_02",15] call grad_fortifications_fnc_addFort;
+};

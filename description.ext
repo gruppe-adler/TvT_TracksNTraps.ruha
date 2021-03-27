@@ -9,16 +9,20 @@
 
 #include ".\ui\include.hpp"
 
+#include "node_modules\grad-fortifications\grad_fortifications.hpp"
 
 class CfgFunctions {
     #include "cfgFunctions.hpp"
     #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
+    #include "node_modules\grad-fortifications\cfgFunctions.hpp"
 };
 
 class rscTitles {
     #include "functions\missionSetup\rscTitles.hpp"
+    #include "node_modules\grad-fortifications\dialog\hint\title.hpp"
 };
+
 
 disableRemoteSensors = true;
 
@@ -39,6 +43,24 @@ class gradTnT_Points {
     crew = 50;
     car_deposit = -50;
 };
+
+
+class CfgGradFortifications {
+    canDemolishDefault = 1;
+    demolitionTimeFactor = 1;
+    packUpTimeFactor = 0.5;
+    playerInventorySize = 10;
+    vehicleInventorySizeFactor = 2;
+
+    class Fortifications {
+        class land_gm_tanktrap_01 {
+            size = 1;
+            demolitionTime = 60;
+            fortificationOwnerType = "SIDE";
+        };
+    };
+};
+
 
 // cba_settings_hasSettingsFile = 1;
 //GRAD REPLAY =================================================================
