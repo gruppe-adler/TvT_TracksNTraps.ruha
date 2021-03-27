@@ -11,7 +11,7 @@ class LENGTH_OF_BATTLE
     title = "Length of Battle";
     values[] = {60,300,1800,2700,3600,5400,7200};
     texts[] = {"60s (debug)", "5min (debug)", "30min", "45min", "60min", "90min", "120min"};
-    default = 60;
+    default = 1800;
 };
 
 class WEATHER_OVERCAST
@@ -32,9 +32,9 @@ class WEATHER_FOG
 
 class PREPARATION_TIME {
     title = "Preparation time";
-    values[] = {0,60,120,180,240,300,480,600,900};
-    texts[] = {"off","1min","2min","3min","4min","5min","8min","10min","15min"};
-    default = 300;
+    values[] = {0,10,120,180,240,300,480,600,900};
+    texts[] = {"off","10s","2min","3min","4min","5min","8min","10min","15min"};
+    default = 10;
 };
 
 class GRAD_REPLAY_PRECISION

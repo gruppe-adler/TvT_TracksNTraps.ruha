@@ -46,7 +46,7 @@ private _apcEast = [east, "apc"] call gradTnT_fnc_getPointsForKeySide;
 private _carEast = [east, "car"] call gradTnT_fnc_getPointsForKeySide;
 private _crewEast = [east, "crew"] call gradTnT_fnc_getPointsForKeySide;
 
-systemChat str _flagTickWest;
+
 
 private _results_west_total = [west] call gradTnT_fnc_getPointsForSide;
 private _results_east_total = [east] call gradTnT_fnc_getPointsForSide;
@@ -56,7 +56,7 @@ private _results_east = [nil, _flagTickEast, _depotEast, _bridgeEast, _tankEast,
 
 if (hasInterface) then {
 
-    playSound "glitch_end";
+    playSound "intro_fx";
     [player, true] call TFAR_fnc_forceSpectator;
     [player, player] call ace_medical_treatment_fnc_fullHeal;
 
@@ -218,7 +218,7 @@ if (hasInterface) then {
         };
     };
 
-    sleep 16;
+    sleep 10;
     _display displayRemoveAllEventHandlers "KeyDown";
     _display closeDisplay 1;
 

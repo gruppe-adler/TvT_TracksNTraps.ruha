@@ -1,8 +1,7 @@
-addMissionEventHandler
-["Map",{   
+addMissionEventHandler ["Map",{   
     params ["_isOpened","_isForced"];
 
     if (_isOpened) then {
-        private _display = call gradTnT_fnc_createBar;
+        execVM "functions\mapInfo\fn_createBar.sqf";
     };
 }];
