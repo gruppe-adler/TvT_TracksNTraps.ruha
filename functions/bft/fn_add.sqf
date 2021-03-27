@@ -34,18 +34,4 @@ private _side = [_veh] call gradTnT_fnc_side;
 
 ["gradTnT_bft_add", [_veh, _side]] call CBA_fnc_globalEvent;
 
-private _id = _veh addMPEventHandler ["MPKilled", {
-    params ["_veh"];
-
-    // save time when vehicle got destroyed
-    _veh setVariable ["gradTnT_bft_destroyedTime", CBA_missionTime, true];
-
-    // trigger event after 310s to remove vehicle
-    [
-        CBA_fnc_globalEvent, 
-        ["gradTnT_bft_remove", [_veh]],
-        310
-    ] call CBA_fnc_waitAndExecute;
-}];
-
-diag_log format ["mpkilled added %1", _id];
+_veh addMPEventHandler ["MPKilled", gradTnT_bft_fnc_onKilled];
