@@ -15,7 +15,7 @@ call grad_publicTransport_fnc_taxiDialogClose;
 vehicle player lockCargo [vehicle player getCargoIndex player, true];
 
 _wp setWaypointStatements ["true", "
-    vehicle player vehicleChat format ['Willste aussteigen?!'];
+    vehicle this vehicleChat format ['Willste aussteigen?!'];
     vehicle player lockCargo [vehicle player getCargoIndex player, false];
 "];
 
