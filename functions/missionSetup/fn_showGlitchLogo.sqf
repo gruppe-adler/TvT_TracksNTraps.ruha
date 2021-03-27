@@ -3,7 +3,7 @@ params ["_fadeIn", "_duration", ["_isLast", false]];
 [{
     params ["_duration", "_isLast"];
 
-    private _textures = if (_isLast) then { ["glitch7.paa"] } else { [
+    private _textures = if (_isLast) then { ["glitch6.paa"] } else { [
         "glitch1.paa",
         "glitch2.paa",
         "glitch3.paa",
