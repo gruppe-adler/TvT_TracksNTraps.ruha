@@ -39,13 +39,14 @@ _veh addMPEventHandler ["MPKilled", {
 
     if (!isServer) exitWith {};
 
-    // save time when vehicle got destroyes
-    _veh setVariable ["gradTnT_bft_destroyedTime", serverTime, true];
+    // save time when vehicle got destroyed
+    _veh setVariable ["gradTnT_bft_destroyedTime", CBA_missionTime, true];
 
-    // trigger event after 300s to remove vehicle
+    // trigger event after 310s to remove vehicle
     [
         CBA_fnc_globalEvent, 
         ["gradTnT_bft_remove", [_veh]],
-        300
+        310
     ] call CBA_fnc_waitAndExecute;
 }];
+

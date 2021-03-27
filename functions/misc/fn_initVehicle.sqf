@@ -31,19 +31,19 @@ clearItemCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
 
-[_veh] call gradTnT_fnc_vehicleRespawnAdd;
-[_veh] call gradTnT_fnc_addExplosiveAction;
-[_veh] call gradTnT_fnc_damageHandling;
-[_veh] call gradTnT_bft_fnc_add;
-
 private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]), [[]], [2, 3]];
 [_veh, _callsign] call gradTnT_callsign_fnc_set;
 [_veh] remoteExecCall ["gradTnT_callsign_fnc_addAction", 0, true];
 
-private _side = param [2, [_veh, true] call BIS_fnc_objectSide, [sideUnknown]];
+private _side = param [2, [_veh] call gradTnT_fnc_side, [sideUnknown]];
 _veh setVariable ["gradTnT_vehicleSide", _side, true];
 _veh setVariable ["tf_side", str _side, true];
 _veh setVariable ["tf_hasRadio", true, true];
+
+[_veh] call gradTnT_fnc_vehicleRespawnAdd;
+[_veh] call gradTnT_fnc_addExplosiveAction;
+[_veh] call gradTnT_fnc_damageHandling;
+[_veh] call gradTnT_bft_fnc_add;
 
 // flag for capturing only on non tank vehicles
 if (!(_veh isKindOf "gm_tracked_Tank_base")) then {

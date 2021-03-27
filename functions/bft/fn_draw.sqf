@@ -55,7 +55,7 @@ private _iconSize2 = 50;
     private _opacity = 1;
     if !(alive _veh) then {
         private _destroyedTime = _veh getVariable ["gradTnT_bft_destroyedTime", time];
-        private _elapsed = (serverTime - _destroyedTime) min 300;
+        private _elapsed = (CBA_missionTime - _destroyedTime) min 300;
         _opacity = (1 - (_elapsed / 300)) * 0.75;
     };
 
