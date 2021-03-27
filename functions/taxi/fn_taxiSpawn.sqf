@@ -2,19 +2,17 @@ params ["_side", "_flag"];
 
 private _position = getPos _flag;
 
-if (isOnRoad _position) then {
-    private _road = [_position, 20, []] call BIS_fnc_nearestRoad;
-    _position = getPosATL _road;
-};
+private _road = [_position, 100, []] call BIS_fnc_nearestRoad;
+_position = getPosATL _road;
 
 private _dir = getDir _flag;
 private _classname = "gm_ge_army_iltis_cargo";
 
-if (_side == west) then {
-    _classname = "gm_ge_army_iltis_cargo";
-} else {
+if (_side == east) then {
     _classname = "gm_gc_bgs_uaz469_cargo";
 };
+
+_position = _position findEmptyPosition [1,100,_classname];
 
 private _result = [_position, _dir, _classname, _side] call BIS_fnc_spawnVehicle;
 private _vehicle = _result select 0;

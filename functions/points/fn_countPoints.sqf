@@ -5,7 +5,7 @@
     private _history = missionNamespace getVariable ["gradTnT_pointHistory", []];
 
     switch (_type) do {
-        private _cfg = missionConfigFile >> "gradTnT_Points";
+        private _cfg = (missionConfigFile >> "gradTnT_Points");
 
         case "flagTick" : {
            _pointsAdded = [_cfg,"flagTick",100] call BIS_fnc_returnConfigEntry;

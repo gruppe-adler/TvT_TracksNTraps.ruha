@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11932.915,139.56871,7334.9106};
-		dir[]={-0.92426908,-0.35529712,0.13963717};
-		up[]={-0.35131407,0.93475229,0.053076126};
-		aside[]={0.14938393,-1.044391e-007,0.98878437};
+		pos[]={11948.287,123.1275,7363.5073};
+		dir[]={-0.75378108,-0.62133461,-0.21393003};
+		up[]={-0.59773028,0.78354281,-0.16964139};
+		aside[]={-0.27302718,-2.5669578e-008,0.96200836};
 	};
 };
 binarizationWanted=0;
@@ -20622,7 +20622,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11895.63,101.39996,7363.5195};
+				position[]={11898.786,101.65523,7354.2344};
 				angles[]={0.051597439,5.0629907,0.018509924};
 			};
 			side="Empty";
@@ -20633,7 +20633,7 @@ class Mission
 			};
 			id=819;
 			type="gm_flag_UR";
-			atlOffset=7.6293945e-006;
+			atlOffset=-0.44542694;
 		};
 		class Item61
 		{
@@ -25383,10 +25383,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11902.726,97.748756,7359.9531};
+				position[]={11926.786,97.748756,7353.4385};
 			};
 			id=1417;
 			type="ModuleRespawnPosition_F";
+			atlOffset=-0.86045837;
 			class CustomAttributes
 			{
 				class Attribute0
