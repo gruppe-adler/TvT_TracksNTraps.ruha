@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11884.209,112.06934,7339.8838};
-		dir[]={-0.68487,-0.58477139,-0.43475285};
-		up[]={-0.49370492,0.81119359,-0.3134025};
-		aside[]={-0.53593636,-4.9022492e-007,0.84426671};
+		pos[]={11951.188,149.99747,7345.2798};
+		dir[]={-0.78309935,-0.60038763,0.16214721};
+		up[]={-0.58791757,0.7997089,0.12173326};
+		aside[]={0.20275791,-2.910383e-008,0.97922993};
 	};
 };
 binarizationWanted=0;
@@ -46,14 +46,13 @@ addons[]=
 	"gm_vehicles_land_tracked_marder_ge_army_marder1",
 	"gm_vehicles_land_tracked_bmp1_gc_army_bmp1",
 	"A3_Modules_F_Multiplayer",
-	"gm_vehicles_land_tracked_bpz2_ge_army_bpz2",
-	"acex_fortify"
+	"gm_vehicles_land_tracked_bpz2_ge_army_bpz2"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=20;
+		items=19;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -186,13 +185,6 @@ class AddonsMetaData
 			name="gm_vehicles_land_tracked_bpz2_ge_army_bpz2";
 			author="Global Mobilization";
 			url="global-mobilization.com";
-		};
-		class Item19
-		{
-			className="acex_fortify";
-			name="acex_fortify";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -793,7 +785,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=88;
+		items=86;
 		class Item0
 		{
 			dataType="Logic";
@@ -27451,186 +27443,6 @@ class Mission
 					};
 				};
 				nAttributes=17;
-			};
-		};
-		class Item86
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={11900.916,99.007149,7342.7471};
-			};
-			id=1437;
-			type="acex_fortify_setupModule";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="acex_fortify_setupModule_AddToolItem";
-					expression="_this setVariable ['AddToolItem',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="acex_fortify_setupModule_Budget";
-					expression="_this setVariable ['Budget',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="acex_fortify_setupModule_Side";
-					expression="_this setVariable ['Side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="acex_fortify_setupModule_Preset";
-					expression="_this setVariable ['Preset',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="big";
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item87
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={11900.105,98.961784,7343.4971};
-			};
-			id=1438;
-			type="acex_fortify_setupModule";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="acex_fortify_setupModule_AddToolItem";
-					expression="_this setVariable ['AddToolItem',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="acex_fortify_setupModule_Budget";
-					expression="_this setVariable ['Budget',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=-1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="acex_fortify_setupModule_Side";
-					expression="_this setVariable ['Side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=2;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="acex_fortify_setupModule_Preset";
-					expression="_this setVariable ['Preset',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="big";
-						};
-					};
-				};
-				nAttributes=4;
 			};
 		};
 	};
