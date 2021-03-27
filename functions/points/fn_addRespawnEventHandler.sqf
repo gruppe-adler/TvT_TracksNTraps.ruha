@@ -26,7 +26,7 @@ if (!isServer) exitWith {};
 	if (_rootClass isEqualTo "") exitWith {};
 
 	// give points to opposing side of respawning vehicle
-	private _side = [_veh, true] call BIS_fnc_objectSide;
+	private _side = [_veh] call gradTnT_fnc_side;
 	private _sidePointsAddedTo = sideUnknown;
 	switch (_side) do { 
 		case west : {  _sidePointsAddedTo = east; }; 

@@ -24,7 +24,7 @@ private _action = [
         [_target] call gradTnT_callsign_fnc_openDisplay;
     },
 	{
-        ([_target, true] call BIS_fnc_objectSide) isEqualTo (side _player)
+        alive _target && ([_target] call gradTnT_fnc_side) isEqualTo (side _player)
     },
 	nil,
 	nil,
