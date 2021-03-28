@@ -40,7 +40,7 @@ _veh setVariable ["gradTnT_vehicleSide", _side, true];
 _veh setVariable ["tf_side", str _side, true];
 _veh setVariable ["tf_hasRadio", true, true];
 
-[_veh] call gradTnT_fnc_vehicleRespawnAdd;
+[_veh] call gradTnT_vehicleRespawn_fnc_add;
 [_veh] call gradTnT_fnc_addExplosiveAction;
 [_veh] call gradTnT_fnc_damageHandling;
 [_veh] call gradTnT_bft_fnc_add;

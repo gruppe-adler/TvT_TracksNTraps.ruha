@@ -1,5 +1,5 @@
 /*
- * Name: gradTnT_fnc_vehicleRespawnTrigger
+ * Name: gradTnT_vehicleRespawn_fnc_trigger
  * Author: DerZade
  * Initiates respawn. Called by Deleted / Killed EH of vehicle.
  *
@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * [_oldVehicle] call gradTnT_fnc_vehicleRespawnTrigger;
+ * [_oldVehicle] call gradTnT_vehicleRespawn_fnc_trigger;
  *
  * Public: No
  */
@@ -51,7 +51,7 @@ private _respawnArgs = [
     {
         params ["_args", "_handle"];
 
-        private _isRespawned = _args call gradTnT_fnc_vehicleRespawnTryRespawn;
+        private _isRespawned = _args call gradTnT_vehicleRespawn_fnc_tryRespawn;
 
         if (_isRespawned) then {
             [_handle] call CBA_fnc_removePerFrameHandler;

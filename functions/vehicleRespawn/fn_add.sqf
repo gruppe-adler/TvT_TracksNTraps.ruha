@@ -1,5 +1,5 @@
 /*
- * Name: gradTnT_fnc_vehicleRespawnAdd
+ * Name: gradTnT_vehicleRespawn_fnc_add
  * Author: DerZade
  * Adds vehicle as respawnable vehicle
  *
@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * [_obj] call gradTnT_fnc_vehicleRespawnAdd;
+ * [_obj] call gradTnT_vehicleRespawn_fnc_add;
  *
  * Public: No
  */
@@ -33,14 +33,14 @@ diag_log format ["grad-vehicleRespawn: adding %1 to respawn", _veh];
 private _killedID = _veh addMPEventHandler ["MPKilled", {
     params ["_vehicle"];
     if (!isServer) exitWith {};
-    [_vehicle] call gradTnT_fnc_vehicleRespawnTrigger;
+    [_vehicle] call gradTnT_vehicleRespawn_fnc_trigger;
 }];
 
 // add deleted EH
 private _deletedID = _veh addEventHandler ["Deleted", {
     params ["_vehicle"];
     if (!isServer) exitWith {};
-    [_vehicle] call gradTnT_fnc_vehicleRespawnTrigger;
+    [_vehicle] call gradTnT_vehicleRespawn_fnc_trigger;
 }];
 
 // set variable

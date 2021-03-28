@@ -1,5 +1,5 @@
 /*
- * Name: gradTnT_fnc_vehicleRespawnTryRespawn
+ * Name: gradTnT_vehicleRespawn_fnc_tryRespawn
  * Author: DerZade
  * Tries to respawn vehicle. Respawn can fail if given position doesn't have enough room.
  *
@@ -13,7 +13,7 @@
  * Respawn was successful? <BOOL>
  *
  * Example:
- * private _successful = ["", [0,0,0], 20, []] call gradTnT_fnc_vehicleRespawnTryRespawn;
+ * private _successful = ["", [0,0,0], 20, []] call gradTnT_vehicleRespawn_fnc_tryRespawn;
  *
  * Public: No
  */

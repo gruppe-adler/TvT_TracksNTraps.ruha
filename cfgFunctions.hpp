@@ -1,5 +1,6 @@
 #include "functions\callsign\CfgFunctions.hpp"
 #include "functions\bft\CfgFunctions.hpp"
+#include "functions\vehicleRespawn\CfgFunctions.hpp"
 class gradTnT {
     class bpz {
         file = "functions\bpz";
@@ -140,13 +141,5 @@ class gradTnT {
       class side;
       class getOpposingSide;
       class initVehicle {};
-    };
-
-    class vehicleRespawn {
-      file = "functions\vehicleRespawn";
-
-      class vehicleRespawnAdd;
-      class vehicleRespawnTrigger;
-      class vehicleRespawnTryRespawn;
     };
 };
