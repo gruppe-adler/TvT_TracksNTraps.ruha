@@ -36,8 +36,9 @@ private _getTurrets = {
     gradTnT_bft_turretsCache get _type;
 };
 
-private _side = side player;
+private _side = playerSide;
 private _sideColor = [_side, false] call BIS_fnc_sideColor;
+private _textColor = _control getVariable ["gradTnT_bft_textColor", [0.1, 0.1, 0.1]];
 
 private _vehicles = gradTnT_bft_vehicles getOrDefault [_side, []];
 
@@ -127,7 +128,7 @@ private _iconSize2 = 50;
         _control drawIcon 
         [
             "#(rgb,1,1,1)color(1,1,1,0)",
-            [0.1,0.1,0.1, _opacity],
+            [_textColor#0, _textColor#1, _textColor#2, _opacity],
             _pos,
             _iconSize2,
             _iconSize2,
@@ -144,7 +145,7 @@ private _iconSize2 = 50;
         _control drawIcon 
         [
             "#(rgb,1,1,1)color(1,1,1,0)",
-            [0.1,0.1,0.1, _opacity],
+            [_textColor#0, _textColor#1, _textColor#2, _opacity],
             _pos,
             _iconSize2,
             _iconSize2,

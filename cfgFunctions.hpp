@@ -2,6 +2,7 @@
 #include "functions\bft\CfgFunctions.hpp"
 #include "functions\vehicleRespawn\CfgFunctions.hpp"
 #include "functions\markRivers\CfgFunctions.hpp"
+#include "functions\map\CfgFunctions.hpp"
 class gradTnT {
     class bpz {
         file = "functions\bpz";
@@ -80,7 +81,6 @@ class gradTnT {
       class flagEvents { postInit = 1; };
       class flagGetTexture;
       class flagMapMarker;
-      class flagMapMarkerInit { postInit = 1; };
       class flagRaise;
       class flagTake;
       class flagTakeAction;
