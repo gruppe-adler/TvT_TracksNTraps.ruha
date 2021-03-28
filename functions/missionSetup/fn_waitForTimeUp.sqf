@@ -1,7 +1,7 @@
 if (!isServer) exitWith {};
 
 [{
-    call BIS_fnc_missionTimeLeft < 0.1
+    call BIS_fnc_missionTimeLeft < 1 && call BIS_fnc_missionTimeLeft > -1
 },{
     remoteExec ["gradTnT_fnc_showStats", 0];
 
