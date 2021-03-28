@@ -18,17 +18,15 @@
 
 params ["_veh"];
 
-if (!isServer) exitWith {};
-
 private _var = _veh getVariable ["gradTnT_vehicleRespawn", []];
 if !((count _var) isEqualTo 4) exitWith {
     // TODO: Log Error
 };
 _var params [["_respawnPos", [0,0,0], [[]], [3]], ["_respawnDir", 0, [0]], ["_killedEH", -1, [0]], ["_deletedEH", -1, [0]]];
-_veh setVariable ["gradTnT_vehicleRespawn", nil];
+_veh setVariable ["gradTnT_vehicleRespawn", nil, true];
 
 // remove EHs just to be save any of won't trigger multiple times
-_veh removeMPEventHandler ["MPKilled", _killedEH];
+_veh removeEventHandler ["Killed", _killedEH];
 _veh removeEventHandler ["Deleted", _deletedEH];
 
 // remember all RESPAWN_VARIABLE_NAMES of old vehicle 
@@ -59,4 +57,4 @@ private _respawnArgs = [
     },
     5,
     _respawnArgs
-] call CBA_fnc_addPerFrameHandler;
+] remoteExecCall ["CBA_fnc_addPerFrameHandler", 2];

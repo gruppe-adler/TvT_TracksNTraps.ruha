@@ -19,7 +19,7 @@ params ["_veh"];
 if (_veh getVariable ["gradTnT_bft_destroyedTime", -1] > -1) exitWith {};
 
 if (!isServer) exitWith {
-	_this remoteExecCall ["gradTnT_bft_fnc_onKilled", [0, 2] select isMultiplayer];
+	_this remoteExecCall ["gradTnT_bft_fnc_onKilled", 2];
 };
 
 // save time when vehicle got destroyed
