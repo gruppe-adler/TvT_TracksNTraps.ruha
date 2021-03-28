@@ -1,6 +1,7 @@
 #include "functions\callsign\CfgFunctions.hpp"
 #include "functions\bft\CfgFunctions.hpp"
 #include "functions\vehicleRespawn\CfgFunctions.hpp"
+#include "functions\markRivers\CfgFunctions.hpp"
 class gradTnT {
     class bpz {
         file = "functions\bpz";
@@ -104,7 +105,6 @@ class gradTnT {
       class clearForest;
       class deleteBorder { postInit = 1; };
       class initGlobal { postInit = 1; };
-      class markRivers { postInit = 1; };
       class nerfMines { postInit = 1; };
       class waitForTimeUp { postInit = 1; };
 
