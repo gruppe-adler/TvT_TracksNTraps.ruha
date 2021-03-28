@@ -10,3 +10,5 @@
 #include "CloseButton.hpp"
 
 import ctrlControlsGroupNoScrollbars;
+import ctrlMap;
+import ctrlShortcutButton;

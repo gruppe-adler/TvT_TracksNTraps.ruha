@@ -102,6 +102,7 @@ respawnButton = 1;
 respawnTemplates[] = {"MenuPosition", "Counter"};
 respawnOnStart = -1;
 respawnDelay = 10;
+allowFunctionsRecompile = 1;
 
 class Header
 {

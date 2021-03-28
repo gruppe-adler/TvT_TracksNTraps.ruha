@@ -21,3 +21,5 @@ private _addFlagSpawnMenu = [
 ] call ace_interact_menu_fnc_createAction; 
  
 [_flag, 0, [], _addFlagSpawnMenu] call ace_interact_menu_fnc_addActionToObject;
+
+[_flag, _side] call gradTnT_forceRespawn_fnc_addAction;

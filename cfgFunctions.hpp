@@ -2,6 +2,7 @@
 #include "functions\bft\CfgFunctions.hpp"
 #include "functions\vehicleRespawn\CfgFunctions.hpp"
 #include "functions\markRivers\CfgFunctions.hpp"
+#include "functions\forceRespawn\CfgFunctions.hpp"
 #include "functions\map\CfgFunctions.hpp"
 class gradTnT {
     class bpz {
