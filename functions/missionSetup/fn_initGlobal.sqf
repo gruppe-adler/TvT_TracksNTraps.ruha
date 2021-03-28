@@ -1,18 +1,20 @@
 ["CBA_loadingScreenDone", {
-    _waitCondition = {time > (_this + 3)};
+    _waitCondition = {time > (_this + 10)};
 
+
+
+    
     [_waitCondition,{
-        private _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='pics\logo_large_glitch.paa'/>"];
-        [_text,0,0,2,2] spawn BIS_fnc_dynamicText;
 
         playSound "intro_fx";
+        [2,2,false] call gradTnT_fnc_showGlitchLogo;
 
         [{
-            private _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='pics\logo_large_noglitch.paa'/>"];
-            [_text,0,0,1,1] spawn BIS_fnc_dynamicText;
+            [0.1,2,true] call gradTnT_fnc_showGlitchLogo;
         }, [], 5.5] call CBA_fnc_waitAndExecute;
 
     },time] call CBA_fnc_waitUntilAndExecute;
+    
 
 }] call CBA_fnc_addEventHandler;
 

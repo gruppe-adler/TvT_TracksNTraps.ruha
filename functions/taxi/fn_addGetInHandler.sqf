@@ -8,7 +8,7 @@ _veh setVariable ["gradTnT_isTaxi", true, true];
 
 [{
         params ["_veh"];
-        count (crew _veh) < 2 && alive driver _veh && !isPlayer driver _veh
+        count (crew _veh) < 2 && alive driver _veh && !isPlayer driver _veh && _veh getVariable ["gradTnT_taxiMarker", ""] != ""
 
     }, 
     {

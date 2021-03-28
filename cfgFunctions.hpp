@@ -108,6 +108,7 @@ class gradTnT {
       class nerfMines { postInit = 1; };
       class waitForTimeUp { postInit = 1; };
 
+      class showGlitchLogo;
       class startPreparationTime;
       class preparationTimeCountdown;
     };
