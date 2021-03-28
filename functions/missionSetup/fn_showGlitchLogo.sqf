@@ -19,7 +19,7 @@ params ["_fadeIn", "_duration", ["_isLast", false]];
     _texture setVectorUp [0,0,1];
 
     _texture setObjectTexture [0, "pics\glitch1.paa"];
-    _texture attachTo [player, [0,0,0]];
+    _texture attachTo [player];
     _texture setObjectScale 25;
 
 
