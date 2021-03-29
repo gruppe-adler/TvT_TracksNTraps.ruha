@@ -14,7 +14,7 @@ class sovjetGM {
         binoculars = "gm_df7x40_blk";
         map = "ItemMap";
         radio = "TFAR_fadak";
-        compass = "gm_gc_compass_f73";
+        compass = "ItemCompass";
         watch = "gm_watch_kosei_80";
         nvgoggles = "";
         gps = "";
