@@ -82,7 +82,7 @@ _depotsBuilt = _depotsBuilt + 1;
 missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // fuel
-[_depot, 100000, [0,1,1]] call ace_refuel_fnc_makeSource;
+[_depot, 100000, [0,1,1]] remoteExec ["ace_refuel_fnc_makeSource", 2];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", true, true];
