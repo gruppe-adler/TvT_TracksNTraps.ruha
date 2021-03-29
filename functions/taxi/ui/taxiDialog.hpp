@@ -10,6 +10,7 @@ class gradTnT_taxiDialog
         enableSimulation = 1;
         enableDisplay = 1;
         onLoad = "uiNamespace setVariable ['gradTnT_taxiDialog_display', (_this select 0)];";
+        // TODO: use custom gui message
         onUnLoad = "['Reopen with ACE Interact inside of vehicle.'] spawn BIS_fnc_guiMessage;";
         fadein = 0.25;
         fadeout = 0.25;
