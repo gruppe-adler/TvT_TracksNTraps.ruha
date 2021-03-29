@@ -10,6 +10,7 @@ class gradTnT_taxiDialog
         enableSimulation = 1;
         enableDisplay = 1;
         onLoad = "uiNamespace setVariable ['gradTnT_taxiDialog_display', (_this select 0)];";
+        onUnLoad = "['Reopen with ACE Interact inside of vehicle.'] spawn BIS_fnc_guiMessage;";
         fadein = 0.25;
         fadeout = 0.25;
         controls[] = { btn_taxiDialog_cancel, btn_taxiDialog_stop, btn_taxiDialog_choose, btn_taxiDialog_exitMenu  };
