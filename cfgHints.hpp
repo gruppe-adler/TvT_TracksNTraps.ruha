@@ -11,9 +11,9 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "Engineers";
             // Structured text, filled by arguments from 'arguments' param
-            description = "Hello %11! You belong to the engineers team.<br/><t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>";
+            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "Find a description of your abilities in the %3FIELD MANUAL%4 you find in the ESC menu.";
+            tip = "";
             arguments[] = {
                 "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
@@ -34,7 +34,7 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "Vehicles";
             // Structured text, filled by arguments from 'arguments' param
-            description = "Lorem ipsum dolor set amet";
+            description = "To repair a vehicle completely the pioneers need to drive their Bpz close and go into recovery mode (mouse wheel action). This makes their tank an ACE repair vehicle temporarily but leaves the vehicle vulnerable and static. Close vehicles can now be repaired fully.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
             arguments[] = {
@@ -62,9 +62,9 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "sdfgdsgdgf dgfdsgsdfgdgf";
+            description = "Victory Points are accumulated by the following factors:<br/>Holding the flag objective: 100 points per minute<br/>Destroying enemy depot: 2000 points<br/>Destroying enemy bridge: 1000 points<br/>Destroying enemy tank: 500 points<br/>Destroying enemy APC: 300 points<br/>Destroying enemy Car: 100 points<br/>Killing enemy Crewman: 50 points<br/><br/>Note that points are given only AFTER respawn of that entity. This means as long as e.g. a tank can be repaired (no wreck) its not counting as destroyed.<br/>";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "";
+            tip = "You can destroy/respawn own/enemy tanks instantly by going to their hull and ACE Interact. Time to explosion is 30 seconds. The crew inside will hear metallic sounds if someone tries to attach an explosive. You dont need an actual explosive item to do this.";
             arguments[] = {
                 "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
@@ -80,6 +80,16 @@ class CfgHints
     };
 };
 
+
+flagTick = 100;
+depotTick = 50;
+depot = 2000;
+bridge = 1000;
+tank = 500;
+apc = 300;
+car = 100;
+crew = 50;
+
 class CfgNotifications
 {
     class Default
@@ -91,7 +101,7 @@ class CfgNotifications
         color[] = {1,1,1,1};    // Icon and text color
         duration = 5;           // How many seconds will the notification be displayed
         priority = 0;           // Priority; higher number = more important; tasks in queue are selected by priority
-        difficulty[] = {};      // Required difficulty settings. All listed difficulties has to be enabled        
+        difficulty[] = {};      // Required difficulty settings. All listed difficulties has to be enabled
         sound = "scoreAdded";
         soundClose = "scoreRemoved";
     };
