@@ -1,6 +1,6 @@
 /*
  * Name: gradTnT_bft_fnc_defaultType
- * Author: DerZade
+ * Author: nomisum, DerZade
  * Return default type for vehicle depending on its type
  *
  * Arguments:

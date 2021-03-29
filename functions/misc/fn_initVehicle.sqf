@@ -1,6 +1,6 @@
 /*
  * Name: gradTnT_fnc_initVehicle
- * Author: DerZade
+ * Author: nomisum, DerZade
  * Initialize everything for vehicle
  *
  * Arguments:
