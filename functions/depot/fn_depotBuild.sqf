@@ -44,7 +44,7 @@ private _depotObjects = [];
 
     private _depotPart = _classname createVehicle [0,0,0];
     private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
-    _depotPart enableSimulationGlobal false;
+    // _depotPart enableSimulationGlobal false;
 
     [{
         params ["_depotPart", "_offsetDir", "_position"];
@@ -59,15 +59,21 @@ private _depotObjects = [];
 
 private _depot = _depotObjects select 0;
 
-private _depotHelper = "DemoCharge_F" createVehicle [0,0,0];
-_depotHelper attachTo [_depot,[1,0,1]];
-detach _depotHelper; // because setvectordirandup refuses to work otherwise
-_depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+[{
+    params ["_depot"];
+
+    private _depotHelper = "DemoCharge_F" createVehicle [0,0,0];
+    _depotHelper attachTo [_depot,[1,0,1]];
+    detach _depotHelper; // because setvectordirandup refuses to work otherwise
+    _depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+    _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
+    _depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
+    [_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
+
+}, [_depot], 3] call CBA_fnc_waitAndExecute;
 
 
-
-_depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
-_depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
+_depot allowDamage false;
 
 _depot setVariable ["gradTnt_depotObjects", _depotObjects, true];
 
@@ -76,7 +82,7 @@ _depotsBuilt = _depotsBuilt + 1;
 missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // fuel
-[_depot, 100000] call ace_refuel_fnc_makeSource;
+[_depot, 100000, [0,1,1]] remoteExec ["ace_refuel_fnc_makeSource", 2];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", true, true];
@@ -91,8 +97,6 @@ if (_side == west) then {
 [_side, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
 
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;
-
-[_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
 
 _depot setVariable ["gradTnT_vehicleSide", _side, true];
 
