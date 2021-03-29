@@ -5,7 +5,7 @@ private _sideHeldByValue = _flag getVariable ["gradTnT_flagOwner", sideUnknown];
 private _objHeldByValue = "";
 switch (_sideHeldByValue) do { 
       case west : {  _objHeldByValue = "<t align='left' shadow='0'>Germany</t>"; }; 
-      case east : {  _objHeldByValue = "<t align='left' shadow='0'>Sovjets</t>"; }; 
+      case east : {  _objHeldByValue = "<t align='left' shadow='0'>Soviets</t>"; }; 
       case sideUnknown : {  _objHeldByValue = "<t align='left' shadow='0'>No one</t>"; }; 
       default {}; 
 };
