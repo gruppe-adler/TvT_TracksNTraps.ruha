@@ -36,7 +36,7 @@ if (flagAnimationPhase _flag != 0) then {
             "anthem_ger"
     ] select (side _unit == west));
 
-    [_helper, ["Datei", 150, 1]] remoteExecCall ["say3D", 0];
+    [_helper, [_sound, 150, 1]] remoteExecCall ["say3D", 0];
 
     _flag setVariable ["gradTnT_flagHelper", _helper, true];
 
