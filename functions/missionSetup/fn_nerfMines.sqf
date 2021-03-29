@@ -4,6 +4,10 @@
 
 */
 
+// cause for vehicle damage not working
+
+/*
+
 ["LandVehicle", "HandleDamage", {
   params ["_vehicle", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 
@@ -19,3 +23,5 @@
 
   _damage
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+*/
