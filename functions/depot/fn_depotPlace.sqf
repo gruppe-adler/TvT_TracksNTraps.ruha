@@ -17,17 +17,23 @@ player forceWalk true;
 
     private _depotDummyClasses = if (side player == west) then {
         [
-            ["gm_ge_army_shelteraceII_repair", [2.5,-3],90],
-            ["Land_RepairDepot_01_green_F", [7, 0],-270],
-            ["land_gm_camonet_04_nato", [2.5,0],0]
+            ["gm_ge_army_shelteraceII_repair", [2.5,-3],90]
         ]
     } else {
         [
-            ["gm_gc_army_shelterlakII_repair", [2.5,-3],90],
-            ["Land_RepairDepot_01_green_F", [7, 0],-270],
-            ["land_gm_camonet_04_east", [2.5, 0],0]
+            ["gm_gc_army_shelterlakII_repair", [2.5,-3],90]
         ]
     };
+
+    /*
+        ,
+            ["Land_RepairDepot_01_green_F", [7, 0],-270],
+            ["land_gm_camonet_04_nato", [2.5,0],0]
+        
+        ,
+            ["Land_RepairDepot_01_green_F", [7, 0],-270],
+            ["land_gm_camonet_04_east", [2.5, 0],0]
+    */
 
     private _depotDummys = [];
 

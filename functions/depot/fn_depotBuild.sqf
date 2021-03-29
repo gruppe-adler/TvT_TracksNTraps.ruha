@@ -44,7 +44,7 @@ private _depotObjects = [];
 
     private _depotPart = _classname createVehicle [0,0,0];
     private _position = [_relPos] call gradTnT_fnc_depotGetOffset;
-    _depotPart enableSimulationGlobal false;
+    // _depotPart enableSimulationGlobal false;
 
     [{
         params ["_depotPart", "_offsetDir", "_position"];
@@ -59,11 +59,14 @@ private _depotObjects = [];
 
 private _depot = _depotObjects select 0;
 
-private _depotHelper = "DemoCharge_F" createVehicle [0,0,0];
-_depotHelper attachTo [_depot,[1,0,1]];
-detach _depotHelper; // because setvectordirandup refuses to work otherwise
-_depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+[{
+    params ["_depot"];
 
+    private _depotHelper = "DemoCharge_F" createVehicle [0,0,0];
+    _depotHelper attachTo [_depot,[1,0,1]];
+    detach _depotHelper; // because setvectordirandup refuses to work otherwise
+    _depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+}, [_depot], 3] call CBA_fnc_waitAndExecute;
 
 
 _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
