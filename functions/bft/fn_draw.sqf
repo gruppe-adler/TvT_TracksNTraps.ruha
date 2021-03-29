@@ -63,7 +63,7 @@ private _iconSize2 = 50;
     if (_opacity isEqualTo 0) then {continue};
 
     // vehicle icon
-    private _vehicleIcon = getMissionPath format ["functions\bft\gui\bft\%1.paa", _type];
+    private _vehicleIcon = getMissionPath format ["functions\bft\data\%1.paa", _type];
     _control drawIcon 
     [
         _vehicleIcon,
@@ -86,7 +86,7 @@ private _iconSize2 = 50;
         if (_turretCount isEqualTo 0) exitWith {};
 
         private _crewCount = ({ !(isNull (_veh turretUnit _x)) } count _turrets) min 3;
-        private _crewIcon = getMissionPath format ["functions\bft\gui\bft\crew_%1_%2.paa", _crewCount, _turretCount];
+        private _crewIcon = getMissionPath format ["functions\bft\data\crew_%1_%2.paa", _crewCount, _turretCount];
 
         // crew icon
         _control drawIcon 
@@ -107,7 +107,7 @@ private _iconSize2 = 50;
         // destroyed icon
         _control drawIcon 
         [
-            getMissionPath "functions\bft\gui\bft\destroyed.paa",
+            getMissionPath "functions\bft\data\destroyed.paa",
             [1, 1, 1, _opacity],
             _pos,
             _iconSize,
