@@ -2,7 +2,7 @@ params ["_vehicle"];
 
 _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
 
-[15, [_vehicle], {
+[5, [_vehicle], {
     params ["_args"];
     _args params ["_vehicle"];
 
