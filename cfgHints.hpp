@@ -110,7 +110,7 @@ class CfgNotifications
     class BluforCaptured
     {
         title = "";
-        iconPicture = "functions\flagControl\data\ico_objective_blufor.paa";
+        iconPicture = "functions\flag\data\ico_objective_blufor.paa";
         description = "%1";
         priority = 7;
         duration = 10;
@@ -121,7 +121,7 @@ class CfgNotifications
     class OpforCaptured
     {
         title = "";
-        iconPicture = "functions\flagControl\data\ico_objective_opfor.paa";
+        iconPicture = "functions\flag\data\ico_objective_opfor.paa";
         description = "%1";
         priority = 7;
         duration = 10;
@@ -131,7 +131,7 @@ class CfgNotifications
     class NeutralCaptured
     {
         title = "";
-        iconPicture = "functions\flagControl\data\ico_objective_neutral.paa";
+        iconPicture = "functions\flag\data\ico_objective_neutral.paa";
         description = "%1";
         priority = 7;
         duration = 10;

@@ -2205,7 +2205,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="call{[this, flagSpeakers] call gradTnT_fnc_flagAddControl;}";
+				init="call{[this, flagSpeakers] call gradTnT_flag_fnc_addControl;}";
 			};
 			id=439;
 			type="Flag_Red_F";

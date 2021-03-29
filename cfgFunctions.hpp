@@ -4,6 +4,7 @@
 #include "functions\markRivers\CfgFunctions.hpp"
 #include "functions\forceRespawn\CfgFunctions.hpp"
 #include "functions\map\CfgFunctions.hpp"
+#include "functions\flag\CfgFunctions.hpp"
 class gradTnT {
     class bpz {
         file = "functions\bpz";
@@ -71,20 +72,6 @@ class gradTnT {
 
       class fieldManualAddAction;
       class init { postInit = 1; };
-    };
-
-    class flagControl {
-      file = "functions\flagControl";
-
-      class flagAddAction;
-      class flagAddControl;
-      class flagCanRaise;
-      class flagEvents { postInit = 1; };
-      class flagGetTexture;
-      class flagMapMarker;
-      class flagRaise;
-      class flagTake;
-      class flagTakeAction;
     };
 
     class loadout {

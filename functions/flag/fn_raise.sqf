@@ -22,7 +22,7 @@ if (flagAnimationPhase _flag != 0) then {
     private _helper = _flag getVariable ["gradTnT_flagHelper", objNull];
     if (!(isNull _helper)) then { deleteVehicle _helper; };
 
-    _flag setFlagTexture ([_unit] call gradTnT_fnc_flagGetTexture);
+    _flag setFlagTexture ([_unit] call gradTnT_flag_fnc_getTexture);
 
     private _speakersPos = getPos (_flag getVariable ["gradTnT_flagSpeakers", objNull]);
     _speakersPos set [2,3];

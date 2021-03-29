@@ -9,13 +9,13 @@ private _objectiveIcon = "";
 
 switch (_owner) do { 
     case west : {  
-        _objectiveIcon = getMissionPath "functions\flagControl\data\ico_objective_blufor.paa";
+        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_blufor.paa";
     }; 
     case east : {
-        _objectiveIcon = getMissionPath "functions\flagControl\data\ico_objective_opfor.paa";
+        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_opfor.paa";
     }; 
     case sideUnknown : {
-        _objectiveIcon = getMissionPath "functions\flagControl\data\ico_objective_neutral.paa";
+        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_neutral.paa";
     }; 
     default {  /*...code...*/ }; 
 };
