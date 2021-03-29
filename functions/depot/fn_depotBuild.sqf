@@ -66,13 +66,14 @@ private _depot = _depotObjects select 0;
     _depotHelper attachTo [_depot,[1,0,1]];
     detach _depotHelper; // because setvectordirandup refuses to work otherwise
     _depotHelper setVectorDirAndUp [[1,0,0], [0,0,1]];
+    _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
+    _depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
+    [_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
+
 }, [_depot], 3] call CBA_fnc_waitAndExecute;
 
 
 _depot allowDamage false;
-
-_depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
-_depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
 
 _depot setVariable ["gradTnt_depotObjects", _depotObjects, true];
 
@@ -96,8 +97,6 @@ if (_side == west) then {
 [_side, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
 
 [_depot, 100000] call ace_rearm_fnc_setSupplyCount;
-
-[_depot] remoteExec ["gradTnT_fnc_depotActionDestroy", 0, true];
 
 _depot setVariable ["gradTnT_vehicleSide", _side, true];
 
