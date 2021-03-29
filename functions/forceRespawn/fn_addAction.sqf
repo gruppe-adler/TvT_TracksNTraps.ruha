@@ -1,3 +1,20 @@
+/*
+ * Name: gradTnT_forceRespawn_fnc_addAction
+ * Author: DerZade
+ * Add "Force Vehicle Respawn" action to flag in the base.
+ *
+ * Arguments:
+ * 0: Flag <OBJECT>
+ * 1: Flag side <SIDE>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * [_flag, west] call gradTnT_forceRespawn_fnc_addAction;
+ *
+ * Public: No
+ */
 params ["_flag", "_side"];
 
 _flag setVariable ["gradTnT_forceRespawn_side", _side];
