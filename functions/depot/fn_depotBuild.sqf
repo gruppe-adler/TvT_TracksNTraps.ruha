@@ -69,6 +69,8 @@ private _depot = _depotObjects select 0;
 }, [_depot], 3] call CBA_fnc_waitAndExecute;
 
 
+_depot allowDamage false;
+
 _depotHelper setVariable ["gradTnT_depotHelperDepot", _depot, true];
 _depot setVariable ["gradTnT_depotHelper", _depotHelper, true];
 
