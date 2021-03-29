@@ -1,3 +1,20 @@
+/*
+ * Name: gradTnT_flag_fnc_addControl
+ * Author: nomisum
+ * Setup control point.
+ *
+ * Arguments:
+ * 0: Flag <OBJECT>
+ * 1: Speakers <OBJECT>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * [this, flagSpeakers] call gradTnT_flag_fnc_addControl;
+ *
+ * Public: No
+ */
 params ["_flag", "_flagSpeakers"];
 
 private _flagRaiseAction = [
@@ -7,7 +24,7 @@ private _flagRaiseAction = [
     {
         [_target, _player] remoteExec ["gradTnT_flag_fnc_raise", 2];
     }, {
-        ([_target] call gradTnT_flag_fnc_canRaise)
+        ([_player, _target] call gradTnT_flag_fnc_canRaise)
     },{},nil,[0,-0.35,-2.4],3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
@@ -23,7 +40,7 @@ private _flagRaiseActionHint = [
     {
         hint "Take a flag from your engineers vehicle first!";
     }, {
-        !([_target] call gradTnT_flag_fnc_canRaise)
+        !([_player, _target] call gradTnT_flag_fnc_canRaise)
     },{},nil,[0,-0.35,-2.4],3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

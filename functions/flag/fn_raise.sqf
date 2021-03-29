@@ -1,20 +1,44 @@
-params ["_flag", "_unit"];
+/*
+ * Name: gradTnT_flag_fnc_raise
+ * Author: nomisum
+ * Called by raise action. Raises flag.
+ *
+ * Arguments:
+ * 0: Flag <OBJECT>
+ * 1: Unit <OBJECT>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * [_flag, player] call gradTnT_flag_fnc_raise;
+ *
+ * Public: No
+ */
+params [["_flag", objNull, [objNull]], ["_unit", objNull, [objNull]]];
+
+if (isNull _flag) exitWith {
+	["Flag must not be objNull."] call BIS_fnc_error;
+};
+
+if (isNull _unit) exitWith {
+	["Unit must not be objNull."] call BIS_fnc_error;
+};
 
 _flag setVariable ["gradTnT_flagAnimation", true, true];
 
 // lower flag
-if (_flag getVariable ["gradTnT_flagOwner", sideUnknown] == sideUnknown) then {
+if (_flag getVariable ["gradTnT_flagOwner", sideUnknown] isEqualTo sideUnknown) then {
     [_flag, 0, true] call BIS_fnc_animateFlag;
 };
 
-if (flagAnimationPhase _flag != 0) then {
+if ((flagAnimationPhase _flag) isNotEqualTo 0) then {
     [_flag, 0, 0.25] call BIS_fnc_animateFlag;
 };
 
-
 [{
     params ["_flag"];
-    flagAnimationPhase _flag == 0
+    (flagAnimationPhase _flag) isEqualTo 0
 },{
     params ["_flag", "_unit"];
 
@@ -22,7 +46,7 @@ if (flagAnimationPhase _flag != 0) then {
     private _helper = _flag getVariable ["gradTnT_flagHelper", objNull];
     if (!(isNull _helper)) then { deleteVehicle _helper; };
 
-    _flag setFlagTexture ([_unit] call gradTnT_flag_fnc_getTexture);
+    _flag setFlagTexture ([side _unit] call gradTnT_flag_fnc_getTexture);
 
     private _speakersPos = getPos (_flag getVariable ["gradTnT_flagSpeakers", objNull]);
     _speakersPos set [2,3];
@@ -34,7 +58,7 @@ if (flagAnimationPhase _flag != 0) then {
     private _sound = ([
             "anthem_su",
             "anthem_ger"
-    ] select (side _unit == west));
+    ] select ((side _unit) isEqualTo west));
 
     [_helper, [_sound, 150, 1]] remoteExecCall ["say3D", 0];
 
@@ -77,7 +101,7 @@ if (flagAnimationPhase _flag != 0) then {
             [{
                 params ["_flag"];
 
-                flagAnimationPhase _flag == 0
+                (flagAnimationPhase _flag) isEqualTo 0
             },{
                 params ["_flag"];
                 _flag setFlagTexture "";

@@ -1,3 +1,19 @@
+/*
+ * Name: gradTnT_flag_fnc_draw
+ * Author: nomisum
+ * Event handler for draw event on map controls.
+ *
+ * Arguments:
+ * 0: Map control <CONTROL>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * N/A
+ *
+ * Public: No
+ */
 params ["_control"];
 
 private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];
@@ -20,8 +36,6 @@ switch (_owner) do {
     default {  /*...code...*/ }; 
 };
 
-
-// vehicle icon
 _control drawIcon 
 [
     _objectiveIcon,
