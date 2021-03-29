@@ -1,6 +1,6 @@
 /*
  * Name: gradTnT_fnc_initVehicle
- * Author: DerZade
+ * Author: nomisum, DerZade
  * Initialize everything for vehicle
  *
  * Arguments:
@@ -47,9 +47,7 @@ _veh setVariable ["tf_hasRadio", true, true];
 [_veh] call gradTnT_bft_fnc_add;
 
 // flag for capturing only on non tank vehicles
-if (!(_veh isKindOf "gm_gc_army_t55am2b") && !(_veh isKindOf "gm_ge_army_Leopard1a5")) then {
-    [_veh] remoteExecCall ["gradTnT_fnc_flagTakeAction", _side, true];
-};
+[_veh] remoteExecCall ["gradTnT_flag_fnc_addTakeAction", 0, true];
 
 
 // assign side to vehicle

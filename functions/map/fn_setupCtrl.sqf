@@ -17,5 +17,5 @@
 params ["_ctrl"];
 
 _ctrl ctrlAddEventHandler ["draw", gradTnT_bft_fnc_draw];
-_ctrl ctrlAddEventHandler ["draw", gradTnT_fnc_flagMapMarker];
+_ctrl ctrlAddEventHandler ["draw", gradTnT_flag_fnc_draw];
 _ctrl ctrlAddEventHandler ["draw", gradTnT_markRivers_fnc_draw];

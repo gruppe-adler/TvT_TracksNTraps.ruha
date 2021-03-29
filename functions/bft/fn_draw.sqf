@@ -1,6 +1,6 @@
 /*
  * Name: gradTnT_bft_fnc_draw
- * Author: DerZade
+ * Author: nomisum, DerZade
  * Event handler for draw event on map controls.
  *
  * Arguments:
