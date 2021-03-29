@@ -47,7 +47,7 @@ _veh setVariable ["tf_hasRadio", true, true];
 [_veh] call gradTnT_bft_fnc_add;
 
 // flag for capturing only on non tank vehicles
-if (!(_veh isKindOf "gm_tracked_Tank_base")) then {
+if (!(_veh isKindOf "gm_gc_army_t55am2b") && !(_veh isKindOf "gm_ge_army_Leopard1a5")) then {
     [_veh] remoteExecCall ["gradTnT_fnc_flagTakeAction", _side, true];
 };
 

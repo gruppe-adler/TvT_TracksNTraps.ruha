@@ -1,5 +1,5 @@
 ["CBA_loadingScreenDone", {
-    _waitCondition = {time > (_this + 10)};
+    _waitCondition = {time > (_this + 20)};
 
 
 

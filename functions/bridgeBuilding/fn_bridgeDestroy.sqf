@@ -17,6 +17,12 @@ for "_i" from 0 to _maxTime do {
 [{
     params ["_bridge", "_unit"];
 
+    private _helper = _bridge getVariable ["gradTnT_bridgeHelper", objNull];
+    if (!isNull _helper) then {
+      deleteVehicle _helper;
+    };
+
+
     "Bo_GBU12_LGB" createVehicle (position _bridge);
     deleteVehicle _bridge;
 

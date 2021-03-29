@@ -29,11 +29,14 @@ if (flagAnimationPhase _flag != 0) then {
 
     _helper = "Sign_Sphere25cm_Geometry_F" createVehicle [0,0,0];
     _helper setPos _speakersPos;
-    _helper setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0,ca)"];
-    _helper say3D ([
+    _helper setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0,ca)"];    
+
+    private _sound = ([
             "anthem_su",
             "anthem_ger"
     ] select (side _unit == west));
+
+    [_helper, [_sound, 150, 1]] remoteExecCall ["say3D", 0];
 
     _flag setVariable ["gradTnT_flagHelper", _helper, true];
 
