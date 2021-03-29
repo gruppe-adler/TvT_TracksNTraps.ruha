@@ -72,6 +72,20 @@ _veh addItemCargoGlobal ["ACE_wirecutter", 2];
 _veh addItemCargoGlobal ["grad_axe", 2];
 _veh addItemCargoGlobal ["ACE_DefusalKit", 2];
 
+if (typeOf _veh in [
+    "gm_gc_army_btr60pb",
+    "gm_gc_army_bmp1sp2"]
+    ) then {
+    _veh addItemCargoGlobal ["gm_minestatic_at_tm46", 10];
+};
+
+if (typeOf _veh in [
+    "gm_ge_army_luchsa2",
+    "gm_ge_army_marder1a2"]
+    ) then {
+    _veh addItemCargoGlobal ["gm_minestatic_at_dm21", 10];
+};
+
 
 
 if (_side == west) then {
