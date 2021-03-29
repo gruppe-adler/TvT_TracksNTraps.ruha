@@ -1,3 +1,11 @@
+/*
+
+    not in use as long as vehicle damage is running
+
+*/
+
+/*
+
 params ["_vehicle"];
 
 if (_vehicle isKindOf "Tank") then {
@@ -24,3 +32,5 @@ if (_vehicle isKindOf "Tank") then {
 
     [_vehicle] call gradTnT_fnc_damageHandlingAddAction;
 };
+
+*/

@@ -44,7 +44,6 @@ class gradTnT {
 
         class addExplosiveAction;
         class canBeRepaired;
-        class damageHandling;
         class damageHandlingAddAction;
         class damageRepair;
         class removeExplosive;
