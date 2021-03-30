@@ -43,7 +43,7 @@ private _bridge = createSimpleObject ["\a3\structures_f_exp\infrastructure\bridg
 _bridge setPosATL _position;
 _bridge setDir _dir;
 
-_bridge enableSimulationGlobal false;
+[_bridge, false] remoteExec ["enableSimulationGlobal", 2];
 
 private _bridgeHelper = "DemoCharge_F" createVehicle [0,0,0];
 _bridgeHelper attachTo [_bridge,[3,0,1.5]];
