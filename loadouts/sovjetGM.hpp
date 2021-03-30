@@ -230,7 +230,7 @@ class sovjetGM {
             vest = "gm_gc_army_vest_80_belt_str";
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_dm25"),
-                LIST_3("gm_30Rnd_545x39mm_B_7N6_ak74_org")
+                LIST_4("gm_30Rnd_545x39mm_B_7N6_ak74_org")
             };
             backpack = "";
         };
@@ -259,6 +259,10 @@ class sovjetGM {
         };
 
         class Rank {
+            class CORPORAL {
+                backpack[] = "TFAR_mr3000_rhs";
+            };
+
             class COLONEL {
                 uniform = "gm_ge_army_uniform_crew_80_oli";
                 headgear = "gm_gc_headgear_beret_officer_blk";

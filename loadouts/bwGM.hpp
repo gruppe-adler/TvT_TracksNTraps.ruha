@@ -238,11 +238,12 @@ class bwGM {
             primaryWeapon = "gm_mp2a1_blk";
             primaryWeaponMagazine = "gm_32Rnd_9x19mm_B_DM11_mp2_blk";
             vest = "gm_ge_army_vest_80_crew";
-            addItemsToVest[] = {
-                LIST_2("gm_smokeshell_wht_dm25"),
-                LIST_3("gm_32Rnd_9x19mm_B_DM11_mp2_blk")
-            };
             backpack = "";
+            addItemsToVest[] = {
+                LIST_6("gm_32Rnd_9x19mm_B_DM11_mp2_blk"),
+                LIST_2("gm_handgrenade_frag_dm51"),
+                LIST_2("gm_smokeshell_wht_dm25")
+            };
         };
         class Recon_F: Crew_F {
 
@@ -268,6 +269,10 @@ class bwGM {
         };
 
         class Rank {
+            class CORPORAL {
+                backpack[] = "TFAR_mr3000_bwmod";
+            };
+            
             class COLONEL {
                 headgear = "gm_ge_headgear_beret_crew_red_opcom";
                 backpack = "TFAR_rt1523g_green";
