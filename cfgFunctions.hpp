@@ -10,7 +10,7 @@ class gradTnT {
     class advanced_towing_custom {
       file = "functions\advanced_towing_custom";
       
-      class init { postInit = 1; };
+      class CSAinit { postInit = 1; };
     };
 
     class bpz {

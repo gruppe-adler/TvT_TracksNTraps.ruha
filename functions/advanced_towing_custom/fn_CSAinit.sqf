@@ -750,7 +750,7 @@ CSA_Set_Owner = {
     private _deployRopesAction = [
         "deployRopes",
         "Deploy Tow Ropes",
-        "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+        "\a3\3den\Data\CfgWaypoints\hook_ca.paa",
         {
             [_target] call CSA_Take_Tow_Ropes_Action;
         }, {
@@ -764,7 +764,7 @@ CSA_Set_Owner = {
     private _attachRopesAction = [
         "attachRopes",
         "Attach Tow Ropes",
-        "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+        "\a3\3den\Data\CfgWaypoints\hook_ca.paa",
         {
             [_target] call CSA_Attach_Tow_Ropes_Action;
         }, {
@@ -778,7 +778,7 @@ CSA_Set_Owner = {
     private _putAwayRopes = [
         "putAwayRopes",
         "Put Away Tow Ropes",
-        "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+        "\a3\3den\Data\CfgWaypoints\unhook_ca.paa",
         {
             [_target] call CSA_Attach_Tow_Ropes_Action;
         }, {
@@ -794,11 +794,11 @@ CSA_Set_Owner = {
 private _dropTowRopes  = [
     "dropRopes",
     "Drop Ropes",
-    "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+    "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",
     {
-        [_target] call CSA_Put_Away_Tow_Ropes_Action;
+        call CSA_Drop_Tow_Ropes_Action;
     }, {
-          call CSA_Put_Away_Tow_Ropes_Action_Check
+          call CSA_Can_Drop_Tow_Ropes
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
