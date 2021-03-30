@@ -7,8 +7,5 @@ class gradTnT_flag {
       class getTexture;
       class draw;
       class raise;
-      class has;
-      class take;
-      class addTakeAction;
     };
 }

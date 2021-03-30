@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=1590;
+		nextID=1591;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6897.9263,106.1432,10807.189};
-		dir[]={0.67844898,-0.47920704,0.55691296};
-		up[]={0.37047958,0.8776384,0.30411184};
-		aside[]={0.63450068,6.2573235e-008,-0.77296996};
+		pos[]={11607.398,106.06561,7779.7373};
+		dir[]={0.34953198,-0.72011763,0.59938139};
+		up[]={0.36276343,0.69385201,0.62207085};
+		aside[]={0.86384618,1.4901161e-008,-0.50375581};
 	};
 };
 binarizationWanted=0;
@@ -1224,7 +1224,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=110;
+		items=111;
 		class Item0
 		{
 			dataType="Logic";
@@ -19424,18 +19424,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11614.763,94.519592,7791.6938};
-						angles[]={6.245204,4.5133443,0.018000545};
+						position[]={11614.763,94.519669,7791.6938};
+						angles[]={6.2452068,4.5133519,0.017994344};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1530;
 					type="O_engineer_F";
-					atlOffset=0.17993164;
+					atlOffset=0.18000793;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19476,7 +19477,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=4;
 					};
 				};
 			};
@@ -25585,8 +25624,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -25595,10 +25634,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26025,8 +26064,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26035,10 +26074,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26067,8 +26106,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26077,10 +26116,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26507,8 +26546,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26517,10 +26556,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26548,8 +26587,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26558,10 +26597,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26988,8 +27027,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26998,10 +27037,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -27029,8 +27068,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -27039,10 +27078,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -27469,8 +27508,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -27479,10 +27518,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -30034,7 +30073,7 @@ class Mission
 			};
 			id=1580;
 			type="Land_DisturbedSoil_02_decal_F";
-			atlOffset=0.00035858154;
+			atlOffset=0.00036621094;
 		};
 		class Item104
 		{
@@ -30051,6 +30090,7 @@ class Mission
 			};
 			id=1581;
 			type="Land_ClutterCutter_large_F";
+			atlOffset=-7.6293945e-006;
 		};
 		class Item105
 		{
@@ -30083,7 +30123,7 @@ class Mission
 			};
 			id=1585;
 			type="Land_DisturbedSoil_02_decal_F";
-			atlOffset=-3.8146973e-005;
+			atlOffset=-4.5776367e-005;
 		};
 		class Item107
 		{
@@ -30100,7 +30140,7 @@ class Mission
 			};
 			id=1586;
 			type="Land_DisturbedSoil_02_decal_F";
-			atlOffset=-3.8146973e-005;
+			atlOffset=-4.5776367e-005;
 		};
 		class Item108
 		{
@@ -30135,6 +30175,23 @@ class Mission
 			id=1588;
 			type="Land_DisturbedSoil_02_decal_F";
 			atlOffset=7.6293945e-006;
+		};
+		class Item110
+		{
+			dataType="Trigger";
+			position[]={6914.0742,101.55516,10805.298};
+			angle=4.0719581;
+			class Attributes
+			{
+				name="trg_objective";
+				sizeA=5;
+				sizeB=5;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=1590;
+			type="EmptyDetectorArea10x10";
+			atlOffset=0.00010681152;
 		};
 	};
 	class Connections

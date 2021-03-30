@@ -12,12 +12,11 @@
  * Player can raise flag <BOOL>
  *
  * Example:
- * private _canRaise = [player, _flag] call gradTnT_flag_fnc_canRaise;
+ * private _canRaise = [_flag, _player] call gradTnT_flag_fnc_canRaise;
  *
  * Public: No
  */
-params ["_player", "_flag"];
+params ["_flag", "_player"];
 
 (_flag getVariable ["gradTnT_flagOwner", sideUnknown] isNotEqualTo (side _player)) &&
-!(_flag getVariable ["gradTnT_flagAnimation", false]) &&
-[_player] call gradTnT_flag_fnc_has
+!(_flag getVariable ["gradTnT_flagAnimation", false])
