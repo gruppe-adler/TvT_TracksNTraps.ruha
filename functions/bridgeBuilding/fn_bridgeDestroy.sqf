@@ -24,7 +24,12 @@ for "_i" from 0 to _maxTime do {
 
 
     "Bo_GBU12_LGB" createVehicle (position _bridge);
-    deleteVehicle _bridge;
+
+    // bridge has no destruct state, therefore we move it below ground and do fake damage for BFT compliance
+    _bridge setDamage 1;
+    private _position = getPos _bridge;
+    _position set [2, ((_position select 2) -20)];
+    _bridge setPos _position;
 
     private _bridgesBuild = _unit getVariable ["SB_bridgesBuilt", 0];
     if (_bridgesBuild > 0) then {
