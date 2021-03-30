@@ -69,7 +69,7 @@ if ((flagAnimationPhase _flag) isNotEqualTo 0) then {
         _args params ["_flag", "_unit", "_helper"];        
 
         // if player is still in reach, capture
-        if (_unit distance _flag < 5) then {
+        if (_unit distance _flag < 5 && typeOf vehicle _unit == "gm_ge_army_bpz2a0") then {
             _unit setVariable ["gradTnT_flagRaising", true, true];            
 
             [{ params ["_helper"]; if (!(isNull _helper)) then { deleteVehicle _helper; }}, [_helper], 80] call CBA_fnc_waitAndExecute;

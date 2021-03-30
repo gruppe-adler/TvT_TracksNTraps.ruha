@@ -2,20 +2,20 @@ params ["_vehicle"];
 
 _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
 
-[5, [_vehicle], {
+[15, [_vehicle], {
     params ["_args"];
     _args params ["_vehicle"];
 
     _vehicle setVariable ["gradTnT_explosiveAttaching", false, true];
     _vehicle setVariable ["gradTnT_explosiveAttached", true, true];
-    hint "Explosion in 30s";
+    hint "Explosion in 20s";
 
     [{
         params ["_vehicle"];
         if (_vehicle getVariable ["gradTnT_explosiveAttached", false]) then {
             _vehicle setDamage [1, true];
         };
-    }, [_vehicle], 30] call CBA_fnc_waitAndExecute;
+    }, [_vehicle], 20] call CBA_fnc_waitAndExecute;
 }, {
     params ["_args"];
     _args params ["_vehicle"];

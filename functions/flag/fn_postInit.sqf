@@ -41,7 +41,7 @@ if (!hasInterface) exitWith {};
     private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];
 
     {
-      if (_x inArea trg_objective && typeOf vehicle _x == "gm_ge_army_bpz2a0") then {
+      if (_x inArea trg_objective) then {
         _isInArea pushBackUnique _x;
         _sides pushBackUnique (side _x);
       };
