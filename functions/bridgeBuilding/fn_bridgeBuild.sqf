@@ -58,9 +58,10 @@ player setVariable ["SB_bridgesBuilt", _bridgesBuilt, true];
 private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBuilt)];
 hintSilent _bridgesLeft;
 
-_bridge setVariable ["gradTnT_vehicleSide", side player, true];
+private _side = side player;
+_bridge setVariable ["gradTnT_vehicleSide", _side, true];
 
 [_bridge, "bridge"] call gradTnT_bft_fnc_add;
 
 [_bridge] remoteExec ["gradTnT_fnc_bridgeActionDestroy", 0, true];
-[_bridge, side player] remoteExec ["gradTnT_fnc_bridgeMarker", 0, true];
+[_bridge, false] remoteExec ["gradTnT_fnc_bridgeMarker", _side, true];
