@@ -79,7 +79,7 @@ class GRAD_Replay {
 class Loadouts {
     baseDelay = 1;
     handleRadios = 1;
-    resetLoadout = 0;
+    resetLoadout = 1;
 
     class Faction {
         #include "loadouts\bwGM.hpp"

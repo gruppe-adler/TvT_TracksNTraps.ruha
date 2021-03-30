@@ -22,6 +22,9 @@ class bwGM {
     class Type {
         class Soldier_F {
             gps = "";
+            headgear = "gm_ge_headgear_crewhat_80_blk";
+            vest = "gm_ge_army_vest_80_crew";
+            uniform = "gm_ge_army_uniform_crew_80_oli";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
@@ -32,21 +35,23 @@ class bwGM {
                 "ACE_key_west"
             };
             addItemsToVest[] = {
+                LIST_5("gm_20Rnd_762x51mm_B_DM41_g3_blk"),
                 LIST_6("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk"),
                 LIST_2("gm_handgrenade_frag_dm51"),
                 LIST_2("gm_smokeshell_wht_dm25")
             };
         };
         class Engineer_F: Soldier_F{
-            headgear = "gm_ge_headgear_m62";
-            vest = "gm_ge_army_vest_80_demolition";
-            backpack = "gm_ge_backpack_satchel_80_blk";
+            uniform = "gm_ge_army_uniform_soldier_80_ols";
+            headgear = "gm_ge_headgear_m62_net";
+            vest = "gm_ge_army_vest_80_leader";
+            backpack = "gm_ge_army_backpack_80_engineer_oli";
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_dm25"),
-                LIST_3("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
+                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
             };
             addItemsToBackpack[] = {
-                "gm_mine_at_dm21",
+                LIST_2("gm_mine_at_dm21"),
                 "toolkit",
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
