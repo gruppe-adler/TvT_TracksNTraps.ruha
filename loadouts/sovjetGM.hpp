@@ -23,6 +23,7 @@ class sovjetGM {
 
     class Type {
         class Soldier_F {
+            gps = "itemGPS";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),

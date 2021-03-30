@@ -19,6 +19,9 @@ private _vehicle = _result select 0;
 private _vehiclesCrew = _result select 1;
 private _vehiclesGroup = _result select 2;
 
+clearBackpackCargoGlobal _vehicle;
+clearMagazineCargoGlobal _vehicle;
+clearWeaponCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 
 _vehicle setVariable ["gradTnT_assignedDriver", _vehiclesCrew select 0];

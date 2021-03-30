@@ -21,7 +21,7 @@ class bwGM {
 
     class Type {
         class Soldier_F {
-            gps = "";
+            gps = "itemGPS";
             headgear = "gm_ge_headgear_crewhat_80_blk";
             vest = "gm_ge_army_vest_80_crew";
             uniform = "gm_ge_army_uniform_crew_80_oli";
