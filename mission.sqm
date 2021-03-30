@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=1591;
+		nextID=1593;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11607.398,106.06561,7779.7373};
-		dir[]={0.34953198,-0.72011763,0.59938139};
-		up[]={0.36276343,0.69385201,0.62207085};
-		aside[]={0.86384618,1.4901161e-008,-0.50375581};
+		pos[]={6929.5947,112.65985,10799.387};
+		dir[]={-0.85173696,-0.51760304,0.082309291};
+		up[]={-0.51527768,0.85557485,0.049795508};
+		aside[]={0.096192069,9.4529241e-007,0.99542683};
 	};
 };
 binarizationWanted=0;
@@ -51,13 +51,14 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Data_F_Curator_Virtual",
 	"A3_Structures_F_Enoch_Military_Training",
-	"A3_Structures_F_System"
+	"A3_Structures_F_System",
+	"A3_Structures_F_Enoch_Walls_Concrete"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -209,6 +210,13 @@ class AddonsMetaData
 		{
 			className="A3_Data_F_Curator";
 			name="Arma 3 Zeus Update - Main Configuration";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item22
+		{
+			className="A3_Structures_F_Enoch";
+			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -1224,7 +1232,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=111;
+		items=112;
 		class Item0
 		{
 			dataType="Logic";
@@ -29382,7 +29390,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.73562658;
+							value=0.43194026;
 						};
 					};
 				};
@@ -29401,7 +29409,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.73394346;
+							value=0.43194026;
 						};
 					};
 				};
@@ -29420,7 +29428,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.73000002;
+							value=0.43213636;
 						};
 					};
 				};
@@ -29439,7 +29447,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.73000002;
+							value=0.43213636;
 						};
 					};
 				};
@@ -30192,6 +30200,23 @@ class Mission
 			id=1590;
 			type="EmptyDetectorArea10x10";
 			atlOffset=0.00010681152;
+		};
+		class Item111
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6915.5762,98.703728,10806.521};
+				angles[]={0,4.0906439,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1592;
+			type="Land_SilageWall_01_l_pole_F";
+			atlOffset=-0.00030517578;
 		};
 	};
 	class Connections

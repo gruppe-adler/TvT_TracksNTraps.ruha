@@ -85,7 +85,7 @@ missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 [_depot, 100000, [0,1,1]] remoteExec ["ace_refuel_fnc_makeSource", 2];
 
 // repair
-_depot setVariable ["ACE_isRepairFacility", true, true];
+_depot setVariable ["ACE_isRepairFacility", 1, true];
 
 // rearm
 if (_side == west) then {
