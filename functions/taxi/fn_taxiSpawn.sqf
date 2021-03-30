@@ -24,6 +24,8 @@ clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 
+_vehicle lockDriver true;
+
 _vehicle setVariable ["gradTnT_assignedDriver", _vehiclesCrew select 0];
 _vehicle setVariable ["gradTnT_isTaxi", true, true];
 _vehicle setVariable ["gradTnT_taxiSpawnPosition", _position, true];
