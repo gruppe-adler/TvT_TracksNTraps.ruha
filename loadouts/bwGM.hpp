@@ -267,25 +267,25 @@ class bwGM {
                 "ACE_key_west"
             };
         };
+    };
 
-        class Rank {
-            class CORPORAL {
-                backpack[] = "TFAR_mr3000_bwmod";
-            };
-            
-            class COLONEL {
-                headgear = "gm_ge_headgear_beret_crew_red_opcom";
-                backpack = "TFAR_rt1523g_green";
-                goggles = "";
-                addItemsToUniform[] = {
-                    LIST_7("ACE_fieldDressing"),
-                    LIST_2("ACE_epinephrine"),
-                    LIST_4("ACE_morphine"),
-                    LIST_2("ACE_tourniquet"),
-                    "ACE_MapTools",
-                    "ACE_Flashlight_XL50",
-                    "ACE_key_west"
-                };
+    class Rank {
+        class CORPORAL {
+            backpack[] = {"TFAR_mr3000_bwmod"};
+        };
+        
+        class COLONEL {
+            headgear = "gm_ge_headgear_beret_crew_red_opcom";
+            backpack = "TFAR_rt1523g_green";
+            goggles = "";
+            addItemsToUniform[] = {
+                LIST_7("ACE_fieldDressing"),
+                LIST_2("ACE_epinephrine"),
+                LIST_4("ACE_morphine"),
+                LIST_2("ACE_tourniquet"),
+                "ACE_MapTools",
+                "ACE_Flashlight_XL50",
+                "ACE_key_west"
             };
         };
     };

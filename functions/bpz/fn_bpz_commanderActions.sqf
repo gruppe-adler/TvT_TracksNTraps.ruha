@@ -39,7 +39,7 @@
     ];
 
 
-
+    /*
     _vehicle addAction
     [
         "Extend Rope",
@@ -75,5 +75,6 @@
         50,
         false
     ];
+    */
 
 }] call CBA_fnc_addClassEventHandler;

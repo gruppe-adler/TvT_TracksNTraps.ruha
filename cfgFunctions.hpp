@@ -6,6 +6,13 @@
 #include "functions\map\CfgFunctions.hpp"
 #include "functions\flag\CfgFunctions.hpp"
 class gradTnT {
+
+    class advanced_towing_custom {
+      file = "functions\advanced_towing_custom";
+      
+      class init { postInit = 1; };
+    };
+
     class bpz {
         file = "functions\bpz";
 
