@@ -8,18 +8,18 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=1593;
+		nextID=1594;
 	};
 	class MarkerIDProvider
 	{
-		nextID=62;
+		nextID=63;
 	};
 	class Camera
 	{
-		pos[]={6929.5947,112.65985,10799.387};
-		dir[]={-0.85173696,-0.51760304,0.082309291};
-		up[]={-0.51527768,0.85557485,0.049795508};
-		aside[]={0.096192069,9.4529241e-007,0.99542683};
+		pos[]={6924.5503,131.78815,10788.522};
+		dir[]={-0.48609835,-0.73377913,0.47463331};
+		up[]={-0.52501476,0.67938805,0.51263189};
+		aside[]={0.69861877,-1.4901161e-008,0.71549428};
 	};
 };
 binarizationWanted=0;
@@ -1232,7 +1232,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=112;
+		items=113;
 		class Item0
 		{
 			dataType="Logic";
@@ -30217,6 +30217,21 @@ class Mission
 			id=1592;
 			type="Land_SilageWall_01_l_pole_F";
 			atlOffset=-0.00030517578;
+		};
+		class Item112
+		{
+			dataType="Marker";
+			position[]={6913.7119,97.644997,10805.555};
+			name="marker_62";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorYellow";
+			fillName="Grid";
+			a=14;
+			b=5;
+			angle=52.639992;
+			id=1593;
+			atlOffset=0.00025177002;
 		};
 	};
 	class Connections
