@@ -7,6 +7,9 @@
 }] call CBA_fnc_addEventHandler;
 
 
+["Initialize", [true]] call BIS_fnc_dynamicGroups;
+[] call grad_groupsettings_fnc_setGroupSettings;
+
 
 // read parameters
 TIME_OF_DAY = ["TIME_OF_DAY", 10] call BIS_fnc_getParamValue;

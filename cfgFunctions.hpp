@@ -5,6 +5,7 @@
 #include "functions\forceRespawn\CfgFunctions.hpp"
 #include "functions\map\CfgFunctions.hpp"
 #include "functions\flag\CfgFunctions.hpp"
+#include "functions\groupSettings\CfgFunctions.hpp"
 class gradTnT {
 
     class advanced_towing_custom {
