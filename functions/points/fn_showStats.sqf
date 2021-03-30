@@ -5,10 +5,6 @@
 */
 
 
-private _resultTotalNumber_west = 0;
-private _resultTotalNumber_east = 0;
-
-
 gradTnT_fnc_getPointsForKeySide = {
     params ["_side", "_type"];
 
@@ -69,8 +65,8 @@ if (hasInterface) then {
 
     disableSerialization;
 
-    private _iconObjective = "\A3\ui_f\data\Map\Markers\HandDrawn\objective_ca.paa";
-    private _iconDepots = "\A3\ui_f\data\Map\Markers\HandDrawn\flag_ca.paa";
+    private _iconObjective = "\A3\ui_f\data\Map\Markers\HandDrawn\flag_ca.paa";
+    private _iconDepots = "\A3\ui_f\data\Map\Markers\HandDrawn\objective_ca.paa";
     private _iconBridges = "\A3\ui_f\data\Map\Markers\HandDrawn\join_CA.paa";
     private _iconArmored = "\A3\ui_f\data\igui\cfg\mptable\armored_ca.paa";
     private _iconAPC = "\A3\ui_f\data\Map\Vehicleicons\iconAPC_ca.paa";
@@ -84,13 +80,13 @@ if (hasInterface) then {
     private _picturePathDescription = ["", "Objective", "Depots", "Bridges", "Tank", "APC", "Cars", "Crew", "Total"];
 
 
-    private _totalNumbers = [_resultTotalNumber_west, _resultTotalNumber_east];
+    private _totalNumbers = [_results_west_total, _results_east_total];
     _totalNumbers sort false;
 
     // hint str _totalNumbers;
 
     private _winner = _totalNumbers select 0;
-    private _draw = _resultTotalNumber_west isEqualTo _resultTotalNumber_east;
+    private _draw = _results_west_total isEqualTo _results_east_total;
                     
 
     private _display = findDisplay 46 createDisplay "RscDisplayEmpty";

@@ -46,7 +46,7 @@
     private _pointsTotalKey = format ["gradTnT_pointsTotal_%1", _side];
     private _pointsTotalExisting = missionNameSpace getVariable [_pointsTotalKey, 0];
     private _newGlobalTotal = _pointsTotalExisting + _pointsAdded;
-    missionNameSpace setVariable [_pointsKey, _newGlobalTotal, true];
+    missionNameSpace setVariable [_pointsTotalKey, _newGlobalTotal, true];
 
     // save with timestamp for later evaluation
     _history pushBack [_newTotal, _side, CBA_missionTime];
