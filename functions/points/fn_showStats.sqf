@@ -80,12 +80,12 @@ if (hasInterface) then {
     private _picturePathDescription = ["", "Objective", "Depots", "Bridges", "Tank", "APC", "Cars", "Crew", "Total"];
 
 
-    private _totalNumbers = [_results_west_total, _results_east_total];
+    private _totalNumbers = [[_results_west_total, west], [_results_east_total, east]];
     _totalNumbers sort false;
 
     // hint str _totalNumbers;
 
-    private _winner = _totalNumbers select 0;
+    private _winner = _totalNumbers select 0 select 1;
     private _draw = _results_west_total isEqualTo _results_east_total;
                     
 
