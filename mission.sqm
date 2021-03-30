@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=1595;
+		nextID=1596;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7008.6899,146.30699,10724.952};
-		dir[]={-0.65908462,-0.49441329,0.56671256};
-		up[]={-0.37488502,0.86922687,0.32234412};
-		aside[]={0.65197301,0,0.75824219};
+		pos[]={7037.4565,128.2818,10690.334};
+		dir[]={-0.2427678,-0.68072838,0.69113868};
+		up[]={-0.22559839,0.7325359,0.64225888};
+		aside[]={0.94348776,0,0.33140737};
 	};
 };
 binarizationWanted=0;
@@ -30229,7 +30229,7 @@ class Mission
 			fillName="Grid";
 			a=14;
 			b=5;
-			angle=52.63998;
+			angle=52.639977;
 			id=1593;
 			atlOffset=0.00025177002;
 		};
@@ -30237,7 +30237,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6916.8521,98.765999,10802.293};
-			name="marker_63";
+			name="mrk_objective_area";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";

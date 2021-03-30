@@ -136,6 +136,7 @@ class gradTnT {
 
       class side;
       class getOpposingSide;
+      class preventMinesAtObjective { postInit = 1; };
       class initVehicle {};
     };
 };
