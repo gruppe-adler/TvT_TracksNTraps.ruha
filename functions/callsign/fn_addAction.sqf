@@ -21,7 +21,7 @@ private _action = [
     "Change Callsign",
     "",
     {
-        [_target] call gradTnT_callsign_fnc_openDisplay;
+       [{ [_this] call gradTnT_callsign_fnc_openDisplay; }, _target] call CBA_fnc_execNextFrame;
     },
 	{
         alive _target && ([_target] call gradTnT_fnc_side) isEqualTo (side _player)
