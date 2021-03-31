@@ -99,6 +99,7 @@ class gradTnT {
 
       class clearForest;
       class deleteBorder { postInit = 1; };
+      class endMissionLocal;
       class initGlobal { postInit = 1; };
       class nerfMines { postInit = 1; };
       class waitForTimeUp { postInit = 1; };
