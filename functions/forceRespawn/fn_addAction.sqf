@@ -24,7 +24,7 @@ private _action = [
 	"Force Vehicle Respawn",
 	"",
 	{
-		[] call gradTnT_forceRespawn_fnc_openDisplay;
+		[{[] call gradTnT_forceRespawn_fnc_openDisplay;} ] call CBA_fnc_execNextFrame;
 	},
 	{
 		(side _player) isEqualTo (_target getVariable "gradTnT_forceRespawn_side")
