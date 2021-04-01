@@ -9,3 +9,5 @@ if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
 
     player setVariable ["gradTnT_engineerNodeAdded", true];
 };
+
+0 enableChannel false; // Disable user ability to send voice and text on global channel
