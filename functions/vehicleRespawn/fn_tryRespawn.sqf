@@ -20,7 +20,16 @@
 
 params [["_type", "", [""]], ["_pos", [0,0,0], [[]], [3]], ["_dir", 0, [0]], ["_variables", [], [[]]]];
 
-private _positionEmpty = nearestObjects [_pos, ["Man", "LandVehicle", "Air"], (sizeOf _type)/2];
+// enables better measurement of size needed
+private _sizeDummy = _type createVehicleLocal [0,0,0];
+private _dimensions = _sizeDummy call BIS_fnc_boundingBoxDimensions;
+deleteVehicle _sizeDummy;
+
+_dimensions params ["_width", "_length"];
+
+private _longerSide = _width max _length;
+
+private _positionEmpty = nearestObjects [_pos, ["Man", "LandVehicle", "Air"], _longerSide/2];
 private _isRoom = count _positionEmpty isEqualTo 0;
 
 // exit if position isn't empty
