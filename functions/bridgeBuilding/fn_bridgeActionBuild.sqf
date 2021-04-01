@@ -34,4 +34,4 @@ private _buildAction = [
 ] call ace_interact_menu_fnc_createAction;
 
 
-[player, 1, ["ACE_SelfActions", "Engineer Buildings"], _buildAction] call ace_interact_menu_fnc_addActionToObject;
+[player, 1, ["ACE_SelfActions", "Engineer_Buildings"], _buildAction] call ace_interact_menu_fnc_addActionToObject;
