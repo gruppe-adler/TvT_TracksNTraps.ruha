@@ -42,8 +42,9 @@ _veh setVariable ["tf_side", str _side, true];
 _veh setVariable ["tf_hasRadio", true, true];
 
 [_veh] call gradTnT_vehicleRespawn_fnc_add;
-[_veh] remoteExec ["gradTnT_fnc_addExplosiveAction", 0];
+[_veh] remoteExec ["gradTnT_fnc_addExplosiveAction", 0, true];
 [_veh] call gradTnT_bft_fnc_add;
+[_veh] remoteExec ["gradTnT_fnc_addCamoActions", 0, true];
 
 // flag for capturing only on non tank vehicles
 [_veh] remoteExecCall ["gradTnT_flag_fnc_addTakeAction", 0, true];

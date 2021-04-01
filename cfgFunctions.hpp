@@ -132,9 +132,10 @@ class gradTnT {
     class misc {
       file = "functions\misc";
 
-      class side;
+      class addCamoActions;
       class getOpposingSide;
+      class initVehicle;
       class preventMinesAtObjective { postInit = 1; };
-      class initVehicle {};
+      class side;
     };
 };
