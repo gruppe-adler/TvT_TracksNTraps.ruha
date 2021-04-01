@@ -32,14 +32,12 @@ private _attributes = _veh getVariable ["gm_vehicle_attributes", []];
 if (count _attributes isEqualTo 0) exitWith {};
 
 
-
 if (_number isNotEqualTo "") then {
     private _font = [configFile >> "CfgVehicles" >> (typeOf _veh), "gm_TacticalNumbersFontNumbers", "gm_gc_schablonier_gry"] call BIS_fnc_returnConfigEntry;
 
-    _attributes set [2, [_number, _font]];
-};
+    [_veh, _number, _font] call gradTnT_callsign_fnc_addCustomNumber;
 
-_veh setVariable ["gm_vehicle_attributes", _attributes, true];
+};
 
   
 // add after vehicleMarkingsInit as overwrites internal stuff

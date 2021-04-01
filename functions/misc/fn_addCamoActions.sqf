@@ -83,7 +83,6 @@ gradTnT_fnc_attachCamoNet = {
     private _animationNames = animationNames _vehicle;
 
     {
-        diag_log format ["names %1", "x %2", _animationNames, _x];
         if (_x in _animationNames) then {
             _vehicle animateSource [_x, _animationTo];
         };
