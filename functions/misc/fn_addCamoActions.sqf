@@ -20,7 +20,7 @@ gradTnT_fnc_canAttachCamoNet = {
     private _selectionNames = selectionNames _vehicle;
     
     {
-        if (_x in _selectionNames) exitWith {
+        if (_x in _selectionNames) then {
             _canAttach = true;
         };
     } forEach gradTnT_camoNetSelections;
@@ -51,9 +51,9 @@ gradTnT_fnc_camoNetAttached = {
     
     {
         if (_x in _selectionNames) then {
-            if (_vehicle animationSourcePhase _x == 1) exitWith {
+            if (_vehicle animationSourcePhase _x == 1) then {
                 _isAttached = true;
-            }
+            };
         };
     } forEach gradTnT_camoNetSelections;
 
@@ -68,9 +68,9 @@ gradTnT_fnc_foilageAttached = {
     
     {
         if (_x in _selectionNames) then {
-            if (_vehicle animationSourcePhase _x == 1) exitWith {
+            if (_vehicle animationSourcePhase _x == 1) then {
                 _isAttached = true;
-            }
+            };
         };
     } forEach gradTnT_foilageSelections;
 
@@ -82,7 +82,6 @@ gradTnT_fnc_attachCamoNet = {
     params ["_vehicle", "_attachBool"];
 
     private _animationTo = if (_attachBool) then { 1 } else { 0 };
-    
     private _selectionNames = selectionNames _vehicle;
 
     {
