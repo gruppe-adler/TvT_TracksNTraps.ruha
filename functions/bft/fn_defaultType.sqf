@@ -41,12 +41,13 @@ if (_veh isKindOf "gm_helicopter_base") exitWith {
 	"air";
 };
 
-if (_veh isKindOf "gm_wheeled_car_base") exitWith {
-	"transport";
-};
-
 if (_veh isKindOf "gm_gc_army_uaz469_spg9" || _veh isKindOf "gm_ge_army_iltis_milan") exitWith {
     "antitank";
+};
+
+// parent categories if something didnt fit until now
+if (_veh isKindOf "gm_wheeled_car_base") exitWith {
+    "transport";
 };
 
 if (_veh isKindOf "gm_wheeled_APC_base" || _veh isKindOf "gm_tracked_APC_base") exitWith {

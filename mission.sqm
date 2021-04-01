@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11564.081,124.49501,7818.3398};
-		dir[]={0.44071603,-0.54003888,-0.71706146};
-		up[]={0.28277972,0.84163296,-0.46009603};
-		aside[]={-0.85197258,5.394686e-007,-0.52363104};
+		pos[]={2682.5793,119.83788,15651.31};
+		dir[]={-0.52564329,-0.66623503,0.52898961};
+		up[]={-0.46960211,0.74574178,0.4725917};
+		aside[]={0.70934677,-1.4901161e-008,0.70485955};
 	};
 };
 binarizationWanted=0;
@@ -20723,14 +20723,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2655.5747,87.231674,15675.795};
-				angles[]={0,3.7883134,0};
+				position[]={2655.575,87.231667,15675.795};
+				angles[]={0,3.788307,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				init="call{[west, this] call gradTnT_fnc_addFlagInteraction;}";
+				init="call{[west, this] call gradTnT_fnc_addFlagInteraction; this setVariable [""gradTnT_vehicleSide"", west]; [this, ""headquarter""] call gradTnT_bft_fnc_add;}";
 			};
 			id=817;
 			type="gm_flag_GE";
@@ -20741,13 +20741,13 @@ class Mission
 			class PositionInfo
 			{
 				position[]={11598.067,99.739876,7810.4351};
-				angles[]={6.2457733,5.0629907,0.021686381};
+				angles[]={6.2457652,5.0629907,0.021694442};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[east, this] call gradTnT_fnc_addFlagInteraction;}";
+				init="call{[east, this] call gradTnT_fnc_addFlagInteraction; this setVariable [""gradTnT_vehicleSide"", east]; [this, ""headquarter""] call gradTnT_bft_fnc_add;}";
 			};
 			id=819;
 			type="gm_flag_UR";
