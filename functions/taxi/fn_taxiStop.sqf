@@ -8,7 +8,7 @@ if (ctrlText _btn_stop == "Stop") then {
     private _driver =  driver vehicle player;
     doStop _driver;
 
-    vehicle player vehicleChat format ['Willste aussteigen?!'];
+    vehicle player vehicleChat format ['Wanna get out?!'];
     vehicle player lockCargo [vehicle player getCargoIndex player, false];
 } else {
     _btn_stop ctrlSetText "Stop";
@@ -16,6 +16,6 @@ if (ctrlText _btn_stop == "Stop") then {
     private _driver =  driver vehicle player;
     [_driver] doFollow _driver;
 
-    vehicle player vehicleChat format ['Fahre weiter.'];
+    vehicle player vehicleChat format ['Going on...'];
     vehicle player lockCargo [vehicle player getCargoIndex player, true];
 };

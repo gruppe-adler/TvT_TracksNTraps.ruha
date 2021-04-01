@@ -15,7 +15,7 @@ call grad_publicTransport_fnc_taxiDialogClose;
 vehicle player lockCargo [vehicle player getCargoIndex player, true];
 
 _wp setWaypointStatements ["true", "
-    vehicle this vehicleChat format ['Willste aussteigen?!'];
+    vehicle this vehicleChat format ['Wanna get out man?!'];
     vehicle player lockCargo [vehicle player getCargoIndex player, false];
 "];
 
@@ -36,5 +36,5 @@ _marker setMarkerText (format ["Drop Off %1", groupID group player]);
 
 vehicle player setVariable ["gradTnT_taxiMarker", _marker, true];
 
-vehicle player vehicleChat format ['Fahre los.'];
+vehicle player vehicleChat format ['Moving to destination.'];
 vehicle player lockCargo [vehicle player getCargoIndex player, true];
