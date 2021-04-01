@@ -11,5 +11,9 @@ SB_BRIDGES_VEHICLE_DISTANCE = 30; // maximum distance vehicle is allowed to be
 
 
 if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
-    call gradTnT_fnc_bridgeActionBuild;
+    [{
+        player getVariable ["gradTnT_engineerNodeAdded", false]
+    },{
+        call gradTnT_fnc_bridgeActionBuild;
+    }, []] call CBA_fnc_waitUntilAndExecute; 
 };

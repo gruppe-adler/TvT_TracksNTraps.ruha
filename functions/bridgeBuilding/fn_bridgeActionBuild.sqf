@@ -9,7 +9,7 @@
 private _buildAction = [
     "BuildBridge",
     "Build Bridge",
-    "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+    "functions\bft\data\bridge.paa",
     {
         if (player getVariable ["SB_bridgesBuilt", 0] >= SB_MAX_BRIDGES) exitWith {
             private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", SB_MAX_BRIDGES];
@@ -29,9 +29,9 @@ private _buildAction = [
             call gradTnT_fnc_bridgePlace;
         };
     }, {
-          true
+          vehicle player == player
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
 
-[player, 1, ["ACE_SelfActions"], _buildAction] call ace_interact_menu_fnc_addActionToObject;
+[player, 1, ["ACE_SelfActions", "Engineer Buildings"], _buildAction] call ace_interact_menu_fnc_addActionToObject;

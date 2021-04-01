@@ -4,11 +4,10 @@
 
 */
 
-
 private _buildAction = [
     "BuildDepot",
     "Build Depot",
-    "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
+    "functions\bft\data\depot.paa",
     {
         if (player getVariable ["gradTnT_depotsBuilt", 0] >= gradTnT_MAX_DEPOTS) exitWith {
             private _string = format ["Depot Limit of %1 reached. Destroy one of the placed depots via ACE Interact to be able to build new ones.", gradTnT_MAX_DEPOTS];
@@ -28,9 +27,9 @@ private _buildAction = [
             call gradTnT_fnc_depotPlace;
         };
     }, {
-          true
+          vehicle player == player
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
 
-[player, 1, ["ACE_SelfActions"], _buildAction] call ace_interact_menu_fnc_addActionToObject;
+[player, 1, ["ACE_SelfActions", "Engineer_Buildings"], _buildAction] call ace_interact_menu_fnc_addActionToObject;
