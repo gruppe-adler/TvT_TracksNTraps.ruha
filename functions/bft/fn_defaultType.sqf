@@ -21,6 +21,10 @@ if (isNull _veh) exitWith {
 	"unknown";
 };
 
+if (_veh isKindOf "gm_flag_GE" || _veh isKindOf "gm_flag_UR") exitWith {
+    "headquarter";
+};
+
 if (_veh isKindOf "gm_ge_army_shelteraceII_repair" || _veh isKindOf "gm_gc_army_shelterlakII_repair") exitWith {
 	"depot";
 };
@@ -38,7 +42,11 @@ if (_veh isKindOf "gm_helicopter_base") exitWith {
 };
 
 if (_veh isKindOf "gm_wheeled_car_base") exitWith {
-	"cmd";
+	"transport";
+};
+
+if (_veh isKindOf "gm_gc_army_uaz469_spg9" || _veh isKindOf "gm_ge_army_iltis_milan") exitWith {
+    "antitank";
 };
 
 if (_veh isKindOf "gm_wheeled_APC_base" || _veh isKindOf "gm_tracked_APC_base") exitWith {
