@@ -22,7 +22,7 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
     hint "Aborted!";
 
     _vehicle setVariable ["gradTnT_explosiveAttaching", false, true];
-}, "Attaching Explosive"] call ace_common_fnc_progressBar;
+}, "Attaching Explosive (20s Countdown - then respawn)"] call ace_common_fnc_progressBar;
 
 {
    ["Something cratches on your tank..."] remoteExec ["hintSilent", _x];
