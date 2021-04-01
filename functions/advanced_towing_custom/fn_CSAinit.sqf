@@ -18,7 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 */
 
-#include "supportedVehicles.hpp"
+CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE = ["gm_ge_army_bpz2a0"];
 
 #define CSA_Find_Surface_ASL_Under_Position(_object,_positionAGL,_returnSurfaceASL,_canFloat) \
 _objectASL = AGLToASL (_object modelToWorldVisual (getCenterOfMass _object)); \

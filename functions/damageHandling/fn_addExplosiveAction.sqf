@@ -2,7 +2,7 @@ params ["_vehicle"];
 
 private _explosiveAction = [
     "ExplosiveAction",
-    "Attach Explosive (destroy and respawn) - 30s timer",
+    "Attach Explosive (20s)",
     "\A3\ui_f\data\map\respawn\icon_dead_ca.paa",
     {
         [_target] call gradTnT_fnc_triggerExplosive;

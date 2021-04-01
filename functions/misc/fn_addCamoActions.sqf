@@ -8,7 +8,7 @@ gradTnT_camoNetSelections = [
     "camonet_02_unhide"
 ];
 
-gradTnT_camoFoilageSelections = [
+gradTnT_FoilageSelections = [
     "camofoilage_hull_unhide",
     "camofoilage_mainturret_trav_unhide"
 ];
@@ -17,10 +17,10 @@ gradTnT_fnc_canAttachCamoNet = {
     params ["_vehicle"];
 
     private _canAttach = false;
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
     
     {
-        if (_x in _selectionNames) then {
+        if (_x in _animationNames && !([_vehicle] call gradTnT_fnc_camoNetAttached)) then {
             _canAttach = true;
         };
     } forEach gradTnT_camoNetSelections;
@@ -32,13 +32,13 @@ gradTnT_fnc_canAttachFoilage = {
     params ["_vehicle"];
 
     private _canAttach = false;
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
     
     {
-        if (_x in _selectionNames && !([_vehicle] call gradTnT_fnc_camoNetAttached)) exitWith {
+        if (_x in _animationNames && !([_vehicle] call gradTnT_fnc_foilageAttached)) exitWith {
             _canAttach = true;
         };
-    } forEach gradTnT_camoFoilageSelections;
+    } forEach gradTnT_FoilageSelections;
 
     _canAttach
 };
@@ -47,10 +47,10 @@ gradTnT_fnc_camoNetAttached = {
     params ["_vehicle"];
 
     private _isAttached = false;
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
     
     {
-        if (_x in _selectionNames) then {
+        if (_x in _animationNames) then {
             if (_vehicle animationSourcePhase _x == 1) then {
                 _isAttached = true;
             };
@@ -64,14 +64,12 @@ gradTnT_fnc_foilageAttached = {
     params ["_vehicle"];
 
     private _isAttached = false;
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
     
     {
-        if (_x in _selectionNames) then {
-            if (_vehicle animationSourcePhase _x == 1) then {
-                _isAttached = true;
-            };
-        };
+        if (_vehicle animationSourcePhase _x == 1) then {
+            _isAttached = true;
+        };        
     } forEach gradTnT_foilageSelections;
 
     _isAttached
@@ -82,10 +80,11 @@ gradTnT_fnc_attachCamoNet = {
     params ["_vehicle", "_attachBool"];
 
     private _animationTo = if (_attachBool) then { 1 } else { 0 };
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
 
     {
-        if (_x in _selectionNames) then {
+        diag_log format ["names %1", "x %2", _animationNames, _x];
+        if (_x in _animationNames) then {
             _vehicle animateSource [_x, _animationTo];
         };
     } forEach gradTnT_camoNetSelections;
@@ -96,13 +95,13 @@ gradTnT_fnc_attachFoilage = {
     params ["_vehicle", "_attachBool"];
 
     private _animationTo = if (_attachBool) then { 1 } else { 0 };
-    private _selectionNames = selectionNames _vehicle;
+    private _animationNames = animationNames _vehicle;
 
     {
-        if (_x in _selectionNames) then {
+        if (_x in _animationNames) then {
             _vehicle animateSource [_x, _animationTo];
         };
-    } forEach gradTnT_camoFoilageSelections;
+    } forEach gradTnT_foilageSelections;
 };
 
 
@@ -130,7 +129,7 @@ private _camoNetDetach = [
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
-[_vehicle, 0, ["ACE_MainActions"], _camoNetAttach] call ace_interact_menu_fnc_addActionToObject;
+[_vehicle, 0, ["ACE_MainActions"], _camoNetDetach] call ace_interact_menu_fnc_addActionToObject;
 
 private _foilageAttach = [
     "foilageAttach",
@@ -156,4 +155,4 @@ private _foilageDetach = [
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
-[_vehicle, 0, ["ACE_MainActions"], _camoNetAttach] call ace_interact_menu_fnc_addActionToObject;
+[_vehicle, 0, ["ACE_MainActions"], _foilageDetach] call ace_interact_menu_fnc_addActionToObject;
