@@ -31,11 +31,7 @@ _veh setVariable ["gradTnT_callsign", _callsign, true];
 private _attributes = _veh getVariable ["gm_vehicle_attributes", []];
 if (count _attributes isEqualTo 0) exitWith {};
 
-private _allowedSuffixes = [_prefix] call gradTnt_callsign_fnc_allowedSuffixes;
-if (count _suffix isEqualTo 0 || _suffix in _allowedSuffixes) then {
-    private _formationSign = format ["gm_insignia_formation_%1%2_yel", _prefix, _suffix];
-    (_attributes select 3) set [5, _formationSign];
-};
+
 
 if (_number isNotEqualTo "") then {
     private _font = [configFile >> "CfgVehicles" >> (typeOf _veh), "gm_TacticalNumbersFontNumbers", "gm_gc_schablonier_gry"] call BIS_fnc_returnConfigEntry;
@@ -44,4 +40,18 @@ if (_number isNotEqualTo "") then {
 };
 
 _veh setVariable ["gm_vehicle_attributes", _attributes, true];
-[_veh] spawn gm_core_vehicles_fnc_vehicleMarkingsInit;
+private _script = [_veh] spawn gm_core_vehicles_fnc_vehicleMarkingsInit;
+
+[{
+    params ["_script"];
+    scriptDone _script
+},{
+    params ["_script", "_veh", "_prefix", "_suffix"];
+    
+    // add after vehicleMarkingsInit as overwrites internal stuff
+    private _allowedSuffixes = [_prefix] call gradTnt_callsign_fnc_allowedSuffixes;
+    if (count _suffix isEqualTo 0 || _suffix in _allowedSuffixes) then {
+        private _formationSign = format ["functions\callsign\data\%1%2.paa", _prefix, _suffix];
+        [_veh, _formationSign] call gradTnt_callsign_fnc_addCustomFormationSign;
+    };
+}, [_script, _veh, _prefix, _suffix]] call CBA_fnc_waitUntilAndExecute;
