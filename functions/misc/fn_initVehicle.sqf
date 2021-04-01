@@ -43,7 +43,6 @@ _veh setVariable ["tf_hasRadio", true, true];
 
 [_veh] call gradTnT_vehicleRespawn_fnc_add;
 [_veh] remoteExec ["gradTnT_fnc_addExplosiveAction", 0];
-[_veh] call gradTnT_fnc_damageHandling;
 [_veh] call gradTnT_bft_fnc_add;
 
 // flag for capturing only on non tank vehicles
@@ -60,7 +59,6 @@ if (_veh isKindOf "gm_ge_army_bpz2a0") then {
 
 
 // default items for each vehicle
-_veh addItemCargoGlobal ["ItemGPS", 1];
 _veh addItemCargoGlobal ["ACE_EntrenchingTool", 2];
 _veh addItemCargoGlobal ["ACE_bloodIV", 30];
 _veh addItemCargoGlobal ["ACE_fieldDressing", 30];

@@ -52,9 +52,6 @@ class gradTnT {
         file = "functions\damageHandling";
 
         class addExplosiveAction;
-        class canBeRepaired;
-        class damageHandlingAddAction;
-        class damageRepair;
         class removeExplosive;
         class triggerExplosive;
     };
