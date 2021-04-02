@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
 
         // ends mission after replay is over
         [{
-            REPLAY_FINISHED
+            missionNamespace getVariable ["REPLAY_FINISHED",false]
         }, {
             [] remoteExec ["gradTnT_fnc_endMissionLocal",0,false]; // your custom end mission call or whatever you want to do after replay
         }, []] call CBA_fnc_waitUntilAndExecute;
