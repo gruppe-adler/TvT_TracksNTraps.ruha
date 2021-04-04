@@ -54,6 +54,10 @@ _veh disableTIEquipment true;
 // assign side to vehicle
 if (_veh isKindOf "gm_ge_army_bpz2a0") then {
     _veh setVariable ["gradTnT_isRepairTank", true, true];
+
+    if (_side == east) then {
+        [_veh] call gradTnT_fnc_bpz_configureBpzEast;
+    };
 } else {
     _veh setVariable ["gradTnT_isRepairTank", false, true]; // todo necessary to set respawn var even when false?
 };
