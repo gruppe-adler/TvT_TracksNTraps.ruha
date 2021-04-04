@@ -16,6 +16,8 @@ if (count _possibleRepairVehicles > 0) then {
             };
         };
     } forEach _possibleRepairVehicles;
+} else {
+    hint "No BPz in close range";
 };
 
 _isNear

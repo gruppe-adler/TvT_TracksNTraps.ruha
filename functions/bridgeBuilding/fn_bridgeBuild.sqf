@@ -31,10 +31,13 @@ inGameUISetEventHandler ["NextAction", "false"];
 player forceWalk false;
 player setVariable ["gradTnT_carryBridge", -1];
 
-private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
+private _side = side player;
+private _varKey = format ["gradTnT_bridgesBuilt_%1", _side];
+private _bridgesBuilt = missionNamespace getVariable [_varKey, 0];
+
 // exitwith
-if (_bridgesBuilt >= SB_MAX_BRIDGES) exitWith {
-    private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", SB_MAX_BRIDGES];
+if (_bridgesBuilt >= gradTnT_MAX_BRIDGES) exitWith {
+    private _string = format ["Bridge Limit of %1 reached. Destroy one of the placed bridges via ACE Interact to be able to build new ones.", gradTnT_MAX_BRIDGES];
     hintSilent _string;
 };
 
@@ -51,9 +54,8 @@ _bridgeHelper attachTo [_bridge,[0,0,0.97]];
 _bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
 _bridge setVariable ["gradTnT_bridgeHelper", _bridgeHelper, true];
 
-private _bridgesBuilt = player getVariable ["SB_bridgesBuilt", 0];
 _bridgesBuilt = _bridgesBuilt + 1;
-player setVariable ["SB_bridgesBuilt", _bridgesBuilt, true];
+missionNamespace setVariable [_varKey, _bridgesBuilt, true];
 
 private _bridgesLeft = format ["You can build %1 more bridges.", (2 - _bridgesBuilt)];
 hintSilent _bridgesLeft;
