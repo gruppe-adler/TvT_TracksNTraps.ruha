@@ -15,6 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     additional notice: minor adjustments to original script were made by nomisum for Gruppe Adler 2021
     functions are renamed to CSA (Custom SA) to avoid conflicts/confusion
+    main goal was ACE Interact compatibility and removal from mouse wheel
 
 */
 
