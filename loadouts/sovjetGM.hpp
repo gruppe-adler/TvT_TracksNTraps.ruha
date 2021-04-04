@@ -223,7 +223,7 @@ class sovjetGM {
             };
         };
         class officer_F: Soldier_SL_F {};
-        class Crew_F {
+        class Crew_F: Soldier_F {
             uniform = "gm_ge_army_uniform_crew_80_oli";
             headgear = "gm_gc_army_headgear_crewhat_80_blk";
             primaryWeapon = "gm_mpiaks74nk_brn";

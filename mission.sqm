@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1672;
+		nextID=1681;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6261.2021,150.86809,13795.577};
-		dir[]={-0.84982717,-0.50690657,0.14435874};
-		up[]={-0.49974772,0.86200106,0.084891319};
-		aside[]={0.16746935,0,0.98587734};
+		pos[]={7000.6895,190.22572,11186.958};
+		dir[]={-0.32663202,-0.57211369,-0.75239658};
+		up[]={-0.2278658,0.8200984,-0.52488863};
+		aside[]={-0.91734022,-2.7637725e-007,0.39823455};
 	};
 };
 binarizationWanted=0;
@@ -25656,8 +25656,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -25666,10 +25666,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26096,8 +26096,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26106,10 +26106,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26138,8 +26138,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26148,10 +26148,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26578,8 +26578,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26588,10 +26588,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26619,8 +26619,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26629,10 +26629,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -27059,8 +27059,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -27069,10 +27069,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -27100,8 +27100,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -27110,10 +27110,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -27540,8 +27540,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -27550,10 +27550,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -32400,17 +32400,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6996.1978,102.87041,10877.753};
-				angles[]={0,1.0616122,0};
+				position[]={6996.1982,102.7915,10877.753};
+				angles[]={0,1.0616139,0};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 				init="call{[this] call gradTnT_bridgeDestruction_fnc_actionDestroy;}";
 			};
 			id=1656;
 			type="land_gm_euro_sewer_01";
+			atlOffset=2.0984573;
 		};
 		class Item130
 		{
@@ -32427,6 +32428,7 @@ class Mission
 			};
 			id=1657;
 			type="land_gm_euro_misc_powerbox_01";
+			atlOffset=-7.6293945e-006;
 		};
 		class Item131
 		{
@@ -32449,23 +32451,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6796.9336,102.00322,10758.661};
-				angles[]={0,4.2630196,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				init="call{[this] call gradTnT_bridgeDestruction_fnc_actionDestroy;}";
-			};
-			id=1659;
-			type="land_gm_euro_sewer_01";
-		};
-		class Item133
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={6499.0806,103.96523,10866.925};
 				angles[]={0,1.3723892,0};
 			};
@@ -32476,8 +32461,9 @@ class Mission
 			};
 			id=1660;
 			type="land_gm_euro_misc_powerbox_01";
+			atlOffset=7.6293945e-006;
 		};
-		class Item134
+		class Item133
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32492,25 +32478,27 @@ class Mission
 			};
 			id=1661;
 			type="land_gm_euro_misc_powerbox_01";
+			atlOffset=7.6293945e-006;
 		};
-		class Item135
+		class Item134
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6509.0767,103.78329,10872.94};
-				angles[]={0,2.9157217,0};
+				position[]={6509.0771,103.69718,10872.94};
+				angles[]={0,2.9157298,0};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 				init="call{[this] call gradTnT_bridgeDestruction_fnc_actionDestroy;}";
 			};
 			id=1662;
 			type="land_gm_euro_sewer_01";
+			atlOffset=1.512619;
 		};
-		class Item136
+		class Item135
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32525,8 +32513,9 @@ class Mission
 			};
 			id=1663;
 			type="land_gm_euro_misc_powerbox_01";
+			atlOffset=-7.6293945e-006;
 		};
-		class Item137
+		class Item136
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32542,7 +32531,7 @@ class Mission
 			id=1664;
 			type="land_gm_euro_misc_powerbox_01";
 		};
-		class Item138
+		class Item137
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32559,7 +32548,7 @@ class Mission
 			id=1665;
 			type="land_gm_euro_sewer_01";
 		};
-		class Item139
+		class Item138
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32575,7 +32564,7 @@ class Mission
 			id=1666;
 			type="land_gm_euro_misc_powerbox_01";
 		};
-		class Item140
+		class Item139
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32591,7 +32580,7 @@ class Mission
 			id=1667;
 			type="land_gm_euro_misc_powerbox_01";
 		};
-		class Item141
+		class Item140
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32608,7 +32597,7 @@ class Mission
 			id=1668;
 			type="land_gm_euro_sewer_01";
 		};
-		class Item142
+		class Item141
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32624,7 +32613,7 @@ class Mission
 			id=1669;
 			type="land_gm_euro_misc_powerbox_01";
 		};
-		class Item143
+		class Item142
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32640,7 +32629,7 @@ class Mission
 			id=1670;
 			type="land_gm_euro_misc_powerbox_01";
 		};
-		class Item144
+		class Item143
 		{
 			dataType="Object";
 			class PositionInfo
@@ -32656,6 +32645,23 @@ class Mission
 			};
 			id=1671;
 			type="land_gm_euro_sewer_01";
+		};
+		class Item144
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6796.9341,101.97631,10758.661};
+				angles[]={0,4.2630191,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{[this] call gradTnT_bridgeDestruction_fnc_actionDestroy;}";
+			};
+			id=1679;
+			type="land_gm_euro_sewer_01";
+			atlOffset=1.2732849;
 		};
 	};
 	class Connections
@@ -33741,7 +33747,7 @@ class Mission
 			{
 				linkID=107;
 				item0=1657;
-				item1=1659;
+				item1=1679;
 				class CustomData
 				{
 					type="Sync";
@@ -33751,7 +33757,7 @@ class Mission
 			{
 				linkID=108;
 				item0=1658;
-				item1=1659;
+				item1=1679;
 				class CustomData
 				{
 					type="Sync";
