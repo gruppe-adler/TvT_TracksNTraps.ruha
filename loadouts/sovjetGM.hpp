@@ -215,7 +215,7 @@ class sovjetGM {
             headgear = "gm_gc_headgear_beret_officer_blk";
             primaryWeapon = "gm_mpiaks74nk_brn";
             primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
-            vest = "gm_gc_army_vest_80_belt_str";
+            vest = "gm_gc_army_vest_80_rifleman_str";
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_gc"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
@@ -229,11 +229,11 @@ class sovjetGM {
             primaryWeapon = "gm_mpiaks74nk_brn";
             primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
             vest = "gm_gc_army_vest_80_belt_str";
-            addItemsToVest[] = {
+            addItemsToBackpack[] = {
                 LIST_2("gm_smokeshell_wht_dm25"),
                 LIST_4("gm_30Rnd_545x39mm_B_7N6_ak74_org")
             };
-            backpack = "";
+            backpack = "gm_pl_army_backpack_80_oli";
         };
 
         class Recon_F: Crew_F {
@@ -270,11 +270,11 @@ class sovjetGM {
             headgear = "gm_gc_headgear_beret_officer_blk";
             primaryWeapon = "gm_mpiaks74nk_brn";
             primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
-            vest = "gm_gc_army_vest_80_belt_str";
+            vest = "gm_gc_army_vest_80_rifleman_str";
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_gc"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
-                LIST_3("gm_30Rnd_545x39mm_B_7N6_ak74_org")
+                LIST_5("gm_30Rnd_545x39mm_B_7N6_ak74_org")
             };
         };
     };
