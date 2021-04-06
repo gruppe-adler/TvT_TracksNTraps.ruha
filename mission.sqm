@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6974.8804,107.01383,11131.438};
-		dir[]={-0.1939289,-0.44215977,-0.87572682};
-		up[]={-0.095600277,0.89693648,-0.43170342};
-		aside[]={-0.97635269,1.7066486e-007,0.21621309};
+		pos[]={2698.4651,100.27291,15684.762};
+		dir[]={-0.68802351,-0.57016391,0.44892862};
+		up[]={-0.47750622,0.82153088,0.31156817};
+		aside[]={0.54645365,-1.4901161e-008,0.83748937};
 	};
 };
 binarizationWanted=0;
@@ -262,7 +262,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -317,7 +317,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category2
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -365,7 +365,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=14;
+									items=15;
 									class Item0
 									{
 										class data
@@ -562,6 +562,20 @@ class CustomAttributes
 											value="vet_unflipping_time";
 										};
 									};
+									class Item14
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_fire_enableflare";
+										};
+									};
 								};
 							};
 						};
@@ -578,7 +592,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=14;
+									items=15;
 									class Item0
 									{
 										class data
@@ -1207,6 +1221,51 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item14
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -1256,7 +1315,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=146;
+		items=145;
 		class Item0
 		{
 			dataType="Logic";
@@ -22934,7 +22993,7 @@ class Mission
 				class Attribute6
 				{
 					property="ace_isRepairVehicle";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
 					class Value
 					{
 						class data
@@ -23565,7 +23624,7 @@ class Mission
 				class Attribute6
 				{
 					property="ace_isRepairVehicle";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
 					class Value
 					{
 						class data
@@ -24196,7 +24255,7 @@ class Mission
 				class Attribute6
 				{
 					property="ace_isRepairVehicle";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
 					class Value
 					{
 						class data
@@ -24873,7 +24932,7 @@ class Mission
 				class Attribute6
 				{
 					property="ace_isRepairVehicle";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
 					class Value
 					{
 						class data
@@ -32662,16 +32721,6 @@ class Mission
 			id=1679;
 			type="land_gm_euro_sewer_01";
 			atlOffset=1.2732849;
-		};
-		class Item145
-		{
-			dataType="Group";
-			side="East";
-			class Attributes
-			{
-			};
-			id=1685;
-			atlOffset=-116.728;
 		};
 	};
 	class Connections

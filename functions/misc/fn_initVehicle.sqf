@@ -40,6 +40,7 @@ private _side = param [2, [_veh] call gradTnT_fnc_side, [sideUnknown]];
 _veh setVariable ["gradTnT_vehicleSide", _side, true];
 _veh setVariable ["tf_side", str _side, true];
 _veh setVariable ["tf_hasRadio", true, true];
+_veh setVariable ["ace_cookoff_enable", false, true];
 
 [_veh] call gradTnT_vehicleRespawn_fnc_add;
 [_veh] remoteExec ["gradTnT_fnc_addExplosiveAction", 0, true];

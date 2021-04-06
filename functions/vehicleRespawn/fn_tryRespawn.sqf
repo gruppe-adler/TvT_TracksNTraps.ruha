@@ -22,7 +22,7 @@ params [["_type", "", [""]], ["_pos", [0,0,0], [[]], [3]], ["_dir", 0, [0]], ["_
 
 // SizeOf: At least one object of the given classname has to be present in the current mission otherwise zero will be returned
 private _sizeDummy = _type createVehicleLocal [0,0,0];
-private _dimensions = sizeOf _sizeDummy;
+private _dimensions = sizeOf typeOf _sizeDummy;
 deleteVehicle _sizeDummy;
 
 private _positionEmpty = nearestObjects [_pos, ["Man", "LandVehicle", "Air"], _dimensions/1.5];
