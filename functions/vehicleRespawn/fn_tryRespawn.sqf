@@ -20,20 +20,19 @@
 
 params [["_type", "", [""]], ["_pos", [0,0,0], [[]], [3]], ["_dir", 0, [0]], ["_variables", [], [[]]]];
 
-// enables better measurement of size needed
+// SizeOf: At least one object of the given classname has to be present in the current mission otherwise zero will be returned
 private _sizeDummy = _type createVehicleLocal [0,0,0];
-private _dimensions = _sizeDummy call BIS_fnc_boundingBoxDimensions;
+private _dimensions = sizeOf _sizeDummy;
 deleteVehicle _sizeDummy;
 
-_dimensions params ["_width", "_length"];
-
-private _longerSide = _width max _length;
-
-private _positionEmpty = nearestObjects [_pos, ["Man", "LandVehicle", "Air"], _longerSide/2];
+private _positionEmpty = nearestObjects [_pos, ["Man", "LandVehicle", "Air"], _dimensions/1.5];
 private _isRoom = count _positionEmpty isEqualTo 0;
 
 // exit if position isn't empty
-if (!_isRoom) exitWith { false; };
+if (!_isRoom) exitWith {
+	diag_log format ["trying to respawn %1 on %2 but no room", _type, _pos];
+	false;
+};
 
 // spawn vehicle
 private _veh = createVehicle [ _type, [0,0,0], [], 0, "NONE" ];
