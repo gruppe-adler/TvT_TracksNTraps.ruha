@@ -7,8 +7,8 @@ class bwGM {
         handgunWeapon = "";
         handgunWeaponMagazine = "";
         uniform = "gm_ge_army_uniform_soldier_80_oli";
-        vest = "gm_dk_army_vest_54_rifleman";
-        backpack = "gm_ge_army_backpack_80_oli";
+        vest = "gm_ge_army_vest_80_crew";
+        backpack = "gm_ge_backpack_sem35_oli";
         headgear = "gm_ge_headgear_m62_net";
         binoculars = "gm_ferod16_oli";
         map = "ItemMap";
@@ -23,8 +23,8 @@ class bwGM {
         class Soldier_F {
             gps = "itemGPS";
             headgear = "gm_ge_headgear_crewhat_80_blk";
-            vest = "gm_ge_army_vest_80_crew";
             uniform = "gm_ge_army_uniform_crew_80_oli";
+            backpack = "gm_ge_backpack_sem35_oli";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
@@ -34,14 +34,13 @@ class bwGM {
                 "ACE_Flashlight_XL50",
                 "ACE_key_west"
             };
-            addItemsToVest[] = {
+            addItemsToBackpack[] = {
                 LIST_5("gm_20Rnd_762x51mm_B_DM41_g3_blk"),
-                LIST_6("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk"),
                 LIST_2("gm_handgrenade_frag_dm51"),
                 LIST_2("gm_smokeshell_wht_dm25")
             };
         };
-        class Engineer_F: Soldier_F{
+        class Engineer_F: Soldier_F {
             uniform = "gm_ge_army_uniform_soldier_80_ols";
             headgear = "gm_ge_headgear_m62_net";
             vest = "gm_ge_army_vest_80_leader";
@@ -51,14 +50,40 @@ class bwGM {
                 LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
             };
             addItemsToBackpack[] = {
-                LIST_2("gm_mine_at_dm21"),
-                "toolkit",
+                LIST_1("gm_mine_at_dm21"),
+                LIST_1("toolkit"),
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
                 LIST_2("ACE_morphine"),
-                "grad_axe",
-                "ACE_EntrenchingTool",
-                "ACE_DefusalKit"
+                LIST_1("grad_axe"),
+                LIST_1("ACE_EntrenchingTool"),
+                LIST_1("ACE_DefusalKit")
+            };
+        };
+        class Soldier_exp_F: Soldier_F {
+            uniform = "gm_ge_army_uniform_soldier_80_ols";
+            headgear = "gm_ge_headgear_m62_net";
+            vest = "gm_ge_army_vest_80_leader";
+            backpack = "gm_ge_army_backpack_80_engineer_oli";
+            goggles[] = {
+                "gm_headgear_foliage_summer_grass_01",
+                "gm_headgear_foliage_summer_grass_02",
+                "gm_headgear_foliage_summer_grass_03",
+                "gm_headgear_foliage_summer_grass_04"
+            };
+            addItemsToVest[] = {
+                LIST_2("gm_smokeshell_wht_dm25"),
+                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
+            };
+            addItemsToBackpack[] = {
+                LIST_1("gm_mine_at_dm21"),
+                LIST_1("toolkit"),
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_epinephrine"),
+                LIST_2("ACE_morphine"),
+                LIST_1("grad_axe"),
+                LIST_1("ACE_EntrenchingTool"),
+                LIST_1("ACE_DefusalKit")
             };
         };
         class HeavyGunner_F: Soldier_F {
@@ -232,14 +257,13 @@ class bwGM {
             };
         };
         class officer_F: Soldier_SL_F {};
-        class Crew_F {
+        class Crew_F: Soldier_F {
             uniform = "gm_ge_army_uniform_crew_80_oli";
             headgear = "gm_ge_headgear_crewhat_80_blk";
             primaryWeapon = "gm_mp2a1_blk";
             primaryWeaponMagazine = "gm_32Rnd_9x19mm_B_DM11_mp2_blk";
             vest = "gm_ge_army_vest_80_crew";
-            backpack = "";
-            addItemsToVest[] = {
+            addItemsToBackpack[] = {
                 LIST_6("gm_32Rnd_9x19mm_B_DM11_mp2_blk"),
                 LIST_2("gm_handgrenade_frag_dm51"),
                 LIST_2("gm_smokeshell_wht_dm25")
@@ -270,13 +294,10 @@ class bwGM {
     };
 
     class Rank {
-        class CORPORAL {
-            backpack[] = {"TFAR_mr3000_bwmod"};
-        };
         
         class COLONEL {
             headgear = "gm_ge_headgear_beret_crew_red_opcom";
-            backpack = "TFAR_rt1523g_green";
+            backpack = "gm_ge_backpack_sem35_oli";
             goggles = "";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),

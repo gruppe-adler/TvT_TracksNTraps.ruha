@@ -17,26 +17,26 @@ class sovjetGM {
         compass = "ItemCompass";
         watch = "gm_watch_kosei_80";
         nvgoggles = "";
-        gps = "";
+        gps = "itemGPS";
         goggles = "";
     };
 
     class Type {
         class Soldier_F {
-            gps = "itemGPS";
+            uniform = "gm_gc_army_uniform_soldier_80_str";
+            backpack = "gm_gc_backpack_r105m_brn";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
                 LIST_3("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
-                LIST_4("ACE_splint"),
                 "ACE_MapTools",
                 "ACE_Flashlight_KSF1",
                 "ACE_key_east"
             };
             addItemsToBackpack[] = {
                 "SmokeShell",
-                LIST_6("gm_30rnd_545x39mm_b_7n6_ak74_prp"),
+                LIST_5("gm_30rnd_545x39mm_b_7n6_ak74_prp"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
                 LIST_2("gm_smokeshell_wht_gc")
             };
@@ -47,20 +47,42 @@ class sovjetGM {
             uniform  = "gm_gc_army_uniform_soldier_gloves_80_str";
             vest = "gm_gc_vest_combatvest3_str";
             headgear = "gm_gc_headgear_fjh_model4_oli";
+            backpack = "gm_gc_army_backpack_80_assaultpack_lmg_str";
             addItemsToVest[] = {
-                "SmokeShell",
-                LIST_7("gm_30Rnd_762x39mm_B_M43_ak47_blk"),
+                LIST_5("gm_30Rnd_762x39mm_B_M43_ak47_blk"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
                 LIST_2("gm_smokeshell_wht_gc")
             };
             addItemsToBackpack[] = {
-                LIST_6("ACE_fieldDressing"),
-                LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine"),
-                "gm_mine_at_tm46",
                 "grad_axe",
                 "ACE_EntrenchingTool",
-                "ACE_DefusalKit"
+                "ACE_DefusalKit",
+                "gm_mine_at_tm46"
+            };
+        };
+        class soldier_exp_F: Soldier_F {
+            primaryWeapon = "gm_mpikms72_brn_zvn64";
+            primaryWeaponMagazine = "gm_30Rnd_762x39mm_B_M43_ak47_blk";
+            uniform  = "gm_gc_army_uniform_soldier_gloves_80_str";
+            vest = "gm_gc_vest_combatvest3_str";
+            headgear = "gm_gc_headgear_fjh_model4_oli";
+            backpack = "gm_gc_army_backpack_80_assaultpack_lmg_str";
+            goggles[] = {
+                "gm_headgear_foliage_summer_grass_01",
+                "gm_headgear_foliage_summer_grass_02",
+                "gm_headgear_foliage_summer_grass_03",
+                "gm_headgear_foliage_summer_grass_04"
+            };
+            addItemsToVest[] = {
+                LIST_5("gm_30Rnd_762x39mm_B_M43_ak47_blk"),
+                LIST_2("gm_handgrenade_frag_rgd5"),
+                LIST_2("gm_smokeshell_wht_gc")
+            };
+            addItemsToBackpack[] = {
+                LIST_1("grad_axe"),
+                LIST_1("ACE_EntrenchingTool"),
+                LIST_1("ACE_DefusalKit"),
+                LIST_1("gm_mine_at_tm46")
             };
         };
 
@@ -254,10 +276,6 @@ class sovjetGM {
     };
 
     class Rank {
-        class CORPORAL {
-            backpack[] = {"TFAR_mr3000_rhs"};
-        };
-
         class COLONEL {
             uniform = "gm_ge_army_uniform_crew_80_oli";
             headgear = "gm_gc_headgear_beret_officer_blk";

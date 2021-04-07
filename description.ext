@@ -81,7 +81,7 @@ class GRAD_Replay {
 
 //GRAD LOADOUT =================================================================
 class Loadouts {
-    baseDelay = 1;
+    baseDelay = 3;
     handleRadios = 1;
     resetLoadout = 1;
 
