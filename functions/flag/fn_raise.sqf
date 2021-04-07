@@ -74,12 +74,14 @@ if ((flagAnimationPhase _flag) isNotEqualTo 0) then {
 
             [{ params ["_helper"]; if (!(isNull _helper)) then { deleteVehicle _helper; }}, [_helper], 80] call CBA_fnc_waitAndExecute;
 
+            private _side = side _unit;
+            _flag setFlagTexture ([_side] call gradTnT_flag_fnc_getTexture); // trying to fix missing flag texture
+
             if (flagAnimationPhase _flag < 1) then {
                 [_flag, ((flagAnimationPhase _flag) + 0.05)] call BIS_fnc_animateFlag;
             } else {
                 [_handle] call CBA_fnc_removePerFrameHandler;
 
-                private _side = side _unit;
                 _flag setVariable ["gradTnT_flagAnimation", false, true];
                 _flag setVariable ["gradTnT_flagOwner", _side, true];
                 _unit setVariable ["gradTnT_flagRaising", false, true];
