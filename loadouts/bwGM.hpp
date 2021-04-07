@@ -1,3 +1,5 @@
+#include "list_macros.hpp"
+
 class bwGM {
     class AllUnits {
         primaryWeapon = "gm_g3a3_oli";

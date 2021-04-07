@@ -1,3 +1,5 @@
+#include "list_macros.hpp"
+
 class sovjetGM {
     class AllUnits {
         primaryWeapon = "gm_mpiak74n_brn";
