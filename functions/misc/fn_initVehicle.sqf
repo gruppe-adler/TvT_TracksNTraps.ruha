@@ -36,7 +36,14 @@ _customization params ["_textures", "_animations"];
 [_veh, _textures, _animations] call BIS_fnc_initVehicle;
 
 private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]), [[]], [2, 3]];
-[_veh, _callsign] call gradTnT_callsign_fnc_set;
+
+// delay callsign because gm init scripts are running automatically
+[{
+    params ["_veh", "_callsign"];
+    [_veh, _callsign] call gradTnT_callsign_fnc_set;
+}, [_veh, _callsign], 3] call CBA_fnc_waitAndExecute;
+
+
 [_veh] remoteExecCall ["gradTnT_callsign_fnc_addAction", 0, true];
 
 private _side = param [2, [_veh] call gradTnT_fnc_side, [sideUnknown]];
