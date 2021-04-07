@@ -74,11 +74,6 @@ _veh addItemCargoGlobal ["ACE_fieldDressing", 30];
 _veh addItemCargoGlobal ["ACE_epinephrine", 20];
 _veh addItemCargoGlobal ["ACE_morphine", 20];
 _veh addItemCargoGlobal ["ACE_tourniquet", 10];
-_veh addItemCargoGlobal ["ACE_MapTools", 2];
-_veh addItemCargoGlobal ["ACE_Flashlight_XL50", 2];
-_veh addItemCargoGlobal ["ACE_wirecutter", 2];
-_veh addItemCargoGlobal ["grad_axe", 2];
-_veh addItemCargoGlobal ["ACE_DefusalKit", 2];
 
 if (typeOf _veh in [
     "gm_gc_army_btr60pb",
