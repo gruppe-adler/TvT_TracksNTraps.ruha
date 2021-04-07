@@ -31,6 +31,9 @@ clearItemCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
 
+private _customization = _veh getVariable ["gradTnT_vehicleCustomization", []];
+_customization params ["_textures", "_animations"];
+[_veh, _textures, _animations] call BIS_fnc_initVehicle;
 
 private _callsign = param [1, (_veh getVariable ["gradTnT_callsign", ["A", "1"]]), [[]], [2, 3]];
 [_veh, _callsign] call gradTnT_callsign_fnc_set;
@@ -40,7 +43,7 @@ private _side = param [2, [_veh] call gradTnT_fnc_side, [sideUnknown]];
 _veh setVariable ["gradTnT_vehicleSide", _side, true];
 _veh setVariable ["tf_side", str _side, true];
 _veh setVariable ["tf_hasRadio", true, true];
-_veh setVariable ["ace_cookoff_enable", false, true];
+_veh setVariable ["ace_cookoff_enable", 0, true];
 
 [_veh] call gradTnT_vehicleRespawn_fnc_add;
 [_veh] remoteExec ["gradTnT_fnc_addExplosiveAction", 0, true];

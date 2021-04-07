@@ -9,7 +9,7 @@ class sovjetGM {
         handgunWeaponMagazine = "";
         uniform = "gm_gc_army_uniform_soldier_80_str";
         vest = "gm_gc_army_vest_80_rifleman_str";
-        backpack = "gm_gc_army_backpack_80_assaultpack_str";
+        backpack = "gm_gc_backpack_r105m_brn";
         headgear = "gm_gc_army_headgear_m56_net";
         binoculars = "gm_df7x40_blk";
         map = "ItemMap";
@@ -34,16 +34,11 @@ class sovjetGM {
                 "ACE_Flashlight_KSF1",
                 "ACE_key_east"
             };
-            addItemsToVest[] = {
+            addItemsToBackpack[] = {
                 "SmokeShell",
                 LIST_6("gm_30rnd_545x39mm_b_7n6_ak74_prp"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
                 LIST_2("gm_smokeshell_wht_gc")
-            };
-            addItemsToBackpack[] = {
-                LIST_6("ACE_fieldDressing"),
-                LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine")
             };
         };
         class Engineer_F: Soldier_F {
@@ -51,7 +46,6 @@ class sovjetGM {
             primaryWeaponMagazine = "gm_30Rnd_762x39mm_B_M43_ak47_blk";
             uniform  = "gm_gc_army_uniform_soldier_gloves_80_str";
             vest = "gm_gc_vest_combatvest3_str";
-            backpack = "gm_gc_army_backpack_80_engineer_str";
             headgear = "gm_gc_headgear_fjh_model4_oli";
             addItemsToVest[] = {
                 "SmokeShell",
@@ -185,7 +179,7 @@ class sovjetGM {
             headgear = "gm_gc_army_headgear_m56";
             handgunWeapon = "gm_lp1_blk";
             handgunWeaponMagazine = "gm_1Rnd_265mm_smoke_single_yel_gc";
-            backpack = "TFAR_rt1523g_sage";
+            backpack = "gm_gc_backpack_r105m_brn";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
@@ -233,7 +227,6 @@ class sovjetGM {
                 LIST_2("gm_smokeshell_wht_dm25"),
                 LIST_4("gm_30Rnd_545x39mm_B_7N6_ak74_org")
             };
-            backpack = "gm_pl_army_backpack_80_oli";
         };
 
         class Recon_F: Crew_F {

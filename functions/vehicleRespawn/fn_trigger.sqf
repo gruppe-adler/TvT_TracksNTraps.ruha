@@ -26,6 +26,10 @@ if !((count _var) isEqualTo 4) exitWith {
 _var params [["_respawnPos", [0,0,0], [[]], [3]], ["_respawnDir", 0, [0]], ["_killedEH", -1, [0]], ["_deletedEH", -1, [0]]];
 _veh setVariable ["gradTnT_vehicleRespawn", nil, true];
 
+private _customAttributes = [_veh] call bis_fnc_getVehicleCustomization;
+_veh setVariable ["gradTnT_vehicleCustomization", _customAttributes, true];
+
+
 // remove EHs just to be save any of won't trigger multiple times
 _veh removeMPEventHandler ["MPKilled", _killedEH];
 _veh removeEventHandler ["Deleted", _deletedEH];

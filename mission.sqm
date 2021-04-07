@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11716.403,136.52107,7779.8691};
-		dir[]={-0.90129232,-0.34684655,-0.25960311};
-		up[]={-0.33330515,0.93792039,-0.096003033};
-		aside[]={-0.2767863,7.9788151e-008,0.96094495};
+		pos[]={11635.672,105.42165,7799.4868};
+		dir[]={-0.6449123,-0.59318,-0.4819105};
+		up[]={-0.47517249,0.80506736,-0.35507247};
+		aside[]={-0.59859276,-7.3603587e-008,0.80106091};
 	};
 };
 binarizationWanted=0;
@@ -263,7 +263,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -318,7 +318,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category1
+	class Category2
 	{
 		name="Scenario";
 		class Attribute0
@@ -366,7 +366,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=15;
+									items=16;
 									class Item0
 									{
 										class data
@@ -577,6 +577,20 @@ class CustomAttributes
 											value="ace_fire_enableflare";
 										};
 									};
+									class Item15
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_vehicle_damage_enablecardamage";
+										};
+									};
 								};
 							};
 						};
@@ -593,7 +607,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=15;
+									items=16;
 									class Item0
 									{
 										class data
@@ -1267,6 +1281,51 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item15
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -1388,6 +1447,7 @@ class Mission
 			};
 			id=235;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-0.0012741089;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1750,6 +1810,7 @@ class Mission
 			};
 			id=350;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.00030517578;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2859,6 +2920,7 @@ class Mission
 			};
 			id=583;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-0.00054168701;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3665,6 +3727,7 @@ class Mission
 			};
 			id=584;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-0.00070953369;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4471,7 +4534,7 @@ class Mission
 			};
 			id=585;
 			type="gm_gc_army_t55am2b";
-			atlOffset=-7.6293945e-006;
+			atlOffset=-0.00043487549;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5278,7 +5341,7 @@ class Mission
 			};
 			id=586;
 			type="gm_gc_army_t55am2b";
-			atlOffset=7.6293945e-006;
+			atlOffset=-0.00051116943;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6085,6 +6148,7 @@ class Mission
 			};
 			id=587;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-0.0033569336;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6891,6 +6955,7 @@ class Mission
 			};
 			id=588;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8503,7 +8568,6 @@ class Mission
 			};
 			id=590;
 			type="gm_gc_army_t55am2b";
-			atlOffset=7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9310,6 +9374,7 @@ class Mission
 			};
 			id=592;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.00059509277;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10108,6 +10173,7 @@ class Mission
 			};
 			id=593;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.0014648438;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10906,6 +10972,7 @@ class Mission
 			};
 			id=594;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.00078582764;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11704,6 +11771,7 @@ class Mission
 			};
 			id=595;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.0005645752;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12502,6 +12570,7 @@ class Mission
 			};
 			id=596;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.001121521;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13300,6 +13369,7 @@ class Mission
 			};
 			id=597;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=-0.0001373291;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14098,7 +14168,7 @@ class Mission
 			};
 			id=598;
 			type="gm_ge_army_Leopard1a5";
-			atlOffset=7.6293945e-006;
+			atlOffset=-0.00028991699;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14897,7 +14967,7 @@ class Mission
 			};
 			id=599;
 			type="gm_ge_army_Leopard1a5";
-			atlOffset=1.5258789e-005;
+			atlOffset=-0.0001449585;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16331,7 +16401,7 @@ class Mission
 					};
 					id=1495;
 					type="B_crew_F";
-					atlOffset=0.0018920898;
+					atlOffset=0.0018844604;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16502,7 +16572,7 @@ class Mission
 			{
 			};
 			id=614;
-			atlOffset=0.0018920898;
+			atlOffset=0.0018844604;
 		};
 		class Item34
 		{
@@ -20151,6 +20221,7 @@ class Mission
 			};
 			id=790;
 			type="gm_gc_army_btr60pb";
+			atlOffset=-0.06401825;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20593,6 +20664,7 @@ class Mission
 			};
 			id=807;
 			type="gm_gc_airforce_mi2p";
+			atlOffset=-0.053916931;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20858,6 +20930,7 @@ class Mission
 			};
 			id=822;
 			type="gm_ge_army_luchsa2";
+			atlOffset=-0.00031280518;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21956,6 +22029,7 @@ class Mission
 			};
 			id=837;
 			type="gm_ge_army_bo105m_vbh";
+			atlOffset=-3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -22888,6 +22962,7 @@ class Mission
 			};
 			id=1413;
 			type="gm_ge_army_marder1a2";
+			atlOffset=-0.00060272217;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23518,6 +23593,7 @@ class Mission
 			};
 			id=1414;
 			type="gm_ge_army_marder1a2";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24148,6 +24224,7 @@ class Mission
 			};
 			id=1415;
 			type="gm_gc_army_bmp1sp2";
+			atlOffset=-0.067680359;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24825,6 +24902,7 @@ class Mission
 			};
 			id=1416;
 			type="gm_gc_army_bmp1sp2";
+			atlOffset=-0.066589355;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25726,8 +25804,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -25736,10 +25814,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26166,8 +26244,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26176,10 +26254,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26203,12 +26281,13 @@ class Mission
 			};
 			id=1426;
 			type="gm_ge_army_bpz2a0";
+			atlOffset=-2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26217,10 +26296,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -26647,8 +26726,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -26657,10 +26736,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -26684,12 +26763,13 @@ class Mission
 			};
 			id=1424;
 			type="gm_ge_army_bpz2a0";
+			atlOffset=0.00022125244;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -26698,10 +26778,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -27128,8 +27208,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -27138,10 +27218,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -27165,12 +27245,13 @@ class Mission
 			};
 			id=1427;
 			type="gm_ge_army_bpz2a0";
+			atlOffset=-0.050895691;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -27179,10 +27260,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -27609,8 +27690,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -27619,10 +27700,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -30361,6 +30442,7 @@ class Mission
 			};
 			id=1597;
 			type="gm_gc_army_uaz469_spg9";
+			atlOffset=-0.00047302246;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31643,6 +31725,7 @@ class Mission
 			};
 			id=1610;
 			type="gm_gc_army_uaz469_spg9";
+			atlOffset=-0.051086426;
 			class CustomAttributes
 			{
 				class Attribute0
