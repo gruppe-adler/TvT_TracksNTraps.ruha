@@ -17,11 +17,11 @@ class bwGM {
         watch = "gm_watch_kosei_80";
         nvgoggles = "";
         goggles = "";
+        gps = "itemGPS";
     };
 
     class Type {
         class Soldier_F {
-            gps = "itemGPS";
             headgear = "gm_ge_headgear_crewhat_80_blk";
             uniform = "gm_ge_army_uniform_crew_80_oli";
             backpack = "gm_ge_backpack_sem35_oli";
@@ -286,24 +286,6 @@ class bwGM {
                 LIST_4("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 LIST_3("gm_8Rnd_9x19mm_B_DM11_p1_blk"),
-                "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
-            };
-        };
-    };
-
-    class Rank {
-        
-        class COLONEL {
-            headgear = "gm_ge_headgear_beret_crew_red_opcom";
-            backpack = "gm_ge_backpack_sem35_oli";
-            goggles = "";
-            addItemsToUniform[] = {
-                LIST_7("ACE_fieldDressing"),
-                LIST_2("ACE_epinephrine"),
-                LIST_4("ACE_morphine"),
-                LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
                 "ACE_Flashlight_XL50",
                 "ACE_key_west"
