@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2068;
+		nextID=2070;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11618.55,118.51195,7788.6089};
-		dir[]={-0.70198286,-0.69647521,0.1488315};
-		up[]={-0.68133193,0.71757942,0.14445318};
-		aside[]={0.20740646,-5.0931703e-008,0.97825879};
+		pos[]={3559.8953,207.14763,11753.19};
+		dir[]={-0.61706805,-0.28887552,-0.73196852};
+		up[]={-0.18619393,0.9573667,-0.22086397};
+		aside[]={-0.76456445,0,0.64454728};
 	};
 };
 binarizationWanted=0;
@@ -27261,6 +27261,7 @@ class Mission
 					};
 					id=1935;
 					type="O_soldier_exp_F";
+					atlOffset=3.8146973e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27430,6 +27431,7 @@ class Mission
 			{
 			};
 			id=1934;
+			atlOffset=3.8146973e-005;
 		};
 		class Item131
 		{
@@ -29783,6 +29785,7 @@ class Mission
 					};
 					id=1987;
 					type="O_crew_F";
+					atlOffset=1.5258789e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -32039,7 +32042,7 @@ class Mission
 					};
 					id=2031;
 					type="B_crew_F";
-					atlOffset=0.0010375977;
+					atlOffset=0.0010528564;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33250,7 +33253,7 @@ class Mission
 					};
 					id=2067;
 					type="B_crew_F";
-					atlOffset=0.0020217896;
+					atlOffset=0.0020141602;
 					class CustomAttributes
 					{
 						class Attribute0

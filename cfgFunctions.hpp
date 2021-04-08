@@ -139,5 +139,6 @@ class gradTnT {
       class initVehicle;
       class preventMinesAtObjective { postInit = 1; };
       class side;
+      class transferRadiosAcrossRespawn { postInit = 1; };
     };
 };

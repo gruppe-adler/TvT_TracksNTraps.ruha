@@ -25,6 +25,11 @@ if (isNull _unit) exitWith {
 	["Unit must not be objNull."] call BIS_fnc_error;
 };
 
+// dont lower but exit for same side
+if (_flag getVariable ["gradTnT_flagOwner", sideUnknown] isEqualTo side _unit) exitWith {
+    diag_log format ["Flag is on same side, wont lower now."];
+};
+
 _flag setVariable ["gradTnT_flagAnimation", true, true];
 
 // lower flag
