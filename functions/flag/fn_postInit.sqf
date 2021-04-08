@@ -16,8 +16,7 @@
  * Public: No
  */
 
-if (!hasInterface) exitWith {};
-
+// clients receive notifications
 ["gradTnT_objectiveCaptured", {
     params ["_side"];
 
@@ -35,23 +34,27 @@ if (!hasInterface) exitWith {};
     };
 }] call CBA_fnc_addEventHandler;
 
-[{
-    private _isInArea = [];
-    private _sides = [];
-    private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];
 
-    {
-      if (_x inArea trg_objective) then {
-        _isInArea pushBackUnique _x;
-        _sides pushBackUnique (side _x);
-      };
-    } forEach allPlayers;
+// server manages conquering
+if (isServer) then {
+    [{
+        private _isInArea = [];
+        private _sides = [];
+        private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];
 
-    if (count _isInArea > 0 && count _sides < 2) then {
-        private _firstPlayer = _isInArea select 0;
-        if ([_flag, _firstPlayer] call gradTnT_flag_fnc_canRaise) then {
-            [_flag, _firstPlayer] call gradTnT_flag_fnc_raise;
+        {
+          if (_x inArea trg_objective) then {
+            _isInArea pushBackUnique _x;
+            _sides pushBackUnique (side _x);
+          };
+        } forEach allPlayers;
+
+        if (count _isInArea > 0 && count _sides < 2) then {
+            private _firstPlayer = _isInArea select 0;
+            if ([_flag, _firstPlayer] call gradTnT_flag_fnc_canRaise) then {
+                [_flag, _firstPlayer] call gradTnT_flag_fnc_raise;
+            };
         };
-    };
 
-}, 1, []] call CBA_fnc_addPerFrameHandler;
+    }, 1, []] call CBA_fnc_addPerFrameHandler;
+};
