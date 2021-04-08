@@ -22,3 +22,4 @@ params ["_flag", "_player"];
     (_flag getVariable ["gradTnT_flagOwner", sideUnknown] isNotEqualTo (side _player) && typeOf vehicle player == "gm_ge_army_bpz2a0") ||
     ((_flag getVariable ["gradTnT_flagOwner", sideUnknown] isNotEqualTo sideUnknown) && typeOf vehicle player != "gm_ge_army_bpz2a0")
 ) && !(_flag getVariable ["gradTnT_flagAnimation", false])
+&& side _player isNotEqualTo sideUnknown
