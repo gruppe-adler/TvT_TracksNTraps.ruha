@@ -85,7 +85,7 @@ private _iconSize2 = 50;
 
         if (_turretCount isEqualTo 0) exitWith {};
 
-        private _crewCount = ({ !(isNull (_veh turretUnit _x)) } count _turrets) min 3;
+        private _crewCount = ({ private _unit = (_veh turretUnit _x); alive _unit && !(isNull _unit) } count _turrets) min 3;
         private _crewIcon = getMissionPath format ["functions\bft\data\crew_%1_%2.paa", _crewCount, _turretCount];
 
         // crew icon
