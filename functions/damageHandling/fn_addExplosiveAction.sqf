@@ -7,7 +7,7 @@ private _explosiveAction = [
     {
         [_target] call gradTnT_fnc_triggerExplosive;
     }, {
-        true
+        alive _target
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

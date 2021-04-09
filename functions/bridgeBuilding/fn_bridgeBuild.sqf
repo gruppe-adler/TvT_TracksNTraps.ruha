@@ -48,11 +48,14 @@ _bridge setDir _dir;
 
 [_bridge, false] remoteExec ["enableSimulationGlobal", 2];
 
-private _bridgeHelper = "DemoCharge_F" createVehicle [0,0,0];
-_bridgeHelper attachTo [_bridge,[0,0,0.97]];
+[{
+    params ["_bridge"];
+    private _bridgeHelper = "DemoCharge_F" createVehicle [0,0,0];
+    _bridgeHelper attachTo [_bridge,[0,0,0.97]];
 
-_bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
-_bridge setVariable ["gradTnT_bridgeHelper", _bridgeHelper, true];
+    _bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
+    _bridge setVariable ["gradTnT_bridgeHelper", _bridgeHelper, true];
+}, [_bridge], 2] call CBA_fnc_waitAndExecute;
 
 _bridgesBuilt = _bridgesBuilt + 1;
 missionNamespace setVariable [_varKey, _bridgesBuilt, true];
