@@ -613,7 +613,7 @@ CSA_Can_Put_Away_Tow_Ropes = {
 
 CSA_Drop_Tow_Ropes_Action = {
     private ["_vehicle"];
-    _vehicle = player getVariable ["SA_Tow_Ropes_Vehicle", objNull];
+    _vehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
     if([] call CSA_Can_Drop_Tow_Ropes) then {
         [_vehicle, player] call CSA_Drop_Tow_Ropes;
     };
