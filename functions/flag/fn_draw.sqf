@@ -20,7 +20,7 @@ private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];
 
 if (isNull _flag) exitWith {};
 
-private _owner = _flag getVariable ["gradTnT_flagOwner", sideUnknown];
+private _owner = _flag getVariable ["gradTnT_flag_owner", sideUnknown];
 private _objectiveIcon = "";
 
 switch (_owner) do { 

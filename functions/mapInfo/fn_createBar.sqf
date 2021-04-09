@@ -1,7 +1,7 @@
 private _display = findDisplay 12;  
       
 private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];      
-private _sideHeldByValue = _flag getVariable ["gradTnT_flagOwner", sideUnknown];
+private _sideHeldByValue = _flag getVariable ["gradTnT_flag_owner", sideUnknown];
 private _objHeldByValue = "";
 switch (_sideHeldByValue) do { 
       case west : {  _objHeldByValue = "<t align='left' shadow='0'>Germany</t>"; }; 

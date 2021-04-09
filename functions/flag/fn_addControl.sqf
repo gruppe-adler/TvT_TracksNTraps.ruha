@@ -19,7 +19,8 @@ params ["_flag", "_flagSpeakers"];
 
 if (isServer) then {
     _flag setFlagTexture "";
-    _flag setVariable ["gradTnT_flagSpeakers", _flagSpeakers, true];
+    _flag setVariable ["gradTnT_flag_speakers", _flagSpeakers, true];
+    [_flag, 0] remoteExecCall ["setFlagAnimationPhase", 0];
 
     missionNamespace setVariable ["gradTnT_flagObjective", _flag, true];
 
@@ -28,7 +29,7 @@ if (isServer) then {
         params ["_args", "_handle"];
         _args params ["_flag"];
 
-        private _flagOwner = _flag getVariable ["gradTnT_flagOwner", sideUnknown];
+        private _flagOwner = _flag getVariable ["gradTnT_flag_owner", sideUnknown];
         ["gradTnT_points", ["flagTick", _flagOwner]] call CBA_fnc_serverEvent;
 
     }, 60, [_flag]] call CBA_fnc_addPerFrameHandler;
