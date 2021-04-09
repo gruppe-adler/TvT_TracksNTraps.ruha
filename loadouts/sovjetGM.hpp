@@ -256,14 +256,14 @@ class sovjetGM {
         class Recon_F: Crew_F {
 
         };
-        class Helipilot_F: Crew_F {
+        class Pilot_F: Crew_F {
             primaryWeapon = "";
             secondaryWeapon = "gm_pm_blk";
             secondaryWeaponMagazine = "gm_8Rnd_9x18mm_B_pst_pm_blk";
             headgear = "gm_gc_headgear_zsh3_wht";
             uniform = "gm_gc_airforce_uniform_pilot_80_blu";
             vest = "";
-            backpack = "";
+            backpack = "gm_gc_backpack_r105m_brn";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),

@@ -274,14 +274,14 @@ class bwGM {
         class Recon_F: Crew_F {
 
         };
-        class Helipilot_F: Crew_F {
+        class Pilot_F: Crew_F {
             primaryWeapon = "";
             secondaryWeapon = "gm_p1_blk";
             secondaryWeaponMagazine = "gm_8Rnd_9x19mm_B_DM11_p1_blk";
             headgear = "gm_ge_headgear_sph4_oli";
             uniform = "gm_ge_army_vest_pilot_oli";
             vest = "";
-            backpack = "";
+            backpack = "gm_gc_backpack_r105m_brn";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
