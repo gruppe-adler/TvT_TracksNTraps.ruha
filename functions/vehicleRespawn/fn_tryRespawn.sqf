@@ -43,7 +43,7 @@ _veh setDir _dir;
 // copy variables from old vehicle
 {
 	_x params ["_name", "_val"];
-	_veh setVariable [_name, _val];
+	_veh setVariable [_name, _val, true];
 } forEach _variables;
 
 // trigger server event

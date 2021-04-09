@@ -613,7 +613,7 @@ CSA_Can_Put_Away_Tow_Ropes = {
 
 CSA_Drop_Tow_Ropes_Action = {
     private ["_vehicle"];
-    _vehicle = player getVariable ["SA_Tow_Ropes_Vehicle", objNull];
+    _vehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
     if([] call CSA_Can_Drop_Tow_Ropes) then {
         [_vehicle, player] call CSA_Drop_Tow_Ropes;
     };
@@ -781,9 +781,9 @@ CSA_Set_Owner = {
         "Put Away Tow Ropes",
         "\a3\3den\Data\CfgWaypoints\unhook_ca.paa",
         {
-            [_target] call CSA_Attach_Tow_Ropes_Action;
+            [_target] call CSA_Put_Away_Tow_Ropes_Action;
         }, {
-            [_target] call CSA_Attach_Tow_Ropes_Action_Check
+            [_target] call CSA_Put_Away_Tow_Ropes_Action_Check
         },{},nil,"",3,[false,false,false,false,false]
     ] call ace_interact_menu_fnc_createAction;
 

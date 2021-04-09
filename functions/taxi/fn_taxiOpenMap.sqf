@@ -28,6 +28,8 @@ _map = (uiNamespace getVariable ['gradTnT_taxiDialog_map', controlNull]);
 _map ctrlShow true;
 _map ctrlMapCursor ["", "Move"];
 
+[_map] call gradTnT_map_fnc_setupCtrl;
+
 
 _btn_cancel = (uiNamespace getVariable ['gradTnT_taxiDialog_btn_cancel', controlNull]); 
 _btn_cancel ctrlShow true;
