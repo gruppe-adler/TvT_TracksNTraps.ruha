@@ -13,7 +13,7 @@ if (_side == east) then {
 };
 
 private _vehiclesGroup = createGroup _side;
-private _vehicle = createVehicle [_type, _position, [], 60, "none"];
+private _vehicle = createVehicle [_classname, _position, [], 60, "none"];
 _vehicle setDir _dir;
 createVehicleCrew _vehicle;
 
