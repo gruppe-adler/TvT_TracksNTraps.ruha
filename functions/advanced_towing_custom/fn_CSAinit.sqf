@@ -781,9 +781,9 @@ CSA_Set_Owner = {
         "Put Away Tow Ropes",
         "\a3\3den\Data\CfgWaypoints\unhook_ca.paa",
         {
-            [_target] call CSA_Attach_Tow_Ropes_Action;
+            [_target] call CSA_Put_Away_Tow_Ropes_Action;
         }, {
-            [_target] call CSA_Attach_Tow_Ropes_Action_Check
+            [_target] call CSA_Put_Away_Tow_Ropes_Action_Check
         },{},nil,"",3,[false,false,false,false,false]
     ] call ace_interact_menu_fnc_createAction;
 
