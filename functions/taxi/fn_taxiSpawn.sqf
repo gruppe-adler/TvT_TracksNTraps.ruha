@@ -12,12 +12,14 @@ if (_side == east) then {
     _classname = "gm_gc_bgs_uaz469_cargo";
 };
 
-_position = _position findEmptyPosition [1,100,_classname];
+private _vehiclesGroup = createGroup _side;
+private _vehicle = createVehicle [_type, _position, [], 60, "none"];
+_vehicle setDir _dir;
+createVehicleCrew _vehicle;
 
-private _result = [_position, _dir, _classname, _side] call BIS_fnc_spawnVehicle;
-private _vehicle = _result select 0;
-private _vehiclesCrew = _result select 1;
-private _vehiclesGroup = _result select 2;
+private _vehiclesCrew = crew _vehicle;
+_vehiclesCrew joinsilent _vehiclesGroup;
+_vehiclesGroup addVehicle _vehicle;
 
 clearBackpackCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;

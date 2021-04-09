@@ -49,17 +49,16 @@ class bwGM {
             backpack = "gm_ge_army_backpack_80_engineer_oli";
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_dm25"),
-                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
-            };
-            addItemsToBackpack[] = {
-                LIST_1("gm_mine_at_dm21"),
-                LIST_1("toolkit"),
-                LIST_6("ACE_fieldDressing"),
-                LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine"),
+                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk"),
                 LIST_1("grad_axe"),
                 LIST_1("ACE_EntrenchingTool"),
                 LIST_1("ACE_DefusalKit")
+            };
+            addItemsToBackpack[] = {
+                LIST_1("gm_mine_at_dm21"),
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_epinephrine"),
+                LIST_2("ACE_morphine")
             };
         };
         class Soldier_exp_F: Soldier_F {
@@ -75,17 +74,17 @@ class bwGM {
             };
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_dm25"),
-                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk")
+                LIST_5("gm_20rnd_762x51mm_b_t_dm21a1_g3_blk"),
+                LIST_1("grad_axe"),
+                LIST_1("ACE_EntrenchingTool"),
+                LIST_1("ACE_DefusalKit")
             };
             addItemsToBackpack[] = {
                 LIST_1("gm_mine_at_dm21"),
                 LIST_1("toolkit"),
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine"),
-                LIST_1("grad_axe"),
-                LIST_1("ACE_EntrenchingTool"),
-                LIST_1("ACE_DefusalKit")
+                LIST_2("ACE_morphine")
             };
         };
         class HeavyGunner_F: Soldier_F {

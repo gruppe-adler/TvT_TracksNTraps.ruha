@@ -53,13 +53,16 @@ class sovjetGM {
             addItemsToVest[] = {
                 LIST_5("gm_30Rnd_762x39mm_B_M43_ak47_blk"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
-                LIST_2("gm_smokeshell_wht_gc")
-            };
-            addItemsToBackpack[] = {
+                LIST_2("gm_smokeshell_wht_gc"),
                 "grad_axe",
                 "ACE_EntrenchingTool",
-                "ACE_DefusalKit",
-                "gm_mine_at_tm46"
+                "ACE_DefusalKit"
+            };
+            addItemsToBackpack[] = {
+                "gm_mine_at_tm46",
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_epinephrine"),
+                LIST_2("ACE_morphine")
             };
         };
         class soldier_exp_F: Soldier_F {
@@ -78,12 +81,12 @@ class sovjetGM {
             addItemsToVest[] = {
                 LIST_5("gm_30Rnd_762x39mm_B_M43_ak47_blk"),
                 LIST_2("gm_handgrenade_frag_rgd5"),
-                LIST_2("gm_smokeshell_wht_gc")
-            };
-            addItemsToBackpack[] = {
+                LIST_2("gm_smokeshell_wht_gc"),
                 LIST_1("grad_axe"),
                 LIST_1("ACE_EntrenchingTool"),
-                LIST_1("ACE_DefusalKit"),
+                LIST_1("ACE_DefusalKit")
+            };
+            addItemsToBackpack[] = {
                 LIST_1("gm_mine_at_tm46")
             };
         };

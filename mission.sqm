@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2070;
+		nextID=2072;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3559.8953,207.14763,11753.19};
-		dir[]={-0.61706805,-0.28887552,-0.73196852};
-		up[]={-0.18619393,0.9573667,-0.22086397};
-		aside[]={-0.76456445,0,0.64454728};
+		pos[]={2745.8157,106.8025,15651.808};
+		dir[]={-0.30556422,-0.61091113,0.73038524};
+		up[]={-0.23578168,0.7916953,0.56358379};
+		aside[]={0.92254126,-1.6903505e-007,0.38595489};
 	};
 };
 binarizationWanted=0;
@@ -769,7 +769,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=3;
 													};
 												};
 												class Item1
@@ -20973,8 +20973,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -20983,10 +20983,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -21413,8 +21413,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -21423,10 +21423,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -21455,8 +21455,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -21465,10 +21465,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -21895,8 +21895,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -21905,10 +21905,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -21937,8 +21937,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -21947,10 +21947,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -22377,8 +22377,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -22387,10 +22387,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -22419,8 +22419,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -22429,10 +22429,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -22859,8 +22859,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -22869,10 +22869,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
