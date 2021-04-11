@@ -1,6 +1,4 @@
-params ["_bridge"];
-
-private _helperObject = _bridge getVariable ["gradTnT_bridgeHelper", objNull];
+params ["_bridge", "_helperObject"];
 
 private _destroyAction = [
     "DestroyBridge",

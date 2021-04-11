@@ -55,6 +55,8 @@ _bridge setDir _dir;
 
     _bridgeHelper setVariable ["gradTnT_bridgeHelperBridge", _bridge, true];
     _bridge setVariable ["gradTnT_bridgeHelper", _bridgeHelper, true];
+
+    [_bridge, _bridgeHelper] remoteExec ["gradTnT_fnc_bridgeActionDestroy", 0, true];
 }, [_bridge], 2] call CBA_fnc_waitAndExecute;
 
 _bridgesBuilt = _bridgesBuilt + 1;
@@ -68,5 +70,4 @@ _bridge setVariable ["gradTnT_vehicleSide", _side, true];
 
 [_bridge, "bridge"] call gradTnT_bft_fnc_add;
 
-[_bridge] remoteExec ["gradTnT_fnc_bridgeActionDestroy", 0, true];
 [_bridge, false] remoteExec ["gradTnT_fnc_bridgeMarker", _side, true];
