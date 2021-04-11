@@ -48,6 +48,8 @@ private _vehicles = gradTnT_bft_vehicles getOrDefault [_side, []];
 private _iconSize = 40;
 private _iconSize2 = 50;
 
+private _pathPrefix = ["bft"] call gradTnT_fnc_pathPrefix;
+
 {   
     private _veh = _x;
     private _type = _veh getVariable ["gradTnT_bft_type", "unknown"];
@@ -63,10 +65,9 @@ private _iconSize2 = 50;
     if (_opacity isEqualTo 0) then {continue};
 
     // vehicle icon
-    private _vehicleIcon = getMissionPath format ["functions\bft\data\%1.paa", _type];
     _control drawIcon 
     [
-        _vehicleIcon,
+        format ["%1\%2.paa", _pathPrefix, _type],
         [_sideColor#0, _sideColor#1, _sideColor#2, _opacity],
         _pos,
         _iconSize,
@@ -86,12 +87,11 @@ private _iconSize2 = 50;
         if (_turretCount isEqualTo 0) exitWith {};
 
         private _crewCount = ({ private _unit = (_veh turretUnit _x); alive _unit && !(isNull _unit) } count _turrets) min 3;
-        private _crewIcon = getMissionPath format ["functions\bft\data\crew_%1_%2.paa", _crewCount, _turretCount];
 
         // crew icon
         _control drawIcon 
         [
-            _crewIcon,
+            format ["%1\crew_%2_%3.paa", _pathPrefix, _crewCount, _turretCount],
             [1, 1, 1, _opacity],
             _pos,
             _iconSize,
@@ -107,7 +107,7 @@ private _iconSize2 = 50;
         // destroyed icon
         _control drawIcon 
         [
-            getMissionPath "functions\bft\data\destroyed.paa",
+            format ["%1\destroyed.paa", _pathPrefix],
             [1, 1, 1, _opacity],
             _pos,
             _iconSize,
