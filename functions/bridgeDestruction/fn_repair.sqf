@@ -20,4 +20,4 @@ _helper setVariable ["gradTnT_bridgeDestroyed", false, true];
     {Hint "Repair Finished."}, 
     {hint "Repair aborted!"}, 
     "Repairing Bridge"
-] call ace_common_fnc_progressBar
+] call ace_common_fnc_progressBar;
