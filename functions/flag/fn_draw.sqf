@@ -23,15 +23,17 @@ if (isNull _flag) exitWith {};
 private _owner = _flag getVariable ["gradTnT_flag_owner", sideUnknown];
 private _objectiveIcon = "";
 
+private _pathPrefix = ["flag"] call gradTnT_fnc_pathPrefix;
+
 switch (_owner) do { 
     case west : {  
-        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_blufor.paa";
+        _objectiveIcon = format ["%1\ico_objective_blufor.paa", _pathPrefix];
     }; 
     case east : {
-        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_opfor.paa";
+        _objectiveIcon = format ["%1\ico_objective_opfor.paa", _pathPrefix];
     }; 
     case sideUnknown : {
-        _objectiveIcon = getMissionPath "functions\flag\data\ico_objective_neutral.paa";
+        _objectiveIcon = format ["%1\ico_objective_neutral.paa", _pathPrefix];
     }; 
     default {  /*...code...*/ }; 
 };

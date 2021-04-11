@@ -136,6 +136,7 @@ class gradTnT {
 
       class addCamoActions;
       class getOpposingSide;
+      class pathPrefix;
       class initVehicle;
       class preventMinesAtObjective { postInit = 1; };
       class side;
