@@ -22,6 +22,8 @@ inGameUISetEventHandler ["NextAction", "false"];
 player forceWalk false;
 player setVariable ["gradTnT_carryBridge", -1];
 
+private _side = side player;
+private _varKey = format ["gradTnT_bridgesBuilt_%1", _side];
 private _bridgesBuilt = missionNamespace getVariable [_varKey, 0];
 
 private _bridgesLeft = format ["Building aborted. You can build %1 more bridges.", (SB_BRIDGES_MAX - _bridgesBuilt)];
