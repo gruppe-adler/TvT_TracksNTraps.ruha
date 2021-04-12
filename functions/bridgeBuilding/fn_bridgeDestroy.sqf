@@ -46,6 +46,8 @@ for "_i" from 0 to _maxTime do {
     if (_unitSide == _bridgeSide) then {
         private _bridgesLeft = format ["You can now build %1 bridge again.", 2 - _bridgesBuilt];
         [_bridgesLeft] remoteExec ["hintSilent", _unit];
+    } else {
+        ["gradTnT_points", ["bridge", _unitSide]] call CBA_fnc_serverEvent;
     };
 
 }, [_bridge, _unit], _maxTime] call CBA_fnc_waitAndExecute;

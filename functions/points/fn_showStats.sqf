@@ -66,9 +66,9 @@ if (hasInterface) then {
     disableSerialization;
 
     private _iconObjective = "\A3\ui_f\data\Map\Markers\HandDrawn\flag_ca.paa";
-    private _iconDepots = "\A3\ui_f\data\Map\Markers\HandDrawn\objective_ca.paa";
-    private _iconBridges = "\A3\ui_f\data\Map\Markers\HandDrawn\join_CA.paa";
-    private _iconArmored = "\A3\ui_f\data\igui\cfg\mptable\armored_ca.paa";
+    private _iconDepots = "functions\bft\data\depot.paa";
+    private _iconBridges = "functions\bft\data\bridge.paa";
+    private _iconArmored = "functions\bft\data\armor.paa";
     private _iconAPC = "\A3\ui_f\data\Map\Vehicleicons\iconAPC_ca.paa";
     private _iconCar = "\A3\ui_f\data\Map\Vehicleicons\iconCar_ca.paa";
     private _iconInf = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
