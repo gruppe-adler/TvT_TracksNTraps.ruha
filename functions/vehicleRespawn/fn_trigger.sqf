@@ -18,10 +18,13 @@
 
 params ["_veh"];
 
+if (isNull _veh) exitWith {
+	["Vehicle must not be objNull."] call BIS_fnc_error;
+};
+
 private _var = _veh getVariable ["gradTnT_vehicleRespawn", []];
 if !((count _var) isEqualTo 4) exitWith {
-    // TODO: Log Error
-    diag_log "total failure fuckup o m y g o d - vehiclerespawn_fnc_trigger";
+    ["Respawn was already triggered for vehicle."] call BIS_fnc_error;
 };
 _var params [["_respawnPos", [0,0,0], [[]], [3]], ["_respawnDir", 0, [0]], ["_killedEH", -1, [0]], ["_deletedEH", -1, [0]]];
 _veh setVariable ["gradTnT_vehicleRespawn", nil, true];
