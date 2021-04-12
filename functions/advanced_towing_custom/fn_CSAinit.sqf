@@ -558,7 +558,7 @@ CSA_Can_Take_Tow_Ropes = {
         private ["_existingVehicle","_existingTowRopes"];
         _existingTowRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
         _existingVehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
-        vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) == 0 && isNull _existingVehicle;
+        vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) == 0 && isNull _existingVehicle && alive _vehicle
     } else {
         false;
     };

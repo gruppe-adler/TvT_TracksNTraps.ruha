@@ -24,7 +24,7 @@ private _defuseAction = [
     {
         [_target] call gradTnT_fnc_removeExplosive;
     }, {
-        _target getVariable ["gradTnT_explosiveAttached", false]
+        _target getVariable ["gradTnT_explosiveAttached", false] && alive _target
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
