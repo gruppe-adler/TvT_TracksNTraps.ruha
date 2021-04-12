@@ -16,9 +16,6 @@
  */
 params ["_control"];
 
-[_control] call gradTnT_flag_fnc_draw;
-[_control] call gradTnT_markRivers_fnc_draw;
-
 if (isNil "gradTnT_bft_vehicles") exitWith {
 	["Vehicles not found."] call BIS_fnc_error;
 };

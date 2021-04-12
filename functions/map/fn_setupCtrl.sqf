@@ -16,4 +16,10 @@
  */
 params ["_ctrl"];
 
-_ctrl ctrlAddEventHandler ["draw", gradTnT_bft_fnc_draw];
+_ctrl ctrlAddEventHandler ["draw", {
+	params ["_control"];
+	[_control] call gradTnT_markRivers_fnc_draw;
+	[_control] call gradTnT_flag_fnc_draw;
+	[_control] call gradTnT_bft_fnc_draw;
+}];
+
