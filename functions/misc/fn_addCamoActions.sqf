@@ -132,7 +132,7 @@ private _camoNetDetach = [
     {
         [_target, false] call gradTnT_fnc_attachCamoNet;
     }, {
-        [_target] call gradTnT_fnc_camoNetAttached
+        [_target] call gradTnT_fnc_camoNetAttached && alive _target
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
@@ -158,7 +158,7 @@ private _foilageDetach = [
     {
         [_target, false] call gradTnT_fnc_attachfoilage;
     }, {
-        [_target] call gradTnT_fnc_foilageAttached
+        [_target] call gradTnT_fnc_foilageAttached && alive _target
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
