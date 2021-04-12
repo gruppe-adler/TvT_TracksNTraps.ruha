@@ -1,4 +1,6 @@
 private _display = findDisplay 12;  
+
+disableSerialization;
       
 private _flag = missionNamespace getVariable ["gradTnT_flagObjective", objNull];      
 private _sideHeldByValue = _flag getVariable ["gradTnT_flag_owner", sideUnknown];
@@ -65,6 +67,8 @@ _ctrlBattleTimeValue ctrlCommit 0;
       params ["_args", "_handle"];
       _args params ["_ctrlHeadline", "_ctrlObjHeldByLabel", "_ctrlObjHeldByValue", "_ctrlBattleTimeLabel", "_ctrlBattleTimeValue"];
 
+      disableSerialization;
+      
       if (!visibleMap) exitWith { 
             [_handle] call CBA_fnc_removePerFrameHandler;
 
