@@ -25,6 +25,10 @@ gradTnT_fnc_canAttachCamoNet = {
         };
     } forEach gradTnT_camoNetSelections;
 
+    if (!alive _vehicle) then {
+        _canAttach = false;
+    };
+
     _canAttach
 };
 
@@ -39,6 +43,10 @@ gradTnT_fnc_canAttachFoilage = {
             _canAttach = true;
         };
     } forEach gradTnT_FoilageSelections;
+
+    if (!alive _vehicle) then {
+        _canAttach = false;
+    };
 
     _canAttach
 };
