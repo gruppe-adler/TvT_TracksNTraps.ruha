@@ -39,15 +39,13 @@ _trench setVariable ["ace_trenches_digging", true, true];
     _args params ["_trench", "_unit", "_digTime", "_vecDirAndUp"];
     
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-    private _diggerCount = count (_trench getVariable ["grad_trenches_diggers",[]]);
 
     systemChat str (getPos _Trench);
 
     if (
-        !(_trench getVariable ["ace_trenches_digging", false]) ||
-        {_diggerCount <= 0}
+        !(_trench getVariable ["ace_trenches_digging", false])
     ) exitWith {
-        systemChat (str _diggerCount + str (_trench getVariable ["ace_trenches_digging", false]));
+        systemChat (str (_trench getVariable ["ace_trenches_digging", false]));
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
         _trench setVariable ["grad_trenches_diggers",[], true];
@@ -71,12 +69,17 @@ _trench setVariable ["ace_trenches_digging", true, true];
 
     private _pos = (getPosWorld _trench);
     private _posDiff = 
-        (_trench getVariable ["grad_trenches_diggingSteps", (([configFile >> "CfgVehicles" >> typeOf _trench >> "grad_trenches_offset", "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_digTime*10))]) * _diggerCount;
+        (
+            _trench getVariable ["grad_trenches_diggingSteps",
+            ( 
+                (([configFile >> "CfgVehicles" >> typeOf _trench >> "grad_trenches_offset", "NUMBER", 2] call CBA_fnc_getConfigEntry)
+            +((sizeOf typeOf _unit)/2))/(_digTime*10))]
+        );
  
     _pos set [2, ((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
 
-    _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
+    _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10), true];
 
 }, 0.1, [_trench, _bpz, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
