@@ -1,0 +1,118 @@
+<match >
+  <company side="blufor" natosymbol="recon" callsign="Bundeswehr" vehicletype="">
+    <slot shortcode="CL" description="Company Leader" />
+    <slot shortcode="CLA" description="Asst. Company Leader" />
+    <squad side="" natosymbol="armor" callsign="Alpha-1" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Alpha-2" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Alpha-3" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-1" vehicletype="" reserved-for="0">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-2" vehicletype="" reserved-for="0" min-slotted-player-count="20">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-3" vehicletype="" reserved-for="ttt" min-slotted-player-count="20">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="air" callsign="Air" vehicletype="">
+      <slot shortcode="P" description="Pilot" />
+      <slot shortcode="P" description="Pilot" />
+    </squad>
+    <squad side="" natosymbol="maint" callsign="Logi-1" vehicletype="">
+      <slot shortcode="E" description="Engineer" />
+      <slot shortcode="E" description="Engineer" />
+    </squad>
+    <squad side="" natosymbol="maint" callsign="Logi-2" vehicletype="" reserved-for="ttt">
+      <slot shortcode="E" description="Engineer" />
+      <slot shortcode="E" description="Engineer" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-1 (Marder)" vehicletype="">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-2 (Marder)" vehicletype="" min-slotted-player-count="20">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-3 (AT Iltis)" vehicletype="">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+  </company>
+  <company side="opfor" natosymbol="recon" callsign="UDSSR" vehicletype="" reserved-for="3cbanrop">
+    <slot shortcode="CL" description="Company Leader" />
+    <slot shortcode="CLA" description="Asst. Company Leader" />
+    <squad side="" natosymbol="armor" callsign="Alpha-1" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Alpha-2" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Alpha-3" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-1" vehicletype="">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-2" vehicletype="" min-slotted-player-count="20">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="armor" callsign="Bravo-3" vehicletype="" min-slotted-player-count="20">
+      <slot shortcode="CMD" description="Commander" />
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="air" callsign="Air" vehicletype="">
+      <slot shortcode="P" description="Pilot" />
+      <slot shortcode="P" description="Pilot" />
+    </squad>
+    <squad side="" natosymbol="maint" callsign="Logi-1" vehicletype="">
+      <slot shortcode="E" description="Engineer" />
+      <slot shortcode="E" description="Engineer" />
+    </squad>
+    <squad side="" natosymbol="maint" callsign="Logi-2" vehicletype="">
+      <slot shortcode="E" description="Engineer" />
+      <slot shortcode="E" description="Engineer" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-1 (BMP)" vehicletype="">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-2 (BMP)" vehicletype="" min-slotted-player-count="20">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Recon-3 (SPG9 UAZ)" vehicletype="">
+      <slot shortcode="GUN" description="Gunner" />
+      <slot shortcode="DRV" description="Driver" />
+    </squad>
+  </company>
+</match>
