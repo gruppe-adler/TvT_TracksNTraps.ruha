@@ -32,7 +32,10 @@ if (count (_veh getVariable ["gradTnT_vehicleRespawn", []]) > 0) exitWith {
 ["adding %1 to respawn", _veh] call BIS_fnc_log;
 
 // add killed EH
-private _killedID = _veh addMPEventHandler ["MPKilled", gradTnT_vehicleRespawn_fnc_trigger];
+private _killedID = _veh addMPEventHandler ["MPKilled", {
+    if (!isServer) exitWith {};
+    _this call gradTnT_vehicleRespawn_fnc_trigger;
+}];
 
 // add deleted EH
 private _deletedID = _veh addEventHandler ["Deleted", gradTnT_vehicleRespawn_fnc_trigger];
