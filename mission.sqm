@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2072;
+		nextID=2080;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2745.8157,106.8025,15651.808};
-		dir[]={-0.30556422,-0.61091113,0.73038524};
-		up[]={-0.23578168,0.7916953,0.56358379};
-		aside[]={0.92254126,-1.6903505e-007,0.38595489};
+		pos[]={11597.521,120.96737,7728.4624};
+		dir[]={-0.16461991,-0.65491128,0.73755944};
+		up[]={-0.14266296,0.75570482,0.63918412};
+		aside[]={0.97598648,2.3996108e-008,0.21783543};
 	};
 };
 binarizationWanted=0;
@@ -57,13 +57,15 @@ addons[]=
 	"A3_Characters_F",
 	"ace_explosives",
 	"ace_gforces",
-	"ace_parachute"
+	"ace_parachute",
+	"A3_Supplies_F_Heli_Bladders",
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -245,6 +247,13 @@ class AddonsMetaData
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
+		};
+		class Item26
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -1376,7 +1385,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=163;
+		items=168;
 		class Item0
 		{
 			dataType="Logic";
@@ -16644,8 +16653,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11700.17,97.246361,7816.0908};
-				angles[]={6.0457506,5.428515,0.010000871};
+				position[]={11578.286,94.686172,7751.5283};
+				angles[]={6.259192,6.0653124,0.013995145};
 			};
 			side="Empty";
 			flags=4;
@@ -16655,7 +16664,6 @@ class Mission
 			};
 			id=807;
 			type="gm_gc_airforce_mi2p";
-			atlOffset=-0.053916931;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17577,8 +17585,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2626.3174,85.181572,15716.758};
-				angles[]={0.043969195,3.6762569,6.2571931};
+				position[]={2770.4617,82.040619,15687.67};
+				angles[]={0.0079935296,3.6762569,6.2671871};
 			};
 			side="Empty";
 			flags=4;
@@ -17588,7 +17596,6 @@ class Mission
 			};
 			id=837;
 			type="gm_ge_army_bo105m_vbh";
-			atlOffset=-3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20973,8 +20980,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -20983,10 +20990,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -21413,8 +21420,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -21423,10 +21430,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -21455,8 +21462,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -21465,10 +21472,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="-1";
+							value=10;
 						};
 					};
 				};
@@ -21895,8 +21902,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -21905,10 +21912,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="-1";
 						};
 					};
 				};
@@ -21937,8 +21944,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -21947,10 +21954,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -22377,8 +22384,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -22387,10 +22394,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -22419,8 +22426,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
+					property="ace_repair_editorLoadedTracks";
+					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
 					class Value
 					{
 						class data
@@ -22429,10 +22436,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"SCALAR"
 								};
 							};
-							value="gm_licenseplate_none";
+							value=10;
 						};
 					};
 				};
@@ -22859,8 +22866,8 @@ class Mission
 				};
 				class Attribute17
 				{
-					property="ace_repair_editorLoadedTracks";
-					expression="_this setVariable ['ace_repair_editorLoadedTracks',_value];";
+					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
+					expression="[_this,_value,0,0] spawn gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
 					class Value
 					{
 						class data
@@ -22869,10 +22876,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=10;
+							value="gm_licenseplate_none";
 						};
 					};
 				};
@@ -27911,8 +27918,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11692.031,94.677773,7811.7793};
-						angles[]={6.24121,5.6292624,6.2731848};
+						position[]={11571.271,92.618172,7757.728};
+						angles[]={6.2611909,5.6292624,0.013999403};
 					};
 					side="East";
 					flags=6;
@@ -27923,7 +27930,6 @@ class Mission
 					};
 					id=1949;
 					type="O_Pilot_F";
-					atlOffset=0.0039978027;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27953,8 +27959,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11693.569,94.678764,7812.2036};
-						angles[]={6.2432079,5.6292624,6.2711854};
+						position[]={11572.876,92.664032,7758.7915};
+						angles[]={6.2611909,5.6292624,0.013999403};
 					};
 					side="East";
 					flags=4;
@@ -27964,14 +27970,12 @@ class Mission
 					};
 					id=1950;
 					type="O_Pilot_F";
-					atlOffset=0.0039978027;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=1948;
-			atlOffset=0.0039978027;
 		};
 		class Item135
 		{
@@ -31046,8 +31050,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2631.1768,82.673187,15718.383};
-						angles[]={0.041975394,1.9157956,6.0647283};
+						position[]={2774.4514,79.878143,15689.059};
+						angles[]={0.0079935296,1.9157956,6.2671871};
 					};
 					side="West";
 					flags=6;
@@ -31059,7 +31063,6 @@ class Mission
 					};
 					id=2012;
 					type="B_Pilot_F";
-					atlOffset=0.0029983521;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -31089,8 +31092,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2631.2769,82.732018,15716.453};
-						angles[]={0.041975394,1.9157956,6.0647283};
+						position[]={2774.5515,79.891983,15687.129};
+						angles[]={0.0079935296,1.9157956,6.2671871};
 					};
 					side="West";
 					flags=4;
@@ -31100,7 +31103,6 @@ class Mission
 					};
 					id=2013;
 					type="B_Pilot_F";
-					atlOffset=0.0029983521;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -31149,7 +31151,6 @@ class Mission
 			{
 			};
 			id=2011;
-			atlOffset=0.0029983521;
 		};
 		class Item152
 		{
@@ -33305,6 +33306,109 @@ class Mission
 			};
 			id=2064;
 			atlOffset=0.0019989014;
+		};
+		class Item163
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2779.5669,80.649017,15683.781};
+				angles[]={0.0060039326,1.9514351,6.2671809};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2072;
+			type="StorageBladder_01_fuel_forest_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item164
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2770.4514,79.950539,15687.779};
+				angles[]={0.0079935296,0,6.2671871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2073;
+			type="Land_ClutterCutter_large_F";
+		};
+		class Item165
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2770.1846,79.956726,15687.54};
+				angles[]={0.0079935296,3.5278127,6.2671871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2075;
+			type="Land_HelipadCircle_F";
+		};
+		class Item166
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11577.725,92.627991,7754.1602};
+				angles[]={6.259192,6.050252,0.013995145};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2076;
+			type="Land_HelipadCircle_F";
+		};
+		class Item167
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11564.337,93.204445,7750.2485};
+				angles[]={6.2631893,1.3395975,0.0080009829};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2078;
+			type="StorageBladder_01_fuel_sand_F";
 		};
 	};
 	class Connections
