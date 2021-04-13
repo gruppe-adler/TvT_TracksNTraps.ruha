@@ -29,7 +29,7 @@ publicVariable "PREPARATION_TIME";
 LENGTH_OF_BATTLE = ["LENGTH_OF_BATTLE", 0] call BIS_fnc_getParamValue;
 publicVariable "LENGTH_OF_BATTLE";
 
-[LENGTH_OF_BATTLE] call BIS_fnc_countDown;
+[LENGTH_OF_BATTLE + PREPARATION_TIME] call BIS_fnc_countDown;
 
 // execute weather/time settings
 gradTnT_fnc_setCustomWeather = {
