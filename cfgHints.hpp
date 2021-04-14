@@ -1,21 +1,19 @@
 class CfgHints
 {
-    class gradTnT_Engineer
+    class gradTnT_RoleLogistics
     {
-        // Topic title (displayed only in topic listbox in Field Manual)
-        displayName = "Engineer System";
-        class BuildingAbilities
+        displayName = "Roles: Logistics";
+        class Abilities
         {
             // Hint title, filled by arguments from 'arguments' param
-            displayName = "Building Abilities";
+            displayName = "Abilities";
             // Optional hint subtitle, filled by arguments from 'arguments' param
-            displayNameShort = "Engineers";
+            displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>";
+            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired individually.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
-            arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
             // Optional image
             image = "pics\logo_tracksntraps.paa";
@@ -26,19 +24,17 @@ class CfgHints
             // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
             dlc = 0;
         };
-
-        class RepairAbilities
+        class BuildingAbilities
         {
             // Hint title, filled by arguments from 'arguments' param
-            displayName = "Repair Abilities";
+            displayName = "Recovery tank";
             // Optional hint subtitle, filled by arguments from 'arguments' param
-            displayNameShort = "Vehicles";
+            displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "To repair a vehicle completely the pioneers need to drive their Bpz close and go into recovery mode (mouse wheel action). This makes their tank an ACE repair vehicle temporarily but leaves the vehicle vulnerable and static. Close vehicles can now be repaired fully.";
+            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>%1The recovery tank has to be in close proximity and in %3recovery mode%4 to build any of the above structures or perform %3full repairs%4.%1%3Recovery%4 mode can be entered/exited using mouse wheel actions.%1In recovery mode, the tank becomes %3immovable%4.%1%1%2When in recovery mode, a dismounted engineer can use %3ACE Interact -> Repair -> Full Repair%4 to %3fully repair%4 vehicles in close proxmity without a depot nearby.%1%1Neither you yourself nor your recovery tank not need to remain close to the depot for others to be able to resupply vehicles there.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
-            arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
             // Optional image
             image = "pics\logo_tracksntraps.paa";
@@ -58,15 +54,14 @@ class CfgHints
         class VictoryPoints
         {
             // Hint title, filled by arguments from 'arguments' param
-            displayName = "Victory Point System";
+            displayName = "How to win";
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "Victory Points are accumulated by the following factors:<br/>Holding the flag objective: 100 points per minute<br/>Destroying enemy depot: 2000 points<br/>Destroying enemy bridge: 1000 points<br/>Destroying enemy tank: 500 points<br/>Destroying enemy APC: 300 points<br/>Destroying enemy Car: 100 points<br/>Killing enemy Crewman: 50 points<br/><br/>Note that points are given only AFTER respawn of that entity. This means as long as e.g. a tank can be repaired (no wreck) its not counting as destroyed.<br/>";
+            description = "To win, your faction must accumulate more victory points than the enemy.%1%2Holding the flag objective: 100 points per minute%1%2Destroying enemy depot: 2000 points%1%2Destroying enemy bridge: 1000 points%1%2Destroying enemy tank: 500 points%1%2Destroying enemy APC: 300 points%1%2Destroying enemy Car: 100 points%1%2Killing enemy Crewman: 50 points%1%1Note that points are only rewarded AFTER the vehicle respawns. This means as long as it can be repaired (no wreck model) its not counting as destroyed.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "You can destroy/respawn own/enemy tanks instantly by going to their hull and ACE Interact. Time to explosion is 30 seconds. The crew inside will hear metallic sounds if someone tries to attach an explosive. You dont need an actual explosive item to do this.";
+            tip = "You can destroy/respawn own/enemy tanks instantly by using %3ACE Interact -> Plant explosive %4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
             arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
             // Optional image
             image = "pics\logo_tracksntraps.paa";
