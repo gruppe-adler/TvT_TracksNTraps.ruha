@@ -2,6 +2,8 @@
 
 // global vars
 gradTnT_vehicleTrenchClass = "GRAD_envelope_vehicle";
+gradTnT_vehicleTrench_posOffset = 2;
+gradTnT_vehicleTrench_vehicleCenterToGround = 2.5;
 
 params ["_vehicle"];
 
@@ -79,15 +81,15 @@ gradTnT_fnc_scaleOverTime = {
 gradTnT_fnc_createBuildUp = {
   params ["_vehicle", ["_scale", 0.2]];
 
+  private _offset = [.5,4,-gradTnT_vehicleTrench_posOffset-gradTnT_vehicleTrench_vehicleCenterToGround];
 
-  private _posOffset = 2;
-  private _offset = [1,2,-_posOffset];
   private _trenchAttached = createVehicle [gradTnT_vehicleTrenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
   _trenchAttached setObjectTextureGlobal [0, surfaceTexture position _vehicle];
   _trenchAttached attachTo [_vehicle, _offset];
   _trenchAttached setObjectScale _scale;
 
   _vehicle setVariable ["gradTnT_bpz_trenchAttached", _trenchAttached];
+
   _trenchAttached
 };
 
@@ -96,52 +98,51 @@ gradTnT_fnc_buildUpOnVehicle = {
     params ["_vehicle"];
 
     // dont dig on roads, concrete etc
-    if (!([_vehicle] call ace_common_fnc_canDig)) exitWith {};
+    if (!([_vehicle] call ace_common_fnc_canDig)) exitWith {
+      systemChat "cant dig";
+    };
 
-    private _buildUpSpeed = 0.01; // step of size change
-    private _maxScale = 0.3; // maximum scale when starting from scratch
-    private _trenchAttached = objNull;
-    if (isNull (_vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull])) then {
-        _trenchAttached = [_vehicle] call gradTnT_fnc_createBuildUp;
+    private _buildUpSpeed = 0.001; // step of size change
+    private _maxScale = 1; // maximum scale when starting from scratch
+    private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
+    if (isNull _trenchAttached) then {
+        _trenchAttached = [_vehicle, 0.1] call gradTnT_fnc_createBuildUp;
     };
 
     private _scale = getObjectScale _trenchAttached;
+
+    // systemChat ("object is " + str _trenchAttached + "   scale is " + str _scale);
     if (_scale < _maxScale) then {
         _scale = _scale + _buildUpSpeed;
-        _trenchAttached setObjectScale _scale;
     };
+    _trenchAttached setObjectScale _scale;
 };
 
 gradTnT_fnc_dropBuildUp = {
     params ["_vehicle"];
 
     private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
-    if (isNull _trenchAttached) exitWith {};
-
-    private _unfinishedTrenchNearBy = {
-        private _nearestTrench = nearestObject [player, gradTnT_vehicleTrenchClass];
-        if (!isNull(_nearestTrench && {(_vehicle modelToWorldWorld [0,3,0]) distance _nearestTrench < 2})) then {
-            if (getObjectScale _nearestTrench == 1) then {
-               _nearestTrench = objNull;
-            };
-        };
+    if (isNull _trenchAttached) exitWith {
+        systemChat "no trench attached";
     };
 
-    if (!isNull (_unfinishedTrenchNearBy)) then {
-        private _currentScaleNearby = getObjectScale _nearestTrench;
-        private _currentScaleAttached = getObjectScale _trenchAttached;
-        private _scaleCombined = (_currentScaleNearby + _currentScaleAttached) min 1;
-        [_nearestTrench, _scaleCombined, 1, false] call gradTnT_fnc_scaleOverTime;
-        [_trenchAttached, 0.01, 1, true] call gradTnT_fnc_scaleOverTime;
-    } else {
-        _trenchAttached setPosWorld (_trenchAttached modelToWorldWorld [0,0,0]); // setPos directly where dropped
-        // todo make sure no instaplosion
-    };
+    private _scale = getObjectScale _trenchAttached;
+    
+    // todo make sure no instaplosion
+     private _trenchDropped = createVehicle [gradTnT_vehicleTrenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
+     private _position = _vehicle modelToWorld [.5,5,-gradTnT_vehicleTrench_posOffset];
+    _trenchDropped setObjectTextureGlobal [0, surfaceTexture (position _vehicle)];
+    _trenchDropped setObjectScale _scale;
+    _trenchDropped setDir (getDir _vehicle);
+    _trenchDropped setPos _position;
+
+    deleteVehicle _trenchAttached;
 };
 
 _vehicle addEventHandler ["EpeContactStart", {
 	params ["_object1", "_object2", "_selection1", "_selection2", "_force"];
 
+  
   if (typeOf _object2 == gradTnT_vehicleTrenchClass) then {
     private _trenchAttached = _object1 getVariable ["gradTnT_bpz_trenchAttached", objNull];
     private _currentScaleAttached = if (!isNull _trenchAttached) then { getObjectScale _trenchAttached } else { 0 };
@@ -150,6 +151,8 @@ _vehicle addEventHandler ["EpeContactStart", {
 
     if (!isNull _trenchAttached) then {
         _trenchAttached setObjectScale _scaleCombined;
+        private _offset = [.5,4,-gradTnT_vehicleTrench_posOffset-gradTnT_vehicleTrench_vehicleCenterToGround];
+        _trenchAttached attachTo [_vehicle, _offset];
         deleteVehicle _object2;
     } else {
         [_object1, _scaleCombined] call gradTnT_fnc_createBuildUp;
@@ -166,13 +169,17 @@ _vehicle addEventHandler ["EpeContactStart", {
     if (!alive _vehicle) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
     if (!(_vehicle getVariable ["gradTnT_trenchMode", false])) exitWith {};
 
-    private _speed = velocity _vehicle select 1;
+    private _speed = velocityModelSpace _vehicle select 1;
 
-    if (_speed > 1) then { [_vehicle] call gradTnT_fnc_buildUpOnVehicle; };
-    if (_speed < 0) then {
+    if (_speed > 1) then { 
+      [_vehicle] call gradTnT_fnc_buildUpOnVehicle; 
+    };
+    if (_speed < -0.5) then {
+      // systemChat ("reversing "+ str _speed);
         if (!(isNull (_vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull]))) then {
             [_vehicle] call gradTnT_fnc_dropBuildUp;
+            // systemChat ("dropping");
         };
     };
 
-}, 0.1, [_vehicle]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_vehicle]] call CBA_fnc_addPerFrameHandler;
