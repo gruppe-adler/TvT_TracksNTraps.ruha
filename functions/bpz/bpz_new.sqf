@@ -4,6 +4,26 @@
 gradTnT_vehicleTrenchClass = "GRAD_envelope_vehicle";
 gradTnT_vehicleTrench_posOffset = 2;
 gradTnT_vehicleTrench_vehicleCenterToGround = 2.5;
+gradTnT_vehicleTrench_ammoThatDestroys =
+[
+  "gm_missile_hot_heat_dm102",
+  "gm_missile_hot_heat_dm72",
+  "gm_missile_milan_heat_dm92",
+  "gm_missile_bastion_heat_9M117M1",
+  "gm_missile_milan_heat_dm82",
+  "gm_missile_bastion_heat_9M117 ",
+  "gm_rocket_84x245mm_HEAT_T_DM32",
+  "gm_rocket_40mm_HEAT_pg7vl",
+  "gm_missile_maljutka_heat_9m14m",
+  "gm_missile_fagot_heat_9m111",
+  "gm_rocket_84x245mm_HEAT_T_DM22",
+  "gm_rocket_84x245mm_HEAT_T_DM12A1",
+  "gm_missile_maljutka_heat_9m14",
+  "gm_rocket_44x537mm_HEAT_dm32",
+  "gm_rocket_84x245mm_HEAT_T_DM12",
+  "gm_rocket_40mm_HEAT_pg7v",
+  "gm_rocket_55mm_heat_s5k"
+];
 
 params ["_vehicle"];
 
@@ -127,7 +147,7 @@ gradTnT_fnc_dropBuildUp = {
     };
 
     private _scale = getObjectScale _trenchAttached;
-    
+
     // todo make sure no instaplosion
      private _trenchDropped = createVehicle [gradTnT_vehicleTrenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
      private _position = _vehicle modelToWorld [.5,5,-gradTnT_vehicleTrench_posOffset];
@@ -142,7 +162,7 @@ gradTnT_fnc_dropBuildUp = {
 _vehicle addEventHandler ["EpeContactStart", {
 	params ["_object1", "_object2", "_selection1", "_selection2", "_force"];
 
-  
+
   if (typeOf _object2 == gradTnT_vehicleTrenchClass) then {
     private _trenchAttached = _object1 getVariable ["gradTnT_bpz_trenchAttached", objNull];
     private _currentScaleAttached = if (!isNull _trenchAttached) then { getObjectScale _trenchAttached } else { 0 };
@@ -162,6 +182,22 @@ _vehicle addEventHandler ["EpeContactStart", {
 }];
 
 
+gradTnT_fnc_addHitHandler = {
+    params ["_trench"];
+
+    _trench addEventHandler ["HitPart", {
+    	(_this select 0) params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+
+      if (_isDirect) then {
+          if (_projectile in gradTnT_vehicleTrench_ammoThatDestroys) then {
+              deleteVehicle _target;
+              // todo spawn FX
+          };
+      };
+    }];
+};
+
+
 [{
     params ["_args", "_handle"];
     _args params ["_vehicle"];
@@ -171,8 +207,8 @@ _vehicle addEventHandler ["EpeContactStart", {
 
     private _speed = velocityModelSpace _vehicle select 1;
 
-    if (_speed > 1) then { 
-      [_vehicle] call gradTnT_fnc_buildUpOnVehicle; 
+    if (_speed > 1) then {
+      [_vehicle] call gradTnT_fnc_buildUpOnVehicle;
     };
     if (_speed < -0.5) then {
       // systemChat ("reversing "+ str _speed);
