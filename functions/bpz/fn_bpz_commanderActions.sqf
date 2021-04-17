@@ -2,6 +2,8 @@
     
     params ["_vehicle"];
 
+    [_vehicle] call gradTnT_fnc_bpz_buildTrench;
+
     _vehicle addAction
     [
         "Enter Recovery Mode",
@@ -41,6 +43,54 @@
             _this in (crew (_target)) && speed (_target) < 1 && 
             (_target getVariable ['gradTnT_recoveryMode', false]) && 
             isNull (_target getVariable ['gradTnT_bpz_vehicleHooked', objNull])
+        ",
+        50,
+        false
+    ];
+
+    [_vehicle] call gradTnT_fnc_bpz_buildTrench_pfhLocal;
+
+    _vehicle addAction
+    [
+        "Enter Trench Mode",
+        {
+            params ["_target", "_caller", "_actionId", "_arguments"];
+
+            _target setVariable ["gradTnT_trenchMode", true, true];
+            _target animateSource ["dozer_blade_elev_source", 0.65];
+        },
+        nil,
+        1.5,
+        true,
+        true,
+        "",
+        "
+          _this in (crew (_target)) && speed (_target) < 1 && 
+          !(_target getVariable ['gradTnT_trenchMode', false]) &&
+          !(_target getVariable ['gradTnT_recoveryMode', false])
+        ",
+        50,
+        false
+    ];
+
+    _vehicle addAction
+    [
+        "Exit Trench Mode",
+        {
+            params ["_target", "_caller", "_actionId", "_arguments"];
+
+            [_target] call gradTnT_fnc_dropBuildUp;
+            _target setVariable ["gradTnT_trenchMode", false, true];
+            _target animateSource ["dozer_blade_elev_source", 0];
+        },
+        nil,
+        1.5,
+        true,
+        true,
+        "",
+        "
+          _this in (crew (_target)) && speed (_target) < 1 && 
+          (_target getVariable ['gradTnT_trenchMode', false])
         ",
         50,
         false
