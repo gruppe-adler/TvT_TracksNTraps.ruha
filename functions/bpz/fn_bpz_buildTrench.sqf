@@ -58,29 +58,13 @@ gradTnT_vehicleTrench_subMunitionThatDestroys = [];
 params ["_vehicle"];
 
 
-// fake scale by putting into ground
-gradTnT_fnc_setScale = {
-    params ["_vehicle", ["_trenchAttached", objNull], ["_scale", 0.2]];
-
-    private _scale = _vehicle setVariable ["gradTnT_trenchScale", _scale];
-    private _offset = [-.1,4.1,-(gradTnT_vehicleTrench_posOffset*_scale)-gradTnT_vehicleTrench_vehicleCenterToGround];
-    _trenchAttached attachTo [_vehicle, _offset];
-};  
-
-
-
 gradTnT_fnc_createBuildUp = {
   params ["_vehicle", ["_scale", 0.2]];
 
-  private _offset = [-.1,4.1,-gradTnT_vehicleTrench_posOffset-gradTnT_vehicleTrench_vehicleCenterToGround];
-
-  private _trenchAttached = createVehicle [gradTnT_vehicleTrenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
-  _trenchAttached setObjectTextureGlobal [0, surfaceTexture position _vehicle];
-  [_vehicle, _trenchAttached, _scale] call gradTnT_fnc_setScale;
-
-  _vehicle setVariable ["gradTnT_bpz_trenchAttached", _trenchAttached];
-
-  _trenchAttached
+  systemChat "build up started";
+  _vehicle setVariable ["gradTnT_bpz_trenchAttachedScale", _scale, true];
+  [_vehicle, _scale] remoteExec ["gradTnT_fnc_bpz_buildTrenchLocal", 0];
+  
 };
 
 
@@ -98,38 +82,39 @@ gradTnT_fnc_buildUpOnVehicle = {
       // systemChat "cant dig";
     };
     
-    private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
-    if (isNull _trenchAttached) then {
-        _trenchAttached = [_vehicle, 0.1] call gradTnT_fnc_createBuildUp;
+    private _scale = _vehicle getVariable ["gradTnT_bpz_trenchAttachedScale", -1];
+    if (_scale < 0) exitWith {
+        [_vehicle, 0.1] call gradTnT_fnc_createBuildUp;
+        _vehicle setVariable ["gradTnT_bpz_trenchAttachedScale", 0.1, true];
     };
-    private _scale = getObjectScale _trenchAttached;
     
-    private _buildUpSpeed = 0.002 * 1/_scale; // step of size change
+    private _buildUpSpeed = 0.001 * 1/_scale; // step of size change
     private _maxScale = 1; // maximum scale when starting from scratch
-    if (_scale < (_maxScale-_buildUpSpeed)) then {
+    if (_scale < _maxScale) then {
         _scale = _scale + _buildUpSpeed;
-    };
-    [_vehicle, _trenchAttached, _scale] call gradTnT_fnc_setScale;
+        _vehicle setVariable ["gradTnT_bpz_trenchAttachedScale", _scale, true];
+    };    
 };
 
 gradTnT_fnc_dropBuildUp = {
     params ["_vehicle"];   
 
+    // exit trench mode when reversing
     _vehicle setVariable ['gradTnT_trenchMode', false, true];
+    _vehicle animateSource ["dozer_blade_elev_source", 0];
 
-    private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
-    if (isNull _trenchAttached) exitWith {
+
+    private _scale = _vehicle getVariable ["gradTnT_bpz_trenchAttachedScale", -1];
+    if (_scale < 0) exitWith {
         diag_log format ["no trench attached"];
     };
 
-    _vehicle animateSource ["dozer_blade_elev_source", 0];
-    
-
     // clear condition for drop
-    _vehicle setVariable ["gradTnT_bpz_trenchAttached", objNull, true];
+    _vehicle setVariable ["gradTnT_bpz_trenchAttachedScale", -1, true];
 
-    private _scale = _trenchAttached getVariable ["gradTnT_trenchScale", 0.1];
-    private _position = getPosATLVisual _trenchAttached;
+    // get local trench from server and replace it with a global one
+    private _trenchAttachedServer = _vehicle getVariable ["gradTnT_bpz_trenchAttachedLocal", objNull];
+    private _position = getPosATLVisual _trenchAttachedServer;
 
     // todo make sure no instaplosion
      private _trenchDropped = createVehicle [gradTnT_vehicleTrenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
@@ -138,7 +123,7 @@ gradTnT_fnc_dropBuildUp = {
     _trenchDropped setPosATL _position;
     _trenchDropped setVariable ["gradTnT_trenchScale", _scale];
 
-    deleteVehicle _trenchAttached;
+    deleteVehicle _trenchAttachedServer;
 
     [_trenchDropped] call gradTnT_fnc_addHitHandler;
 };
@@ -149,18 +134,13 @@ _vehicle addEventHandler ["EpeContactStart", {
     if (!(_object1 getVariable ["gradTnT_trenchMode", false])) exitWith {};
 
     if (typeOf _object2 == gradTnT_vehicleTrenchClass) then {
-        private _trenchAttached = _object1 getVariable ["gradTnT_bpz_trenchAttached", objNull];
-        private _currentScaleAttached = if (!isNull _trenchAttached) then { _trenchAttached getVariable ["gradTnT_trenchScale", 0.1] } else { 0 };
+        private _scale1 = _object1 getVariable ["gradTnT_bpz_trenchAttachedScale", -1];
+        private _currentScaleAttached = if (_scale1 > 0) then { _scale1 } else { 0 };
         private _scale = _object2 getVariable ["gradTnT_trenchScale", 0.1];
         private _scaleCombined = (_scale + _currentScaleAttached) min 1;
 
-        if (!isNull _trenchAttached) then {
-            [_object1, _trenchAttached, _scaleCombined] call gradTnT_fnc_setScale;
-
-            if (_trenchAttached getVariable ["gradTnT_hitHandler", false]) then {
-                _trenchAttached removeAllEventHandlers "HitPart";
-                _trench setVariable ["gradTnT_hitHandler", false, true];
-            };
+        if (_scale1 > 0) then {
+            _object1 setVariable ["gradTnT_bpz_trenchAttachedScale", _scaleCombined, true];
             deleteVehicle _object2;
         } else {
             [_object1, _scaleCombined] call gradTnT_fnc_createBuildUp;
@@ -220,10 +200,10 @@ gradTnT_fnc_addHitHandler = {
     };
     if (_speed < -0.5) then {
       // systemChat ("reversing "+ str _speed);
-        if (!(isNull (_vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull]))) then {
+        if (_vehicle getVariable ["gradTnT_bpz_trenchAttachedScale", -1] > 0) then {
             [_vehicle] call gradTnT_fnc_dropBuildUp;
             // systemChat ("dropping");
         };
     };
 
-}, 0, [_vehicle]] call CBA_fnc_addPerFrameHandler;
+}, 0.5, [_vehicle]] call CBA_fnc_addPerFrameHandler;
