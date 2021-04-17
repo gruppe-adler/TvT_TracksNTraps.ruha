@@ -192,6 +192,7 @@ gradTnT_fnc_addHitHandler = {
 
     if (!alive _vehicle) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
     if (!(_vehicle getVariable ["gradTnT_trenchMode", false])) exitWith {};
+    if (isNull driver _vehicle) exitWith {};
 
     private _speed = velocityModelSpace _vehicle select 1;
 
