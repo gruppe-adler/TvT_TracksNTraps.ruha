@@ -15,7 +15,11 @@
         true,
         true,
         "",
-        "_this in (crew (_target)) && speed (_target) < 1 && !(_target getVariable ['recoveryMode', false])",
+        "
+            _this in (crew (_target)) && speed (_target) < 1 && 
+            !(_target getVariable ['gradTnT_recoveryMode', false]) &&
+            !(_target getVariable ['gradTnT_trenchMode', false])
+        ",
         50,
         false
     ];
@@ -33,7 +37,11 @@
         true,
         true,
         "",
-        "_this in (crew (_target)) && speed (_target) < 1 && (_target getVariable ['recoveryMode', false]) && isNull (_target getVariable ['gradTnT_bpz_vehicleHooked', objNull])",
+        "   
+            _this in (crew (_target)) && speed (_target) < 1 && 
+            (_target getVariable ['gradTnT_recoveryMode', false]) && 
+            isNull (_target getVariable ['gradTnT_bpz_vehicleHooked', objNull])
+        ",
         50,
         false
     ];

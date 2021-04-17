@@ -20,6 +20,10 @@ class gradTnT {
         file = "functions\bpz";
 
         class bpz_actions;
+        class bpz_buildTrench;
+        class bpz_buildTrench_buildFX;
+        class bpz_buildTrench_destroyParticle;
+        class bpz_buildTrench_pfhLocal;
         class bpz_commanderActions { preInit = 1; };
         class bpz_configureBpzEast;
         class bpz_connectRopes;
