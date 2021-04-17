@@ -132,7 +132,7 @@ gradTnT_fnc_buildUpOnVehicle = {
 
     // dont dig on roads, concrete etc
     if (!([_vehicle] call ace_common_fnc_canDig)) exitWith {
-      systemChat "cant dig";
+      // systemChat "cant dig";
     };
     
     private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
@@ -156,7 +156,7 @@ gradTnT_fnc_dropBuildUp = {
 
     private _trenchAttached = _vehicle getVariable ["gradTnT_bpz_trenchAttached", objNull];
     if (isNull _trenchAttached) exitWith {
-        systemChat "no trench attached";
+        diag_log format ["no trench attached"];
     };
 
     _vehicle animateSource ["dozer_blade_elev_source", 0];
@@ -217,7 +217,7 @@ gradTnT_fnc_addHitHandler = {
 
       if (_isDirect) then {
         private _type = _ammo select 4;
-        systemChat ("direct Hit with " + str _ammo);
+        diag_log format ["direct Hit with " + str _ammo];
 
           if (_type in gradTnT_vehicleTrench_subMunitionThatDestroys) then {
               // send fx to clients
