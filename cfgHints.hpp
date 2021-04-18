@@ -1,5 +1,51 @@
 class CfgHints
 {
+        class gradTnT_General
+    {
+        displayName = "General";
+        class GoodToKnow
+        {
+            // Hint title, filled by arguments from 'arguments' param
+            displayName = "Good to know";
+            // Optional hint subtitle, filled by arguments from 'arguments' param
+            displayNameShort = "";
+            // Structured text, filled by arguments from 'arguments' param
+            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged, rendering attacked vehicles unusable, but without destroying them completely.%1Vehicle-killss only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles using ACE Interact requires at least two people.%1%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.";
+            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
+            tip = "";
+            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            };
+            // Optional image
+            image = "pics\logo_tracksntraps.paa";
+            // optional parameter for not showing of image in context hint in mission (default false))
+            noImage = false;
+            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
+            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
+            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
+            dlc = 0;
+        };
+        class BuildingAbilities
+        {
+            // Hint title, filled by arguments from 'arguments' param
+            displayName = "Recovery tank";
+            // Optional hint subtitle, filled by arguments from 'arguments' param
+            displayNameShort = "";
+            // Structured text, filled by arguments from 'arguments' param
+            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>%1The recovery tank has to be in close proximity and in %3recovery mode%4 to build any of the above structures or perform %3full repairs%4.%1%3Recovery%4 mode can be entered/exited using mouse wheel actions.%1In recovery mode, the tank becomes %3immovable%4.%1%1%2When in recovery mode, a dismounted engineer can use %3ACE Interact -> Repair -> Full Repair%4 to %3fully repair%4 vehicles in close proxmity without a depot nearby.%1%1Neither you yourself nor your recovery tank not need to remain close to the depot for others to be able to resupply vehicles there.";
+            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
+            tip = "";
+            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            };
+            // Optional image
+            image = "pics\logo_tracksntraps.paa";
+            // optional parameter for not showing of image in context hint in mission (default false))
+            noImage = false;
+            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
+            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
+            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
+            dlc = 0;
+        };
+    };
     class gradTnT_RoleLogistics
     {
         displayName = "Roles: Logistics";
@@ -10,7 +56,7 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired individually.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.";
+            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired individually.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.%1%1Engineers can place and remove tank traps and AT mines (hostile ones as well).%1Tank traps and mines cannot be placed inside the green objective radius.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
             arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
