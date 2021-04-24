@@ -25,7 +25,9 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
 }, "Attaching Explosive (20s Countdown - then respawn)"] call ace_common_fnc_progressBar;
 
 {
-   ["Something cratches on your tank..."] remoteExec ["hintSilent", _x];
+    if (alive _x) then {
+        ["Something scratches on your tank..."] remoteExec ["hintSilent", _x];
+    };
 } forEach crew _vehicle;
 
 [{
