@@ -50,6 +50,7 @@
 
     [_vehicle] call gradTnT_fnc_bpz_buildTrench_pfhLocal;
 
+    /*
     _vehicle addAction
     [
         "Enter Trench Mode",
@@ -95,6 +96,7 @@
         50,
         false
     ];
+    */
 
 
     /*
