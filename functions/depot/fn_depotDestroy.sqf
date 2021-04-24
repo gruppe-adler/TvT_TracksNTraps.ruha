@@ -1,9 +1,9 @@
 params ["_player", "_depotHelper"];
 
-
 [   20, 
     [_player, _depotHelper], 
     {
+        params ["_args"];
         _args params ["_player", "_depotHelper"];
 
         private _depot = _depotHelper getVariable ["gradTnT_depotHelperDepot", objNull];
