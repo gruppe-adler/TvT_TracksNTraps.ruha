@@ -22,6 +22,9 @@ if (isNull _veh) exitWith {
 	["Vehicle must not be objNull."] call BIS_fnc_error;
 };
 
+private _vehicleID = _veh getVariable ["gradTnT_vehicleID", -1];
+["trigger respawning %1 with ID %2 to respawn", _veh, _vehicleID] call BIS_fnc_log;
+
 private _var = _veh getVariable ["gradTnT_vehicleRespawn", []];
 if !((count _var) isEqualTo 4) exitWith {
     ["Respawn was already triggered for vehicle."] call BIS_fnc_error;
@@ -48,8 +51,7 @@ private _variables = [];
 private _respawnArgs = [
     typeOf _veh,
     _respawnPos,
-    _respawnDir,
-    _variables
+    _respawnDir
 ];
 
 // try to respawn vehicle every 5s

@@ -31,7 +31,11 @@ clearItemCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
 
+
 private _customization = _veh getVariable ["gradTnT_vehicleCustomization", []];
+if (count _customization < 1) then {
+    _customization = [_veh] call bis_fnc_getVehicleCustomization;
+};
 _customization params ["_textures", "_animations"];
 [_veh, _textures, _animations] call BIS_fnc_initVehicle;
 
