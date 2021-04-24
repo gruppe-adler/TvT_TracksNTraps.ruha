@@ -225,8 +225,7 @@ class bwGM {
                 LIST_4("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
             addItemsToVest[] = {
                 LIST_2("gm_handgrenade_frag_dm51"),
@@ -253,8 +252,7 @@ class bwGM {
                 LIST_4("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
         };
         class officer_F: Soldier_SL_F {};
@@ -288,8 +286,7 @@ class bwGM {
                 LIST_2("ACE_tourniquet"),
                 LIST_3("gm_8Rnd_9x19mm_B_DM11_p1_blk"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
         };
     };

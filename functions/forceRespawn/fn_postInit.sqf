@@ -27,4 +27,5 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 
 	gradTnT_forceRespawn_vehicles pushBackUnique _vehicle;
+    [_unit, _vehicle, true] call ace_vehiclelock_fnc_addKeyForVehicle;
 }];

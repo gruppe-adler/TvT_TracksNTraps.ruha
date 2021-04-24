@@ -72,6 +72,7 @@ if (_veh isKindOf "gm_ge_army_bpz2a0") then {
 
     if (_side == east) then {
         [_veh] call gradTnT_fnc_bpz_configureBpzEast;
+        _vehicle setVariable ["TF_RadioType", "gm_gc_backpack_r105m_brn", true];
     };
 } else {
     _veh setVariable ["gradTnT_isRepairTank", false, true]; // todo necessary to set respawn var even when false?
@@ -98,12 +99,4 @@ if (typeOf _veh in [
     "gm_ge_army_marder1a2"]
     ) then {
     _veh addItemCargoGlobal ["gm_minestatic_at_dm21", 10];
-};
-
-
-
-if (_side == west) then {
-    _veh addItemCargoGlobal ["ACE_key_west", 2];
-} else {
-    _veh addItemCargoGlobal ["ACE_key_east", 2];
 };
