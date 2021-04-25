@@ -62,6 +62,12 @@ class CfgGradFortifications {
             condition = "!(getPos ACE_player inArea 'mrk_objective_area')";
             conditionHint = "Too close to objective";
         };
+        class land_gm_tanktrap_02 {
+            size = 1;
+            demolitionTime = 60;
+            condition = "!(getPos ACE_player inArea 'mrk_objective_area')";
+            conditionHint = "Too close to objective";
+        };
     };
 };
 
