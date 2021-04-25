@@ -30,9 +30,18 @@ private _isRoom = count _positionEmpty isEqualTo 0;
 
 // exit if position isn't empty
 if (!_isRoom) exitWith {
-	diag_log format ["trying to respawn %1 on %2 but no room", _type, _pos];
+    private _side = [west, east] select ({ _x select 1 == west } count _variables > 0);
+    private _identifier = format ["gradTnT_waitingForRespawn_%1", _side];
+    private _waitingForRespawn = missionNamespace getVariable [_identifier, []];
+    _waitingForRespawn pushBackUnique [_type, _pos];
+    missionNamespace setVariable [_identifier, _waitingForRespawn, true];
+    diag_log format ["%2 respawn queue: %1", _waitingForRespawn, _side];
 	false;
 };
+
+ private _waitingForRespawn = missionNamespace getVariable ["gradTnT_waitingForRespawn", []];
+_waitingForRespawn deleteAt (_waitingForRespawn find [_type, _pos]);
+missionNamespace setVariable ["gradTnT_waitingForRespawn", _waitingForRespawn, true];
 
 // spawn vehicle
 private _veh = createVehicle [ _type, [0,0,0], [], 0, "NONE" ];

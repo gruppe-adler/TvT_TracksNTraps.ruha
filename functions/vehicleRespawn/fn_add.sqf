@@ -29,7 +29,17 @@ if (count (_veh getVariable ["gradTnT_vehicleRespawn", []]) > 0) exitWith {
     ["failed add respawn to vehicle %1, because it is already added as respawnable", _veh] call BIS_fnc_error;
 };
 
-["adding %1 to respawn", _veh] call BIS_fnc_log;
+
+private _vehicleID = _veh getVariable ["gradTnT_vehicleRespawn", []] param [4, -1]; // get param 4 of variable
+// if no ID assigned, assign ID 
+if (_vehicleID < 0) then {
+    private _newVehicleID = (missionNamespace getVariable ["gradTnT_vehicleCount", 0]) + 1;
+    _vehicleID = _newVehicleID;
+    missionNamespace setVariable ["gradTnT_vehicleCount", _vehicleID, true];
+    _veh setVariable ["gradTnT_vehicleID", _vehicleID, true];
+};
+
+["adding %1 with ID %2 to respawn", _veh, _vehicleID] call BIS_fnc_log;
 
 // add killed EH
 private _killedID = _veh addMPEventHandler ["MPKilled", {

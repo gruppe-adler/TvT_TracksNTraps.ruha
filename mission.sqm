@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2080;
+		nextID=2083;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11597.521,120.96737,7728.4624};
-		dir[]={-0.16461991,-0.65491128,0.73755944};
-		up[]={-0.14266296,0.75570482,0.63918412};
-		aside[]={0.97598648,2.3996108e-008,0.21783543};
+		pos[]={11552.498,125.33272,7748.834};
+		dir[]={0.79980719,-0.47303417,0.36952311};
+		up[]={0.42941791,0.88104403,0.19839762};
+		aside[]={0.419415,0,-0.90779471};
 	};
 };
 binarizationWanted=0;
@@ -16664,6 +16664,7 @@ class Mission
 			};
 			id=807;
 			type="gm_gc_airforce_mi2p";
+			atlOffset=-0.04940033;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17596,6 +17597,7 @@ class Mission
 			};
 			id=837;
 			type="gm_ge_army_bo105m_vbh";
+			atlOffset=-0.001449585;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -26140,7 +26142,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11594.221,93.88887,7761.3511};
+				position[]={11592.829,93.857277,7760.9922};
 				angles[]={0,2.879802,0};
 			};
 			side="Empty";

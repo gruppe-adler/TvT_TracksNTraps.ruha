@@ -225,8 +225,7 @@ class bwGM {
                 LIST_4("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
             addItemsToVest[] = {
                 LIST_2("gm_handgrenade_frag_dm51"),
@@ -245,7 +244,7 @@ class bwGM {
         };
         class Soldier_SL_F: Soldier_TL_F {
             headgear = "gm_ge_headgear_beret_crew_red_opcom";
-            backpack = "TFAR_rt1523g_green";
+            backpack = "gm_ge_backpack_sem35_oli";
             goggles = "";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
@@ -253,8 +252,7 @@ class bwGM {
                 LIST_4("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
         };
         class officer_F: Soldier_SL_F {};
@@ -278,9 +276,9 @@ class bwGM {
             secondaryWeapon = "gm_p1_blk";
             secondaryWeaponMagazine = "gm_8Rnd_9x19mm_B_DM11_p1_blk";
             headgear = "gm_ge_headgear_sph4_oli";
-            uniform = "gm_ge_army_vest_pilot_oli";
-            vest = "";
-            backpack = "gm_gc_backpack_r105m_brn";
+            uniform = "gm_ge_army_uniform_pilot_rolled_oli";
+            vest = "gm_ge_army_vest_pilot_oli";
+            backpack = "gm_ge_backpack_sem35_oli";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
@@ -288,8 +286,7 @@ class bwGM {
                 LIST_2("ACE_tourniquet"),
                 LIST_3("gm_8Rnd_9x19mm_B_DM11_p1_blk"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_west"
+                "ACE_Flashlight_XL50"
             };
         };
     };

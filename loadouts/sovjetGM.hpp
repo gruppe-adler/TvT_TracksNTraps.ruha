@@ -33,8 +33,7 @@ class sovjetGM {
                 LIST_3("ACE_morphine"),
                 LIST_2("ACE_tourniquet"),
                 "ACE_MapTools",
-                "ACE_Flashlight_KSF1",
-                "ACE_key_east"
+                "ACE_Flashlight_KSF1"
             };
             addItemsToBackpack[] = {
                 "SmokeShell",
@@ -210,8 +209,7 @@ class sovjetGM {
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine"),
-                "ACE_key_east"
+                LIST_2("ACE_morphine")
             };
             addItemsToVest[] = {
                 LIST_2("gm_smokeshell_wht_gc"),
@@ -274,8 +272,7 @@ class sovjetGM {
                 LIST_2("ACE_tourniquet"),
                 LIST_3("gm_8Rnd_9x18mm_B_pst_pm_blk"),
                 "ACE_MapTools",
-                "ACE_Flashlight_XL50",
-                "ACE_key_east"
+                "ACE_Flashlight_XL50"
             };
         };
     };
