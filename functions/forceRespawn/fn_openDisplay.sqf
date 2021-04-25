@@ -29,7 +29,7 @@ if (count _vehicles isEqualTo 0) exitWith {
 	if (count _waitingForRespawn isEqualTo 0) then {
 		systemChat "No vehicles to respawn. You can only force respawn vehicles you've entered.";
 	} else {
-		systemChat format ["Clear area for: %1 vehicles to respawn automatically.", count _waitingForRespawn];
+		systemChat format ["Clear area for %1 vehicles to respawn automatically.", count _waitingForRespawn];
 	};
 };
 
