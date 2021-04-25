@@ -24,11 +24,13 @@
 private _vehicles = gradTnT_forceRespawn_vehicles select { !(isNull _x) && alive _x && ([_x] call gradTnT_fnc_side) isEqualTo playerSide };
 
 if (count _vehicles isEqualTo 0) exitWith {
-	// TODO
-	systemChat "You don't have any vehicles to respawn. You can only force respawn vehicles you've entered.";
-
+	// TODO filter side
 	private _waitingForRespawn = missionNamespace getVariable ["gradTnT_waitingForRespawn", []];
-	systemChat format ["No respawn due to no room: %1", _waitingForRespawn];
+	if (count _waitingForRespawn isEqualTo 0) then {
+		systemChat "No vehicles to respawn. You can only force respawn vehicles you've entered.";
+	} else {
+		systemChat format ["Clear area for: %1 vehicles to respawn automatically.", count _waitingForRespawn];
+	};
 };
 
 private _display = findDisplay 46 createDisplay "gradTnT_forceVehicleRespawn";
