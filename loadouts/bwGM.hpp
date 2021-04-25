@@ -244,7 +244,7 @@ class bwGM {
         };
         class Soldier_SL_F: Soldier_TL_F {
             headgear = "gm_ge_headgear_beret_crew_red_opcom";
-            backpack = "TFAR_rt1523g_green";
+            backpack = "gm_ge_backpack_sem35_oli";
             goggles = "";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
@@ -278,7 +278,7 @@ class bwGM {
             headgear = "gm_ge_headgear_sph4_oli";
             uniform = "gm_ge_army_uniform_pilot_rolled_oli";
             vest = "gm_ge_army_vest_pilot_oli";
-            backpack = "gm_gc_backpack_r105m_brn";
+            backpack = "gm_ge_backpack_sem35_oli";
             addItemsToUniform[] = {
                 LIST_7("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
