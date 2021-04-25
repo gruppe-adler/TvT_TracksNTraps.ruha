@@ -3,7 +3,7 @@ class CfgHints
         class gradTnT_General
     {
         displayName = "General";
-        logicalOrder=1;
+        logicalOrder = 1;
         class GoodToKnow
         {
             // Hint title, filled by arguments from 'arguments' param
@@ -29,24 +29,15 @@ class CfgHints
         };
         class VictoryPoints
         {
-            // Hint title, filled by arguments from 'arguments' param
             displayName = "How to win";
             logicalOrder = 2;
-            // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
-            // Structured text, filled by arguments from 'arguments' param
             description = "To win, your faction must accumulate more victory points than the enemy.%1%2Holding the flag objective: 100 points per minute%1%2Destroying enemy depot: 2000 points%1%2Destroying enemy bridge: 1000 points%1%2Destroying enemy tank: 500 points%1%2Destroying enemy APC: 300 points%1%2Destroying enemy Car: 100 points%1%2Killing enemy Crewman: 50 points%1%1Points are only awarded %3AFTER%4 the vehicle respawns. This means as long as it can be repaired (no wreck model) its not counting as destroyed.";
-            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "You can destroy your own and hostile tanks instantly by using %3ACE Interact > Plant explosive%4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
             arguments[] = {
             };
-            // Optional image
             image = "pics\logo_tracksntraps.paa";
-            // optional parameter for not showing of image in context hint in mission (default false))
             noImage = false;
-            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
-            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
-            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
             dlc = 0;
         };
     };
@@ -56,46 +47,28 @@ class CfgHints
         logicalOrder = 2;
         class Abilities
         {
-            // Hint title, filled by arguments from 'arguments' param
             displayName = "Abilities";
             logicalOrder = 1;
-            // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
-            // Structured text, filled by arguments from 'arguments' param
             description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired %3individually%4.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.%1%1Abilities%1%2Engineers can place and remove tank traps and AT mines (hostile ones as well).%1%2Tank traps and mines cannot be placed inside the green objective radius.";
-            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
-            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            arguments[] = {
             };
-            // Optional image
             image = "pics\logo_tracksntraps.paa";
-            // optional parameter for not showing of image in context hint in mission (default false))
             noImage = false;
-            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
-            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
-            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
             dlc = 0;
         };
         class BuildingAbilities
         {
-            // Hint title, filled by arguments from 'arguments' param
             displayName = "Recovery tank";
             logicalOrder = 2;
-            // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
-            // Structured text, filled by arguments from 'arguments' param
             description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>%1%2The recovery tank has to be in close proximity and in %3recovery mode%4 to build any of the above structures or perform %3full repairs%4.%1%2%3Recovery%4 mode can be entered/exited using mouse wheel actions.%1%2In recovery mode, the tank becomes %3immovable%4.%1%2In recovery mode, a dismounted engineer can use %3ACE Interact > Repair > Full Repair%4 to %3fully repair%4 vehicles in close proxmity without a depot nearby.%1%2Neither you nor your recovery tank need to remain close to a depot for others to be able to resupply vehicles there.";
-            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
-            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            arguments[] = {
             };
-            // Optional image
             image = "pics\logo_tracksntraps.paa";
-            // optional parameter for not showing of image in context hint in mission (default false))
             noImage = false;
-            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
-            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
-            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
             dlc = 0;
         };
     };
