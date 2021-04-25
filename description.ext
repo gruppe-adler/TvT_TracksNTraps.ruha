@@ -59,7 +59,7 @@ class CfgGradFortifications {
         class land_gm_tanktrap_01 {
             size = 1;
             demolitionTime = 60;
-            condition = "!(getPos player inArea 'mrk_objective_area')";
+            condition = "!(getPos ACE_player inArea 'mrk_objective_area')";
             conditionHint = "Needs to be outside of objective circle";
         };
     };
