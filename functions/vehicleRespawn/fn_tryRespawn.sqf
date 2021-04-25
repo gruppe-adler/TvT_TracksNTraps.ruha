@@ -30,12 +30,14 @@ private _isRoom = count _positionEmpty isEqualTo 0;
 
 // exit if position isn't empty
 if (!_isRoom) exitWith {
-    private _side = [west, east] select ({ _x select 1 == east } count _variables > 0);
+    
+    private _side = [west, east] select ({ _x select 0 isEqualTo "gradTnT_vehicleSide" && _x select 1 isEqualTo east };
     private _identifier = format ["gradTnT_waitingForRespawn_%1", _side];
     private _waitingForRespawn = missionNamespace getVariable [_identifier, []];
     _waitingForRespawn pushBackUnique [_type, _pos];
     missionNamespace setVariable [_identifier, _waitingForRespawn, true];
-    diag_log format ["%2 respawn queue: %1", _waitingForRespawn, _side];
+    
+    diag_log format ["variables: %1", _variables];
 	false;
 };
 

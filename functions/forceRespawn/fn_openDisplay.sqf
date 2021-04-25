@@ -24,8 +24,7 @@
 private _vehicles = gradTnT_forceRespawn_vehicles select { !(isNull _x) && alive _x && ([_x] call gradTnT_fnc_side) isEqualTo playerSide };
 
 if (count _vehicles isEqualTo 0) exitWith {
-	private _side = side ACE_player;
-	private _identifier = format ["gradTnT_waitingForRespawn_%1", _side];
+	private _identifier = format ["gradTnT_waitingForRespawn_%1", playerSide];
     private _waitingForRespawn = missionNamespace getVariable [_identifier, []];
 	if (count _waitingForRespawn isEqualTo 0) then {
 		systemChat "No vehicles to respawn. You can only force respawn vehicles you've entered.";

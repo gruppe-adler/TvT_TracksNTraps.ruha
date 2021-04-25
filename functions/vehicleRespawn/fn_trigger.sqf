@@ -51,7 +51,8 @@ private _variables = [];
 private _respawnArgs = [
     typeOf _veh,
     _respawnPos,
-    _respawnDir
+    _respawnDir,
+    _variables
 ];
 
 // try to respawn vehicle every 5s
