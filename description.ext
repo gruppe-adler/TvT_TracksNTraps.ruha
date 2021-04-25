@@ -60,7 +60,7 @@ class CfgGradFortifications {
             size = 1;
             demolitionTime = 60;
             condition = "!(getPos ACE_player inArea 'mrk_objective_area')";
-            conditionHint = "Needs to be outside of objective circle";
+            conditionHint = "Too close to objective";
         };
     };
 };
