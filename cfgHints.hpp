@@ -1,72 +1,22 @@
 class CfgHints
 {
-    class gradTnT_Engineer
+        class gradTnT_General
     {
-        // Topic title (displayed only in topic listbox in Field Manual)
-        displayName = "Engineer System";
-        class BuildingAbilities
+        displayName = "General";
+        logicalOrder = 1;
+        class GoodToKnow
         {
             // Hint title, filled by arguments from 'arguments' param
-            displayName = "Building Abilities";
-            // Optional hint subtitle, filled by arguments from 'arguments' param
-            displayNameShort = "Engineers";
-            // Structured text, filled by arguments from 'arguments' param
-            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>";
-            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "";
-            arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
-            };
-            // Optional image
-            image = "pics\logo_tracksntraps.paa";
-            // optional parameter for not showing of image in context hint in mission (default false))
-            noImage = false;
-            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
-            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
-            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
-            dlc = 0;
-        };
-
-        class RepairAbilities
-        {
-            // Hint title, filled by arguments from 'arguments' param
-            displayName = "Repair Abilities";
-            // Optional hint subtitle, filled by arguments from 'arguments' param
-            displayNameShort = "Vehicles";
-            // Structured text, filled by arguments from 'arguments' param
-            description = "To repair a vehicle completely the pioneers need to drive their Bpz close and go into recovery mode (mouse wheel action). This makes their tank an ACE repair vehicle temporarily but leaves the vehicle vulnerable and static. Close vehicles can now be repaired fully.";
-            // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "";
-            arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
-            };
-            // Optional image
-            image = "pics\logo_tracksntraps.paa";
-            // optional parameter for not showing of image in context hint in mission (default false))
-            noImage = false;
-            // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
-            // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
-            // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
-            dlc = 0;
-        };
-    };
-
-    class gradTnT_VictoryPoints
-    {
-        // Topic title (displayed only in topic listbox in Field Manual)
-        displayName = "Victory Point System";
-        class VictoryPoints
-        {
-            // Hint title, filled by arguments from 'arguments' param
-            displayName = "Victory Point System";
+            displayName = "Good to know";
+            // Optional. Can be used to force the display order in the list.
+            logicalOrder = 1;
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "Victory Points are accumulated by the following factors:<br/>Holding the flag objective: 100 points per minute<br/>Destroying enemy depot: 2000 points<br/>Destroying enemy bridge: 1000 points<br/>Destroying enemy tank: 500 points<br/>Destroying enemy APC: 300 points<br/>Destroying enemy Car: 100 points<br/>Killing enemy Crewman: 50 points<br/><br/>Note that points are given only AFTER respawn of that entity. This means as long as e.g. a tank can be repaired (no wreck) its not counting as destroyed.<br/>";
+            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged, rendering vehicles unusable, but without destroying them completely.%1Vehicle-kills only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles using ACE Interact requires at least two people.%1%2%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1%2No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
-            tip = "You can destroy/respawn own/enemy tanks instantly by going to their hull and ACE Interact. Time to explosion is 30 seconds. The crew inside will hear metallic sounds if someone tries to attach an explosive. You dont need an actual explosive item to do this.";
-            arguments[] = {
-                "name player" // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
+            tip = "";
+            arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
             };
             // Optional image
             image = "pics\logo_tracksntraps.paa";
@@ -75,6 +25,50 @@ class CfgHints
             // -1 Creates no log in player diary, 0 Creates diary log ( default when not provided )
             // if a dlc's appID Number is used ( see [[getDLCs]] ) and the user does not have the required dlc installed then the advHint will be replaced with
             // configfile >> "CfgHints" >> "DlcMessage" >> "Dlc#"; where # is this properties ( dlc appID ) number
+            dlc = 0;
+        };
+        class VictoryPoints
+        {
+            displayName = "How to win";
+            logicalOrder = 2;
+            displayNameShort = "";
+            description = "To win, your faction must accumulate more victory points than the enemy.%1%2Holding the flag objective: 100 points per minute%1%2Destroying enemy depot: 2000 points%1%2Destroying enemy bridge: 1000 points%1%2Destroying enemy tank: 500 points%1%2Destroying enemy APC: 300 points%1%2Destroying enemy Car: 100 points%1%2Killing enemy Crewman: 50 points%1%1Points are only awarded %3AFTER%4 the vehicle respawns. This means as long as it can be repaired (no wreck model) its not counting as destroyed.";
+            tip = "You can destroy your own and hostile tanks instantly by using %3ACE Interact > Plant explosive%4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
+            arguments[] = {
+            };
+            image = "pics\logo_tracksntraps.paa";
+            noImage = false;
+            dlc = 0;
+        };
+    };
+    class gradTnT_RoleLogistics
+    {
+        displayName = "Roles: Logistics";
+        logicalOrder = 2;
+        class Abilities
+        {
+            displayName = "Abilities";
+            logicalOrder = 1;
+            displayNameShort = "";
+            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired %3individually%4.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.%1%1Abilities%1%2Engineers can place and remove tank traps and AT mines (hostile ones as well).%1%2Tank traps and mines cannot be placed inside the green objective radius.";
+            tip = "";
+            arguments[] = {
+            };
+            image = "pics\logo_tracksntraps.paa";
+            noImage = false;
+            dlc = 0;
+        };
+        class BuildingAbilities
+        {
+            displayName = "Recovery tank";
+            logicalOrder = 2;
+            displayNameShort = "";
+            description = "<t size='30' shadow='0'><img image='pics\help_engineers.paa'/></t>%1%2The recovery tank has to be in close proximity and in %3recovery mode%4 to build any of the above structures or perform %3full repairs%4.%1%2%3Recovery%4 mode can be entered/exited using mouse wheel actions.%1%2In recovery mode, the tank becomes %3immovable%4.%1%2In recovery mode, a dismounted engineer can use %3ACE Interact > Repair > Full Repair%4 to %3fully repair%4 vehicles in close proxmity without a depot nearby.%1%2Neither you nor your recovery tank need to remain close to a depot for others to be able to resupply vehicles there.";
+            tip = "";
+            arguments[] = {
+            };
+            image = "pics\logo_tracksntraps.paa";
+            noImage = false;
             dlc = 0;
         };
     };
