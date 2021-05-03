@@ -257,6 +257,13 @@ class AddonsMetaData
 		};
 	};
 };
+dlcs[]=
+{
+	"gm",
+	"Argo",
+	"Enoch",
+	"Heli"
+};
 randomSeed=12538678;
 class ScenarioData
 {
@@ -25706,7 +25713,7 @@ class Mission
 			};
 			id=1679;
 			type="land_gm_euro_sewer_01";
-			atlOffset=1.2732849;
+			atlOffset=1.2732773;
 		};
 		class Item95
 		{

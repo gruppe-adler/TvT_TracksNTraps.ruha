@@ -7,7 +7,7 @@ private _destroyAction = [
     "Destroy Depot",
     "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     {
-        [player, _target] remoteExec ["gradTnT_fnc_depotDestroy", 2];
+        [player, _target] call gradTnT_fnc_depotDestroy;
     }, {
         private _depot = _target getVariable ["gradTnT_depotHelperDepot", objNull];
         !(_depot getVariable ["gradTnT_depotDestroyed", false])
