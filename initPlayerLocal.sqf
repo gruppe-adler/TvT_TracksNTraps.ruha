@@ -11,3 +11,9 @@ if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
 };
 
 0 enableChannel false; // Disable user ability to send voice and text on global channel
+
+// disable penalties for blue on blue
+player addEventHandler ["HandleRating", {
+	params ["_unit", "_rating"];
+  0
+}];y
