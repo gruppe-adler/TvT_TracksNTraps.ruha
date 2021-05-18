@@ -59,7 +59,7 @@ class CfgHints
             displayName = "Blufor Tracker";
             logicalOrder = 5;
             displayNameShort = "";
-            description = "This mission features a detailed Blufor tracker.%1%2Only %3vehicles%4 are shown.%1%2%3Empty dots%4 above the vehicle icon show the crew capacity.%1%2%3Filled dots%4 show how many slots are crewed in the vehicle.%1%2Vehicles have a %3formation marker%4 on the hull (can be obscured by attached by camo or foliage). This can be changed using ACE Interact on the vehicle.%1%2The %3objective and its current owner%4 will always be shown.%1%2%4Depot and bridges%4 built by your engineers will always be shown.%1%2Completely %3destroyed vehicles%4 are shown with a fading explosion-marker. Wrecks persist on terrain.%1%2%3Rivers and creeks%4 are highlighted on the BluforTracker to prevent drowning accidents.";
+            description = "This mission features a detailed Blufor tracker.%1%2Only %3vehicles%4 are shown.%1%2%3Empty dots%4 above the vehicle icon show the crew capacity.%1%2%3Filled dots%4 show how many slots are crewed in the vehicle.%1%2Vehicles have a %3formation marker%4 on the hull (can be obscured by attached by camo or foliage). This can be changed using ACE Interact on the vehicle.%1%2The %3objective and its current owner%4 will always be shown.%1%2%3Depot and bridges%4 built by your engineers will always be shown.%1%2Completely %3destroyed vehicles%4 are shown with a fading explosion-marker. Wrecks persist on terrain.%1%2%3Rivers and creeks%4 are highlighted on the BluforTracker to prevent drowning accidents.";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
@@ -73,7 +73,7 @@ class CfgHints
             displayName = "Tanker";
             logicalOrder = 1;
             displayNameShort = "";
-            description = "The tanker's job is to engage the enemy and clear the way to the control point. You have access to your faction's armored vehicles.%1%2Check %3Good to Know%4 for some information about your abilities.";
+            description = "The tanker's job is to %3engage the enemy%4 and clear the way to the control point. He has access to your faction's armored vehicles.";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
@@ -82,7 +82,7 @@ class CfgHints
             displayName = "Recon";
             logicalOrder = 2;
             displayNameShort = "";
-            description = "The recon's job is to %3scout enemy movements%4 and %3disrupt%4 them. They have access to comaparably lightly armored, fast and quiet vehicles such as the %3BTR, BMP, Luchs and Marder%4.%1The BTR, BMP and Luchs are %3amphibious%4. The Marder is not, but has more powerful armament.%1%1%2Can plant %3AT mines%4%1%2Can build %3tank traps%4 (retrieve from logistic depot) using ACE Interact->Fortifications";
+            description = "The recon's job is to %3scout enemy movements%4 and %3disrupt%4 them. He has  access to comparably lightly armored, fast and quiet vehicles such as the %3BTR, BMP, Luchs and Marder%4.%1The BTR, BMP and Luchs are %3amphibious%4. The Marder is not, but has more powerful armament.%1%1%2Can plant %3AT mines%4%1%2Can build %3tank traps%4 (retrieve from logistic depot) using ACE Interact->Fortifications";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
@@ -91,7 +91,7 @@ class CfgHints
             displayName = "Pilot";
             logicalOrder = 3;
             displayNameShort = "";
-            description = "The pilot's job is to %3scout enemy movements%4. They have access to an unarmed light scout helicopter. They have no special abilities.";
+            description = "The pilot's job is to %3scout enemy movements%4. He has access to an unarmed light scout helicopter. He has no special abilities.";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
