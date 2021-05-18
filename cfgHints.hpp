@@ -13,7 +13,7 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged and crew can still be killed, rendering vehicles unusable, but without destroying the vehicle itself.%1Vehicle-kills only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles using ACE Interact requires at least two people.%1%2%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1%2No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.%1%2Pre-existing bridges can be destroyed using ACE Interact atop the center of the bridge.";
+            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged and crew can still be killed, rendering vehicles unusable, but without destroying the vehicle itself.%1Vehicle-kills only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles using ACE Interact requires at least two people.%1%2%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1%2No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.%1%2%3Existing bridges%4 can be destroyed using ACE Interact atop the center of the bridge.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
             arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
@@ -33,7 +33,7 @@ class CfgHints
             logicalOrder = 2;
             displayNameShort = "";
             description = "To win, your faction must accumulate more victory points than the enemy.%1%2Holding the flag objective: 100 points per minute%1%2Destroying enemy depot: 2000 points%1%2Destroying enemy bridge: 1000 points%1%2Destroying enemy tank: 500 points%1%2Destroying enemy APC: 300 points%1%2Destroying enemy Car: 100 points%1%2Killing enemy Crewman: 50 points%1%1Points are only awarded %3AFTER%4 the vehicle respawns. This means as long as it can be repaired (no wreck model) its not counting as destroyed.%1%1Control of the flag objective can only be achieved by moving a %3recovery tank%4 close to the flag pole. However, %3any vehicle%4 can be used to neutralize (lower) the flag to prevent the enemy from scoring points.";
-            tip = "You can destroy your own and hostile tanks instantly by using %3ACE Interact > Plant explosive%4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
+            tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
         class gradTnT_RespawnSystem
@@ -41,9 +41,7 @@ class CfgHints
             displayName = "Vehicle Respawn";
             logicalOrder = 3;
             displayNameShort = "";
-            description = "If you die, you can always respawn at base. You can also respawn at the depot (if placed), but you will not be able to spawn vehicles or the AI taxi there.%1%1You can decide to try and recover the vehicle in the field. This has the advantage of the enemy not being awarded any points for the vehicle kill. If recovery of the vehicle is impossible, you can respawn any vehicle you previously occupied at the base flagpole. This will award the enemy points for the vehicle kill.%1
-            
-             If you lose To win, your faction must accumulate more victory points than the enemy.%1%2Holding the flag objective: 100 points per minute%1%2Destroying enemy depot: 2000 points%1%2Destroying enemy bridge: 1000 points%1%2Destroying enemy tank: 500 points%1%2Destroying enemy APC: 300 points%1%2Destroying enemy Car: 100 points%1%2Killing enemy Crewman: 50 points%1%1Points are only awarded %3AFTER%4 the vehicle respawns. This means as long as it can be repaired (no wreck model) its not counting as destroyed.%1%1Control of the flag objective can only be achieved by moving a %3recovery tank%4 close to the flag pole. However, %3any vehicle%4 can be used to neutralize (lower) the flag to prevent the enemy from scoring points.";
+            description = "If you die, you can always respawn at base. You can also respawn at the depot (if placed), but you will not be able to spawn vehicles or the AI taxi there.%1%1You can decide to try and recover the vehicle in the field. This has the advantage of the enemy %3not gaining points%4 for the vehicle kill. If recovery of the vehicle is impossible, you can respawn any vehicle you previously occupied at the %3base flagpole%4. This will award the enemy points for the vehicle kill.";
             tip = "You can destroy your own and hostile tanks instantly by using %3ACE Interact > Plant explosive%4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
             image = "pics\logo_tracksntraps.paa";
         };
@@ -61,42 +59,47 @@ class CfgHints
             displayName = "Blufor Tracker";
             logicalOrder = 5;
             displayNameShort = "";
-            description = "This mission features a detailed Blufor tracker.%1%2Only vehicles are shown.%1%2%3Empty dots%4 above the vehicle icon show the crew capacity.%1%2%3Filled dots%4 show how many slots are crewed in the vehicle.%1%2Vehicles have a formation marker on the hull (can be obscured by attached by camo or foliage). This can be changed using ACE Interact on the vehicle.%1%2The objective and its current ownership will always be shown.%1%2Depot and bridges built by your engineers will always be shown.%1%2Completely destroyed vehicles are shown with a fading explosion-marker. Wrecks persist on terrain.%1%2Waterways are highlighted on the BluforTracker to prevent drowning accidents.";
+            description = "This mission features a detailed Blufor tracker.%1%2Only %3vehicles%4 are shown.%1%2%3Empty dots%4 above the vehicle icon show the crew capacity.%1%2%3Filled dots%4 show how many slots are crewed in the vehicle.%1%2Vehicles have a %3formation marker%4 on the hull (can be obscured by attached by camo or foliage). This can be changed using ACE Interact on the vehicle.%1%2The %3objective and its current owner%4 will always be shown.%1%2%4Depot and bridges%4 built by your engineers will always be shown.%1%2Completely %3destroyed vehicles%4 are shown with a fading explosion-marker. Wrecks persist on terrain.%1%2%3Rivers and creeks%4 are highlighted on the BluforTracker to prevent drowning accidents.";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
     };
-    class gradTnT_RoleTanker
+    class gradTnT_Role
     {
-        displayName = "Roles: Tanker";
+        displayName = "Roles";
         logicalOrder = 2;
-        displayNameShort = "";
-        description = "The tanker's job is to engage the enemy and clear the way to the control point. You have access to your faction's armored vehicles.%1%2Check %3Good to Know%4 for some information about your abilities.";
-        tip = "";
-        image = "pics\logo_tracksntraps.paa";
-    };
-    class gradTnT_RoleRecon
-    {
-        displayName = "Roles: Recon";
-        logicalOrder = 3;
-        displayNameShort = "";
-        description = "The recon's job is to %3scout enemy movements%4 and %3disrupt%4 them. They have access to comaparably lightly armored, fast and quiet vehicles such as the %3BTR, BMP, Luchs and Marder%4.%1The BTR, BMP and Luchs are %3amphibious%4. The Marder is not, but has more powerful armament.%1%1%2Can plant %3AT mines%4%1%2Can build %3tank traps%4 (retrieve from logistic depot) using ACE Interact->Fortifications%1%2";
-        tip = "";
-        image = "pics\logo_tracksntraps.paa";
-    };
-    class gradTnT_RolePilot
-    {
-        displayName = "Roles: Pilot";
-        logicalOrder = 4;
-        displayNameShort = "";
-        description = "The pilot's job is to %3scout enemy movements%4. They have access to an unarmed light scout helicopter. They have no special abilities.";
-        tip = "";
-        image = "pics\logo_tracksntraps.paa";
-    };
+        class gradTnT_RoleTanker
+        {
+            displayName = "Tanker";
+            logicalOrder = 1;
+            displayNameShort = "";
+            description = "The tanker's job is to engage the enemy and clear the way to the control point. You have access to your faction's armored vehicles.%1%2Check %3Good to Know%4 for some information about your abilities.";
+            tip = "";
+            image = "pics\logo_tracksntraps.paa";
+        };
+        class gradTnT_RoleRecon
+        {
+            displayName = "Recon";
+            logicalOrder = 2;
+            displayNameShort = "";
+            description = "The recon's job is to %3scout enemy movements%4 and %3disrupt%4 them. They have access to comaparably lightly armored, fast and quiet vehicles such as the %3BTR, BMP, Luchs and Marder%4.%1The BTR, BMP and Luchs are %3amphibious%4. The Marder is not, but has more powerful armament.%1%1%2Can plant %3AT mines%4%1%2Can build %3tank traps%4 (retrieve from logistic depot) using ACE Interact->Fortifications";
+            tip = "";
+            image = "pics\logo_tracksntraps.paa";
+        };
+        class gradTnT_RolePilot
+        {
+            displayName = "Pilot";
+            logicalOrder = 3;
+            displayNameShort = "";
+            description = "The pilot's job is to %3scout enemy movements%4. They have access to an unarmed light scout helicopter. They have no special abilities.";
+            tip = "";
+            image = "pics\logo_tracksntraps.paa";
+        };
+    }
     class gradTnT_RoleLogistics
     {
         displayName = "Roles: Logistics";
-        logicalOrder = 5;
+        logicalOrder = 3;
         class Abilities
         {
             displayName = "Abilities";
