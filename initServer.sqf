@@ -113,7 +113,7 @@ gradTnT_fnc_setCustomWeather = {
 // allow view distance to be up to 10k
 
 // set to full moon date
-setDate [2015, 2, 1, TIME_OF_DAY, 1]; // set to 5:00 for perfect full moon
+setDate [2015, 6, 1, TIME_OF_DAY, 1]; // set to 5:00 for perfect full moon
 
 call gradTnT_fnc_setCustomWeather;
 

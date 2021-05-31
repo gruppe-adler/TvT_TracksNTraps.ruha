@@ -16,4 +16,4 @@ if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
 player addEventHandler ["HandleRating", {
 	params ["_unit", "_rating"];
   0
-}];y
+}];
