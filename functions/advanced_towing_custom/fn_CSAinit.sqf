@@ -815,8 +815,10 @@ CSA_Find_Nearby_Tow_Vehicles = {
     private ["_nearVehicles","_nearVehiclesWithTowRopes","_vehicle","_ends","_end1","_end2"];
     _nearVehicles = [];
     {
-        _nearVehicles append  (position player nearObjects ["LandVehicle", 30]);
-    } forEach (_x getVariable ["gradTnT_isRepairTank", false]);
+        if (_x getVariable ["gradTnT_isRepairTank", false]) then {
+            _nearVehicles append _x;
+        };
+    } forEach (position player nearObjects ["LandVehicle", 30]);
     _nearVehiclesWithTowRopes = [];
     {
         _vehicle = _x;
