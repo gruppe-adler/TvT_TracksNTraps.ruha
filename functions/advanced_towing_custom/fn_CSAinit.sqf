@@ -19,8 +19,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 */
 
-CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE = ["gm_ge_army_bpz2a0"];
-
 #define CSA_Find_Surface_ASL_Under_Position(_object,_positionAGL,_returnSurfaceASL,_canFloat) \
 _objectASL = AGLToASL (_object modelToWorldVisual (getCenterOfMass _object)); \
 _surfaceIntersectStartASL = [_positionAGL select 0, _positionAGL select 1, (_objectASL select 2) + 1]; \
@@ -675,12 +673,8 @@ CSA_TOW_SUPPORTED_VEHICLES = [
 CSA_Is_Supported_Vehicle = {
     params ["_vehicle","_isSupported"];
     _isSupported = false;
-    if(not isNull _vehicle) then {
-        {
-            if(_vehicle isKindOf _x) then {
-                _isSupported = true;
-            };
-        } forEach (missionNamespace getVariable ["CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE",CSA_TOW_SUPPORTED_VEHICLES]);
+    if (_vehicle getVariable ["gradTnT_isRepairTank", false]) then {
+        _isSupported = true;
     };
     _isSupported;
 };
@@ -821,8 +815,8 @@ CSA_Find_Nearby_Tow_Vehicles = {
     private ["_nearVehicles","_nearVehiclesWithTowRopes","_vehicle","_ends","_end1","_end2"];
     _nearVehicles = [];
     {
-        _nearVehicles append  (position player nearObjects [_x, 30]);
-    } forEach (missionNamespace getVariable ["CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE",CSA_TOW_SUPPORTED_VEHICLES]);
+        _nearVehicles append  (position player nearObjects ["LandVehicle", 30]);
+    } forEach (_x getVariable ["gradTnT_isRepairTank", false]);
     _nearVehiclesWithTowRopes = [];
     {
         _vehicle = _x;

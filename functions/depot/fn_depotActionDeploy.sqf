@@ -9,21 +9,13 @@ private _buildAction = [
     "Build Depot",
     "functions\bft\data\depot.paa",
     {
-        if (player getVariable ["gradTnT_depotsBuilt", 0] >= gradTnT_MAX_DEPOTS) exitWith {
+        private _side = side player;
+        private _varKey = format ["gradTnT_depotsBuilt_%1", _side];
+        if (missionNamespace getVariable [_varKey, 0] >= gradTnT_MAX_DEPOTS) exitWith {
             private _string = format ["Depot Limit of %1 reached. Destroy one of the placed depots via ACE Interact to be able to build new ones.", gradTnT_MAX_DEPOTS];
             hintSilent _string;
         };
-        private _bridgeVehicle = [gradTnT_DEPOTS_VEHICLE_WEST, gradTnT_DEPOTS_VEHICLE_EAST] select ( side player == east );
-        private _vehicleNear = false;
-        private _canBuild = true;
-        if (_bridgeVehicle != "") then {
-            if (count (player nearObjects [_bridgeVehicle, gradTnT_DEPOTS_VEHICLE_DISTANCE]) == 0) exitWith {
-              private _string = format ["No Engineer Vehicle near your position (needs to be closer than %1 m).", gradTnT_DEPOTS_VEHICLE_DISTANCE];
-              hintSilent _string;
-              _canBuild = false;
-            };
-        };
-        if (_canBuild) then {
+        if ([_player] call gradTnT_bridgeDestruction_fnc_isRepairVehicleNear) then {
             call gradTnT_fnc_depotPlace;
         };
     }, {

@@ -25,7 +25,7 @@ for "_i" from _emptyIndex to ((count _closestRoads) - 1) do {
 
     private _foundStuff = (allMissionObjects "") inAreaArray [_roadPos, 8, 8, _roadDir, true, -1];
 
-    systemChat str _foundStuff;
+    // systemChat str _foundStuff;
 
     if ((count _foundStuff) < 1) exitWith {
         private _vehiclesGroup = createGroup _side;

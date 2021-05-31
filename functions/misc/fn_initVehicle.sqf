@@ -18,7 +18,7 @@
  */
 
 params [
-    ["_veh", objNull, [objNull]]
+    ["_veh", objNull, [objNull], ["_engineerVehicle", false]]
 ];
 
 // exit if this is no the server
@@ -67,15 +67,10 @@ _veh setVariable ["ace_cookoff_enable", 0, true];
 _veh disableTIEquipment true;
 
 // assign side to vehicle
-if (_veh isKindOf "gm_ge_army_bpz2a0") then {
-    _veh setVariable ["gradTnT_isRepairTank", true, true];
-
-    if (_side == east) then {
-        [_veh] call gradTnT_fnc_bpz_configureBpzEast;
-        _vehicle setVariable ["TF_RadioType", "gm_gc_backpack_r105m_brn", true];
-    };
+if (_engineerVehicle) then {
+    _veh setVariable ["gradTnT_engineerVehicle", true, true];
 } else {
-    _veh setVariable ["gradTnT_isRepairTank", false, true]; // todo necessary to set respawn var even when false?
+    _veh setVariable ["gradTnT_engineerVehicle", false, true]; // todo necessary to set respawn var even when false?
 };
 
 

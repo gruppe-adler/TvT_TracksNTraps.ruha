@@ -17,4 +17,4 @@
  */
 params ["_player"];
 
-(typeof vehicle _player) isEqualTo "gm_ge_army_bpz2a0"
+((vehicle _player) getVariable ["gradTnT_canCapture", false])
