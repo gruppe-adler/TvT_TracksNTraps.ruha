@@ -11,3 +11,15 @@
         };
     };
 }] call CBA_fnc_addEventhandler;
+
+
+[{
+    params ["_args", "_handle"];
+   
+    if (getPos ACE_player inArea "mrk_objective_area") then {
+        grad_trenches_functions_allowDigging = false;
+    } else {
+        grad_trenches_functions_allowDigging = true;
+    };
+
+}, 1, []] call CBA_fnc_addPerFrameHandler;

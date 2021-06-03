@@ -25,7 +25,7 @@ class gradTnT {
         class bpz_buildTrench_destroyParticle;
         class bpz_buildTrench_pfhLocal;
         class bpz_buildTrenchLocal;
-        class bpz_commanderActions { preInit = 1; };
+        class bpz_commanderActions { postInit = 1; };
         class bpz_configureBpzEast;
         class bpz_connectRopes;
         class bpz_dropRopes;
@@ -39,6 +39,7 @@ class gradTnT {
         class bpz_removeRopesCrane;
         class bpz_ropeUnwind;
 
+        class spw60pu12_commanderActions { postInit = 1; };
         class spw60pu12_recoveryMode;
     };
 
