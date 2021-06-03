@@ -11,7 +11,7 @@ class LENGTH_OF_BATTLE
     title = "Length of Battle";
     values[] = {60,300,1800,2700,3600,5400,7200};
     texts[] = {"60s (debug)", "5min (debug)", "30min", "45min", "60min", "90min", "120min"};
-    default = 1800;
+    default = 7200;
 };
 
 class WEATHER_OVERCAST

@@ -17,4 +17,4 @@
  */
 params ["_player"];
 
-((vehicle _player) getVariable ["gradTnT_isRepairTank", false])
+((vehicle _player) getVariable ["gradTnT_isEngineerVehicle", false])

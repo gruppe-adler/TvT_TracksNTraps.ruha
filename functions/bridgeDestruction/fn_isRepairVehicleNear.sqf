@@ -7,7 +7,7 @@ private _isNear = false;
 if (count _possibleRepairVehicles > 0) then {
     {
         private _repairVehicle = _x;
-        if (_repairVehicle getVariable ["gradTnT_isRepairTank", false] && _repairVehicle getVariable ["gradTnT_vehicleSide", sideUnknown] == side _player) then {
+        if (_repairVehicle getVariable ["gradTnT_isEngineerVehicle", false] && _repairVehicle getVariable ["gradTnT_vehicleSide", sideUnknown] == side _player) then {
             if (_repairVehicle getVariable ["ACE_isRepairVehicle", 0] == 1) then {
                 _isNear = true;
             } else {

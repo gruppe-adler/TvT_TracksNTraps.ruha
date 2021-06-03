@@ -673,7 +673,7 @@ CSA_TOW_SUPPORTED_VEHICLES = [
 CSA_Is_Supported_Vehicle = {
     params ["_vehicle","_isSupported"];
     _isSupported = false;
-    if (_vehicle getVariable ["gradTnT_isRepairTank", false]) then {
+    if (_vehicle getVariable ["gradTnT_isEngineerVehicle", false]) then {
         _isSupported = true;
     };
     _isSupported;
@@ -815,8 +815,8 @@ CSA_Find_Nearby_Tow_Vehicles = {
     private ["_nearVehicles","_nearVehiclesWithTowRopes","_vehicle","_ends","_end1","_end2"];
     _nearVehicles = [];
     {
-        if (_x getVariable ["gradTnT_isRepairTank", false]) then {
-            _nearVehicles append _x;
+        if (_x getVariable ["gradTnT_isEngineerVehicle", false]) then {
+            _nearVehicles append [_x];
         };
     } forEach (position player nearObjects ["LandVehicle", 30]);
     _nearVehiclesWithTowRopes = [];

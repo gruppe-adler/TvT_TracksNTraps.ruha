@@ -18,7 +18,7 @@
  */
 
 params [
-    ["_veh", objNull, [objNull], ["_engineerVehicle", false]]
+    ["_veh", objNull, [objNull]]
 ];
 
 // exit if this is no the server
@@ -66,11 +66,12 @@ _veh setVariable ["ace_cookoff_enable", 0, true];
 
 _veh disableTIEquipment true;
 
+private _engineerVehicle = param [3, (_veh getVariable ["gradTnT_isEngineerVehicle", false]), [false]];
 // assign side to vehicle
 if (_engineerVehicle) then {
-    _veh setVariable ["gradTnT_engineerVehicle", true, true];
+    _veh setVariable ["gradTnT_isEngineerVehicle", true, true];
 } else {
-    _veh setVariable ["gradTnT_engineerVehicle", false, true]; // todo necessary to set respawn var even when false?
+    _veh setVariable ["gradTnT_isEngineerVehicle", false, true]; // todo necessary to set respawn var even when false?
 };
 
 

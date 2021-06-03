@@ -33,7 +33,7 @@ if (((getModelInfo _veh) select 0) == "bridgewooden_01_f.p3d") exitWith {
 	"bridge";
 };
 
-if (_veh getVariable ["gradTnT_isRepairTank", false]) exitWith {
+if (_veh getVariable ["gradTnT_isEngineerVehicle", false]) exitWith {
 	"engineer";
 };
 
