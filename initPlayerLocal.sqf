@@ -8,6 +8,7 @@ if (player getVariable ["ACE_IsEngineer", 0] > 0) then {
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
     player setVariable ["gradTnT_engineerNodeAdded", true];
+    player setVariable ["gradTnT_isEngineer", true, true];
 };
 
 0 enableChannel false; // Disable user ability to send voice and text on global channel

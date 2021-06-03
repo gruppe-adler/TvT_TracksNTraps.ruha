@@ -1,7 +1,7 @@
 params ["_player"];
 
 private _position = getPos _player;
-private _possibleRepairVehicles = nearestObjects [_player, ["LandVehicle"], 30];
+private _possibleRepairVehicles = nearestObjects [_player, ["LandVehicle", "gm_container_base"], 30];
 private _isNear = false;
 
 if (count _possibleRepairVehicles > 0) then {

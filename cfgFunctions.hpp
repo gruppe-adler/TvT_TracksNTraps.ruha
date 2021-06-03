@@ -38,6 +38,8 @@ class gradTnT {
         class bpz_recoveryMode;
         class bpz_removeRopesCrane;
         class bpz_ropeUnwind;
+
+        class spw60pu12_recoveryMode;
     };
 
     class bridgeBuilding {

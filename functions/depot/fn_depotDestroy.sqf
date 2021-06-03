@@ -21,6 +21,8 @@ params ["_player", "_depotHelper"];
         deleteVehicle _depotHelper;
 
         _depot setVariable ["gradTnT_depotDestroyed", true, true];
+        _depot setVariable ["ACE_isRepairFacility", 0, true];
+        _depot setVariable ["ACE_isRepairVehicle", 0, true];
 
         // down counter
         private _side = side _player;

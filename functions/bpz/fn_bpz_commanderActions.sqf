@@ -48,7 +48,7 @@
         false
     ];
 
-    [_vehicle] call gradTnT_fnc_bpz_buildTrench_pfhLocal;
+    // [_vehicle] call gradTnT_fnc_bpz_buildTrench_pfhLocal;
 
     /*
     _vehicle addAction

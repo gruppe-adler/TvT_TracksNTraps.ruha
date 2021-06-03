@@ -86,6 +86,7 @@ missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", 1, true];
+_depot setVariable ["ACE_isRepairVehicle", 1, true];
 
 // rearm
 if (_side == west) then {
