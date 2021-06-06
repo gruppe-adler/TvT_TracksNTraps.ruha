@@ -1,3 +1,7 @@
+// Not needed, there is an ACE fnc for that
+
+/*
+
 ["LandVehicle", "init", {
     params ["_vehicle"];
 
@@ -11,7 +15,7 @@
                 params ["_args"];
                 _args params ["_vehicle"];
 
-                _target setDamage 0;
+                _vehicle setDamage 0;
                 hint "Fully repaired vehicle";
             }, {
                 params ["_args"];
@@ -27,3 +31,5 @@
     [_vehicle, 0, ["ACE_MainActions"], _fullRepairAction] call ace_interact_menu_fnc_addActionToObject;
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+*/

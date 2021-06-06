@@ -1,0 +1,1 @@
+private _trigger = trg_gameArea;

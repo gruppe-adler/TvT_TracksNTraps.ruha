@@ -105,6 +105,8 @@ class gradTnT {
       file = "functions\missionSetup";
 
       class clearForest;
+      class coverMap;
+      class createBorder { postInit = 1; };
       class deleteBorder { postInit = 1; };
       class endMissionLocal;
       class initGlobal { postInit = 1; };

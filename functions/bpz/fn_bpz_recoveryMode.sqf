@@ -14,7 +14,7 @@ if (_enter) then {
     [{
         params ["_vehicle"];
 
-        (_vehicle animationSourcePhase "crane_elev_source" > 0.8)
+        (_vehicle animationSourcePhase "crane_elev_source" > 0.7)
     },{
         params ["_vehicle"];
         
