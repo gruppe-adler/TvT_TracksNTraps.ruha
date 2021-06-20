@@ -1,7 +1,7 @@
 #include "\z\ace\addons\main\script_component.hpp"
 #include "\z\ace\addons\main\script_macros.hpp"
 
-params ["_bridgeDummy", "_mouseClickEH", "_mouseWheelEH"];
+params ["_bridgeDummy", "_mouseClickEH"];
 
 private _position = getPosATLVisual _bridgeDummy;
 _position params ["_posX", "_posY", "_posZ"];
@@ -12,7 +12,7 @@ deleteVehicle _bridgeDummy;
 addCamShake [10, 1, 3];
 
 (findDisplay 46) displayRemoveEventHandler ["MouseButtonDown", _mouseClickEH];
-(findDisplay 46) displayRemoveEventHandler ["MouseZChanged", _mouseWheelEH];
+// (findDisplay 46) displayRemoveEventHandler ["MouseZChanged", _mouseWheelEH];
 
 [] call EFUNC(interaction,hideMouseHint);
 
