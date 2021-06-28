@@ -126,6 +126,13 @@ class gradTnT {
       class showStats;
     };
 
+    class tanktrapdestruction {
+      file = "functions\tanktrapdestruction";
+
+      class explodeFX;
+      class hitPartEH;
+    };
+
     class taxi {
       file = "functions\taxi";
 
