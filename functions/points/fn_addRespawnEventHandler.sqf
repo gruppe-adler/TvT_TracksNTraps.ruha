@@ -10,8 +10,8 @@ if (!isServer) exitWith {};
 		["gm_tracked_Tank_base", "tank"],
 		["gm_wheeled_APC_base", "apc"],
 		["gm_wheeled_truck_base", "car"],
-		["gm_helicopter_base", "heli"],
-		["Man","crew"]
+		["gm_wheeled_car_base", "car"],
+		["gm_helicopter_base", "heli"]
 	];
 
 	private _rootClass = "";
