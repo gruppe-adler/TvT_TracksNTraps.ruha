@@ -17,7 +17,7 @@ class sovjetGM {
         map = "ItemMap";
         radio = "TFAR_fadak";
         compass = "ItemCompass";
-        watch = "gm_watch_kosei_80";
+        watch = "itemWatch";
         nvgoggles = "";
         gps = "itemGPS";
         goggles = "";

@@ -16,7 +16,7 @@ class bwGM {
         map = "ItemMap";
         radio = "TFAR_anprc152";
         compass = "ItemCompass";
-        watch = "gm_watch_kosei_80";
+        watch = "itemWatch";
         nvgoggles = "";
         goggles = "";
         gps = "itemGPS";
