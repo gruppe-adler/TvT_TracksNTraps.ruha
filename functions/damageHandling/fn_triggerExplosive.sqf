@@ -22,13 +22,18 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
     hint "Aborted!";
 
     _vehicle setVariable ["gradTnT_explosiveAttaching", false, true];
-}, "Attaching Explosive (20s Countdown - then respawn)"] call ace_common_fnc_progressBar;
+}, "Attaching Explosive (20s Countdown - then respawn)", {
+    params ["_args"];
+    _args params ["_vehicle"];
 
-{
-    if (alive _x && objectParent _x == _vehicle) then {
-        ["Something scratches on your tank..."] remoteExec ["hintSilent", _x];
+    if ([_vehicle, ACE_player] call ace_interaction_fnc_getInteractionDistance > 4) then {
+        false
+    } else {
+        true
     };
-} forEach crew _vehicle;
+
+}] call ace_common_fnc_progressBar;
+
 
 [{
     params ["_args", "_handle"];
@@ -40,8 +45,10 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
 
     private _sound = selectRandom ["bongs1", "bongs2", "bongs3", "bongs4"];
     {
-       [_sound] remoteExec ["playSound", _x];
+        if (alive _x && objectParent _x == _vehicle) then {
+            [_sound] remoteExec ["playSound", _x];
+            ["Something scratches on your tank..."] remoteExec ["hintSilent", _x];
+        };
     } forEach crew _vehicle;
 
-    playSound _sound;
 }, 2, [_vehicle]] call CBA_fnc_addPerFrameHandler;
