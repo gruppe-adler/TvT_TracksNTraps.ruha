@@ -22,6 +22,9 @@
         case "tank" : {
             _pointsAdded = [_cfg,"tank",500] call BIS_fnc_returnConfigEntry;
         };
+        case "heli" : {
+            _pointsAdded = [_cfg,"heli",500] call BIS_fnc_returnConfigEntry;
+        };
         case "apc" : {
             _pointsAdded = [_cfg,"apc",300] call BIS_fnc_returnConfigEntry;
         };
