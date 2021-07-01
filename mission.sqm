@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1687.0692,50.799774,1107.4214};
-		dir[]={-0.51671827,-0.62133592,0.58902276};
-		up[]={-0.40974754,0.78354442,0.46708333};
-		aside[]={0.75174034,-2.3137545e-008,0.65946245};
+		pos[]={1691.5564,50.799774,1110.9445};
+		dir[]={0.18448058,-0.58298367,0.79126287};
+		up[]={0.13237084,0.81248391,0.56775695};
+		aside[]={0.97388136,-7.4505806e-009,-0.22705755};
 	};
 };
 binarizationWanted=0;
@@ -33642,6 +33642,7 @@ class Mission
 			};
 			id=2098;
 			type="gm_ge_army_Leopard1a5";
+			atlOffset=5.7220459e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -34440,6 +34441,7 @@ class Mission
 			};
 			id=2099;
 			type="gm_gc_army_t55am2b";
+			atlOffset=-0.012554169;
 			class CustomAttributes
 			{
 				class Attribute0
