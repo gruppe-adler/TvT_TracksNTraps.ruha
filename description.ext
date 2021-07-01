@@ -52,7 +52,7 @@ class CfgGradFortifications {
 
     demolitionTimeFactor = 1;
     packUpTimeFactor = 0.5;
-    playerInventorySize = 10;
+    playerInventorySize = 1;
     vehicleInventorySizeFactor = 2;
 
     class Fortifications {
