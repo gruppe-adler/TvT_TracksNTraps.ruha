@@ -19,6 +19,13 @@
 }] call CBA_fnc_addEventHandler;
 
 
+// empty fuel on all vehicles
+if (isServer) then {
+    {
+       _x setFuel 0;
+    } forEach vehicles;
+};
+
 // prevent bugging out on jip
 [{
     !isNil "PREPARATION_TIME"  
@@ -26,6 +33,14 @@
         // start replay record on server and init replay on client
     [{
         call GRAD_replay_fnc_init;
+
+        // fill all vehicles with fuel after prep time
+        if (isServer) then {
+            {
+               _x setFuel 1;
+            } forEach vehicles;
+        };
+
     }, [], PREPARATION_TIME] call CBA_fnc_waitAndExecute;    
 }, []] call CBA_fnc_waitUntilAndExecute;
 
