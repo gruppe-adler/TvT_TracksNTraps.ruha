@@ -17,11 +17,11 @@ player forceWalk true;
 
     private _depotDummyClasses = if (side player == west) then {
         [
-            ["gm_ge_army_shelteraceII_repair", [2.5,-3],90]
+            ["gm_ge_army_shelteraceII_repair", [4.5,-3],90]
         ]
     } else {
         [
-            ["gm_gc_army_shelterlakII_repair", [2.5,-3],90]
+            ["gm_gc_army_shelterlakII_repair", [4.5,-3],90]
         ]
     };
 

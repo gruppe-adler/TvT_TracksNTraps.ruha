@@ -103,6 +103,6 @@ _depot setVariable ["gradTnT_vehicleSide", _side, true];
 
 [_depot, "depot"] spawn gradTnT_bft_fnc_add;
 
-[_depot,"land_gm_tanktrap_01",50] call grad_fortifications_fnc_addFort;
+[_depot,"land_gm_tanktrap_01", 10] call grad_fortifications_fnc_addFort;
 
 player setVariable ["gradTnT_carryDepotDummys", []];
