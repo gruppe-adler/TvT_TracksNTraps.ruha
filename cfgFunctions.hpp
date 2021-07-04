@@ -107,7 +107,7 @@ class gradTnT {
       class clearForest;
       class coverMap;
       class createBorder { postInit = 1; };
-      class deleteBorder { postInit = 1; };
+      class deleteBorder {  };
       class endMissionLocal;
       class initGlobal { postInit = 1; };
       class nerfMines { postInit = 1; };

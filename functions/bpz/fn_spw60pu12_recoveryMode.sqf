@@ -8,7 +8,7 @@ if (_enter) then {
     _vehicle animateSource ['antennamast_01_elev_source', 1, 4];
     _vehicle setVariable ["gradTnT_isAnimating", true, true];
     _vehicle setVariable ["gradTnT_fuelCache", fuel _vehicle, true];
-    _vehicle setFuel 0;
+    [_vehicle, 0] remoteExec ["setFuel", _vehicle];
 
     [{
         params ["_vehicle"];
@@ -41,6 +41,7 @@ if (_enter) then {
 
         private _fuel = _vehicle getVariable ["gradTnT_fuelCache", 1];
         _vehicle setFuel _fuel;
+        [_vehicle, _fuel] remoteExec ["setFuel", _vehicle];
 
     }, [_vehicle]] call CBA_fnc_waitUntilAndExecute;
 };

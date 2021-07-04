@@ -62,7 +62,7 @@ _marker setmarkershape "rectangle";
 _marker setmarkerbrush "border";
 _marker setmarkercolor "colorblack";
 
-private _distanceBetweenPosts = 10;
+private _distanceBetweenPosts = 20;
 
 private _dir = (getMarkerPos "gradTnT_moduleCoverMap_dot_0") getDir (getMarkerPos "gradTnT_moduleCoverMap_dot_90");
 private _distance = (getMarkerPos "gradTnT_moduleCoverMap_dot_0") distance2d (getMarkerPos "gradTnT_moduleCoverMap_dot_90");

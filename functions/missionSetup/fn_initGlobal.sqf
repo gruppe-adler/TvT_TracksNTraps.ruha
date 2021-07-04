@@ -22,7 +22,7 @@
 // empty fuel on all vehicles
 if (isServer) then {
     {
-       _x setFuel 0;
+       [_x, 0] remoteExec ["setFuel", _x];
     } forEach vehicles;
 };
 
@@ -37,7 +37,7 @@ if (isServer) then {
         // fill all vehicles with fuel after prep time
         if (isServer) then {
             {
-               _x setFuel 1;
+               [_x, 1] remoteExec ["setFuel", _x];
             } forEach vehicles;
         };
 
