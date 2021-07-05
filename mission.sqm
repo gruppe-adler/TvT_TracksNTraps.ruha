@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2115;
+		nextID=2117;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5447.418,36.864304,7772.6265};
-		dir[]={0.80112875,-0.49130923,-0.34178078};
-		up[]={0.45190322,0.87098283,-0.19279265};
-		aside[]={-0.39240557,7.4331183e-008,-0.91979241};
+		pos[]={1698.791,26.466072,1107.943};
+		dir[]={0.71807981,-0.63084871,0.2939657};
+		up[]={0.58382946,0.77589709,0.23900752};
+		aside[]={0.37886447,-1.2654345e-007,-0.92546487};
 	};
 };
 binarizationWanted=0;
@@ -57,13 +57,15 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Supplies_F_Heli_Bladders",
-	"A3_Structures_F_Mil_Helipads"
+	"A3_Structures_F_Mil_Helipads",
+	"tfar_backpacks",
+	"tfar_handhelds"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -245,6 +247,18 @@ class AddonsMetaData
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item26
+		{
+			className="tfar_backpacks";
+			name="tfar_backpacks";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item27
+		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
 		};
 	};
 };
@@ -1678,7 +1692,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=150;
+		items=152;
 		class Item0
 		{
 			dataType="Logic";
@@ -37232,6 +37246,39 @@ class Mission
 				};
 				nAttributes=17;
 			};
+		};
+		class Item150
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5425.9653,15.597945,7793.7324};
+				angles[]={0.047464538,0,6.2606897};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2115;
+			type="TFAR_NATO_Radio_Crate";
+		};
+		class Item151
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1710.754,15.117267,1109.0028};
+				angles[]={-0,0,6.2407117};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2116;
+			type="TFAR_EAST_Radio_Crate";
+			atlOffset=9.5367432e-007;
 		};
 	};
 	class Connections
