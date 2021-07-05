@@ -45,6 +45,8 @@ if (isServer) then {
 }, []] call CBA_fnc_waitUntilAndExecute;
 
 
+/*
+// moved to vehicle inventory
 if (player getVariable ["ACE_isEngineer", 0] > 0 && side player == west) then {
     [player,"land_gm_tanktrap_01",15] call grad_fortifications_fnc_addFort;
 };
@@ -52,3 +54,4 @@ if (player getVariable ["ACE_isEngineer", 0] > 0 && side player == west) then {
 if (player getVariable ["ACE_isEngineer", 0] > 0 && side player == east) then {
     [player,"land_gm_tanktrap_02",15] call grad_fortifications_fnc_addFort;
 };
+*/
