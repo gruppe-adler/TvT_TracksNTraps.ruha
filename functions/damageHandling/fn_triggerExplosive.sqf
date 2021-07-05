@@ -51,4 +51,6 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
         };
     } forEach crew _vehicle;
 
+     playSound _sound;
+
 }, 2, [_vehicle]] call CBA_fnc_addPerFrameHandler;
