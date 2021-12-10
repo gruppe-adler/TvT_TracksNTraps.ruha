@@ -17,7 +17,7 @@ private _openTaxiMenu = [
         params ["_target"];
         private _side = _target getVariable ["gradTnT_side", civilian];
         deleteVehicle _target;
-        ['gradTnT_points', ['car_deposit', _side]] call CBA_fnc_serverEvent; 
+        ["gradTnT_points", ["car_deposit", [_side] call gradTnT_fnc_getOpposingSide]] call CBA_fnc_serverEvent;
     },
     { 
         true
