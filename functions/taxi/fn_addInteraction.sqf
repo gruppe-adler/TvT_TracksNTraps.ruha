@@ -1,5 +1,7 @@
 params ["_vehicle"];
 
+if (isNull _vehicle) exitWith {}; // JIP handling
+
 private _vehicleclass = typeOf _vehicle;
 private _interactionID = format ["gradTnT_interactionID_%1", vehicleclass];
 
@@ -9,11 +11,14 @@ missionNamespace setVariable [_interactionID, true];
 
 private _openTaxiMenu = [ 
     "openTaxiMenu", 
-    "Taxi Menü öffnen", 
+    "Despawn Vehicle to regain points", 
     "", 
     { 
-        call gradTnT_fnc_taxiDialogOpen; 
-    }, 
+        params ["_target"];
+        private _side = _target getVariable ["gradTnT_side", civilian];
+        deleteVehicle _target;
+        ['gradTnT_points', ['car_deposit', _side]] call CBA_fnc_serverEvent; 
+    },
     { 
         true
     }, 
@@ -24,4 +29,4 @@ private _openTaxiMenu = [
     [true,true,false,false,true] 
 ] call ace_interact_menu_fnc_createAction; 
  
-[_vehicle, 1, ["ACE_SelfActions"], _openTaxiMenu] call ace_interact_menu_fnc_addActionToObject;
+[_vehicle, 0, ["ACE_MainActions"], _openTaxiMenu] call ace_interact_menu_fnc_addActionToObject;

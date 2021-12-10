@@ -28,30 +28,21 @@ for "_i" from _emptyIndex to ((count _closestRoads) - 1) do {
     // systemChat str _foundStuff;
 
     if ((count _foundStuff) < 1) exitWith {
-        private _vehiclesGroup = createGroup _side;
 
         private _vehicle = _classname createVehicle [0,0,0]; // create elsewhere so you dont see the rotation glitch
         _vehicle setDir _dir;
         _roadPos set [2,0.6]; // elevate a bit in case of bumps in the road or other shit instaploding
 
         _vehicle setPos _roadPos;
-        createVehicleCrew _vehicle;
-
-        private _vehiclesCrew = crew _vehicle;
-        _vehiclesCrew joinsilent _vehiclesGroup;
-        _vehiclesGroup addVehicle _vehicle;
 
         clearBackpackCargoGlobal _vehicle;
         clearMagazineCargoGlobal _vehicle;
         clearWeaponCargoGlobal _vehicle;
         clearItemCargoGlobal _vehicle;
-
-        _vehicle lockDriver true;
-
-        _vehicle setVariable ["gradTnT_assignedDriver", _vehiclesCrew select 0];
+        
         _vehicle setVariable ["gradTnT_isTaxi", true, true];
         _vehicle setVariable ["gradTnT_taxiSpawnPosition", _position, true];
-
+        _vehicle setVariable ["gradTnT_side", _side, true];
 
         [_vehicle] call gradTnT_fnc_addGetInHandler;
 
