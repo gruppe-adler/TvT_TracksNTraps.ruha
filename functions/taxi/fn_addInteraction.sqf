@@ -20,7 +20,8 @@ private _openTaxiMenu = [
         ["gradTnT_points", ["car_deposit", [_side] call gradTnT_fnc_getOpposingSide]] call CBA_fnc_serverEvent;
     },
     { 
-        true
+        params ["_target"];
+        alive _target
     }, 
     {}, 
     [], 
