@@ -58,7 +58,8 @@ class bwGM {
                 LIST_1("gm_mine_at_dm21"),
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
-                LIST_2("ACE_morphine")
+                LIST_2("ACE_morphine"),
+                LIST_2("ACE_rope15")
             };
         };
         class Soldier_exp_F: Soldier_F {

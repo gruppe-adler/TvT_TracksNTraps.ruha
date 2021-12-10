@@ -64,5 +64,9 @@ if (isNil "gradTnT_bft_vehicles") then {
 			_y deleteAt (_y find _veh);
 			gradTnT_bft_vehicles set [_x, _y];
 		} forEach gradTnT_bft_vehicles;
+
+		if (isServer) then {
+			_veh enableSimulationGlobal false;
+		};
 	}
 ] call CBA_fnc_addEventHandler;

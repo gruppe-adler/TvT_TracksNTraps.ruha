@@ -13,7 +13,7 @@ class gradTnT {
     class advanced_towing_custom {
       file = "functions\advanced_towing_custom";
       
-      class CSAinit { postInit = 1; };
+      class CSAinit {};
     };
 
     class bpz {
@@ -139,12 +139,6 @@ class gradTnT {
       class addFlagInteraction;
       class addGetInHandler;
       class addInteraction;
-      class taxiDialogClose;
-      class taxiDialogOpen;
-      class setTaxiWaypoint;
-      class taxiOpenMap;
-      class taxiCloseMap;
-      class taxiStop;
       class taxiSpawn;
     };
 

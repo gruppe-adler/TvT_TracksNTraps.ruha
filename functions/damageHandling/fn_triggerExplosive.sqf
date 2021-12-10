@@ -26,7 +26,7 @@ _vehicle setVariable ["gradTnT_explosiveAttaching", true, true];
     params ["_args"];
     _args params ["_vehicle"];
 
-    if ([_vehicle, ACE_player] call ace_interaction_fnc_getInteractionDistance > 4) then {
+    if ([_vehicle, ACE_player] call ace_interaction_fnc_getInteractionDistance > 7) then {
         false
     } else {
         true
