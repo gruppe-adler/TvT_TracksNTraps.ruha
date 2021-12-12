@@ -24,8 +24,6 @@ class rscTitles {
 };
 
 
-disableRemoteSensors = true;
-
 class Params
 {
     #include "params\params.hpp"
@@ -39,9 +37,9 @@ class gradTnT_Points {
     bridge = 1000;
     tank = 500;
     apc = 300;
-    car = 100;
+    car = 50;
     crew = 50;
-    car_deposit = -100;
+    car_deposit = 50;
 };
 
 

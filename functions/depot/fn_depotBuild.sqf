@@ -83,21 +83,31 @@ missionNameSpace setVariable [_depotsBuiltID, _depotsBuilt, true];
 
 // fuel
 [_depot, 100000, [0,1,1]] remoteExec ["ace_refuel_fnc_makeSource", 2];
+[_depot, 100000] remoteExec ["ace_rearm_fnc_makeSource", 0];
 
 // repair
 _depot setVariable ["ACE_isRepairFacility", 1, true];
 _depot setVariable ["ACE_isRepairVehicle", 1, true];
 
 // rearm
+/*
 if (_side == west) then {
-    [_depot, "gm_ge_army_Leopard1a5"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
+    [_depot, "gm_ge_army_Leopard1a5"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_ge_army_m109g"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_ge_army_iltis_milan"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_ge_army_marder1a2"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];  
+    
 } else {
-    [_depot, "gm_gc_army_t55am2b"] call ace_rearm_fnc_addVehicleMagazinesToSupply;
+    [_depot, "gm_gc_army_t55am2b"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_gc_army_2s1"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_gc_army_uaz469_spg9"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
+    [_depot, "gm_gc_army_bmp1sp2"] remoteExec ["ace_rearm_fnc_addVehicleMagazinesToSupply", 2];
 };
+[_depot, 100000] remoteExec ["ace_rearm_fnc_setSupplyCount", 2];
+_depot setVariable ["ace_rearm_isSupplyVehicle", true, true];
+*/
 
 [_side, _depot, "Depot", true] remoteExec ["gradTnT_fnc_depotAddRespawn", 2];
-
-[_depot, 100000] call ace_rearm_fnc_setSupplyCount;
 
 _depot setVariable ["gradTnT_vehicleSide", _side, true];
 

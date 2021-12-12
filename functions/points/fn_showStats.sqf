@@ -1,9 +1,10 @@
 /*
 
-    execVM "functions\points\fn_showStats.sqf";
+    [false] execVM "functions\points\fn_showStats.sqf";
 
 */
 
+params [["_playSound", true]];
 
 gradTnT_fnc_getPointsForKeySide = {
     params ["_side", "_type"];
@@ -52,10 +53,12 @@ private _results_east = [nil, _flagTickEast, _depotEast, _bridgeEast, _tankEast,
 
 if (hasInterface) then {
 
-    playSound "intro_fx";
-    [player, true] call TFAR_fnc_forceSpectator;
-    [player, player] call ace_medical_treatment_fnc_fullHeal;
-
+    if (_playSound) then {
+        playSound "intro_fx";
+    
+        [player, true] call TFAR_fnc_forceSpectator;
+        [player, player] call ace_medical_treatment_fnc_fullHeal;
+    };
 
     private _screenWidth = safeZoneW;
     private _screenHeight = safeZoneH;

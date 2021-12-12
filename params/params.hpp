@@ -9,9 +9,9 @@ class TIME_OF_DAY
 class LENGTH_OF_BATTLE
 {
     title = "Length of Battle";
-    values[] = {60,300,1800,2700,3600,5400,7200};
-    texts[] = {"60s (debug)", "5min (debug)", "30min", "45min", "60min", "90min", "120min"};
-    default = 7200;
+    values[] = {60,300,1800,2700,3600,5400,7200,9000,10800};
+    texts[] = {"60s (debug)", "5min (debug)", "30min", "45min", "60min", "90min", "120min", "150min", "180min"};
+    default = 9000;
 };
 
 class WEATHER_OVERCAST
@@ -34,13 +34,13 @@ class PREPARATION_TIME {
     title = "Preparation time";
     values[] = {0,10,120,180,240,300,480,600,900};
     texts[] = {"off","10s","2min","3min","4min","5min","8min","10min","15min"};
-    default = 10;
+    default = 600;
 };
 
 class GRAD_REPLAY_PRECISION
 {
     title = "InGame Replay Precision";
-    values[] = {1,2,3,4,5};
-    texts[] = {"every 1s","every 2s","every 3s","every 4s","every 5s"};
-    default = 5;
+    values[] = {1,2,3,4,5,6,7,10};
+    texts[] = {"every 1s","every 2s","every 3s","every 4s","every 5s","every 6s","every 7s","every 10s"};
+    default = 10;
 };

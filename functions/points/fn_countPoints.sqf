@@ -29,13 +29,13 @@
             _pointsAdded = [_cfg,"apc",300] call BIS_fnc_returnConfigEntry;
         };
         case "car" : {
-            _pointsAdded = [_cfg,"car",300] call BIS_fnc_returnConfigEntry;
+            _pointsAdded = [_cfg,"car",50] call BIS_fnc_returnConfigEntry;
         };
         case "crew" : {
             _pointsAdded = [_cfg,"crew",50] call BIS_fnc_returnConfigEntry;
         };
         case "car_deposit" : {
-            _pointsAdded = [_cfg,"car_deposit",-50] call BIS_fnc_returnConfigEntry;
+            _pointsAdded = -([_cfg,"car_deposit",50] call BIS_fnc_returnConfigEntry);
         };
         default {};
     };
