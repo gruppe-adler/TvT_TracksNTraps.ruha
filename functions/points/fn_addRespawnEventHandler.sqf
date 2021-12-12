@@ -8,7 +8,9 @@ if (!isServer) exitWith {};
 
 	private _rootClasses = [
 		["gm_tracked_Tank_base", "tank"],
+		["gm_tracked_artillery_base", "tank"],
 		["gm_wheeled_APC_base", "apc"],
+		["gm_tracked_APC_base", "apc"],
 		["gm_wheeled_truck_base", "car"],
 		["gm_wheeled_car_base", "car"],
 		["gm_helicopter_base", "heli"]

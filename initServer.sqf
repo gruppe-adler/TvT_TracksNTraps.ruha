@@ -10,6 +10,7 @@
 [] call grad_groupsettings_fnc_setGroupSettings;
 
 
+
 // read parameters
 TIME_OF_DAY = ["TIME_OF_DAY", 10] call BIS_fnc_getParamValue;
 publicVariable "TIME_OF_DAY";
