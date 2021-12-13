@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5465.5439,45.96632,7741.2192};
-		dir[]={-0.025182826,-0.68709421,0.7261318};
-		up[]={-0.023814656,0.72656828,0.68668139};
-		aside[]={0.99939913,1.8626451e-009,0.034659956};
+		pos[]={1713.9067,47.415478,1122.6716};
+		dir[]={-0.54111278,-0.56297493,0.62470937};
+		up[]={-0.36859298,0.82647359,0.42553681};
+		aside[]={0.75587106,-1.3795216e-008,0.65472364};
 	};
 };
 binarizationWanted=0;
@@ -60,15 +60,13 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"ace_explosives",
-	"gm_vehicles_land_tracked_2s1_gc_army_2s1",
-	"gm_vehicles_land_wheeled_kat1_ge_army_kat1",
-	"gm_vehicles_land_wheeled_ural4320_gc_army_ural4320"
+	"gm_vehicles_land_tracked_2s1_gc_army_2s1"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=31;
+		items=29;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -267,20 +265,6 @@ class AddonsMetaData
 		{
 			className="gm_vehicles_land_tracked_2s1_gc_army_2s1";
 			name="gm_vehicles_land_tracked_2s1_gc_army_2s1";
-			author="Global Mobilization";
-			url="global-mobilization.com";
-		};
-		class Item29
-		{
-			className="gm_vehicles_land_wheeled_kat1_ge_army_kat1";
-			name="gm_vehicles_land_wheeled_kat1_ge_army_kat1";
-			author="Global Mobilization";
-			url="global-mobilization.com";
-		};
-		class Item30
-		{
-			className="gm_vehicles_land_wheeled_ural4320_gc_army_ural4320";
-			name="gm_vehicles_land_wheeled_ural4320_gc_army_ural4320";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
@@ -2076,7 +2060,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=160;
+		items=158;
 		class Item0
 		{
 			dataType="Logic";
@@ -39662,348 +39646,6 @@ class Mission
 				};
 				nAttributes=16;
 			};
-		};
-		class Item158
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5369.6411,19.411295,7704.1177};
-				angles[]={6.2781935,5.9775257,6.2706885};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=3260;
-			type="gm_ge_army_kat1_451_reammo";
-			atlOffset=-0.0030002594;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="gm_vehicleMarkings_Insignias_MissionLarge_attribute";
-					expression="[_this,_value,3,1] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="gm_vehicleMarkings_Insignias_MissionSmall_attribute";
-					expression="[_this,_value,3,0] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_isMedicalVehicle";
-					expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=100000;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ace_rearm_rearmCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=100000;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="gm_vehicleMarkings_Insignias_HazardSign_attribute";
-					expression="[_this,_value,4,0] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="gm_vehicleMarkings_Insignias_Marking_attribute";
-					expression="[_this,_value,3,2] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="gm_vehicleMarkings_tacticalSign_Icon_attribute";
-					expression="[_this,_value,1,2] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="gm_vehicleMarkings_Insignias_Platoon_attribute";
-					expression="[_this,_value,3,5] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ace_isRepairVehicle";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairVehicle', _value, true]}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="gm_vehicleMarkings_Insignias_Company_attribute";
-					expression="[_this,_value,3,4] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="gm_vehicleMarkings_tacticalSign_PreIcon_attribute";
-					expression="[_this,_value,1,0] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="gm_vehicleMarkings_tacticalSign_PostIcon_attribute";
-					expression="[_this,_value,1,3] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute13
-				{
-					property="gm_vehicleMarkings_Insignias_Battalion_attribute";
-					expression="[_this,_value,3,3] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute14
-				{
-					property="gm_vehicleMarkings_LicensePlates_Numbers_attribute";
-					expression="[_this,_value,0,1] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute15
-				{
-					property="gm_vehicleMarkings_LicensePlates_Plate_attribute";
-					expression="[_this,_value,0,0] call gm_core_vehicles_fnc_vehicleMarkingsUpdateAttributes;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				nAttributes=16;
-			};
-		};
-		class Item159
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1757.1537,17.211754,1145.7585};
-				angles[]={6.2744508,3.1682506,6.282495};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=3261;
-			type="gm_gc_army_ural4320_reammo";
-			atlOffset=-0.0013065338;
 		};
 	};
 	class Connections

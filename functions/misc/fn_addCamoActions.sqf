@@ -1,5 +1,7 @@
 params ["_vehicle"];
 
+if (isNull _vehicle) exitWith { diag_log "camo action vehicle not found"; };
+
 gradTnT_camoNetSelections = [
     "camonet_hull_unhide",
     "camonet_mainturret_trav_unhide",

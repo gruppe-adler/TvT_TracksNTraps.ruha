@@ -1,5 +1,7 @@
 params ["_vehicle"];
 
+if (isNull _vehicle) exitWith { diag_log "ExplosiveAction action not found"; };
+
 private _explosiveAction = [
     "ExplosiveAction",
     "Attach Explosive (20s)",

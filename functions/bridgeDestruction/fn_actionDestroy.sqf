@@ -19,6 +19,7 @@ private _action = [
     [false, true, false, false, false]
 ] call ace_interact_menu_fnc_createAction;
 
+if (isNull _helper) exitWith { diag_log "bridge for action not found"; };
 [_helper, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 

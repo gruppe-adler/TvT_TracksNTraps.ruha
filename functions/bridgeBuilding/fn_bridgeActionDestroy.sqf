@@ -13,5 +13,5 @@ private _destroyAction = [
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
-
+if (isNull _helperObject) exitWith { diag_log "bridge for action not found"; };
 [_helperObject, 0, ["ACE_MainActions"], _destroyAction] call ace_interact_menu_fnc_addActionToObject;

@@ -16,6 +16,8 @@
  */
 params ["_veh"];
 
+if (isNull _veh) exitWith { diag_log "callsign vehicle action not found"; };
+
 private _action = [
     "gradTnT_callsign_change",
     "Change Callsign",

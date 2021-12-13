@@ -1,5 +1,8 @@
 params ["_helper", "_parentHelper"];
 
+if (isNull _helper) exitWith { diag_log "bridge for action not found"; };
+if (isNull _parentHelper) exitWith { diag_log "bridge for action not found"; };
+
 // _helper setObjectTexture [0, "#(argb,8,8,3)color(1,1,1,0,ca)"];
 
 private _action = [
