@@ -13,7 +13,7 @@ class CfgHints
             // Optional hint subtitle, filled by arguments from 'arguments' param
             displayNameShort = "";
             // Structured text, filled by arguments from 'arguments' param
-            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged and crew can still be killed, rendering vehicles unusable, but without destroying the vehicle itself.%1Vehicle-kills only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles using ACE Interact requires at least two people.%1%2%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1%2No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.%1%2%3Existing bridges%4 can be destroyed using ACE Interact atop the center of the bridge.";
+            description = "In %3Tracks'n'Traps%4, all armored vehicles are much less likely to explode after a few hits. Modules are still damaged and crew can still be killed, rendering vehicles unusable, but without destroying the vehicle itself.%1Vehicle-kills only award points once they explode or are forcibly respawned by the owning faction.%1These changes promote %3teamplay%4 and %3logistics%4. When your tank is disabled, you have the option to bring in your engineers to make your vehicle combat-ready again without losing any points, instead of forcibly respawning the vehicle and starting from base.%1%1%2Everyone has access to GPS and at least a short range radio.%1%2You can %3manage your groups%4 using the dynamic groups (default U) menu, as well as your Blufor Tracker (BFT) %3callsign%4 using ACE Interact at your vehicle.%1%2%3Unflipping%4 vehicles can only be done by %3engineers%4.%1%2%3Foliage%4 and %3camonets%4 on vehicles can be detached.%1%2No one has %3thermal vision%4.%1%2You are not allowed to leave the marked %3battle area%4.%1%2You are not allowed to pick up %3enemy radios%4.%1%2There is no %3AT infantry%4.%1%2%3Existing bridges%4 can be destroyed using ACE Interact atop the center of the bridge.";
             // Optional structured text, filled by arguments from 'arguments' param (first argument is %11, see notes bellow), grey color of text
             tip = "";
             arguments[] = { // Simple string will be simply compiled and called, String can also link to localization database in case it starts by str_
@@ -45,13 +45,13 @@ class CfgHints
             tip = "You can destroy your own and hostile tanks instantly by using %3ACE Interact > Plant explosive%4 on the vehicle hull. After the specified time, the vehicle will explode. The crew will hear metallic clangs while someone tries to attach an explosive. You don't need an actual explosive item to do this.";
             image = "pics\logo_tracksntraps.paa";
         };
-        class gradTnT_AITaxi
+        class gradTnT_Taxi
         {
-            displayName = "AI Taxi";
+            displayName = "Taxi";
             logicalOrder = 4;
             displayNameShort = "";
-            description = "You can request an %3AI taxi%4 at the flagpole in base. This will spawn a jeep with an AI driver. When you get in, a popup will ask you to click on your destination. The driver will then take you there.%1This is useful when only part of a vehicle crew has been killed and you need to meet up with your vehicle and the rest of the crew.";
-            tip = "Bear in mind that this is the regular AI driving. They will take roads whenever possible and not drive straight to your destination. They will also not detour enemies or minefields.";
+            description = "You can spawn a %3cheap jeep%4 at the flagpole in base. %1This is useful when only part of a vehicle crew has been killed and you need to meet up with your vehicle and the rest of the crew.%1Once you reach your destination, use %3ACE Interact -> Despawn%4 on the jeep to get a %3full refund%4 back for your team.";
+            tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
         class gradTnT_BluforTracker
@@ -86,12 +86,30 @@ class CfgHints
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
+        class gradTnT_RoleAT
+        {
+            displayName = "AT Specialist";
+            logicalOrder = 2;
+            displayNameShort = "";
+            description = "The AT specialist has access to unarmored, highly %3mobile vehicles equipped with recoilless rifles or rocket launchers%4. He can use this to support ground operations by flanking the front line and %3exploiting weak spots%4 identified by recon to disrupt supply lines.";
+            tip = "";
+            image = "pics\logo_tracksntraps.paa";
+        };
         class gradTnT_RolePilot
         {
             displayName = "Pilot";
             logicalOrder = 3;
             displayNameShort = "";
             description = "The pilot's job is to %3scout enemy movements%4. He has access to an unarmed light scout helicopter. He has no special abilities.";
+            tip = "";
+            image = "pics\logo_tracksntraps.paa";
+        };
+        class gradTnT_RoleArtillery
+        {
+            displayName = "Artillery";
+            logicalOrder = 3;
+            displayNameShort = "";
+            description = "The artilleryman's job is to %3support%4 friendly troops with tactical fire.%1It can lay large scale smoke cover to conceal vehicle operations and also provide indirect fire support using HE shells to deny infantry operations in an area.%1Artillery has a limited maximum range of 1.6km, so you have to keep up with the front line and keep good firing positions in mind.";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
@@ -105,7 +123,7 @@ class CfgHints
             displayName = "Abilities";
             logicalOrder = 1;
             displayNameShort = "";
-            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired %3individually%4.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.%1%1Abilities%1%2Engineers can place and remove tank traps and AT mines (hostile ones as well).%1%2Tank traps and mines cannot be placed inside the green objective radius.%1%2Engineers are also trained medics and can offer full treatment to any injured personnel.%1%2Medical equipment is available in all vehicles.";
+            description = "The engineer's job is to keep the armored vehicles %3repaired, refueled and rearmed%4.%1To accomplish this, he can build %3support structures%4 and %3fortifications%4 such as depots, bridges and tank traps using his recovery tank. In addition, he can perform field repairs.%1%1Field Repair%1%2Can %3repair%4 vehicles in the field to a functional level using a %3toolbox%4.%1%2Uses the regular %3ACE Repair system%4.%1%2Components need to be repaired %3individually%4.%1%2Tracks and wheels need to repaired using %3spare tracks/wheels%4. Usually each vehicle carries some of those in their cargo inventory.%1%1Abilities%1%2Engineers can place and remove tank traps and AT mines (hostile ones as well).%1%2Tank traps and mines cannot be placed inside the green objective radius.%1%2Engineers are also trained medics and can offer full treatment to any injured personnel.%1%2Medical equipment is available in all vehicles.%1%2Only engineers can %3unflip%4 vehicles using the ACE towing system (ropes).";
             tip = "";
             image = "pics\logo_tracksntraps.paa";
         };
