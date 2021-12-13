@@ -231,7 +231,7 @@ class sovjetGM {
             };
         };
         class Soldier_SL_F: Soldier_TL_F {
-            uniform = "gm_ge_army_uniform_crew_80_oli";
+            uniform = "gm_gc_army_uniform_crew_80_oli";
             headgear = "gm_gc_headgear_beret_officer_blk";
             primaryWeapon = "gm_mpiaks74nk_brn";
             primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
@@ -244,7 +244,7 @@ class sovjetGM {
         };
         class officer_F: Soldier_SL_F {};
         class Crew_F: Soldier_F {
-            uniform = "gm_ge_army_uniform_crew_80_oli";
+            uniform = "gm_gc_army_uniform_crew_80_oli";
             headgear = "gm_gc_army_headgear_crewhat_80_blk";
             primaryWeapon = "gm_mpiaks74nk_brn";
             primaryWeaponMagazine = "gm_30Rnd_545x39mm_B_7N6_ak74_org";

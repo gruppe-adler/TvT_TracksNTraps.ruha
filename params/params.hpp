@@ -34,7 +34,7 @@ class PREPARATION_TIME {
     title = "Preparation time";
     values[] = {0,10,120,180,240,300,480,600,900};
     texts[] = {"off","10s","2min","3min","4min","5min","8min","10min","15min"};
-    default = 600;
+    default = 900;
 };
 
 class GRAD_REPLAY_PRECISION
