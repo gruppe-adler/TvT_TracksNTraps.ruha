@@ -40,7 +40,7 @@ class PREPARATION_TIME {
 class GRAD_REPLAY_PRECISION
 {
     title = "InGame Replay Precision";
-    values[] = {1,2,3,4,5,6,7,10};
-    texts[] = {"every 1s","every 2s","every 3s","every 4s","every 5s","every 6s","every 7s","every 10s"};
-    default = 10;
+    values[] = {1,2,3,4,5,6,7,10,15,20};
+    texts[] = {"every 1s","every 2s","every 3s","every 4s","every 5s","every 6s","every 7s","every 10s", "every 15s", "every 20s"};
+    default = 20;
 };
