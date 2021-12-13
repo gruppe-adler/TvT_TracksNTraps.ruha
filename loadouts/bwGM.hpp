@@ -55,7 +55,7 @@ class bwGM {
                 LIST_1("ACE_DefusalKit")
             };
             addItemsToBackpack[] = {
-                LIST_1("gm_mine_at_dm21"),
+                LIST_1("ATMine_Range_Mag"),
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
                 LIST_2("ACE_morphine"),
@@ -81,7 +81,7 @@ class bwGM {
                 LIST_1("ACE_DefusalKit")
             };
             addItemsToBackpack[] = {
-                LIST_1("gm_mine_at_dm21"),
+                LIST_1("ATMine_Range_Mag"),
                 LIST_1("toolkit"),
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),

@@ -58,7 +58,7 @@ class sovjetGM {
                 "ACE_DefusalKit"
             };
             addItemsToBackpack[] = {
-                "gm_mine_at_tm46",
+                "ATMine_Range_Mag",
                 LIST_6("ACE_fieldDressing"),
                 LIST_2("ACE_epinephrine"),
                 LIST_2("ACE_morphine"),
@@ -87,7 +87,7 @@ class sovjetGM {
                 LIST_1("ACE_DefusalKit")
             };
             addItemsToBackpack[] = {
-                LIST_1("gm_mine_at_tm46")
+                LIST_1("ATMine_Range_Mag")
             };
         };
 

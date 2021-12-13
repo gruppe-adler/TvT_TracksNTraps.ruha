@@ -88,7 +88,7 @@ if (typeOf _veh in [
     "gm_gc_army_bmp1sp2",
     "gm_gc_army_btr60pu12"]
     ) then {
-    _veh addItemCargoGlobal ["gm_mine_at_tm46", 10];
+    _veh addItemCargoGlobal ["ATMine_Range_Mag", 10];
     [_veh,"land_gm_tanktrap_01",15] call grad_fortifications_fnc_addFort;
 };
 
@@ -97,6 +97,6 @@ if (typeOf _veh in [
     "gm_ge_army_marder1a2",
     "gm_ge_army_bpz2a0"]
     ) then {
-    _veh addItemCargoGlobal ["gm_mine_at_dm21", 10];
+    _veh addItemCargoGlobal ["ATMine_Range_Mag", 10];
     [_veh,"land_gm_tanktrap_01",15] call grad_fortifications_fnc_addFort;
 };
