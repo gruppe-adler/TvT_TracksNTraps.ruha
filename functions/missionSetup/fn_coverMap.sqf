@@ -31,36 +31,36 @@ for "_i" from 0 to 270 step 90 do {
     ];
 
     _marker = format ["gradTnT_moduleCoverMap_%1",_i];
-    createmarker [_marker,_markerPos];
-    _marker setmarkerpos _markerPos;
-    _marker setmarkersize [_sizeMarker,_sizeOut - _size1];
-    _marker setmarkerdir _dirTemp;
-    _marker setmarkershape "rectangle";
-    _marker setmarkerbrush "solidFull";
-    _marker setmarkercolor "colorBlack";
-    _marker setMarkerAlpha 1;
+    createmarkerlocal [_marker,_markerPos];
+    _marker setmarkerposlocal _markerPos;
+    _marker setmarkersizelocal [_sizeMarker,_sizeOut - _size1];
+    _marker setmarkerdirlocal _dirTemp;
+    _marker setmarkershapelocal "rectangle";
+    _marker setmarkerbrushlocal "solidFull";
+    _marker setmarkercolorlocal "colorBlack";
+    _marker setMarkerAlphalocal 1;
 
     _markerPos = [
         _posX + (sin _dirTemp * _size1) + (sin (_dirTemp + 90) * _size2),
         _posY + (cos _dirTemp * _size1) + (cos (_dirTemp + 90) * _size2)
     ];
     _marker = format ["gradTnT_moduleCoverMap_dot_%1",_i];
-    createmarker [_marker,_markerPos];
-    _marker setmarkerpos _markerPos;
-    _marker setmarkersize [0.75,0.75];
-    _marker setmarkerdir _dir;
-    _marker setmarkertype "mil_box_noShadow";
-    _marker setmarkercolor "colorBlack";
+    createmarkerlocal [_marker,_markerPos];
+    _marker setmarkerposlocal _markerPos;
+    _marker setmarkersizelocal [0.75,0.75];
+    _marker setmarkerdirlocal _dir;
+    _marker setmarkertypelocal "mil_box_noShadow";
+    _marker setmarkercolorlocal "colorBlack";
 };
 
 private _marker = "gradTnT_moduleCoverMap_border";
-createmarker [_marker,_pos];
-_marker setmarkerpos _pos;
-_marker setmarkersize [_sizeX,_sizeY];
-_marker setmarkerdir _dir;
-_marker setmarkershape "rectangle";
-_marker setmarkerbrush "border";
-_marker setmarkercolor "colorblack";
+createmarkerlocal [_marker,_pos];
+_marker setmarkerposlocal _pos;
+_marker setmarkersizelocal [_sizeX,_sizeY];
+_marker setmarkerdirlocal _dir;
+_marker setmarkershapelocal "rectangle";
+_marker setmarkerbrushlocal "border";
+_marker setmarkercolorlocal "colorblack";
 
 private _distanceBetweenPosts = 20;
 
@@ -70,8 +70,7 @@ private _amount = floor (_distance/_distanceBetweenPosts);
 
 for "_i" from 1 to _amount do {
     private _position = (getMarkerPos "gradTnT_moduleCoverMap_dot_0") getPos [_i*(_distance/_amount) , _dir];
-    private _pole = "land_gm_wall_gc_borderpost_01" createVehicle [0,0,0];
-    _pole setPos _position;
+    private _pole = createSimpleObject ["land_gm_wall_gc_borderpost_01", AGLtoASL _position, true];
     _pole setVectorUp [0,0,1];
 };
 
@@ -81,8 +80,7 @@ private _amount = floor (_distance/_distanceBetweenPosts);
 
 for "_i" from 1 to _amount do {
     private _position = (getMarkerPos "gradTnT_moduleCoverMap_dot_90") getPos [_i*(_distance/_amount) , _dir];
-    private _pole = "land_gm_wall_gc_borderpost_01" createVehicle [0,0,0];
-    _pole setPos _position;
+    private _pole = createSimpleObject ["land_gm_wall_gc_borderpost_01", AGLtoASL _position, true];
     _pole setVectorUp [0,0,1];
 };
 
@@ -93,8 +91,7 @@ private _amount = floor (_distance/_distanceBetweenPosts);
 
 for "_i" from 1 to _amount do {
     private _position = (getMarkerPos "gradTnT_moduleCoverMap_dot_180") getPos [_i*(_distance/_amount) , _dir];
-    private _pole = "land_gm_wall_gc_borderpost_01" createVehicle [0,0,0];
-    _pole setPos _position;
+    private _pole = createSimpleObject ["land_gm_wall_gc_borderpost_01", AGLtoASL _position, true];
     _pole setVectorUp [0,0,1];
 };
 
@@ -105,8 +102,7 @@ private _amount = floor (_distance/_distanceBetweenPosts);
 
 for "_i" from 1 to _amount do {
     private _position = (getMarkerPos "gradTnT_moduleCoverMap_dot_270") getPos [_i*(_distance/_amount) , _dir];
-    private _pole = "land_gm_wall_gc_borderpost_01" createVehicle [0,0,0];
-    _pole setPos _position;
+    private _pole = createSimpleObject ["land_gm_wall_gc_borderpost_01", AGLtoASL _position, true];
     _pole setVectorUp [0,0,1];
 };
 
